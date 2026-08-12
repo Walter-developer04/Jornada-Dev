@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- ============ PRAGMA DIRECTIVES (http-equiv) ============ -->
+    <!-- São diretivas que imitam cabeçalhos HTTP.
+         Quase todas foram substituídas por métodos melhores -->
+
+    <!-- refresh: recarrega ou redireciona a página automaticamente.
+         Péssimo para acessibilidade e experiência do usuário.
+         O usuário está lendo e a página do nada reinicia -->
+    <meta http-equiv="refresh" content="30" />
+
+    <!-- content-security-policy: define de onde o navegador pode carregar recursos.
+         Útil contra ataques, mas normalmente isso fica no servidor, não no HTML -->
+    <meta http-equiv="content-security-policy" content="default-src https:" />
+
+    <!-- content-language: define o idioma da página.
+         Foi substituído pelo atributo lang="" na tag <html> -->
+    <meta http-equiv="content-language" content="en-us" />
+
+    <!-- ============ META TAGS INÚTEIS ============ -->
+
+    <!-- keywords: servia para SEO, mas spammers encheram de palavras irrelevantes.
+         Hoje o Google IGNORA completamente essa tag. -->
+    <meta name="keywords" content="exemplo, meta, tag" />
+
+    <!-- ============ META TAGS PARA APPS NATIVOS ============ -->
+    <!-- Só servem para sites PWA (app que funciona offline). -->
+
+    <!-- apple-mobile-web-app-capable: diz que o site deve funciona como app no iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- mobile-web-app-capable: mesma coisa, mas para Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- apple-mobile-web-app-title: nome curto que aparece na tela do iPhone -->
+    <meta name="apple-mobile-web-app-title" content="MLW" />
+
+    <!-- application-name: nome curto que aparece na tela do Android -->
+    <meta name="application-name" content="MLW" />
+
+    <title>Meta tags</title>
+
+</head>
+<body>
+</body>
+</html>
