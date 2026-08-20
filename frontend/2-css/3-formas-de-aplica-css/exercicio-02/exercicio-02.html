@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: interno</title>
+</head>
+<style>
+
+    /*
+    CSS Interno é uma forma de aplicar CSS dentro do próprio
+    arquivo HTML, utilizando a tag <style>.
+
+    As regras CSS ficam geralmente dentro da tag <head>
+    e podem ser aplicadas a vários elementos da página.
+
+    Diferentemente do CSS Inline, o CSS não é escrito
+    diretamente dentro do elemento HTML.
+                                                           */
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        background-color: rgb(40, 106, 228);
+        color: #f5f5f5;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgba(40, 106, 228, 0.897);
+    }
+</style>
+<body>
+    <button>CSS INTERNO</button>
+</body>
+</html>
