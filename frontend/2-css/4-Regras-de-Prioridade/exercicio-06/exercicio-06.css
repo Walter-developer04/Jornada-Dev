@@ -1,0 +1,9 @@
+/* O CSS externo deixa o h1 laranja. */
+h1 {
+    color: orangered;
+}
+
+/* O CSS externo deixa o p verde. */
+p {
+    color: green;
+}

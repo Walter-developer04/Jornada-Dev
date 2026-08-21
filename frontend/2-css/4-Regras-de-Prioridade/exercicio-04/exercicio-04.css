@@ -1,0 +1,15 @@
+/* A primeira regra deixa o texto azul. */
+h1 {
+    color: rgb(36, 36, 114);
+}
+
+/* A segunda regra muda apenas o tamanho do texto. */
+h1 {
+    font-size: 40px;
+}
+
+/* A terceira regra muda a mesma propriedade da primeira.
+   Como ela vem depois, o texto fica vermelho. */
+h1 {
+    color: rgb(119, 17, 17);
+}

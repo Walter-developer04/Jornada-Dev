@@ -1,0 +1,29 @@
+
+/* h1 {
+    color: blue;
+}
+
+/* As duas regras mudam a mesma propriedade.
+   Como a segunda vem depois, o texto fica vermelho. */
+
+/* h1 {
+
+    color: red;
+}  */
+
+/* 
+  =====================
+  INVERTENDO OS VALORES
+  =====================
+*/
+
+  /* Aqui mesmo invertendo os valores as duas regras mudam a mesma propriedade.
+   Como o azul está por último, o texto fica azul. */
+
+h1 {
+    color: red;
+}
+
+h1 {
+    color: blue;
+}

@@ -1,0 +1,27 @@
+/* p {
+    color: green;
+}
+    
+/* Esta regra muda outra coisa: o tamanho do texto. Portanto não e sobrescrita*/
+
+/* p {
+    font-size: 40px;
+} */
+
+
+/* 
+  =====================
+  INVERTENDO OS VALORES
+  =====================
+*/
+
+/* A ordem foi invertida, mas as duas regras continuam sendo aplicadas,
+   porque cada uma muda uma propriedade diferente. */
+
+p {
+    font-size: 40px;
+}
+
+p {
+    color: green;
+}

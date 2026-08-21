@@ -1,0 +1,27 @@
+/* As duas regras mudam o tamanho do texto.
+   Como a segunda vem depois, o tamanho fica em 50px. */
+
+/* h2 {
+    font-size: 20px;
+} */
+
+/* h2 {
+    font-size: 50px;
+} */
+
+/* 
+      =====================
+      INVERTENDO OS VALORES
+      ===================== 
+*/
+
+/* Agora a ordem foi invertida.
+   Como 20px está por último, esse é o tamanho aplicado. */
+
+h2 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 20px;
+}

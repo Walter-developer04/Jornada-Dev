@@ -1,0 +1,5 @@
+/* O inline define vermelho no h1.
+   Porém, o !important faz o dourado ser aplicado. */
+h1 {
+    color: gold !important;
+}
