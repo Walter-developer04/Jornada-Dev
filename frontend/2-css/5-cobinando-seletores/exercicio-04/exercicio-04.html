@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-04.css">
+    <title>Seletor Irmão Subsequente (~)</title>
+</head>
+<body>
+
+    <h1>Seletor Irmão Subsequente (~)</h1>
+    <p class="intro">
+        Sintaxe: <code>elemento1 ~ elemento2 { propriedade: valor; }</code><br>
+        Seleciona <strong>todos</strong> os elementos que vêm <u>depois</u> de um determinado elemento,
+        desde que compartilhem o mesmo pai. (Não precisa ser imediatamente após, ao contrário do +)
+    </p>
+
+    <hr>
+
+    <div class="bloco">
+        <h2>Título</h2>
+        <p>Primeiro parágrafo após H2. A regra <code>h2 ~ p</code> vai estilizar este.</p>
+        <p>Segundo parágrafo. Também é estilizado, pois vem depois do H2.</p>
+        <div>
+            <p>Este está dentro de uma div, não é irmão direto do H2, portanto NÃO é estilizado.</p>
+        </div>
+        <p>Terceiro parágrafo. Também estilizado, pois é irmão subsequente.</p>
+        <span>Span após os parágrafos. A regra <code>h2 ~ span</code> também o pega.</span>
+        <p>Quarto parágrafo, também estilizado.</p>
+    </div>
+
+    <div class="bloco">
+        <h3>Subtítulo</h3>
+        <span>Primeiro span após H3 (estilizado por <code>h3 ~ span</code>).</span>
+        <strong>Strong aqui não é span, não é afetado.</strong>
+        <span>Segundo span (também estilizado).</span>
+    </div>
+
+    <div class="destaque-box" style="background-color: #eaf2f8; padding: 12px; border-radius: 6px; margin-top: 30px; border-left: 4px solid #2980b9;">
+        <strong>Diferença:</strong> Enquanto <code>+</code> pega apenas o <u>primeiro</u> irmão imediato, o <code>~</code> pega <u>todos</u> os irmãos que vêm depois (em qualquer posição).
+    </div>
+
+</body>
+</html>

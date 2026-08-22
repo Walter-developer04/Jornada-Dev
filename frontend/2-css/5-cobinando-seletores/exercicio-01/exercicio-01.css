@@ -1,0 +1,94 @@
+/* ==========================================================
+               REGRA 1: Seletor descendente básico
+               Aplica estilo a TODO <p> que estiver DENTRO de .container,
+               em QUALQUER nível (netos, bisnetos, etc).
+               ========================================================== */
+        .container p {
+            color: #2c3e50;
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid rgb(46, 139, 245);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* ==========================================================
+               REGRA 2: Descendente com caminho mais específico
+               Estiliza <span> que estiver dentro de <p> que está dentro de .container
+               (ou seja, span é descendente de p, que é descendente de .container)
+               ========================================================== */
+        .container p span {
+            font-weight: bold;
+            color: #e74c3c;
+            background-color: #fadbd8;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* ==========================================================
+               REGRA 3: Descendente com seletor de ID
+               Estiliza <li> que estiver dentro do elemento com id="menu-principal"
+               ========================================================== */
+        #menu-principal li {
+            list-style-type: disc;
+            font-size: 18px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #bdc3c7;
+        }
+
+        /* ==========================================================
+               REGRA 4: Descendente encadeado (vários níveis)
+               Estiliza <strong> que está dentro de <li> que está dentro de #menu-principal
+               ========================================================== */
+        #menu-principal li strong {
+            color: #27ae60;
+            background-color: #d5f5e3;
+            padding: 0 6px;
+        }
+
+        /* ==========================================================
+               REGRA 5: Descendente com seletor de elemento + classe
+               Estiliza <a> que estiver dentro de qualquer elemento com a classe .destaque
+               ========================================================== */
+        .destaque a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #8e44ad;
+            border-bottom: 2px solid #8e44ad;
+        }
+
+        /* --- Apenas para organização visual da página --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .box-demo {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .aviso {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 12px 18px;
+            border-radius: 4px;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 1px solid #dee2e6;
+        }

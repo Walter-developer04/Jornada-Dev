@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="irmao-adjacente.css">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>Seletor Irmão Adjacente (+)</title>
+</head>
+<body>
+    <h1>Seletor Irmão Adjacente (+)</h1>
+    <p class="intro">
+        Sintaxe: <code>elemento1 + elemento2 { propriedade: valor; }</code><br>
+        Seleciona o elemento que vem <strong>imediatamente depois</strong> (adjacente) de outro elemento, desde que ambos compartilhem o mesmo pai.
+    </p>
+    <hr>
+
+    <div class="bloco">
+        <h2>Titulo Principal</h2>
+        <p>Este paragrafo vem imediatamente apos o H2. A regra <code>h2 + p</code> vai estiliza-lo.</p>
+        
+        <p>Este e o SEGUNDO paragrafo. Ele nao e adjacente ao H2 (porque tem outro p no meio). Portanto, <code>h2 + p</code> NAO vai pega-lo.</p>
+
+        <p>Este e o terceiro paragrafo. Tambem nao pego.</p>
+        
+        <h2>Outro Titulo</h2>
+        <p>Este tambem e adjacente a um H2, entao tambem e estilizado.</p>
+    </div>
+
+    <div class="bloco">
+        <h3>Subtitulo</h3>
+        <p>Paragrafo apos H3. Estilizado por <code>h3 + p</code>.</p>
+        <div>
+            <p>Este p esta dentro de uma div. Nao e irmao do H3, e sim descendente da div. Nao e pego pelo seletor.</p>
+        </div>
+    </div>
+
+    <!-- Exemplo com span -->
+    <div class="bloco">
+        <span class="tag">Tag</span>
+        <strong class="destaque">Strong imediatamente apos span. A regra <code>span + strong</code> pega este.</strong>
+        <strong>Este strong NAO e adjacente ao span (tem outro strong no meio), entao nao pego.</strong>
+    </div>
+
+    <div class="destaque-box" style="background-color: #eaf2f8; padding: 12px; border-radius: 6px; margin-top: 30px; border-left: 4px solid #2980b9;">
+        <strong>Observacao:</strong> O sinal de <code>+</code> exige que o segundo elemento seja o <u>proximo irmao</u> exato. Se houver qualquer elemento no meio, a regra nao se aplica.
+    </div>
+</body>
+</html>

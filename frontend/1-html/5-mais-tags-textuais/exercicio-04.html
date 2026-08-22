@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links (a)</title>
+</head>
+<body>
+
+    <h1>Tag &lt;a&gt; (âncora / link)</h1>
+    <p>
+        A tag &lt;a&gt; define um hiperlink. O atributo <b>href</b> (hypertext reference) 
+        é obrigatório e especifica o destino do link.
+    </p>
+
+    <hr>
+
+    <h2>1. Link para site externo</h2>
+    <p>
+        Abre o site no mesmo navegador (substitui a página atual).
+    </p>
+    <p>
+        <a href="https://www.google.com">Visite o Google</a>
+    </p>
+
+    <h2>2. Link para site externo em nova aba</h2>
+    <p>
+        O atributo <b>target="_blank"</b> abre o link em uma nova aba ou janela.
+    </p>
+    <p>
+        <a href="https://www.w3schools.com" target="_blank">Visite W3Schools (nova aba)</a>
+    </p>
+
+    <hr>
+
+    <h2>3. Link para outra seção da mesma página</h2>
+    <p>
+        Usa o caractere <b>#</b> seguido do <b>id</b> de um elemento para navegar até ele.
+    </p>
+    <p>
+        <a href="#secao-final">Ir para a seção final</a>
+    </p>
+
+    <hr>
+
+    <h2>4. Link para enviar e-mail</h2>
+    <p>
+        Usa o prefixo <b>mailto:</b> para abrir o programa de e-mail padrão.
+    </p>
+    <p>
+        <a href="mailto:contato@exemplo.com">Enviar e-mail para contato@exemplo.com</a>
+    </p>
+
+    <hr>
+
+    <h2>5. Link para realizar chamada telefônica</h2>
+    <p>
+        Usa o prefixo <b>tel:</b> para discar um número em dispositivos móveis.
+    </p>
+    <p>
+        <a href="tel:+5511999999999">Ligar para (11) 99999-9999</a>
+    </p>
+
+    <hr>
+
+    <!-- Seção destino do link interno (#secao-final) -->
+    <h2 id="secao-final">Seção final (destino do link interno)</h2>
+    <p>
+        Você chegou aqui clicando no link com <b>href="#secao-final"</b>.
+    </p>
+    <p>
+        <a href="#">Voltar ao topo</a> (uso de <b>#</b> sozinho recarrega a página no topo).
+    </p>
+
+    <hr>
+
+    <!-- Nota prática visível para o usuário -->
+    <p>
+        <b>Nota prática:</b> O atributo <b>href</b> é obrigatório. Links sem <b>href</b> não são interativos. 
+        Use <b>target="_blank"</b> com cuidado para não sobrecarregar o usuário com muitas abas. 
+        O link <b>#</b> (sem destino) recarrega a página ou navega para o topo.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filho.css">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Seletor Filho (>)</title>
+</head>
+<body>
+
+    <h1>Seletor Filho (>)</h1>
+    <p class="intro">
+        Sintaxe: <code>pai > filho { propriedade: valor; }</code><br>
+        Seleciona <strong>apenas</strong> os elementos que sao <u>filhos diretos</u> (primeiro nivel) do pai.
+    </p>
+
+    <hr>
+
+    <!-- EXEMPLO PRATICO -->
+    <div class="caixa">
+        <p>Filho direto -- estilizado pela regra .caixa > p</p>
+        
+        <div class="interna">
+            <p>Este e um NETO (dentro de .interna). Nao e filho direto de .caixa -> NAO e estilizado.</p>
+        </div>
+
+        <p>Outro filho direto -- estilizado normalmente.</p>
+        
+        <span>Filho direto span -- estilizado pela regra .caixa > span</span>
+    </div>
+
+    <!-- COMPARACAO RAPIDA -->
+    <div class="destaque" style="background-color: #fff3cd; padding: 12px; border-radius: 6px; margin-top: 30px;">
+        <strong>Compare:</strong> Se usassemos o seletor descendente (espaco) .caixa p, o paragrafo dentro de .interna tambem ganharia estilo. Com o <strong>filho (>)</strong>, apenas os de primeiro nivel sao afetados.
+    </div>
+
+</body>
+</html>

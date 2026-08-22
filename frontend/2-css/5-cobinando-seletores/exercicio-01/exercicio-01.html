@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Seletor Descendente (CSS)</title>
+</head>
+<body>
+
+    <h1> Seletor Descendente (espaço)</h1>
+
+    <div class="aviso">
+        <strong>Sintaxe:</strong> <code>pai  descendente { propriedade: valor; }</code>
+        <br>
+        O seletor descendente (<strong>espaço</strong>) seleciona TODOS os elementos que estão
+        <strong>dentro</strong> do pai, <em>em qualquer nível de aninhamento</em> (filho, neto, bisneto...).
+    </div>
+
+    <hr>
+
+    <!-- ===== EXEMPLO 1: .container p ===== -->
+    <div class="container">
+        <h2> Exemplo 1: <code>.container p</code></h2>
+        <p>Este parágrafo é <strong>filho direto</strong> de .container — será estilizado.</p>
+
+        <div>
+            <p>Este parágrafo está <strong>dentro de uma div interna</strong> (neto de .container) — também será estilizado, pois é descendente!</p>
+        </div>
+
+        <section>
+            <article>
+                <p>Este está <strong>dentro de section > article</strong> (bisneto) — o seletor descendente também alcança ele.</p>
+            </article>
+        </section>
+
+        <!-- Mostrando a regra 2: span dentro de p dentro de .container -->
+        <p>
+            Aqui temos um <span>SPAN destacado</span> dentro de um parágrafo. O seletor
+            <code>.container p span</code> encontrou e estilizou ele.
+        </p>
+
+        <p style="background: transparent; border-left-color: #95a5a6;">
+             Note que <strong>TODOS</strong> os parágrafos dentro de .container foram afetados, não importa o quão fundo estejam.
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- ===== EXEMPLO 2: #menu-principal li ===== -->
+    <div class="box-demo">
+        <h2> Exemplo 2: <code>#menu-principal li</code></h2>
+
+        <ul id="menu-principal">
+            <li><strong>Início</strong> — este item ganhou cor e borda</li>
+            <li><strong>Sobre</strong> — o <strong>strong</strong> dentro dele também ficou verde (regra 4)</li>
+            <li>
+                Serviços
+                <ul>
+                    <li>Consultoria — este é <strong>neto</strong> do #menu-principal, mas o seletor descendente <code>#menu-principal li</code> também pegou ele!</li>
+                    <li>Suporte — mesmo estando dentro de outra lista, continua sendo descendente.</li>
+                </ul>
+            </li>
+            <li><strong>Contato</strong> — outro item</li>
+        </ul>
+
+        <p style="margin-top: 10px; font-size: 0.9em; color: #7f8c8d;">
+             Observe que os <code>&lt;li&gt;</code> dentro da sub-lista (nível 2) também ganharam o estilo,
+            porque são descendentes de <code>#menu-principal</code>.
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- ===== EXEMPLO 3: .destaque a ===== -->
+    <div class="box-demo">
+        <h2> Exemplo 3: <code>.destaque a</code></h2>
+
+        <div class="destaque">
+            <p>Este é um link dentro de .destaque: <a href="#">Clique aqui</a> — ele foi estilizado.</p>
+            <div>
+                <p>Outro link dentro de uma div aninhada: <a href="#">Link interno</a> — também foi estilizado, pois é descendente de .destaque.</p>
+            </div>
+        </div>
+
+        <div>
+            <p>Já este link <a href="#">fora do .destaque</a> NÃO recebeu o estilo, porque não é descendente.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- ===== COMPARAÇÃO COM O SELETOR FILHO (para fixar a diferença) ===== -->
+    <div class="box-demo" style="background: #eaf2f8; border: 2px solid #2980b9;">
+        <h3> Para fixar: Descendente vs Filho</h3>
+        <p>
+            <strong>Descendente (espaço):</strong> <code>.box p</code> → pega <u>todos</u> os &lt;p&gt; dentro de .box,
+            em qualquer profundidade.
+        </p>
+        <p>
+            <strong>Filho (&gt;):</strong> <code>.box > p</code> → pega <u>apenas</u> os &lt;p&gt; que são
+            <strong>filhos diretos</strong> (primeiro nível) de .box.
+        </p>
+        <p style="background: #d4efdf; border-left-color: #27ae60;">
+             No Exemplo 1, se usássemos <code>.container > p</code>, apenas o PRIMEIRO parágrafo
+            (o filho direto) seria estilizado. Os outros (dentro de div, section, article) seriam ignorados.
+            Com o descendente (espaço), <strong>TODOS</strong> foram estilizados.
+        </p>
+    </div>
+
+    <hr>
+
+    <div style="text-align: center; color: #7f8c8d; font-size: 0.9rem;">
+        Fim do exemplo — Seletor descendente (<code> </code>) aplicado em várias situações.
+    </div>
+
+</body>
+</html>

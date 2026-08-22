@@ -1,0 +1,61 @@
+/* Estilos gerais (apenas para organizacao) */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f4f6f9;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #1a2a3a;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 8px;
+}
+
+.intro {
+    background: #ecf0f1;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.caixa {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin: 20px 0;
+}
+
+.interna {
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* ========================================
+   REGRA PRINCIPAL: SELETOR FILHO (>)
+   ======================================== */
+
+/* Estiliza SOMENTE os <p> que sao filhos DIRETOS de .caixa */
+.caixa > p {
+    background: #d5f5e3;
+    padding: 10px 14px;
+    border-left: 6px solid #27ae60;
+    border-radius: 4px;
+    color: #1a5a2a;
+    font-weight: 500;
+}
+
+/* Estiliza SOMENTE os <span> que sao filhos DIRETOS de .caixa */
+.caixa > span {
+    display: inline-block;
+    background: #d6eaf8;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 2px solid #2980b9;
+    color: #154360;
+    font-weight: bold;
+}

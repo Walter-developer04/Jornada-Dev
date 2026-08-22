@@ -1,0 +1,77 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #1a2a3a;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 8px;
+}
+
+.intro {
+    background: #ecf0f1;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.bloco {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin: 20px 0;
+}
+
+hr {
+    margin: 30px 0;
+    border: 1px solid #dee2e6;
+}
+
+/* ========================================
+   REGRA PRINCIPAL: SELETOR IRMAO ADJACENTE (+)
+   ======================================== */
+
+/* Estiliza o PRIMEIRO paragrafo APOS qualquer H2 */
+h2 + p {
+    background: #d5f5e3;
+    padding: 10px 14px;
+    border-left: 6px solid #27ae60;
+    border-radius: 4px;
+    color: #1a5a2a;
+    font-weight: 500;
+}
+
+/* Estiliza o PRIMEIRO paragrafo APOS qualquer H3 */
+h3 + p {
+    background: #fdebd0;
+    padding: 10px 14px;
+    border-left: 6px solid #e67e22;
+    border-radius: 4px;
+    color: #6c2e00;
+    font-weight: 500;
+}
+
+/* Estiliza o PRIMEIRO strong APOS span */
+span + strong {
+    display: inline-block;
+    background: #d6eaf8;
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 2px solid #2980b9;
+    color: #154360;
+}
+
+/* Estiliza a tag span para referencia (opcional) */
+.tag {
+    background: #f39c12;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}

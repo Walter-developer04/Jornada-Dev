@@ -1,0 +1,68 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #1a2a3a;
+    border-bottom: 3px solid #8e44ad;
+    padding-bottom: 8px;
+}
+
+.intro {
+    background: #ecf0f1;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.bloco {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin: 20px 0;
+}
+
+hr {
+    margin: 30px 0;
+    border: 1px solid #dee2e6;
+}
+
+/* ========================================
+   REGRA PRINCIPAL: SELETOR IRMÃO SUBSEQUENTE (~)
+   ======================================== */
+
+/* Estiliza TODOS os <p> que vêm depois de um H2 (irmãos, não importa a distância) */
+h2 ~ p {
+    background: #d5f5e3;
+    padding: 10px 14px;
+    border-left: 6px solid #27ae60;
+    border-radius: 4px;
+    color: #1a5a2a;
+}
+
+/* Estiliza TODOS os <span> que vêm depois de um H2 */
+h2 ~ span {
+    display: inline-block;
+    background: #d6eaf8;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 2px solid #2980b9;
+    color: #154360;
+    font-weight: bold;
+}
+
+/* Estiliza TODOS os <span> que vêm depois de um H3 */
+h3 ~ span {
+    background: #fdebd0;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 2px solid #e67e22;
+    color: #6c2e00;
+    font-weight: bold;
+}
