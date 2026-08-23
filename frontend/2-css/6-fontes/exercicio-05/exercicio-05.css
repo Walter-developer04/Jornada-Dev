@@ -1,0 +1,210 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+::selection { background: #F4C430; color: #2B1E17; }
+
+body {
+  font: 400 1.0625rem/1.8 "Newsreader", Georgia, serif;
+  color: #2B1E17;
+  background: #FFFDD0;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 2rem) 2rem;
+  counter-reset: sec;
+  text-wrap: pretty;
+}
+
+body::before {
+
+  display: block;
+  font: 500 0.66rem/1 "JetBrains Mono", monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C6A07E;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #C6A07E;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+body::after {
+  display: block;
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #C6A07E;
+  font: italic 400 0.85rem/1.6 "Newsreader", Georgia, serif;
+  color: #C6A07E;
+  text-align: center;
+}
+
+h1 {
+  font: 600 clamp(2.5rem, 7vw, 4rem)/1.04 "Fraunces", Georgia, serif;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.6rem;
+  text-wrap: balance;
+}
+
+h1 .w {
+  font-style: italic;
+  color: #2B1E17;
+  background: #F4C430;
+  padding: 0 0.14em;
+}
+
+h2 {
+  font: 600 clamp(1.45rem, 3.5vw, 1.9rem)/1.15 "Fraunces", Georgia, serif;
+  letter-spacing: -0.01em;
+  margin: 2.4rem 0 1.3rem;
+  text-wrap: balance;
+}
+
+h2::before {
+  counter-increment: sec;
+  content: "0" counter(sec);
+  display: block;
+  width: fit-content;
+  font: 500 0.68rem/1 "JetBrains Mono", monospace;
+  letter-spacing: 0.2em;
+  color: #2B1E17;
+  background: #F4C430;
+  padding: 0.4em 0.8em 0.35em;
+  margin-bottom: 0.8rem;
+}
+
+p { margin-bottom: 1.15rem; }
+
+.intro::first-letter {
+  font: 600 3.5em/0.82 "Fraunces", Georgia, serif;
+  float: left;
+  color: #2B1E17;
+  background: #F4C430;
+  padding: 0.05em 0.16em 0.02em;
+  margin: 0.04em 0.14em 0 0;
+}
+
+.c {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82em;
+  font-weight: 500;
+  background: rgba(198, 160, 126, 0.28);
+  padding: 0.14em 0.4em;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.25s ease;
+}
+
+.c:hover { background: rgba(198, 160, 126, 0.5); }
+
+.code {
+  font: 400 0.85rem/1.95 "JetBrains Mono", monospace;
+  color: #FFFDD0;
+  background: #2B1E17;
+  padding: 1.6rem 1.4rem 1.2rem;
+  border-radius: 6px;
+  margin: 1.4rem 0 1.5rem;
+  white-space: pre;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #6E5A4A transparent;
+}
+
+.code::-webkit-scrollbar { height: 7px; }
+.code::-webkit-scrollbar-thumb { background: #6E5A4A; border-radius: 4px; }
+
+.code::before {
+  content: "css";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.85rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 208, 0.45);
+}
+
+.code .req { color: #F4C430; font-weight: 500; }
+.code .opt { color: #C6A07E; }
+
+.demo {
+  font: italic small-caps 700 1.5rem/1.5 "Fraunces", Georgia, serif;
+  background: #FEF6BD;
+  border: 1px solid #C6A07E;
+  border-radius: 6px;
+  padding: 1.8rem 1.6rem 1.5rem;
+  position: relative;
+}
+
+.demo::before {
+  content: "resultado";
+  position: absolute;
+  top: -0.55rem;
+  left: 1.1rem;
+  background: #FEF6BD;
+  padding: 0 0.6em;
+  font: 500 0.6rem/1.1 "JetBrains Mono", monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #2B1E17;
+}
+
+.nota {
+  border-left: 3px solid #F4C430;
+  padding-left: 1.15rem;
+  font-style: italic;
+}
+
+.veredito {
+  font: 500 1.15rem/1.65 "Fraunces", Georgia, serif;
+  color: #2B1E17;
+  background: #F4C430;
+  border-radius: 6px;
+  padding: 1.8rem 1.6rem 1.5rem;
+  margin-top: 2.4rem;
+  position: relative;
+}
+
+.veredito::before {
+  content: "quando usar";
+  position: absolute;
+  top: -0.55rem;
+  left: 1.1rem;
+  background: #2B1E17;
+  color: #F4C430;
+  padding: 0 0.6em;
+  font: 500 0.6rem/1.1 "JetBrains Mono", monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.veredito .v {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.veredito .c {
+  background: #2B1E17;
+  color: #F4C430;
+}
+
+.veredito .c:hover {
+  background: #3A2A1E;
+}
+
+hr {
+  position: relative;
+  height: 0;
+  border: none;
+  border-top: 1px solid #C6A07E;
+  margin: 3rem 0;
+}
+
+hr::after {
+  content: "§";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: #FFFDD0;
+  color: #C6A07E;
+  padding: 0 0.9em;
+  font: 400 0.95rem/1 "Newsreader", Georgia, serif;
+}

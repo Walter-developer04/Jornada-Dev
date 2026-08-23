@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="exercicio-07.css">
+
+    <title>font-variant no CSS</title>
+  </head>
+
+  <body>
+
+    <h1>font-variant</h1>
+
+    <p>
+      A propriedade <span>font-variant</span> permite definir diferentes
+      variações tipográficas para um texto. Ela é uma propriedade abreviada
+      que reúne várias configurações relacionadas às características da fonte.
+    </p>
+
+    <h2>O que é font-variant</h2>
+
+    <p>
+      <span>font-variant</span> é uma propriedade CSS usada para controlar
+      determinadas características tipográficas de uma fonte.
+    </p>
+
+    <p>
+      Diferentemente de propriedades como <span>font-size</span> e
+      <span>font-weight</span>, que controlam diretamente o tamanho e o peso
+      do texto, <span>font-variant</span> trabalha com recursos tipográficos
+      oferecidos pela fonte.
+    </p>
+
+    <p>
+      A propriedade pode receber diferentes valores e também pode combinar
+      mais de uma variação.
+    </p>
+
+    <h2>font-variant: normal</h2>
+
+    <p>
+      O valor <span>normal</span> mantém as variações tipográficas em seu
+      estado normal.
+    </p>
+
+    <h3>Exemplo</h3>
+
+    <div>
+      p {
+      <br>
+      &nbsp;&nbsp;font-variant: normal;
+      <br>
+      }
+    </div>
+
+    <h3>Resultado</h3>
+
+    <p style="font-variant: normal;">
+      Texto utilizando font-variant normal.
+    </p>
+
+    <h2>font-variant: small-caps</h2>
+
+    <p>
+      O valor <span>small-caps</span> exibe as letras minúsculas como
+      pequenas versões de letras maiúsculas. As letras que já são maiúsculas
+      continuam sendo exibidas como maiúsculas.
+    </p>
+
+    <h3>Exemplo</h3>
+
+    <div>
+      p {
+      <br>
+      &nbsp;&nbsp;font-variant: small-caps;
+      <br>
+      }
+    </div>
+
+    <h3>Resultado</h3>
+
+    <p style="font-variant: small-caps;">
+      Este texto utiliza small-caps para alterar a apresentação das letras.
+    </p>
+
+    <h2>Small caps na prática</h2>
+
+    <p>
+      O efeito pode ser utilizado em títulos, nomes ou pequenos trechos de
+      texto quando se deseja uma aparência semelhante às letras maiúsculas,
+      mas mantendo uma diferença visual de tamanho.
+    </p>
+
+    <p style="font-variant: small-caps;">
+      Tipografia e desenvolvimento web
+    </p>
+
+    <p style="font-variant: small-caps;">
+      HTML CSS JavaScript
+    </p>
+
+    <h2>Outras variações</h2>
+
+    <p>
+      A propriedade <span>font-variant</span> também pode controlar outros
+      recursos tipográficos. Entre eles estão variações de ligaturas,
+      maiúsculas, números e formas de caracteres.
+    </p>
+
+    <p>
+      Alguns desses recursos podem ser definidos diretamente por valores de
+      <span>font-variant</span>, enquanto outros também possuem propriedades
+      específicas, como <span>font-variant-caps</span>,
+      <span>font-variant-numeric</span> e
+      <span>font-variant-ligatures</span>.
+    </p>
+
+    <h2>font-variant e suas propriedades específicas</h2>
+
+    <p>
+      Como <span>font-variant</span> é uma propriedade abreviada, ela reúne
+      configurações de outras propriedades relacionadas às variantes das
+      fontes.
+    </p>
+
+    <p>
+      Entre essas propriedades estão <span>font-variant-caps</span>,
+      <span>font-variant-numeric</span>,
+      <span>font-variant-ligatures</span>,
+      <span>font-variant-alternates</span>,
+      <span>font-variant-east-asian</span>,
+      <span>font-variant-position</span> e
+      <span>font-variant-emoji</span>.
+    </p>
+
+    <p>
+      Neste momento, não é necessário estudar todas essas propriedades
+      separadamente. O mais importante é entender que
+      <span>font-variant</span> funciona como uma forma abreviada de definir
+      diferentes variantes tipográficas.
+    </p>
+
+    <h2>Mais de uma variação</h2>
+
+    <p>
+      Alguns valores de <span>font-variant</span> podem ser combinados na
+      mesma declaração.
+    </p>
+
+    <p>
+      Por exemplo, a propriedade pode receber
+      <span>small-caps</span> junto com uma configuração relacionada aos
+      números.
+    </p>
+
+    <h3>Exemplo</h3>
+
+    <div>
+      p {
+      <br>
+      &nbsp;&nbsp;font-variant: small-caps tabular-nums;
+      <br>
+      }
+    </div>
+
+    <h3>Resultado</h3>
+
+    <p style="font-variant: small-caps tabular-nums;">
+      Valores 2026 1234 5678 e texto com small caps.
+    </p>
+
+    <h2>font-variant e a fonte utilizada</h2>
+
+    <p>
+      O resultado das variações tipográficas depende dos recursos disponíveis
+      na fonte utilizada. Nem toda fonte possui suporte para todas as
+      características tipográficas.
+    </p>
+
+    <p>
+      Por isso, uma declaração de <span>font-variant</span> pode produzir
+      resultados diferentes dependendo da fonte utilizada e do recurso
+      escolhido.
+    </p>
+
+    <h2>Exemplo final</h2>
+
+    <p>
+      O exemplo abaixo reúne uma fonte e uma variação tipográfica em uma
+      mesma regra CSS.
+    </p>
+
+    <div>
+      p {
+      <br>
+      &nbsp;&nbsp;font-family: "Roboto", sans-serif;
+      <br>
+      &nbsp;&nbsp;font-variant: small-caps;
+      <br>
+      }
+    </div>
+
+    <p
+      style="
+        font-family: 'Roboto', sans-serif;
+        font-variant: small-caps;
+      "
+    >
+      Este texto utiliza a fonte Roboto com a variação small-caps.
+    </p>
+
+    <h2>Resumo</h2>
+
+    <p>
+      <span>font-variant</span> é uma propriedade abreviada do CSS usada para
+      definir variantes tipográficas de uma fonte.
+    </p>
+
+    <p>
+      O valor <span>normal</span> mantém as configurações normais. O valor
+      <span>small-caps</span> cria uma apresentação em pequenas maiúsculas.
+      Também existem valores relacionados a ligaturas, números, formas de
+      caracteres e outras características tipográficas.
+    </p>
+
+    <p>
+      A propriedade pode receber mais de uma variação e reúne configurações
+      que também podem ser controladas por propriedades específicas
+      <span>font-variant-*</span>.
+    </p>
+
+  </body>
+</html>

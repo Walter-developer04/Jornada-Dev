@@ -1,0 +1,50 @@
+/*
+ * ORDEM DE PRIORIDADE DA FONT-FAMILY (Cascata de Fallback):
+ * 
+ * 1 PRIMEIRA OPÇÃO (Fonte principal):
+ *    É a tipografia idealizada pelo design (ex: "Proxima Nova", "Montserrat").
+ *    Ela só será aplicada se o usuário tiver EXATAMENTE essa fonte instalada 
+ *    no sistema operacional dele ou se ela for carregada via @font-face.
+ * 
+ * 2 FONTES DE RESERVA (Fallbacks intermediários):
+ *    São alternativas para sistemas que não possuem a fonte principal.
+ *    Como cada SO (Windows, macOS, Linux) vem com bibliotecas de fontes 
+ *    diferentes, listamos várias opções com características visuais parecidas.
+ *    Ex: Se não tiver "Helvetica" (comum no Mac), tenta "Arial" (comum no Windows).
+ *    O navegador percorre a lista DA ESQUERDA PARA A DIREITA até encontrar 
+ *    a primeira fonte disponível no computador do usuário.
+ * 
+ * 3 GENÉRICO DE SEGURANÇA (Último recurso):
+ *    É a palavra-chave final (ex: sans-serif, serif, monospace, cursive, fantasy).
+ *    Essa é a ÚLTIMA BARREIRA. Ela garante que o navegador SEMPRE encontrará 
+ *    uma fonte para renderizar o texto, mesmo que todas as anteriores falhem.
+ *    Sem ela, o navegador recorrerá à fonte padrão imprevisível (que varia 
+ *    entre navegadores), podendo quebrar completamente o layout ou até 
+ *    tornar o texto invisível em alguns casos raros (se a fonte padrão tiver 
+ *    glifos faltando). Ela obriga o sistema a usar a fonte padrão daquela 
+ *    família genérica (ex: no Windows, sans-serif geralmente vira Arial).
+ */
+body {
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(1, 1, 20);
+}
+
+h1 {
+  font-size: 60px;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: #f2f2f2;
+  font-family: sans-serif;
+}
+
+span {
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: cursive;
+}

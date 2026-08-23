@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="exercicio-06.css" />
+
+    <title>Google Fonts — Exercício de HTML e CSS</title>
+  </head>
+
+  <body>
+    <h1>Google Fonts</h1>
+
+    <p>
+      O Google Fonts é um serviço que disponibiliza diferentes fontes
+      tipográficas para serem utilizadas em páginas da web. Neste exercício,
+      vamos conhecer sua finalidade e entender como uma fonte pode ser aplicada
+      com CSS.
+    </p>
+
+    <h2>O que é o Google Fonts</h2>
+
+    <p>
+      O Google Fonts é uma biblioteca de fontes disponibilizada pelo Google.
+      Ela permite que desenvolvedores escolham diferentes famílias tipográficas
+      para utilizar em seus sites.
+    </p>
+
+    <p>
+      Entre as fontes disponíveis estão famílias como
+      <span>Roboto</span>, Open Sans, Lato e Montserrat.
+    </p>
+
+    <h2>O que são fontes tipográficas</h2>
+
+    <p>
+      Uma fonte tipográfica é um conjunto de caracteres que possui determinado
+      estilo visual. Ela define a aparência das letras, números e outros
+      símbolos utilizados em um texto.
+    </p>
+
+    <p>
+      A escolha da fonte pode influenciar a aparência e a leitura de uma página.
+      Por isso, a tipografia é uma parte importante da apresentação de um site.
+    </p>
+
+    <h2>Para que o Google Fonts serve</h2>
+
+    <p>
+      Um site pode utilizar fontes que já estão instaladas no computador ou
+      dispositivo do usuário. Porém, nem todas as fontes estão disponíveis em
+      todos os dispositivos.
+    </p>
+
+    <p>
+      O Google Fonts oferece uma alternativa para utilizar outras famílias de
+      fontes em uma página web. A fonte escolhida pode ser carregada pela
+      página e depois utilizada pelo CSS.
+    </p>
+
+    <h2>Como adicionar uma fonte</h2>
+
+    <p>
+      Para utilizar uma fonte do Google Fonts, podemos adicionar uma tag
+      <span>&lt;link&gt;</span> dentro do elemento
+      <span>&lt;head&gt;</span> do documento HTML.
+    </p>
+
+    <p>
+      Nesta página, a fonte escolhida foi a Roboto. O código utilizado para
+      carregá-la é fornecido pelo próprio Google Fonts.
+    </p>
+
+    <pre>
+&lt;link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+  rel="stylesheet"
+&gt;
+    </pre>
+
+    <h2>Como aplicar a fonte com CSS</h2>
+
+    <p>
+      Depois que a fonte é adicionada à página, podemos utilizá-la com a
+      propriedade <span>font-family</span>.
+    </p>
+
+    <pre>
+body {
+  font-family: "Roboto", sans-serif;
+}
+    </pre>
+
+    <p>
+      Nesse exemplo, <span>Roboto</span> é a fonte principal. O valor
+      <span>sans-serif</span> funciona como uma opção de reserva caso a Roboto
+      não possa ser utilizada.
+    </p>
+
+    <p>
+      Também podemos utilizar a propriedade
+      <span>font-weight</span> para definir o peso do texto. Neste exercício,
+      foram carregados os pesos 400 e 700 da Roboto.
+    </p>
+
+    <h2>HTML, CSS e Google Fonts</h2>
+
+    <p>
+      O HTML organiza o conteúdo da página, como títulos e parágrafos. O CSS
+      controla a aparência desses elementos, incluindo a escolha da fonte.
+    </p>
+
+    <p>
+      O Google Fonts fornece a fonte que será utilizada. Depois de carregada,
+      ela pode ser aplicada aos elementos HTML por meio do CSS.
+    </p>
+
+    <h2>Exemplo</h2>
+
+    <p>
+      A Roboto pode ser utilizada em diferentes tipos de conteúdo.
+      <br />
+      Veja um exemplo simples:
+    </p>
+
+    <div>
+      <h3>Feira de Tipografia</h3>
+
+      <p>
+        Conheça diferentes estilos de fontes e suas características.
+        <br />
+        Data: <span>15 de março de 2026</span>
+        <br />
+        Horário: <span>14h às 18h</span>
+      </p>
+    </div>
+
+    <h2>Resumo</h2>
+
+    <p>
+      O Google Fonts disponibiliza diversas famílias de fontes para utilização
+      em páginas web. Uma fonte pode ser adicionada ao HTML por meio de uma
+      tag <span>&lt;link&gt;</span> e aplicada pelo CSS utilizando
+      <span>font-family</span>.
+    </p>
+
+    <p>
+      Neste exercício, a fonte utilizada é a Roboto, aplicada ao conteúdo da
+      página por meio do CSS.
+    </p>
+  </body>
+</html>

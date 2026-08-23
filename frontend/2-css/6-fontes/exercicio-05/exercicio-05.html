@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="exercicio-05.css">
+  <title>A abreviação font — CSS</title>
+</head>
+<body>
+
+  <h1>A abreviação <span class="w">font</span></h1>
+
+  <p class="intro">Em CSS, <span class="c">font</span> é uma abreviação (shorthand): uma única declaração que reúne sete propriedades tipográficas. Em vez de espalhar estilo, peso, tamanho e família pela folha de estilo, você escreve tudo de uma vez.</p>
+
+  <hr>
+
+  <h2>A ordem importa</h2>
+
+  <p>A sintaxe segue uma sequência fixa: o que vem antes do tamanho é opcional; tamanho e família são obrigatórios.</p>
+
+  <p class="code">font: <span class="opt">[style] [variant] [weight] [stretch]</span> <span class="req">size</span><span class="opt">[/line-height]</span> <span class="req">family</span>;</p>
+
+
+
+  <hr>
+
+  <h2>Sete linhas viram uma</h2>
+
+  <p>O caminho longo:</p>
+
+  <p class="code">font-style: italic;<br>font-variant: small-caps;<br>font-weight: 700;<br>font-stretch: normal;<br>font-size: 1.5rem;<br>line-height: 1.5;<br>font-family: "Fraunces", Georgia, serif;</p>
+
+  <p>Equivale exatamente a:</p>
+
+  <p class="code">font: <span class="opt">italic small-caps 700</span> <span class="req">1.5rem</span><span class="opt">/1.5</span> <span class="req">"Fraunces", Georgia, serif</span>;</p>
+
+  <p>Repare: a altura de linha vem sempre colada ao tamanho, separada por uma barra.</p>
+
+  <hr>
+
+  <h2>Vendo acontecer</h2>
+
+  <p>O parágrafo abaixo usa a declaração acima, ao vivo:</p>
+
+  <p class="demo">A tipografia é a voz do texto — e uma única linha de CSS ajusta o tom, o peso e o ritmo com que cada palavra é dita.</p>
+
+  <hr>
+
+  <p class="nota">Atenção: sem <span class="c">font-size</span> e <span class="c">font-family</span>, o navegador descarta a declaração inteira.</p>
+
+  <p class="veredito">Use a abreviação para <span class="v">definir</span> uma tipografia do zero; para <span class="v">ajustar</span>, prefira as propriedades individuais — a abreviação <span class="v">zera tudo o que você omite</span>: <span class="c">font: 1rem serif</span> apaga o peso e o estilo que o elemento carregava, e mudar um único valor obriga a reescrever a linha inteira.</p>
+
+</body>
+</html>

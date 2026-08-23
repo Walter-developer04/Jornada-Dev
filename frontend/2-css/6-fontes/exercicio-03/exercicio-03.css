@@ -1,0 +1,23 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-color: #b19c9a;
+}
+
+h1 {
+    font-family: segoe UI;
+    color: #3e2723d3;
+    font-size: 60px;
+}
+
+p {
+    color: #f6e0ff;
+    font-size: 18px;
+}
+
+span {
+    font-weight: bold;
+    color: rgb(125, 214, 128);
+    font-size: 24px;
+}
