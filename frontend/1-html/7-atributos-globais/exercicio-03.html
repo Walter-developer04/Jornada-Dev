@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Attributes</title>
+  </head>
+  <style>
+    body {
+        background-color: rgb(8, 13, 29);
+    }
+
+    [data-tamanho-base="grande"] {
+        font-size: 75px;
+        font-family: sans-serif;
+        color: rgb(68, 68, 202);
+    }
+
+    [data-tamanho-base="medio"] {
+        font-weight: 600;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(202, 202, 68);
+    }
+    div {
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #f4f4f4;
+      width: 20%;
+      padding: 25px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+    
+    }
+  </style>
+
+  <body>
+    <h1 data-tamanho-base="grande">Aprendo Sobre Data Attributes</h1>
+
+    <p data-tamanho-base="medio">
+        Os <strong>data atributes</strong> servem como "gavetas secretas" no HTML. <br> 
+        Eles servem para guardar informações extras que não aparecem na tela para o usuário, <br> 
+        mas que o JavaScript ou o CSS podem ler e usar depois para criar interações inteligentes na página.
+    </p>
+
+    
+    <div data-cor="azul">Card 1</div>
+    <div data-cor="amarelo">Card 2</div>
+    <div data-cor="vermelho">Card 3</div>
+
+   <script>
+  // A tag <script> é usada para escrever ou inserir código JavaScript dentro do HTML.
+
+  // Seleciona todas as divs da página.
+  const divs = document.querySelectorAll("div");
+
+  // Executa o código para cada div encontrada.
+  divs.forEach(function (div) {
+
+    // Pega o valor do atributo data-cor da div.
+    const dataCor = div.dataset.cor;
+
+    // Cria um objeto que relaciona nomes de cores com suas cores em hexadecimal.
+    const coresDiv = {
+      "azul": "#2b6cb0",
+      "amarelo": "#d69e2e",
+      "vermelho": "#c53030"
+    }
+
+    // Usa o valor de data-cor para escolher a cor e aplicá-la ao fundo da div.
+    div.style.backgroundColor = coresDiv[dataCor];
+  })
+</script>
+
+  </body>
+</html>
