@@ -1,0 +1,289 @@
+/* ===================== Variáveis e base ===================== */
+:root{
+  --roxo:     #5252d4;
+  --lilas:    #8b8be2;
+  --vermelho: #eb1636;
+  --escuro:   #242130;
+  --mais-escuro: #1c1a29;
+  --texto:      #f1effa;
+  --texto-suave:#b5b2c9;
+  --borda: rgba(139,139,226,.25);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  background: var(--escuro);
+  color: var(--texto);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  line-height: 1.7;
+  border-top: 5px solid var(--vermelho); /* faixa de identidade no topo */
+}
+
+.container{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+/* ===================== Cabeçalho ===================== */
+header{
+  padding: 68px 0 52px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.kicker{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: .28em;
+  color: var(--vermelho);
+}
+
+h1{
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: clamp(38px, 8vw, 62px);
+  color: var(--lilas);
+  margin: 14px 0 16px;
+}
+
+.subtitulo{
+  color: var(--texto-suave);
+  font-size: 19px;
+  max-width: 580px;
+}
+
+/* ===================== Seções ===================== */
+section{
+  padding: 56px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-secao{
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.numero-secao{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--vermelho);
+}
+
+h2{
+  font-family: 'Sora', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+section p{ margin-bottom: 16px; }
+
+/* ===================== Código ===================== */
+pre{
+  background: var(--mais-escuro);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.8;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+/* cores do código: seletor branco, propriedade lilás, valor vermelho */
+.c-seletor   { color: #ffffff; }
+.c-propriedade{ color: var(--lilas); }
+.c-valor     { color: var(--vermelho); }
+.c-comentario{ color: #6f6b8a; font-style: italic; }
+
+code.inline{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .92em;
+  background: rgba(139,139,226,.12);
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  padding: 2px 7px;
+  color: var(--lilas);
+}
+
+/* ===================== Anatomia da sintaxe ===================== */
+.anatomia{ list-style: none; margin-top: 8px; }
+
+.anatomia li{
+  padding: 12px 0 12px 26px;
+  border-left: 2px solid var(--borda);
+  margin-left: 4px;
+}
+
+.anatomia .termo{
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+}
+
+.t-branco { color: #ffffff; }
+.t-lilas  { color: var(--lilas); }
+.t-vermelho{ color: var(--vermelho); }
+
+.anatomia .explicacao{ color: var(--texto-suave); font-size: 15px; }
+
+/* ===================== Cards de cada valor ===================== */
+.valor{
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: rgba(139,139,226,.04);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.valor:last-child{ margin-bottom: 0; }
+
+.valor-nome{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--vermelho);
+}
+
+.valor-descricao{
+  color: var(--texto-suave);
+  margin: 6px 0 4px;
+  font-size: 16px;
+}
+
+.uso-comum{
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.uso-comum strong{ color: var(--lilas); }
+
+/* ===================== Demonstração (antes → depois) ===================== */
+.demonstracao{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.demo-caixa{
+  flex: 1;
+  min-width: 220px;
+  background: var(--mais-escuro);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.demo-resultado{
+  background: rgba(82,82,212,.13);
+  border-color: var(--roxo);
+}
+
+.demo-rotulo{
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--texto-suave);
+  margin-bottom: 8px;
+}
+
+.demo-resultado .demo-rotulo{ color: var(--vermelho); }
+
+.demo-caixa p{ margin: 0; font-size: 16px; }
+
+.seta{
+  align-self: center;
+  font-size: 24px;
+  color: var(--lilas);
+}
+
+/* as transformações de verdade, aplicadas no resultado */
+.tf-upper { text-transform: uppercase; }
+.tf-lower { text-transform: lowercase; }
+.tf-cap   { text-transform: capitalize; }
+.tf-none  { text-transform: none; color: var(--vermelho); }
+
+/* ===================== Alerta didático ===================== */
+.alerta{
+  border-left: 3px solid var(--vermelho);
+  background: rgba(235,22,54,.07);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--texto-suave);
+}
+
+.alerta strong{ color: var(--vermelho); }
+
+/* ===================== Observações ===================== */
+.observacoes{ list-style: none; counter-reset: obs; }
+
+.observacoes li{
+  counter-increment: obs;
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 22px;
+}
+
+.observacoes li::before{
+  content: counter(obs, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 3px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--vermelho);
+}
+
+.observacoes strong{ color: var(--lilas); }
+
+/* ===================== Tabela resumo ===================== */
+.tabela-rolagem{ overflow-x: auto; }
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th, td{
+  border: 1px solid var(--borda);
+  padding: 14px 18px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th{
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--lilas);
+  background: rgba(82,82,212,.16);
+}
+
+td.valor-celula{
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--vermelho);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===================== Rodapé ===================== */
+footer{
+  padding: 36px 0 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--texto-suave);
+  letter-spacing: .04em;
+}
+
+footer span{ color: var(--vermelho); }

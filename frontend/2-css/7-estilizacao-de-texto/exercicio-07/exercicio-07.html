@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exercicio-07.css">
+  <title>line-height — CSS</title>
+
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1 class="titulo">LINE-<br>HEIGHT</h1>
+    <p class="subtitulo">A altura da caixa de linha: o espaço vertical entre as linhas do seu texto.</p>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2><span class="numero">01</span> O que é ?</h2>
+      <p>
+        A propriedade <code>line-height</code> define a altura da <strong>caixa de linha</strong>
+        (line box). Em elementos de bloco, ela determina a altura mínima das caixas de linha
+        dentro do elemento; em texto inline, é a altura usada no cálculo da altura de cada linha.
+      </p>
+      <p>
+        Na prática: <code>line-height</code> controla o "respiro" vertical do texto, sem alterar
+        o tamanho da fonte em si.
+      </p>
+      <p><code>p { line-height: 1.5; }</code></p>
+    </section>
+
+    <hr>
+
+    <section class="secao">
+      <h2><span class="numero">02</span> Valores possíveis</h2>
+      <dl class="lista-valores">
+        <dt><code>normal</code></dt>
+        <dd>Valor inicial. Depende do navegador — a maioria dos agentes aplica algo próximo de 1,2.</dd>
+
+        <dt><code>1.5</code> — número puro (sem unidade)</dt>
+        <dd>Multiplicado pelo <code>font-size</code> do próprio elemento. É o valor recomendado pela documentação, pois os filhos herdam o fator e recalculam com o próprio tamanho de fonte.</dd>
+
+        <dt><code>1.5em</code> ou <code>24px</code> — comprimento</dt>
+        <dd>Altura de linha fixa, computada no elemento onde foi declarada.</dd>
+
+        <dt><code>150%</code> — porcentagem</dt>
+        <dd>Percentual do <code>font-size</code> do elemento. Atenção: os filhos herdam o valor já calculado, não a porcentagem.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+    <section class="secao">
+      <h2><span class="numero">03</span> Demonstração</h2>
+      <p>
+        Cada faixa clara no parágrafo abaixo marca a altura de uma caixa de linha.
+        Aperte o botão para alternar entre valores de <code>line-height</code> e observe
+        o espaço vertical mudar — a fonte permanece exatamente a mesma.
+      </p>
+
+      <div class="caixa-demo">
+        <p class="paragrafo-demo" id="demo">
+          Este parágrafo é o campo de prova. Cada faixa que você vê marca a altura de
+          uma linha, a tal line box. Aperte o botão e observe o espaço vertical entre
+          as linhas crescer e encolher, enquanto o tamanho da fonte não muda nem um pixel.
+        </p>
+      </div>
+
+      <div class="painel-controle">
+        <button class="botao-demo" id="botao" type="button">Alternar line-height</button>
+        <p class="leitura">
+          <code>line-height: <output id="valor">1.2</output>;</code>
+          — <span id="rotulo">normal (padrão do navegador)</span>
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="secao">
+      <h2><span class="numero">04</span> Dica de herança</h2>
+      <div class="dica">
+        <p>
+          Prefira o <strong>número sem unidade</strong>. Com <code>line-height: 1.5</code>,
+          cada elemento descendente recalcula a altura a partir do seu próprio
+          <code>font-size</code>. Com <code>1.5em</code> ou <code>150%</code>, os filhos
+          herdam um valor já resolvido em pixels — o que pode apertar linhas de texto
+          menores que o esperado.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>
+      Referência: MDN Web Docs — CSS: line-height<br>
+      developer.mozilla.org/pt-BR/docs/Web/CSS/line-height
+    </p>
+  </footer>
+
+  <script>
+    // ===== Demonstração do line-height =====
+    const demo    = document.getElementById('demo');
+    const botao   = document.getElementById('botao');
+    const valor   = document.getElementById('valor');
+    const rotulo  = document.getElementById('rotulo');
+
+    // Modos que o botão percorre em ciclo
+    const modos = [
+      { valor: 0.8, nome: 'apertado — linhas coladas' },
+      { valor: 1.2, nome: 'normal (padrão do navegador)' },
+      { valor: 1.5, nome: 'confortável — recomendado' },
+      { valor: 2.0, nome: 'espaçado — leitura solta' }
+    ];
+    let atual = 1; // começa no "normal"
+
+    // Aplica o modo ao parágrafo e atualiza a régua de fundo
+    function aplicar(modo){
+      demo.style.lineHeight = modo.valor;
+      // régua: cada faixa = altura de uma linha (font-size da demo = 20px)
+      demo.style.backgroundSize = '100% ' + (modo.valor * 20) + 'px';
+      valor.textContent  = modo.valor.toFixed(1);
+      rotulo.textContent = modo.nome;
+    }
+
+    aplicar(modos[atual]); // estado inicial
+
+    botao.addEventListener('click', () => {
+      atual = (atual + 1) % modos.length; // avança em ciclo
+      aplicar(modos[atual]);
+    });
+  </script>
+
+</body>
+</html>

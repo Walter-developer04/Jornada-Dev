@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="exercicio-05.css">
+<title>text-decoration — Guia de CSS</title>
+
+
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header>
+    <p class="kicker">PROPRIEDADE DO CSS &middot; TEXTO</p>
+    <h1>text-decoration</h1>
+    <p class="subtitulo">
+      Um guia direto e didático sobre como desenhar linhas decorativas
+      abaixo, acima e através do texto usando apenas CSS.
+    </p>
+  </header>
+
+  <!-- ===================== 01 · O QUE É ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">01</span>
+      <h2>O que é?</h2>
+    </div>
+
+    <p>
+      A decoração de texto mais famosa da web é o sublinhado: todo link
+      rec&eacute;m-criado j&aacute; nasce com uma linha embaixo. A propriedade
+      <code class="inline">text-decoration</code> &eacute; quem controla essas
+      linhas — onde elas aparecem (abaixo, acima ou atravessando o texto),
+      com qual estilo, cor e espessura.
+    </p>
+    <p>
+      O efeito &eacute; puramente visual. A linha &eacute; desenhada por cima do
+      texto na hora da exibi&ccedil;&atilde;o — o conte&uacute;do salvo no HTML
+      permanece intacto.
+    </p>
+    <p>Por que isso é útil:</p>
+    <ul style="margin: 0 0 16px 22px; color: var(--texto-suave);">
+      <li>Padronizar a aparência de todos os links do site com uma regra só;</li>
+      <li>Riscar preços antigos ou itens esgotados sem editar o conteúdo;</li>
+      <li>Destacar termos com linhas de estilo e cor próprios, mantendo o HTML limpo.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 02 · SINTAXE ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">02</span>
+      <h2>Sintaxe</h2>
+    </div>
+
+    <p>A regra funciona assim:</p>
+
+<pre><span class="c-seletor">.destaque</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">underline wavy #eb1636</span>;
+}</pre>
+
+    <ul class="anatomia">
+      <li>
+        <span class="termo t-branco">.destaque &rarr; seletor</span>
+        <span class="explicacao">Escolhe quais elementos serão afetados pela regra.</span>
+      </li>
+      <li>
+        <span class="termo t-lilas">text-decoration &rarr; propriedade</span>
+        <span class="explicacao">Um atalho (shorthand) que resume várias configurações em uma só.</span>
+      </li>
+      <li>
+        <span class="termo t-vermelho">underline wavy #eb1636 &rarr; valores</span>
+        <span class="explicacao">Linha, estilo e cor — separados por espaço, na mesma declaração.</span>
+      </li>
+    </ul>
+
+    <p>
+      Como <code class="inline">text-decoration</code> é um atalho, a mesma regra
+      poderia ser escrita por extenso, com as propriedades individuais:
+    </p>
+
+<pre><span class="c-seletor">.destaque</span> {
+  <span class="c-propriedade">text-decoration-line</span>:  <span class="c-valor">underline</span>;  <span class="c-comentario">/* onde fica a linha     */</span>
+  <span class="c-propriedade">text-decoration-style</span>: <span class="c-valor">wavy</span>;       <span class="c-comentario">/* como ela é desenhada */</span>
+  <span class="c-propriedade">text-decoration-color</span>: <span class="c-valor">#eb1636</span>;    <span class="c-comentario">/* qual a cor da linha   */</span>
+}</pre>
+
+    <p>
+      No dia a dia, o atalho é mais prático — mas conhecer as versões longas
+      ajuda a mudar só um detalhe quando precisar, sem afetar os demais.
+    </p>
+  </section>
+
+  <!-- ===================== 03 · VALORES ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">03</span>
+      <h2>Os quatro valores principais</h2>
+    </div>
+
+    <!-- UNDERLINE -->
+    <article class="valor">
+      <span class="valor-nome">underline</span>
+      <p class="valor-descricao">Desenha a linha abaixo do texto — a decoração clássica da web.</p>
+
+<pre><span class="c-seletor">.termo</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">underline</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>aprendendo css é mais fácil do que parece</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="td-underline">aprendendo css é mais fácil do que parece</p>
+        </div>
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> links, termos em destaque e títulos com traço marcante.</p>
+    </article>
+
+    <!-- OVERLINE -->
+    <article class="valor">
+      <span class="valor-nome">overline</span>
+      <p class="valor-descricao">Desenha a linha acima do texto.</p>
+
+<pre><span class="c-seletor">.rotulo</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">overline</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>aprendendo css é mais fácil do que parece</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="td-overline">aprendendo css é mais fácil do que parece</p>
+        </div>
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> composições tipográficas e efeitos decorativos específicos.</p>
+    </article>
+
+    <!-- LINE-THROUGH -->
+    <article class="valor">
+      <span class="valor-nome">line-through</span>
+      <p class="valor-descricao">Atravessa o texto com uma linha no meio — o texto "riscado".</p>
+
+<pre><span class="c-seletor">.preco-antigo</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">line-through</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>aprendendo css é mais fácil do que parece</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="td-through">aprendendo css é mais fácil do que parece</p>
+        </div>
+      </div>
+
+      <div class="alerta">
+        <strong>Atenção:</strong> a linha atravessa o meio das letras, inclusive
+        as descendentes (g, j, p, q). E se o objetivo for marcar conte&uacute;do
+        <em>removido</em> com valor sem&acirc;ntico, o HTML oferece a tag
+        <code class="inline">&lt;del&gt;</code>, que comunica o sentido tamb&eacute;m
+        a leitores de tela.
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> preços antigos em promoções, itens esgotados em listas e marcações de revisão.</p>
+    </article>
+
+    <!-- NONE -->
+    <article class="valor">
+      <span class="valor-nome">none</span>
+      <p class="valor-descricao">
+        Remove qualquer decoração e exibe o texto sem linhas.
+      </p>
+
+<pre><span class="c-seletor">a</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">none</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">LINK PADRÃO</span>
+          <p><a href="#" class="demo-link demo-link-padrao">ver documentação completa</a></p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA (COM CSS)</span>
+          <p><a href="#" class="demo-link demo-link-limpo">ver documentação completa</a></p>
+        </div>
+      </div>
+
+      <div class="alerta">
+        <strong>Atenção:</strong> todo link (<code class="inline">&lt;a&gt;</code>)
+        nasce sublinhado. Ao remover o sublinhado, garanta outro sinal de que o
+        elemento é clicável — cor destacada, peso da fonte — ou o usuário pode
+        não reconhecer o link.
+      </div>
+
+      <p class="uso-comum">
+        <strong>Uso comum:</strong> remover o sublinhado padrão dos links em
+        menus, botões e logotipos.
+      </p>
+    </article>
+
+    <div class="alerta">
+      <strong>Dica:</strong> os valores de linha podem ser combinados.
+      <code class="inline">text-decoration: underline overline</code> desenha
+      as duas linhas ao mesmo tempo — veja em
+      <span class="td-ambas">underline overline aplicado</span>.
+    </div>
+  </section>
+
+  <!-- ===================== 04 · PERSONALIZANDO ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">04</span>
+      <h2>Personalizando a linha</h2>
+    </div>
+
+    <p>
+      A linha não precisa ser um risco fino na cor do texto. O atalho controla
+      três aspectos dela — e cada um pode ser ajustado separadamente.
+    </p>
+
+    <h3>ESTILO DA LINHA &middot; text-decoration-style</h3>
+
+    <ul class="lista-estilos">
+      <li>
+        <span class="nome-estilo">solid</span>
+        <p class="ts-solid">linha contínua — o padrão</p>
+      </li>
+      <li>
+        <span class="nome-estilo">wavy</span>
+        <p class="ts-wavy">linha ondulada</p>
+      </li>
+      <li>
+        <span class="nome-estilo">dotted</span>
+        <p class="ts-dotted">linha pontilhada</p>
+      </li>
+      <li>
+        <span class="nome-estilo">dashed</span>
+        <p class="ts-dashed">linha tracejada</p>
+      </li>
+      <li>
+        <span class="nome-estilo">double</span>
+        <p class="ts-double">linha dupla</p>
+      </li>
+    </ul>
+
+    <h3>COR DA LINHA &middot; text-decoration-color</h3>
+
+    <p>
+      Por padrão, a linha usa a mesma cor do texto — mas ela pode ter cor
+      própria, diferente da das letras.
+    </p>
+
+<pre><span class="c-seletor">.destaque</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">underline</span>;
+  <span class="c-propriedade">text-decoration-color</span>: <span class="c-valor">#eb1636</span>;
+}</pre>
+
+    <div class="demonstracao">
+      <div class="demo-caixa">
+        <span class="demo-rotulo">PADRÃO</span>
+        <p class="dc-padrao">a linha usa a cor do texto</p>
+      </div>
+      <div class="demo-caixa demo-resultado">
+        <span class="demo-rotulo">#eb1636</span>
+        <p class="dc-vermelho">a linha ganha cor própria</p>
+      </div>
+      <div class="demo-caixa demo-resultado">
+        <span class="demo-rotulo">#8b8be2</span>
+        <p class="dc-lilas">qualquer cor é válida</p>
+      </div>
+    </div>
+
+    <h3>ESPESSURA DA LINHA &middot; text-decoration-thickness</h3>
+
+    <p>
+      Nos navegadores atuais, também é possível controlar a espessura da linha:
+    </p>
+
+<pre><span class="c-seletor">.destaque</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">underline</span>;
+  <span class="c-propriedade">text-decoration-thickness</span>: <span class="c-valor">3px</span>;
+}</pre>
+
+    <div class="demonstracao">
+      <div class="demo-caixa">
+        <span class="demo-rotulo">ESPESSURA PADRÃO</span>
+        <p class="tt-fina">sublinhado comum</p>
+      </div>
+      <span class="seta">&rarr;</span>
+      <div class="demo-caixa demo-resultado">
+        <span class="demo-rotulo">3PX</span>
+        <p class="tt-grossa">sublinhado reforçado</p>
+      </div>
+    </div>
+
+    <h3>TUDO JUNTO NO ATALHO</h3>
+
+    <p>
+      Os quatro ajustes podem ser escritos em uma única declaração, na ordem:
+      linha, estilo, cor e espessura.
+    </p>
+
+<pre><span class="c-seletor">.destaque</span> {
+  <span class="c-propriedade">text-decoration</span>: <span class="c-valor">underline wavy #eb1636 3px</span>;
+}</pre>
+  </section>
+
+  <!-- ===================== 05 · OBSERVAÇÕES ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">05</span>
+      <h2>Observações importantes</h2>
+    </div>
+
+    <ol class="observacoes">
+      <li>
+        <strong>A linha atravessa os filhos — e eles não conseguem cancelá-la.</strong>
+        Diferente de propriedades herdadas comuns, quando o pai tem
+        <code class="inline">text-decoration</code>, a linha é desenhada pelo
+        ancestral e cobre todo o conteúdo interno. Escrever
+        <code class="inline">text-decoration: none</code> em um elemento filho
+        <em>não</em> remove a linha:
+        <div class="demonstracao">
+          <div class="demo-caixa demo-larga">
+            <span class="demo-rotulo">PROVA NA TELA</span>
+            <p class="pai-sublinhado">
+              Todo este parágrafo foi decorado pelo próprio elemento, e
+              <span class="filho-tenta-none">este trecho tenta cancelar com none — mas a linha continua</span>,
+              porque quem desenha é o ancestral.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <strong>Não é a mesma coisa que border-bottom.</strong>
+        A decoração acompanha o texto linha por linha: se o parágrafo quebra,
+        cada linha recebe o seu traço. A borda, por sua vez, é desenhada uma
+        única vez, sob a caixa inteira do elemento:
+        <div class="comparativo">
+          <div class="demo-caixa">
+            <span class="demo-rotulo">COM TEXT-DECORATION</span>
+            <p class="com-underline">Cada linha do parágrafo recebe a sua própria linha decorativa, acompanhando o texto onde ele quebrar.</p>
+          </div>
+          <div class="demo-caixa">
+            <span class="demo-rotulo">COM BORDER-BOTTOM</span>
+            <p class="com-border">A borda é desenhada uma única vez, na parte de baixo da caixa inteira, e não sob cada linha do texto.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <strong>Sublinhado é um forte sinal de "isto é um link".</strong>
+        Os usuários aprendem essa convenção desde os primeiros sites. Sublinhar
+        texto comum pode gerar confusão — e, ao remover o sublinhado de links,
+        é preciso oferecer outro diferencial visual claro.
+      </li>
+      <li>
+        <strong>Efeitos visuais não substituem a semântica.</strong>
+        Um texto riscado com <code class="inline">line-through</code> não
+        comunica "removido" a leitores de tela. Para isso, o HTML oferece
+        <code class="inline">&lt;del&gt;</code> (removido) e
+        <code class="inline">&lt;ins&gt;</code> (inserido).
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===================== 06 · RESUMO ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">06</span>
+      <h2>Resumo em uma tabela</h2>
+    </div>
+
+    <p>Tomando como base o texto <code class="inline">css é legal</code>:</p>
+
+    <div class="tabela-rolagem">
+      <table>
+        <thead>
+          <tr>
+            <th>Valor</th>
+            <th>O que faz</th>
+            <th>Resultado na tela</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="valor-celula">underline</td>
+            <td>Linha abaixo do texto</td>
+            <td><span class="td-underline">css é legal</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">overline</td>
+            <td>Linha acima do texto</td>
+            <td><span class="td-overline">css é legal</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">line-through</td>
+            <td>Linha atravessando o meio do texto</td>
+            <td><span class="td-through">css é legal</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">none</td>
+            <td>Remove qualquer decoração</td>
+            <td><span class="td-none">css é legal</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Guia de estudo &middot; CSS <span>text-decoration</span> &middot; underline &middot; overline &middot; line-through &middot; none
+  </footer>
+
+</div>
+
+</body>
+</html>

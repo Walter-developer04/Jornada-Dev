@@ -1,0 +1,158 @@
+ /* ===== Paleta cyberpunk ===== */
+    :root{
+      --roxo:    #b000ff;
+      --magenta: #fd00ff;
+      --violeta: #8900ff;
+      --rosa:    #ff0677;
+      --azul:    #0051ff;
+      --fundo:   #070112;
+      --tinta:   #e9dcff;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background:var(--fundo);
+      color:var(--tinta);
+      font-family:'Chakra Petch', sans-serif;
+      line-height:1.6; /* prática o que ensina */
+    }
+
+    code{
+      font-family:'Chakra Petch', monospace;
+      background:#160524;
+      color:var(--magenta);
+      padding:.15em .45em;
+      border:1px solid #2a0b45;
+    }
+
+    /* ===== Cabeçalho: 100% da viewport ===== */
+    .cabecalho{
+      min-height:100vh;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      padding:2rem 1rem;
+      /* scanlines estáticas de monitor CRT */
+      background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px);
+    }
+
+    .titulo{
+      font-family:'Audiowide', cursive;
+      font-size:clamp(3rem, 13vw, 9rem);
+      line-height:1.05;
+      color:var(--rosa);
+      /* aberração cromática sólida, sem brilho */
+      text-shadow:6px 6px 0 rgba(0,81,255,.85);
+    }
+
+    .subtitulo{
+      margin-top:1.5rem;
+      max-width:34ch;
+      font-size:1.1rem;
+      color:#c9b6e8;
+    }
+
+  
+
+    /* ===== Conteúdo ===== */
+    .conteudo{
+      max-width:760px;
+      margin:0 auto;
+      padding:4rem 1.5rem;
+      border-top:2px solid var(--roxo);
+    }
+
+    .secao h2{
+      font-family:'Audiowide', cursive;
+      font-size:1.35rem;
+      font-weight:400;
+      letter-spacing:.08em;
+      color:var(--rosa);
+      margin-bottom:1.25rem;
+    }
+    .secao h2 .numero{ color:var(--azul); }
+
+    .secao p{ margin-bottom:1rem; }
+
+    hr{
+      border:none;
+      height:2px;
+      width:64px;
+      margin:3.5rem auto;
+      background:var(--violeta);
+    }
+
+    /* lista de valores possíveis */
+    .lista-valores dt{
+      font-weight:600;
+      margin-top:1.4rem;
+    }
+    .lista-valores dd{
+      color:#c9b6e8;
+      margin-top:.35rem;
+      padding-bottom:.6rem;
+      border-bottom:1px solid #1c0a30;
+    }
+
+    /* ===== Demonstração ===== */
+    .caixa-demo{
+      border:2px solid var(--rosa);
+      background:#0d0220;
+      padding:1.5rem;
+    }
+
+    .paragrafo-demo{
+      font-size:20px; /* o JS calcula a régua com base neste valor */
+      color:var(--tinta);
+      background-image:linear-gradient(to bottom,
+        rgba(253,0,255,.55) 0, rgba(253,0,255,.55) 1px,
+        rgba(137,0,255,.10) 1px, rgba(137,0,255,.10) 100%);
+      background-origin:content-box;
+      background-repeat:repeat;
+    }
+
+    .painel-controle{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:1.5rem;
+      margin-top:1.5rem;
+    }
+
+    .botao-demo{
+      font-family:'Audiowide', cursive;
+      font-size:1rem;
+      letter-spacing:.06em;
+      color:#0a0014;
+      background:var(--rosa);
+      border:none;
+      cursor:pointer;
+      padding:1rem 2rem;
+      clip-path:polygon(14px 0, 100% 0, 100% calc(100% - 14px),
+        calc(100% - 14px) 100%, 0 100%, 0 14px);
+    }
+    .botao-demo:hover{ background:var(--magenta); }
+    .botao-demo:active{ background:var(--azul); color:#fff; }
+
+    .leitura{ font-size:1.05rem; }
+    .leitura output{ color:var(--magenta); font-weight:600; }
+
+    /* caixa de dica final */
+    .dica{
+      border-left:3px solid var(--azul);
+      background:rgba(0,81,255,.08);
+      padding:1rem 1.25rem;
+    }
+
+    .rodape{
+      text-align:center;
+      padding:2.5rem 1rem;
+      font-size:.85rem;
+      color:#8a76ab;
+      border-top:1px solid #1c0a30;
+    }

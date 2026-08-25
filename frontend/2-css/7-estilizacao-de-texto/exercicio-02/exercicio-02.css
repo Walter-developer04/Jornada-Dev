@@ -1,0 +1,65 @@
+body {
+    background-color: #3b3759;
+    color: #ccfda7;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    direction: ltr;
+}
+
+.titulo-principal {
+    color: #7aacb3;
+    font-size: 2em;
+    border-bottom: 3px solid #4c6e81;
+    padding-bottom: 10px;
+}
+
+.destaque {
+    color: #aa5377;
+    font-weight: bold;
+}
+
+.linha-divisoria {
+    border: 0;
+    border-top: 2px solid #4c6e81;
+    margin: 25px 0;
+}
+
+.paragrafo-introdutorio {
+    color: #ccfda7;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.palavra-chave {
+    color: #7aacb3;
+    font-weight: bold;
+}
+
+.paragrafo-valores {
+    color: #ccfda7;
+    line-height: 1.6;
+    direction: rtl;
+    background-color: #4c6e81;
+    padding: 15px;
+    border-right: 5px solid #aa5377;
+}
+
+.valor-ltr {
+    direction: ltr;
+    color: #7aacb3;
+    font-weight: bold;
+}
+
+.valor-rtl {
+    direction: rtl;
+    color: #aa5377;
+    font-weight: bold;
+}
+
+.paragrafo-impacto {
+    color: #ccfda7;
+    line-height: 1.6;
+    direction: rtl;
+    border: 2px dashed #aa5377;
+    padding: 15px;
+}

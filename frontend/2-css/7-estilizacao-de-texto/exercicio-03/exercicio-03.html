@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Text Alignment — Alinhamento de Texto em CSS</title>
+    <link rel="stylesheet" href="exercicio-03.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="hero-kicker">Guia de CSS · Tipografia</p>
+        <h1>Text Alignment</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-subtitle">
+          Como a propriedade
+          <span class="code-inline">text-align</span> distribui o texto entre as
+          margens de um elemento
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h2 class="section-title">O que é text-align?</h2>
+        <div class="intro-text">
+          <p>
+            A propriedade <span class="code-inline">text-align</span> controla o
+            alinhamento horizontal do conteúdo inline dentro de um elemento de
+            bloco. Ela define se as linhas de texto se apoiam na margem
+            esquerda, na margem direita, no centro — ou se se esticam para
+            ocupar toda a largura disponível.
+          </p>
+          <p>
+            Além do texto, a propriedade também posiciona imagens, links e
+            outros elementos inline, o que a torna uma das ferramentas mais
+            fundamentais da composição visual na web.
+          </p>
+        </div>
+        <div class="syntax">
+          <span class="syntax-label">Sintaxe</span>
+          <code
+            >text-align: left | right | center | justify | start | end;</code
+          >
+        </div>
+      </section>
+
+      <section class="align-block">
+        <div class="align-info">
+          <span class="align-number">01</span>
+          <h2>À esquerda</h2>
+          <code class="prop-name">text-align: left</code>
+          <p>
+            O texto se apoia na margem esquerda, e a borda direita permanece
+            livre. É o valor padrão para idiomas escritos da esquerda para a
+            direita e o mais confortável para a leitura em telas: a borda reta
+            no início de cada linha guia o olhar sem esforço.
+          </p>
+          <pre><code><span class="tok-sel">.paragrafo</span> {
+    <span class="tok-prop">text-align</span>: <span class="tok-val">left</span>;
+}</code></pre>
+        </div>
+        <div class="align-demo">
+          <div class="demo-header">
+            <span class="demo-label">Resultado</span>
+          </div>
+          <p class="demo-text ta-left">
+            O alinhamento à esquerda mantém o começo de cada linha sempre no
+            mesmo ponto. O olhar encontra a próxima linha com facilidade, e o
+            ritmo da leitura permanece constante do início ao fim do parágrafo.
+          </p>
+        </div>
+      </section>
+
+      <section class="align-block reverse">
+        <div class="align-info">
+          <span class="align-number">02</span>
+          <h2>Centralizado</h2>
+          <code class="prop-name">text-align: center</code>
+          <p>
+            Cada linha é posicionada no centro do contêiner. O equilíbrio
+            resultante dá destaque ao conteúdo, o que torna esse valor ideal
+            para títulos, epígrafes e citações curtas. Em parágrafos longos,
+            porém, as duas bordas ficam irregulares e a leitura perde fluidez.
+          </p>
+          <pre><code><span class="tok-sel">.paragrafo</span> {
+    <span class="tok-prop">text-align</span>: <span class="tok-val">center</span>;
+}</code></pre>
+        </div>
+        <div class="align-demo">
+          <div class="demo-header">
+            <span class="demo-label">Resultado</span>
+          </div>
+          <p class="demo-text ta-center">
+            Cada linha ocupa o centro do espaço disponível. O resultado
+            transmite equilíbrio e hierarquia, por isso funciona tão bem em
+            títulos e epígrafes.
+          </p>
+        </div>
+      </section>
+
+      <section class="align-block">
+        <div class="align-info">
+          <span class="align-number">03</span>
+          <h2>À direita</h2>
+          <code class="prop-name">text-align: right</code>
+          <p>
+            O texto se apoia na margem direita, deixando a borda esquerda livre.
+            É o alinhamento natural de idiomas como árabe e hebraico, e aparece
+            com frequência em datas, assinaturas, legendas de figuras e colunas
+            numéricas de tabelas.
+          </p>
+          <pre><code><span class="tok-sel">.paragrafo</span> {
+    <span class="tok-prop">text-align</span>: <span class="tok-val">right</span>;
+}</code></pre>
+        </div>
+        <div class="align-demo">
+          <div class="demo-header">
+            <span class="demo-label">Resultado</span>
+          </div>
+          <p class="demo-text ta-right">
+            Aqui, todas as linhas terminam exatamente no mesmo ponto, junto à
+            margem direita. Esse alinhamento direciona a atenção para o fim da
+            linha.
+          </p>
+        </div>
+      </section>
+
+      <section class="align-block reverse">
+        <div class="align-info">
+          <span class="align-number">04</span>
+          <h2>Justificado</h2>
+          <code class="prop-name">text-align: justify</code>
+          <p>
+            As linhas são esticadas para tocar as duas margens ao mesmo tempo,
+            criando um bloco de texto reto dos dois lados — o clássico dos
+            jornais e livros impressos. Em telas e colunas estreitas, o espaço
+            entre as palavras pode ficar irregular.
+          </p>
+          <pre><code><span class="tok-sel">.paragrafo</span> {
+    <span class="tok-prop">text-align</span>: <span class="tok-val">justify</span>;
+}</code></pre>
+        </div>
+        <div class="align-demo">
+          <div class="demo-header">
+            <span class="demo-label">Resultado</span>
+          </div>
+          <p class="demo-text ta-justify">
+            Com a justificação ativa, todas as linhas, exceto a última, tocam as
+            duas margens ao mesmo tempo. O bloco de texto ganha contorno
+            retangular e denso, semelhante ao de um jornal impresso. Quanto mais
+            larga a coluna, mais uniforme fica o espaço entre as palavras, e
+            melhor é o resultado visual da composição tipográfica.
+          </p>
+        </div>
+      </section>
+
+      <section class="tips-section">
+        <h2 class="section-title">Boas práticas</h2>
+        <div class="tips">
+          <div class="tip-col">
+            <h3>Prefira</h3>
+            <ul class="tip-list list-do">
+              <li>
+                Alinhamento à esquerda para parágrafos e textos longos na web
+              </li>
+              <li>Centralização para títulos, subtítulos e citações curtas</li>
+              <li>
+                Alinhamento à direita para datas, assinaturas e valores
+                numéricos
+              </li>
+              <li>
+                Justificar apenas em colunas largas ou com hifenização ativa
+              </li>
+            </ul>
+          </div>
+          <div class="tip-col">
+            <h3>Evite</h3>
+            <ul class="tip-list list-dont">
+              <li>
+                Centralizar parágrafos longos: as bordas irregulares cansam a
+                leitura
+              </li>
+              <li>
+                Justificar colunas estreitas: surgem espaços grandes entre
+                palavras
+              </li>
+              <li>Misturar vários alinhamentos no mesmo bloco de conteúdo</li>
+              <li>
+                Usar text-align para posicionar blocos — ele só afeta conteúdo
+                inline
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h2 class="section-title">Valores possíveis</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Valor</th>
+                <th>Comportamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>left</td>
+                <td>Alinha o conteúdo à margem esquerda do elemento</td>
+              </tr>
+              <tr>
+                <td>right</td>
+                <td>Alinha o conteúdo à margem direita do elemento</td>
+              </tr>
+              <tr>
+                <td>center</td>
+                <td>Centraliza cada linha no espaço disponível</td>
+              </tr>
+              <tr>
+                <td>justify</td>
+                <td>Distribui as linhas entre as duas margens</td>
+              </tr>
+              <tr>
+                <td>start</td>
+                <td>Margem inicial do texto — depende da direção da escrita</td>
+              </tr>
+              <tr>
+                <td>end</td>
+                <td>Margem final do texto — depende da direção da escrita</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Text Alignment · Um guia sobre alinhamento de texto em CSS</p>
+    </footer>
+  </body>
+</html>

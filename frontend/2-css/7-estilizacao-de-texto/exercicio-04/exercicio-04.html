@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="exercicio-04.css">
+<title>text-transform — Guia de CSS</title>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header>
+    <p class="kicker">PROPRIEDADE DO CSS &middot; TEXTO</p>
+    <h1>text-transform</h1>
+    <p class="subtitulo">
+      Um guia direto e didático sobre como controlar maiúsculas e minúsculas
+      no texto da sua página usando apenas CSS.
+    </p>
+  </header>
+
+  <!-- ===================== 01 · O QUE É ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">01</span>
+      <h2>O que é?</h2>
+    </div>
+
+    <p>
+      Imagine que você escreveu um título no HTML todo em letras minúsculas,
+      mas o design pede tudo em <strong>CAIXA ALTA</strong>. Em vez de reescrever
+      o texto à mão, você deixa o CSS fazer esse trabalho.
+    </p>
+    <p>
+      A propriedade <code class="inline">text-transform</code> altera a caixa das
+      letras (maiúsculas &harr; minúsculas) no momento em que a página é exibida.
+      O texto original, salvo no arquivo HTML, permanece intacto.
+    </p>
+    <p>Por que isso é útil:</p>
+    <ul style="margin: 0 0 16px 22px; color: var(--texto-suave);">
+      <li>Você escreve o texto uma única vez e muda a exibição quando quiser;</li>
+      <li>O conteúdo original fica limpo, sem edições manuais;</li>
+      <li>Uma única linha de CSS padroniza a aparência de toda a página.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 02 · SINTAXE ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">02</span>
+      <h2>Sintaxe</h2>
+    </div>
+
+    <p>A regra funciona assim:</p>
+
+<pre><span class="c-seletor">h1</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">uppercase</span>;
+}</pre>
+
+    <ul class="anatomia">
+      <li>
+        <span class="termo t-branco">h1 &rarr; seletor</span>
+        <span class="explicacao">Escolhe quais elementos serão afetados pela regra.</span>
+      </li>
+      <li>
+        <span class="termo t-lilas">text-transform &rarr; propriedade</span>
+        <span class="explicacao">Define o que será controlado: a caixa das letras.</span>
+      </li>
+      <li>
+        <span class="termo t-vermelho">uppercase &rarr; valor</span>
+        <span class="explicacao">Define como o texto será transformado na tela.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 03 · VALORES ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">03</span>
+      <h2>Os quatro valores principais</h2>
+    </div>
+
+    <!-- UPPERCASE -->
+    <article class="valor">
+      <span class="valor-nome">uppercase</span>
+      <p class="valor-descricao">Transforma todas as letras em MAI&Uacute;SCULAS.</p>
+
+<pre><span class="c-seletor">button</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">uppercase</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>aprendendo css é mais fácil do que parece</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="tf-upper">aprendendo css é mais fácil do que parece</p>
+        </div>
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> botões, etiquetas, chamadas e títulos de destaque.</p>
+    </article>
+
+    <!-- LOWERCASE -->
+    <article class="valor">
+      <span class="valor-nome">lowercase</span>
+      <p class="valor-descricao">Transforma todas as letras em minúsculas.</p>
+
+<pre><span class="c-seletor">.legenda</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">lowercase</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>APRENDENDO CSS É MAIS FÁCIL DO QUE PARECE</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="tf-lower">APRENDENDO CSS É MAIS FÁCIL DO QUE PARECE</p>
+        </div>
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> textos de apoio, legendas e links em layouts minimalistas.</p>
+    </article>
+
+    <!-- CAPITALIZE -->
+    <article class="valor">
+      <span class="valor-nome">capitalize</span>
+      <p class="valor-descricao">Deixa a primeira letra de cada palavra em maiúscula.</p>
+
+<pre><span class="c-seletor">.nome-produto</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">capitalize</span>;
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa">
+          <span class="demo-rotulo">NO HTML</span>
+          <p>aprendendo css é mais fácil do que parece</p>
+        </div>
+        <span class="seta">&rarr;</span>
+        <div class="demo-caixa demo-resultado">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="tf-cap">aprendendo css é mais fácil do que parece</p>
+        </div>
+      </div>
+
+      <div class="alerta">
+        <strong>Atenção:</strong> <code class="inline">capitalize</code> age em
+        <em>todas</em> as palavras — inclusive "é", "do" e "que". Ele não sabe
+        quais palavras deveriam permanecer minúsculas em um título; para isso,
+        o texto precisaria ser escrito já formatado.
+      </div>
+
+      <p class="uso-comum"><strong>Uso comum:</strong> nomes próprios, nomes de produtos e listas de categorias.</p>
+    </article>
+
+    <!-- NONE -->
+    <article class="valor">
+      <span class="valor-nome">none</span>
+      <p class="valor-descricao">
+        Remove qualquer transformação e exibe o texto exatamente como foi escrito.
+      </p>
+
+<pre><span class="c-seletor">.aviso</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">uppercase</span>;
+}
+<span class="c-seletor">.aviso .destaque</span> {
+  <span class="c-propriedade">text-transform</span>: <span class="c-valor">none</span>; <span class="c-comentario">/* cancela a herança */</span>
+}</pre>
+
+      <div class="demonstracao">
+        <div class="demo-caixa demo-resultado" style="flex: 100%;">
+          <span class="demo-rotulo">NA TELA</span>
+          <p class="tf-upper">
+            todo este parágrafo herda uppercase do elemento pai, mas
+            <span class="tf-none">este trecho aqui</span>
+            tem seu próprio none e volta ao original.
+          </p>
+        </div>
+      </div>
+
+      <p class="uso-comum">
+        <strong>Uso comum:</strong> cancelar uma transformação que foi herdada
+        do elemento pai, criando uma "exceção" dentro do texto.
+      </p>
+    </article>
+  </section>
+
+  <!-- ===================== 04 · OBSERVAÇÕES ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">04</span>
+      <h2>Observações importantes</h2>
+    </div>
+
+    <ol class="observacoes">
+      <li>
+        <strong>A mudança é apenas visual.</strong> O texto salvo no arquivo HTML
+        continua exatamente como você escreveu. A transformação acontece só na
+        renderização da página — o que facilita a manutenção e a busca pelo conteúdo.
+      </li>
+      <li>
+        <strong>Não confunda capitalize com "primeira letra da frase".</strong>
+        Ele capitaliza cada palavra individualmente, sem entender gramática.
+      </li>
+      <li>
+        <strong>Existem outros valores,</strong> como
+        <code class="inline">full-width</code>, mas são casos raros ligados a
+        alfabetos asiáticos. No dia a dia, os quatro valores acima resolvem
+        praticamente todas as situações.
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===================== 05 · RESUMO ===================== -->
+  <section>
+    <div class="cabecalho-secao">
+      <span class="numero-secao">05</span>
+      <h2>Resumo em uma tabela</h2>
+    </div>
+
+    <p>Tomando como base o texto <code class="inline">css é legal</code>:</p>
+
+    <div class="tabela-rolagem">
+      <table>
+        <thead>
+          <tr>
+            <th>Valor</th>
+            <th>O que faz</th>
+            <th>Resultado na tela</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="valor-celula">uppercase</td>
+            <td>Todas as letras em maiúsculas</td>
+            <td><span class="tf-upper">css é legal</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">lowercase</td>
+            <td>Todas as letras em minúsculas</td>
+            <td><span class="tf-lower">CSS É LEGAL</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">capitalize</td>
+            <td>Primeira letra de cada palavra em maiúscula</td>
+            <td><span class="tf-cap">css é legal</span></td>
+          </tr>
+          <tr>
+            <td class="valor-celula">none</td>
+            <td>Nenhuma transformação (texto original)</td>
+            <td><span class="tf-none">css é legal</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Guia de estudo &middot; CSS <span>text-transform</span> &middot; uppercase &middot; lowercase &middot; capitalize &middot; none
+  </footer>
+
+</div>
+
+</body>
+</html>

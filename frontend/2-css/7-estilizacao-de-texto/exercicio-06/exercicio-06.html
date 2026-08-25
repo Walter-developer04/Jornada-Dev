@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="exercicio-06.css">
+  <title>Text Spacing — Espaçamento de Texto</title>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="topo">
+      <p class="rotulo">Acessibilidade Web · WCAG 2.1 · Critério 1.4.12</p>
+      <h1 class="titulo">Text <span class="acento">Spacing</span></h1>
+      <p class="subtitulo">
+        Textos devem suportar o aumento de espaçamento sem quebrar o layout,
+        cortar ou sobrepor conteúdo.
+      </p>
+    </div>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <span class="numero">01</span>
+      <h2>O que é?</h2>
+      <p>
+        <strong>Text Spacing</strong> (espaçamento de texto) é um critério de acessibilidade
+        das diretrizes WCAG. Ele garante que pessoas com dislexia, baixa visão ou
+        dificuldade de leitura possam ampliar os espaços entre linhas, letras, palavras
+        e parágrafos — por folhas de estilo próprias ou extensões de navegador —
+        sem perder informação.
+      </p>
+    </section>
+
+    <section class="secao">
+      <span class="numero">02</span>
+      <h2>Os quatro ajustes mínimos</h2>
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Medida</th>
+            <th>Propriedade CSS</th>
+            <th>Valor mínimo exigido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Altura da linha</td>
+            <td><code>line-height</code></td>
+            <td>1,5 × o tamanho da fonte</td>
+          </tr>
+          <tr>
+            <td>Espaço entre parágrafos</td>
+            <td><code>margin-bottom</code></td>
+            <td>2 × o tamanho da fonte</td>
+          </tr>
+          <tr>
+            <td>Espaço entre letras</td>
+            <td><code>letter-spacing</code></td>
+            <td>0,12 × o tamanho da fonte</td>
+          </tr>
+          <tr>
+            <td>Espaço entre palavras</td>
+            <td><code>word-spacing</code></td>
+            <td>0,16 × o tamanho da fonte</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="secao">
+      <span class="numero">03</span>
+      <h2>Na prática</h2>
+      <p>
+        O texto abaixo recebe exatamente os valores da tabela. Use o botão
+        <strong>Text Spacing</strong> para ligar e desligar o efeito.
+      </p>
+      <div class="amostra" id="amostra">
+        <p>
+          A legibilidade não depende apenas do tamanho da fonte. Para muitos leitores,
+          é o espaço entre as linhas que mantém os olhos na frase certa.
+        </p>
+        <p>
+          Quando o espaçamento é amplo, cada palavra respira. Se o layout quebra ao
+          ampliá-lo, o conteúdo se torna inacessível — e é isso que o critério 1.4.12
+          vem impedir.
+        </p>
+      </div>
+       <div class="acoes">
+        <button class="botao" id="alternar">Text Spacing</button>
+        <span class="dica">clique para aplicar o espaçamento.</span>
+      </div>
+    </section>
+
+    <section class="secao">
+      <span class="numero">04</span>
+      <h2>CSS correspondente</h2>
+      <pre class="codigo">.texto {
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+}
+
+.texto + .texto {
+  margin-bottom: 2em;
+}</pre>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Corpo do texto em <strong>Atkinson Hyperlegible</strong>, fonte desenhada para leitura acessível.</p>
+  </footer>
+
+  <script>
+    // alterna o espaçamento da amostra, como uma extensão de acessibilidade faria
+    document.getElementById('alternar').onclick = function () {
+      document.getElementById('amostra').classList.toggle('amplo');
+    };
+  </script>
+</body>
+</html>

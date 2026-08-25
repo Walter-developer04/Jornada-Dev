@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Material educacional sobre a propriedade CSS text-shadow, sua sintaxe e diferentes formas de criar sombras em textos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Rye&family=Smokum&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exercicio-08.css">
+  <title>Text-Shadow — Guia de CSS</title>
+</head>
+<body>
+
+  <!-- ==================== CAPA ==================== -->
+  <header class="capa" id="topo">
+    <p class="edicao">Guia de CSS — Estudo de Propriedades</p>
+
+    <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+    <p class="procura">Propriedade CSS</p>
+
+    <h1>TEXT-<br>SHADOW</h1>
+
+    <p class="lema">
+      A propriedade CSS usada para adicionar uma ou mais sombras ao texto,
+      criando diferentes efeitos de profundidade, destaque e iluminação.
+    </p>
+
+    <div class="baixo">
+      <p class="faixa">Estudo prático da propriedade text-shadow</p>
+      <div class="selo"><span>CSS</span></div>
+    </div>
+
+    <nav class="menu" aria-label="Atalhos do conteúdo">
+      <a href="#bandido">O que é</a>
+      <a href="#sintaxe">A Sintaxe</a>
+      <a href="#galeria">Exemplos</a>
+      <a href="#noite">Múltiplas sombras</a>
+      <a href="#dicas">Dicas</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== O QUE É ==================== -->
+    <section class="secao" id="bandido">
+      <h2>O que é text-shadow</h2>
+      <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+      <p class="primeira">
+        A propriedade <code>text-shadow</code> adiciona uma ou mais sombras ao texto de um elemento.
+        Ela permite controlar a posição, o desfoque e a cor de cada sombra.
+      </p>
+
+      <p>
+        A sombra pode ser deslocada horizontalmente e verticalmente em relação ao texto.
+        Também é possível definir um valor de desfoque para criar uma aparência mais suave.
+      </p>
+
+      <p>
+        A propriedade pode ser utilizada para criar efeitos simples ou mais elaborados,
+        como profundidade, contorno, destaque, brilho e diferentes níveis de contraste.
+      </p>
+    </section>
+
+    <hr class="cerca">
+
+    <!-- ==================== SINTAXE ==================== -->
+    <section class="secao" id="sintaxe">
+      <h2>A sintaxe</h2>
+      <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+      <p>Uma sombra pode ser definida utilizando deslocamento horizontal, deslocamento vertical, desfoque e cor:</p>
+
+      <pre><code>/*       x    y  desfoque  cor */
+text-shadow: 4px 4px 2px #b65a4a;
+
+/* somente os deslocamentos */
+text-shadow: 4px 4px;</code></pre>
+
+      <div class="rolar">
+        <table class="tabela">
+          <caption>Os principais valores de uma sombra</caption>
+          <thead>
+            <tr>
+              <th>Parte</th>
+              <th>O que faz</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>offset-x</code></td>
+              <td>Define o deslocamento horizontal da sombra.</td>
+              <td>Valor negativo desloca a sombra para a esquerda.</td>
+            </tr>
+            <tr>
+              <td><code>offset-y</code></td>
+              <td>Define o deslocamento vertical da sombra.</td>
+              <td>Valor negativo desloca a sombra para cima.</td>
+            </tr>
+            <tr>
+              <td><code>blur</code></td>
+              <td>Define o nível de desfoque da sombra.</td>
+              <td>Quanto maior o valor, mais suave será a sombra.</td>
+            </tr>
+            <tr>
+              <td><code>cor</code></td>
+              <td>Define a cor da sombra.</td>
+              <td>Quando omitida, a sombra utiliza a cor atual do texto.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr class="cerca">
+
+    <!-- ==================== GALERIA DE EXEMPLOS ==================== -->
+    <section class="secao" id="galeria">
+      <h2>Exemplos de text-shadow</h2>
+      <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+      <p>
+        A propriedade pode produzir diferentes resultados dependendo dos valores utilizados.
+        Observe o efeito visual e o código responsável por cada exemplo.
+      </p>
+
+      <div class="mural">
+
+        <article class="cartaz">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 1 · Sombra sem desfoque</h3>
+          <p class="amostra dura">SOMBRA</p>
+          <p class="nota">Sem desfoque, a sombra apresenta bordas definidas e um efeito mais sólido.</p>
+          <code class="codigo">text-shadow: 5px 5px 0 #b65a4a;</code>
+        </article>
+
+        <article class="cartaz">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 2 · Sombra suave</h3>
+          <p class="amostra suave">SUAVE</p>
+          <p class="nota">O valor de desfoque suaviza as bordas e cria uma sombra menos definida.</p>
+          <code class="codigo">text-shadow: 3px 4px 9px
+  rgba(47,42,36,.5);</code>
+        </article>
+
+        <article class="cartaz barro">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 3 · Destaque</h3>
+          <p class="amostra entalhada">DESTAQUE</p>
+          <p class="nota">Uma sombra com pouco deslocamento pode criar contraste e destacar o texto.</p>
+          <code class="codigo">text-shadow: 0 2px 0 #e7c9a9;</code>
+        </article>
+
+        <article class="cartaz">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 4 · Profundidade</h3>
+          <p class="amostra extrusao">RELEVO</p>
+          <p class="nota">Várias sombras próximas podem ser combinadas para produzir um efeito de profundidade.</p>
+          <code class="codigo">text-shadow:
+  1px 1px 0 #b65a4a,
+  2px 2px 0 #b65a4a,
+  3px 3px 0 #b65a4a,
+  4px 4px 0 #b65a4a,
+  5px 5px 0 #b65a4a,
+  6px 6px 0 #2f2a24;</code>
+        </article>
+
+        <article class="cartaz">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 5 · Contorno</h3>
+          <p class="amostra contorno">CONTORNO</p>
+          <p class="nota">Sombras em diferentes direções podem criar um contorno ao redor das letras.</p>
+          <code class="codigo">text-shadow:
+  -2px  0 0 #2f2a24,  2px  0 0 #2f2a24,
+   0 -2px 0 #2f2a24,  0  2px 0 #2f2a24,
+  -2px -2px 0 #2f2a24, 2px  2px 0 #2f2a24,
+  -2px  2px 0 #2f2a24, 2px -2px 0 #2f2a24;</code>
+        </article>
+
+        <article class="cartaz">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 6 · Duas sombras</h3>
+          <p class="amostra dupla">CAMADAS</p>
+          <p class="nota">É possível adicionar mais de uma sombra ao mesmo texto, separando cada uma por vírgula.</p>
+          <code class="codigo">text-shadow:
+  4px 4px 0 #6b7d5a,
+  8px 8px 0 #2f2a24;</code>
+        </article>
+
+        <article class="cartaz escuro">
+          <span class="prego" aria-hidden="true"></span>
+          <h3 class="efeito">Nº 7 · Brilho</h3>
+          <p class="amostra lampiao">BRILHO</p>
+          <p class="nota">Quando não há deslocamento e existe bastante desfoque, a sombra pode criar um efeito de brilho.</p>
+          <code class="codigo">text-shadow:
+  0 0 18px rgba(213,139,106,.6);</code>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== SEÇÃO NOTURNA ==================== -->
+    <section class="noite" id="noite">
+      <div class="miolo">
+        <h2>Múltiplas sombras</h2>
+        <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+        <p>
+          A propriedade <code>text-shadow</code> permite adicionar várias sombras ao mesmo texto.
+          Cada sombra deve ser separada por uma vírgula.
+        </p>
+
+        <figure class="prova">
+          <p class="duelo">EFEITO</p>
+          <figcaption>
+            A primeira sombra declarada aparece na frente das sombras seguintes,
+            permitindo combinar diferentes efeitos em um mesmo texto.
+          </figcaption>
+        </figure>
+
+        <pre><code>text-shadow:
+  3px 3px 0 #b65a4a,
+  14px 16px 20px rgba(47,42,36,.8);</code></pre>
+
+        <p>
+          A combinação de diferentes valores permite criar efeitos de profundidade,
+          contorno, relevo e brilho utilizando apenas CSS.
+        </p>
+      </div>
+    </section>
+
+    <hr class="cerca">
+
+    <!-- ==================== DICAS ==================== -->
+    <section class="secao" id="dicas">
+      <h2>Dicas importantes</h2>
+      <div class="orn" aria-hidden="true"><span class="losango"></span></div>
+
+      <p>Alguns pontos importantes para utilizar <code>text-shadow</code> corretamente:</p>
+
+      <ul class="dicas">
+        <li>
+          Várias sombras podem ser declaradas em uma única propriedade,
+          separadas por vírgulas.
+        </li>
+        <li>
+          A cor da sombra pode ser definida explicitamente ou omitida,
+          permitindo que ela utilize a cor atual do texto.
+        </li>
+        <li>
+          O valor de desfoque não pode ser negativo.
+          Já os deslocamentos podem utilizar valores positivos ou negativos.
+        </li>
+        <li>
+          A sombra não ocupa espaço no fluxo do documento,
+          pois é um efeito visual aplicado ao texto.
+        </li>
+        <li>
+          O excesso de sombra pode prejudicar a leitura.
+          Utilize contraste e desfoque de forma equilibrada.
+        </li>
+        <li>
+          <code>text-shadow: none;</code> remove as sombras aplicadas ao texto.
+        </li>
+      </ul>
+
+      <blockquote class="recado">
+        <p>
+          Use text-shadow para complementar o texto, mantendo o efeito visual
+          equilibrado e a leitura confortável.
+        </p>
+        <footer>— Princípio de legibilidade em interfaces</footer>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="rodape">
+    <p>
+      Material desenvolvido para estudo de HTML e CSS.<br>
+      Todos os efeitos apresentados utilizam a propriedade text-shadow.
+    </p>
+    <p class="rubrica">Estudo de CSS · Text Shadow · HTML semântico e CSS externo</p>
+  </footer>
+
+</body>
+</html>
