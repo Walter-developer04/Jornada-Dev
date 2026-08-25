@@ -1,3 +1,4 @@
+
  /* ===== Paleta cyberpunk ===== */
     :root{
       --roxo:    #b000ff;
@@ -8,6 +9,7 @@
       --fundo:   #070112;
       --tinta:   #e9dcff;
     }
+
 
     *{ margin:0; padding:0; box-sizing:border-box; }
 
@@ -26,7 +28,7 @@
       border:1px solid #2a0b45;
     }
 
-    /* ===== Cabeçalho: 100% da viewport ===== */
+    /* ===== Cabeçalho ===== */
     .cabecalho{
       min-height:100vh;
       width:100%;
@@ -37,7 +39,6 @@
       text-align:center;
       position:relative;
       padding:2rem 1rem;
-      /* scanlines estáticas de monitor CRT */
       background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px);
     }
 
@@ -107,7 +108,7 @@
     }
 
     .paragrafo-demo{
-      font-size:20px; /* o JS calcula a régua com base neste valor */
+      font-size:20px; 
       color:var(--tinta);
       background-image:linear-gradient(to bottom,
         rgba(253,0,255,.55) 0, rgba(253,0,255,.55) 1px,

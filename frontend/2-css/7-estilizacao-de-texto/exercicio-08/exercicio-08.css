@@ -1,3 +1,8 @@
+/* ============ Savizando a navegação entre sessões ============ */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ============ Paleta de Cores ============ */
 :root {
   --papel: #e7c9a9;
