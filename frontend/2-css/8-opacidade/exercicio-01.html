@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia visual e introdutório sobre a propriedade opacity do CSS: a escala de 0 a 1, o efeito sobre o conteúdo e usos práticos.">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Opacidade no CSS — Laboratório de Opacidade</title>
+    
+</head>
+<body>
+
+<header class="topo">
+    <div class="largura topo-linha">
+        <span class="topo-marca">Laboratório de Opacidade</span>
+        <span class="topo-tag">CSS · opacity</span>
+    </div>
+</header>
+
+<main>
+
+    <!-- Hero: as camadas translúcidas atrás do título usam a própria opacity -->
+    <section class="hero">
+        <div class="camada-pos pos-a">
+            <div class="camada camada-teal"></div>
+            <span class="camada-rotulo">opacity: 0.25</span>
+        </div>
+        <div class="camada-pos pos-b">
+            <div class="camada camada-branca"></div>
+            <span class="camada-rotulo">opacity: 0.9</span>
+        </div>
+        <div class="camada-pos pos-c">
+            <div class="camada camada-laranja"></div>
+            <span class="camada-rotulo">opacity: 0.3</span>
+        </div>
+
+        <div class="hero-conteudo">
+            <h1>Opacidade no CSS</h1>
+            <p class="hero-texto">
+                Entenda como a propriedade <code>opacity</code> controla a transparência
+                de um elemento — da escala de 0 a 1 ao efeito sobre o seu conteúdo.
+            </p>
+            <p class="hero-nota">0 = totalmente transparente&ensp;·&ensp;1 = totalmente opaco</p>
+        </div>
+    </section>
+
+    <!-- Seção 1 -->
+    <section class="secao" id="o-que-e">
+        <div class="largura">
+            <span class="secao-numero">01</span>
+            <h2>O que é opacity</h2>
+            <p class="secao-texto">
+                <code>opacity</code> é a propriedade do CSS que controla o nível de opacidade
+                de um elemento: o quanto ele permite ver o que está atrás dele.
+                O valor é sempre um número entre <strong>0</strong> e <strong>1</strong>.
+            </p>
+
+            <div class="demo-grade">
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="amostra opacidade-1"></div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 1;</code></p>
+                    <p class="demo-texto">Totalmente opaco: o elemento cobre por completo o que está atrás dele.</p>
+                </article>
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="amostra opacidade-0-5"></div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 0.5;</code></p>
+                    <p class="demo-texto">Meio transparente: o fundo aparece parcialmente através do elemento.</p>
+                </article>
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="amostra opacidade-0"></div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 0;</code></p>
+                    <p class="demo-texto">Totalmente transparente: o elemento fica invisível — mas continua lá.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2 -->
+    <section class="secao" id="escala">
+        <div class="largura">
+            <span class="secao-numero">02</span>
+            <h2>A escala de opacidade</h2>
+            <p class="secao-texto">
+                Valores intermediários criam níveis graduais de transparência. Abaixo, o mesmo
+                elemento com cinco valores diferentes. O fundo quadriculado existe justamente
+                para deixar a transparência visível — repare nele aparecendo aos poucos:
+            </p>
+
+            <div class="palco xadrez palco-escala">
+                <div class="escala">
+                    <div class="escala-item">
+                        <div class="amostra opacidade-1"></div>
+                        <code>1</code>
+                    </div>
+                    <div class="escala-item">
+                        <div class="amostra opacidade-0-75"></div>
+                        <code>0.75</code>
+                    </div>
+                    <div class="escala-item">
+                        <div class="amostra opacidade-0-5"></div>
+                        <code>0.5</code>
+                    </div>
+                    <div class="escala-item">
+                        <div class="amostra opacidade-0-25"></div>
+                        <code>0.25</code>
+                    </div>
+                    <div class="escala-item">
+                        <div class="amostra opacidade-0"></div>
+                        <code>0</code>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Experimente você mesmo</h3>
+            <p class="secao-texto">
+                Aumente ou diminua a opacidade do cartão abaixo, de 0 a 1, em passos de 0.1 —
+                e repare que o texto acompanha a mudança junto com o fundo:
+            </p>
+
+            <div class="laboratorio">
+                <div class="palco xadrez palco-lab">
+                    <div class="alvo" id="alvo">
+                        <strong>Elemento de teste</strong>
+                        <p>Fundo, borda e texto: esta caixa inteira recebe a opacidade escolhida.</p>
+                    </div>
+                </div>
+                <div class="controles">
+                    <button type="button" class="botao-controle" id="botao-diminuir">Diminuir</button>
+                    <p class="valor-atual"><span class="valor-rotulo">opacity:</span> <output id="valor-atual">1.0</output></p>
+                    <button type="button" class="botao-controle" id="botao-aumentar">Aumentar</button>
+                </div>
+                <p class="css-ao-vivo">CSS aplicado agora: <code id="css-ao-vivo">opacity: 1;</code></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3 -->
+    <section class="secao" id="sintaxe">
+        <div class="largura">
+            <span class="secao-numero">03</span>
+            <h2>Como escrever opacity</h2>
+            <p class="secao-texto">
+                Uma regra com <code>opacity</code> tem a mesma estrutura de qualquer regra CSS:
+                um seletor, uma propriedade e um valor.
+            </p>
+
+            <pre class="codigo-sintaxe"><code><span class="p-seletor">.elemento</span> {
+    <span class="p-propriedade">opacity</span>: <span class="p-valor">0.5</span>;
+}</code></pre>
+
+            <ul class="anatomia">
+                <li>
+                    <span class="chave chave-seletor"></span>
+                    <p><strong>Seletor</strong> — indica a qual elemento a regra se aplica.</p>
+                </li>
+                <li>
+                    <span class="chave chave-propriedade"></span>
+                    <p><strong>Propriedade</strong> — o que será ajustado: a opacidade.</p>
+                </li>
+                <li>
+                    <span class="chave chave-valor"></span>
+                    <p><strong>Valor</strong> — quanto de opacidade, de 0 a 1.</p>
+                </li>
+            </ul>
+
+            <p class="nota">O valor é apenas um número: ele não leva unidade, como <code>px</code> ou <code>em</code>.</p>
+        </div>
+    </section>
+
+    <!-- Seção 4 -->
+    <section class="secao" id="elemento-inteiro">
+        <div class="largura">
+            <span class="secao-numero">04</span>
+            <h2>Opacity afeta o elemento inteiro</h2>
+            <p class="secao-texto">
+                A opacidade vale para o elemento como um todo. Quando você aplica
+                <code>opacity</code> em uma caixa, o fundo, as bordas e também todo o
+                conteúdo de dentro — texto, imagens, outros elementos — ficam transparentes
+                juntos. Compare duas caixas iguais:
+            </p>
+
+            <div class="demo-grade demo-grade-2">
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="caixa-demo opacidade-1">
+                            <strong>Uma caixa com texto</strong>
+                            <p>Fundo e texto totalmente opacos.</p>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 1;</code></p>
+                </article>
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="caixa-demo opacidade-0-35">
+                            <strong>Uma caixa com texto</strong>
+                            <p>Com <code>opacity: 0.35</code>, o texto fica translúcido junto com o fundo.</p>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 0.35;</code></p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5 -->
+    <section class="secao" id="opacity-x-cor">
+        <div class="largura">
+            <span class="secao-numero">05</span>
+            <h2>Opacity x transparência de uma cor</h2>
+            <p class="secao-texto">
+                Existe outro jeito de criar transparência: declarar uma cor com canal alfa,
+                como em <code>rgb(36 92 99 / 50%)</code>. O fundo fica parecido, mas o efeito
+                não é o mesmo. Veja as duas caixas com texto dentro:
+            </p>
+
+            <div class="demo-grade demo-grade-2">
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="caixa-demo opacidade-0-5">
+                            <strong>A caixa inteira</strong>
+                            <p>Com <code>opacity: 0.5</code>, fundo e texto ficam translúcidos juntos.</p>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 0.5;</code></p>
+                </article>
+                <article class="demo">
+                    <div class="palco xadrez">
+                        <div class="caixa-demo caixa-alpha">
+                            <strong>Apenas o fundo</strong>
+                            <p>Com o alfa na cor de fundo, o texto continua totalmente opaco.</p>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>background-color: rgb(36 92 99 / 50%);</code></p>
+                </article>
+            </div>
+
+            <p class="nota">
+                Resumindo: <code>opacity</code> afeta o elemento inteiro, conteúdo incluído.
+                Já o canal alfa deixa transparente somente a cor em que é declarado —
+                neste exemplo, apenas o fundo da caixa.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção 6 -->
+    <section class="secao" id="opacity-zero">
+        <div class="largura">
+            <span class="secao-numero">06</span>
+            <h2>opacity: 0</h2>
+            <p class="secao-texto">
+                Com <code>opacity: 0</code>, o elemento fica totalmente transparente: invisível.
+                Isso <strong>não</strong> significa que ele deixou de existir — ele continua no
+                documento e continua ocupando o seu espaço no layout.
+            </p>
+
+            <div class="demo-grade demo-grade-2">
+                <article class="demo">
+                    <div class="palco xadrez palco-fileira">
+                        <div class="fileira">
+                            <div class="quadradinho"></div>
+                            <div class="quadradinho opacidade-0"></div>
+                            <div class="quadradinho"></div>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>opacity: 0</code> no quadrado do meio</p>
+                    <p class="demo-texto">Ele fica invisível, mas o lugar dele continua reservado.</p>
+                </article>
+                <article class="demo">
+                    <div class="palco xadrez palco-fileira">
+                        <div class="fileira">
+                            <div class="quadradinho"></div>
+                            <div class="quadradinho oculto"></div>
+                            <div class="quadradinho"></div>
+                        </div>
+                    </div>
+                    <p class="demo-valor"><code>display: none</code> no quadrado do meio</p>
+                    <p class="demo-texto">O quadrado some, e o espaço dele também: os vizinhos se encostam.</p>
+                </article>
+            </div>
+
+            <p class="nota">
+                Por isso as duas declarações não são equivalentes: <code>opacity: 0</code>
+                apenas torna o elemento invisível; <code>display: none</code> faz o elemento
+                nem ser renderizado — sem caixa e sem espaço ocupado.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção 7 -->
+    <section class="secao" id="uso-pratico">
+        <div class="largura">
+            <span class="secao-numero">07</span>
+            <h2>Uso prático: opacidade no hover</h2>
+            <p class="secao-texto">
+                Um uso comum de <code>opacity</code> é dar um retorno visual quando o ponteiro
+                passa por cima de um elemento. Passe o mouse (ou toque) nos botões abaixo:
+            </p>
+
+            <div class="palco xadrez palco-botoes">
+                <button type="button" class="botao-demo botao-primario">Salvar rascunho</button>
+                <button type="button" class="botao-demo botao-escuro">Publicar</button>
+                <button type="button" class="botao-demo botao-contorno">Cancelar</button>
+            </div>
+
+            <pre class="codigo-uso"><code>.botao-demo {
+    transition: opacity 0.3s;
+}
+
+.botao-demo:hover {
+    opacity: 0.6;
+}</code></pre>
+
+            <p class="nota">
+                Sem a <code>transition</code>, a mudança seria instantânea. Com
+                <code>transition: opacity 0.3s</code>, ela acontece de forma suave,
+                ao longo de 0.3 segundos.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <div class="largura rodape-linha">
+        <p>Laboratório de Opacidade — um guia visual sobre a propriedade <code>opacity</code> do CSS.</p>
+    </div>
+</footer>
+
+<script>
+    const alvo = document.getElementById('alvo');
+    const valorAtual = document.getElementById('valor-atual');
+    const cssAoVivo = document.getElementById('css-ao-vivo');
+    const botaoDiminuir = document.getElementById('botao-diminuir');
+    const botaoAumentar = document.getElementById('botao-aumentar');
+    let opacidade = 1;
+
+    function aplicarOpacidade() {
+        const texto = opacidade.toFixed(1);
+        alvo.style.opacity = texto;
+        valorAtual.textContent = texto;
+        cssAoVivo.textContent = 'opacity: ' + texto + ';';
+        botaoDiminuir.disabled = opacidade === 0;
+        botaoAumentar.disabled = opacidade === 1;
+    }
+
+    botaoAumentar.addEventListener('click', function () {
+        opacidade = Math.min(1, Math.round((opacidade + 0.1) * 10) / 10);
+        aplicarOpacidade();
+    });
+
+    botaoDiminuir.addEventListener('click', function () {
+        opacidade = Math.max(0, Math.round((opacidade - 0.1) * 10) / 10);
+        aplicarOpacidade();
+    });
+
+    aplicarOpacidade();
+</script>
+
+</body>
+</html>
