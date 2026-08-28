@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Colspan e rowspan</title>
+</head>
+<body>
+
+    <h1>Mesclando células da tabela</h1>
+
+    <!--
+        colspan faz uma célula ocupar mais de uma coluna.
+        rowspan faz uma célula ocupar mais de uma linha.
+
+        Observe que, quando uma célula ocupa mais espaço,
+        as outras células da mesma linha ou das linhas seguintes
+        precisam ser organizadas de acordo com esse espaço.
+    -->
+
+    <table>
+        <caption>Horário de estudos</caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Dia</th>
+                <th scope="col">08:00</th>
+                <th scope="col">09:00</th>
+                <th scope="col">10:00</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Segunda</th>
+                <td rowspan="2">HTML</td>
+                <td>CSS</td>
+                <td>Revisão</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Terça</th>
+                <td>Exercícios</td>
+                <td>Projeto</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Quarta</th>
+                <td colspan="3">Projeto prático</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

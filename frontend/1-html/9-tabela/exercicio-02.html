@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Estrutura semântica da tabela</title>
+</head>
+<body>
+
+    <h1>Estrutura organizada da tabela</h1>
+
+    <!--
+        Agora a tabela foi dividida em partes:
+        <caption> identifica a tabela.
+        <thead> contém o cabeçalho.
+        <tbody> contém os dados principais.
+        <tfoot> contém um resumo ou total.
+    -->
+
+    <table>
+        <caption>Notas dos alunos</caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Aluno</th>
+                <th scope="col">HTML</th>
+                <th scope="col">CSS</th>
+                <th scope="col">Média</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Ana</th>
+                <td>8,0</td>
+                <td>9,0</td>
+                <td>8,5</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Bruno</th>
+                <td>7,0</td>
+                <td>8,0</td>
+                <td>7,5</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Carla</th>
+                <td>9,0</td>
+                <td>9,0</td>
+                <td>9,0</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th scope="row">Quantidade de alunos</th>
+                <td colspan="3">3</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Cabeçalhos agrupados</title>
+</head>
+<body>
+
+    <h1>Cabeçalhos agrupados em uma tabela</h1>
+
+    <!--
+        Esta tabela possui dois níveis de cabeçalho.
+
+        "Notas" ocupa duas colunas usando colspan.
+        "Professor" e "Aluno" ocupam duas linhas usando rowspan.
+
+        scope="colgroup" indica que "Notas" é um cabeçalho
+        que se relaciona com um grupo de colunas.
+    -->
+
+    <table>
+        <caption>Desempenho dos alunos por atividade</caption>
+
+        <thead>
+            <tr>
+                <th scope="col" rowspan="2">Aluno</th>
+                <th scope="colgroup" colspan="2">Notas</th>
+                <th scope="col" rowspan="2">Frequência</th>
+            </tr>
+
+            <tr>
+                <th scope="col">Prova</th>
+                <th scope="col">Trabalho</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Ana</th>
+                <td>8,5</td>
+                <td>9,0</td>
+                <td>95%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Bruno</th>
+                <td>7,0</td>
+                <td>8,5</td>
+                <td>90%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Carla</th>
+                <td>9,5</td>
+                <td>9,0</td>
+                <td>98%</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
