@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Content-Security-Policy: política de segurança que controla 
+    de onde os recursos podem ser carregados.
+    "img-src 'self'": permite apenas imagens do próprio site.
+    Imagens de domínios externos serão BLOQUEADAS pelo navegador.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="img-src 'self">
+  <title>CSP</title>
+
+
+
+</head>
+<body>
+
+  <h1>CSP - Bloqueio de Imagem Externa</h1>
+
+  <!-- Esta imagem será BLOQUEADA pela CSP pois vem de um domínio externo -->
+  <!-- Imagem do Google (será bloqueada pela CSP) -->
+  <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Imagem bloqueada">
+
+</body>
+</html>

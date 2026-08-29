@@ -5,7 +5,7 @@ const usuario1 = {
 const usuario2 = {
     nome: "Carlos"
 };
-a
+
 const usuarios = new WeakSet();
 
 usuarios.add(usuario1);

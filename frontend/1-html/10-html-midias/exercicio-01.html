@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority Hints</title>
+  </head>
+  <body>
+    <h1 style="font-size: 60px; font-family: sans-serif;">Priority Hints</h1>
+
+    <!-- Explica a ideia do fetchpriority -->
+    <p style="font-size: 18px; font-family: arial;">
+      O atributo fetchpriority indica a prioridade de carregamento de uma
+      imagem.
+    </p>
+
+    <!-- PNG é um formato que mantém boa qualidade e pode ter fundo transparente.
+     É mais comum usar em logos, ícones, ilustrações e imagens que precisam de transparência. -->
+
+    <!-- Imagem principal recebe prioridade alta -->
+    <img
+      src="img/mascote-html.png"
+      alt="Foto principal"
+      width="400"
+      height="250"
+      fetchpriority="high"
+    />
+
+    <!-- JPG reduz bastante o tamanho do arquivo, sendo indicado para fotos e imagens com muitas cores.
+     É mais comum usar em fotografias e imagens grandes que não precisam de fundo transparente. -->
+
+    <!-- Imagem secundária recebe prioridade baixa -->
+    <img
+      src="img/mascote-css.jpg"
+      alt="Foto secundária"
+      width="400"
+      height="250"
+      fetchpriority="low"
+    />
+
+     <!-- WebP oferece boa qualidade com um arquivo menor que muitos formatos tradicionais.
+     É mais comum usar em sites para deixar as imagens mais leves e melhorar o carregamento da página. -->
+     
+    <!-- Imagem sem prioridade definida -->
+    <img
+      src="img/mascote-js.webp"
+      alt="Mascote do JavaScript"
+      width="400"
+      height="250"
+      fetchpriority="low"
+    />
+  </body>
+</html>
