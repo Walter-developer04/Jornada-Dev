@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-05.css">
+  <title>Exercício 05 - Transparência com RGBA e HSLA</title>
+</head>
+<body>
+  <main>
+    <h1>Transparência com RGBA e HSLA</h1>
+    <p>
+      As funções rgba() e hsla() ganham um quarto valor, o canal alfa.
+      Ele vai de 0 (totalmente transparente) até 1 (totalmente opaco).
+    </p>
+
+    <h2>Com rgba()</h2>
+    <!-- As caixas são da mesma cor, mas o fundo amarelo aparece através delas -->
+    <section class="fundo fundo-amarelo">
+      <div class="amostra">
+        <div class="cor rgba-opaca"></div>
+        <p>rgba(0, 0, 255, 1)</p>
+      </div>
+      <div class="amostra">
+        <div class="cor rgba-media"></div>
+        <p>rgba(0, 0, 255, 0.5)</p>
+      </div>
+      <div class="amostra">
+        <div class="cor rgba-leve"></div>
+        <p>rgba(0, 0, 255, 0.2)</p>
+      </div>
+    </section>
+
+    <h2>Com hsla()</h2>
+    <!-- Mesma ideia: só o canal alfa muda de uma caixa para outra -->
+    <section class="fundo fundo-rosa">
+      <div class="amostra">
+        <div class="cor hsla-opaca"></div>
+        <p>hsla(160, 100%, 30%, 1)</p>
+      </div>
+      <div class="amostra">
+        <div class="cor hsla-media"></div>
+        <p>hsla(160, 100%, 30%, 0.5)</p>
+      </div>
+      <div class="amostra">
+        <div class="cor hsla-leve"></div>
+        <p>hsla(160, 100%, 30%, 0.2)</p>
+      </div>
+    </section>
+
+    <p>Quanto menor o canal alfa, mais o fundo aparece através da caixa.</p>
+  </main>
+</body>
+</html>

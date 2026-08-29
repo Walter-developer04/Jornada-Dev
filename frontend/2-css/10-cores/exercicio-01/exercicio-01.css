@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Estilo comum a todas as caixas coloridas */
+.caixa {
+  width: 240px;
+  height: 60px;
+  line-height: 60px;
+  margin: 12px auto;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Só o canal do vermelho no máximo */
+.vermelho {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/* Fundo claro pede texto escuro */
+.verde {
+  background-color: rgb(0, 255, 0);
+  color: rgb(0, 0, 0);
+}
+
+.azul {
+  background-color: rgb(0, 0, 255);
+  color: rgb(255, 255, 255);
+}
+
+/* Vermelho + verde = amarelo */
+.amarelo {
+  background-color: rgb(255, 255, 0);
+  color: rgb(0, 0, 0);
+}
+
+/* Vermelho + azul = magenta */
+.magenta {
+  background-color: rgb(255, 0, 255);
+  color: rgb(255, 255, 255);
+}
+
+/* Verde + azul = ciano */
+.ciano {
+  background-color: rgb(0, 255, 255);
+  color: rgb(0, 0, 0);
+}

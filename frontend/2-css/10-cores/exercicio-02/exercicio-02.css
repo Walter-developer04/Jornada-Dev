@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Caixas pequenas, lado a lado em cada grupo */
+.caixa {
+  display: inline-block;
+  width: 175px;
+  height: 70px;
+  line-height: 70px;
+  margin: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Grupo 1: mesma saturação e luminosidade, só a matiz muda */
+.matiz-0 {
+  background-color: hsl(0, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+.matiz-120 {
+  background-color: hsl(120, 100%, 50%);
+  color: hsl(0, 0%, 0%);
+}
+
+.matiz-240 {
+  background-color: hsl(240, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Grupo 2: mesma cor com luminosidade diferente */
+.luz-baixa {
+  background-color: hsl(210, 100%, 25%);
+  color: hsl(0, 0%, 100%);
+}
+
+.luz-media {
+  background-color: hsl(210, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Fundo claro pede texto escuro */
+.luz-alta {
+  background-color: hsl(210, 100%, 75%);
+  color: hsl(0, 0%, 0%);
+}
+
+/* Grupo 3: mesma cor com saturação diferente */
+.sat-alta {
+  background-color: hsl(0, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+.sat-media {
+  background-color: hsl(0, 50%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* 0% de saturação sempre vira cinza */
+.sat-baixa {
+  background-color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 100%);
+}

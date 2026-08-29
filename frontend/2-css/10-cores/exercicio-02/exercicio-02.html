@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-02.css">
+  <title>Exercício 02 - Cores com HSL</title>
+</head>
+<body>
+  <main>
+    <h1>Cores com HSL</h1>
+    <p>
+      Na função hsl() usamos três valores: matiz (0 a 360),
+      saturação (%) e luminosidade (%).
+    </p>
+
+    <!-- A matiz escolhe a cor base -->
+    <h2>Mudando a matiz</h2>
+    <div class="caixa matiz-0">hsl(0, 100%, 50%)</div>
+    <div class="caixa matiz-120">hsl(120, 100%, 50%)</div>
+    <div class="caixa matiz-240">hsl(240, 100%, 50%)</div>
+
+    <!-- Luminosidade baixa escurece e alta clareia a mesma cor -->
+    <h2>Mudando a luminosidade</h2>
+    <div class="caixa luz-baixa">hsl(210, 100%, 25%)</div>
+    <div class="caixa luz-media">hsl(210, 100%, 50%)</div>
+    <div class="caixa luz-alta">hsl(210, 100%, 75%)</div>
+
+    <!-- Saturação baixa deixa a cor mais apagada -->
+    <h2>Mudando a saturação</h2>
+    <div class="caixa sat-alta">hsl(0, 100%, 50%)</div>
+    <div class="caixa sat-media">hsl(0, 50%, 50%)</div>
+    <div class="caixa sat-baixa">hsl(0, 0%, 50%)</div>
+
+    <p>Com 0% de saturação a cor vira cinza, mesmo tendo matiz 0.</p>
+  </main>
+</body>
+</html>

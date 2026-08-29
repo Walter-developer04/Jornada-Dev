@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Cartões pequenos, lado a lado */
+.cartao {
+  display: inline-block;
+  width: 115px;
+  height: 70px;
+  line-height: 70px;
+  margin: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* A cor aqui é só o nome escrito em inglês */
+.vermelho {
+  background-color: red;
+  color: white;
+}
+
+.azul {
+  background-color: blue;
+  color: white;
+}
+
+.verde {
+  background-color: green;
+  color: white;
+}
+
+/* Fundo claro pede texto escuro */
+.laranja {
+  background-color: orange;
+  color: black;
+}
+
+.roxo {
+  background-color: purple;
+  color: white;
+}

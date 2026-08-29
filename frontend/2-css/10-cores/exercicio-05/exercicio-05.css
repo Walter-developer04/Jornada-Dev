@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Área com fundo colorido para dar para ver a transparência */
+.fundo {
+  padding: 16px;
+  margin: 0 16px 30px;
+}
+
+/* Fundo amarelo criado com rgba() e alfa 1 (opaco) */
+.fundo-amarelo {
+  background-color: rgba(255, 200, 40, 1);
+}
+
+/* Fundo rosa criado com hsla() e alfa 1 (opaco) */
+.fundo-rosa {
+  background-color: hsla(340, 100%, 85%, 1);
+}
+
+/* Cada amostra tem uma caixa e a legenda embaixo */
+.amostra {
+  display: inline-block;
+  width: 190px;
+  margin: 8px;
+}
+
+.cor {
+  height: 90px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Azul totalmente opaco */
+.rgba-opaca {
+  background-color: rgba(0, 0, 255, 1);
+}
+
+/* Azul pela metade */
+.rgba-media {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* Azul quase transparente */
+.rgba-leve {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+/* Verde escuro totalmente opaco */
+.hsla-opaca {
+  background-color: hsla(160, 100%, 30%, 1);
+}
+
+.hsla-media {
+  background-color: hsla(160, 100%, 30%, 0.5);
+}
+
+.hsla-leve {
+  background-color: hsla(160, 100%, 30%, 0.2);
+}
+
+/* Legendas pequenas abaixo das caixas */
+.amostra p {
+  font-size: 14px;
+  margin: 4px 0;
+}
