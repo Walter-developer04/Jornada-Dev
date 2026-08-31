@@ -1,0 +1,17 @@
+﻿.caixa {
+    width: 220px;
+    padding: 16px;
+    background-color: #e0e0e0;
+}
+
+.sem-borda {
+    border: 0;
+}
+
+.com-borda {
+    border: 8px solid #000;
+}
+
+.espaco {
+    margin-top: 20px;
+}

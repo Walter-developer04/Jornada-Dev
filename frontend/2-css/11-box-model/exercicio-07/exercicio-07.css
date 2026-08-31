@@ -1,0 +1,10 @@
+﻿/* Dimensoes da caixa: largura 250px e altura 150px. A margem de 30px fica fora das dimensoes da caixa. */
+.caixa {
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid #000;
+    margin: 30px;
+    background-color: #e0e0e0;
+}
