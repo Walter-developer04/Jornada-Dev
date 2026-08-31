@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de Upload de Arquivos</title>
+    <style>
+      h2 {
+        font-size: 38px;
+        color: rgb(127, 157, 241);
+      }
+      .upload-container {
+        font-family: arial;
+        max-width: 290px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid rgb(236, 28, 1);
+        border-radius: 6px;
+      }
+      .btn-enviar {
+        margin-top: 15px;
+        padding: 10px 15px;
+        color: #f1ecece8;
+        background-color: #060a0ef3;
+        border: none;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="upload-container">
+      <h2>Enviar Arquivos</h2>
+
+      <!-- O atributo enctype="multipart/form-data" é OBRIGATÓRIO para envio de arquivos -->
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <!-- O atributo type="file" cria o botão de escolher arquivo do sistema -->
+        <label for="arquivo_usuario"> Selecione um arquivo:</label>
+        <input type="file" id="arquivo_usuario " name="arquivo_enviado" />
+        <br />
+
+        <!-- Botão que finaliza e envia o formulário -->
+        <button type="submit" class="btn-enviar">Enviar para o Servidor</button>
+      </form>
+    </div>
+  </body>
+</html>

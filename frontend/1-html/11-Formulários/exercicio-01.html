@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula: Label e inputs</title>
+</head>
+
+<body>
+    <!-- Para criar um formularo no html usa-se a tag <form> -->
+    <!-- Um formulario agrupa todos os campos de entrada de dados-->
+    <!-- Serve para coletar informações do usuário e enviá-las a um servidor -->
+    <!-- Usado obrigatoriamente antes ou depois de quase todo input -->
+    <form action="#" method="post">
+        <div>
+            <!-- O <label> define um rótulo de texto para um campo específico -->
+            <!-- O atributo 'for' liga o rótulo ao 'id' do input correspondente -->
+            <!-- Serve para acessibilidade e melhora a experiência do usuário (clicar no texto foca no campo) -->
+            <!-- Usado obrigatoriamente antes ou depois de quase todo input -->
+            <label filename="nome" for="campo-nome">Nome Completo:</label>
+            <!-- O <input> cria um campo onde o usuário pode digitar ou interagir -->
+            <!-- O 'type="text"' define que este campo aceita textos curtos livres -->
+            <!-- O 'id' deve ser idêntico ao 'for' do label para fazer a conexão entre eles -->
+            <!-- Usado para capturar nomes, sobrenomes, nomes de usuário, etc... -->
+            <input type="text" id="campo-nome" name="usuario_nome" placeholder="Digite Seu Nome Completo... " />
+
+            <br> <br>
+
+            <label for="campo-email">Email:</label>
+            <!-- O 'type="email"' valida automaticamente se o texto digitado tem o formato de e-mail (com @ e domínio) -->
+            <!-- Serve para evitar que o usuário envie dados inválidos por engano -->
+            <!-- Usado em formulários de contato, login e cadastro de contas -->
+
+            <input type="email" name="usuario_email" id="campo-email" placeholder="Digite um Email valido" />
+            <br><br>
+            <!-- O <input type="password"> cria um campo de entrada de texto protegido -->
+            <!-- O 'type="password"' oculta os caracteres digitados substituindo-os por bolinhas ou asteriscos -->
+            <!-- O 'placeholder' exibe uma dica temporária dentro do campo que desaparece quando o usuário começa a digitar -->
+            <!-- O 'name' identifica o dado que será enviado ao servidor (ex: banco de dados) -->
+            <!-- Usado obrigatoriamente em telas de login, criação de contas e alteração de credenciais de acesso -->
+            <label for="campo-senha">Senhar:</label>
+            <input type="password" id="campo-senha" name="usuario_senha" placeholder="Digite sua Senhar">
+        </div>
+
+        <br />
+
+        <!-- O botão envia os dados preenchidos no formulário -->
+        <!-- O 'type="submit"' indica que a ação de envio deve ser executada ao clicar -->
+        <!-- Usado no final de todo formulário para processar as informações -->
+        <button type="submit">Enviar dados</button>
+    </form>
+</body>
+
+</html>

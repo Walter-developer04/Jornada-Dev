@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo a Validação de Formulários</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+        }
+
+        .info-box {
+            background-color: #fef9e7;
+            border-left: 5px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        form {
+            background: #f2f4f4;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:invalid {
+            border-color: #e74c3c;
+            background-color: #fdedec;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Título principal da página -->
+        <h1>Validação de Formulários</h1>
+
+        <!-- Explicação sobre o conceito de validação de formulários -->
+        <div class="info-box">
+
+            <!-- Título da primeira explicação -->
+            <h2>O que é Validação de Formulários?</h2>
+
+            <!-- Explicação sobre o que é validação de formulários -->
+            <p>
+                A validação de formulários é o processo de verificar se os dados
+                preenchidos pelo usuário estão corretos antes que o formulário
+                seja enviado.
+            </p>
+
+            <!-- Título da explicação sobre a finalidade -->
+            <h2>Para que serve?</h2>
+
+            <!-- Explicação sobre a finalidade da validação -->
+            <p>
+                Ela serve para verificar se os campos obrigatórios foram
+                preenchidos e se os dados possuem o formato esperado.
+            </p>
+
+            <!-- Título da explicação sobre quando utilizar -->
+            <h2>Quando usar?</h2>
+
+            <!-- Exemplos de situações em que a validação pode ser utilizada -->
+            <p>
+                A validação pode ser utilizada sempre que um formulário
+                precisar receber informações do usuário, como nome, e-mail,
+                senha, telefone, código ou outros dados.
+            </p>
+
+        </div>
+
+        <!-- Título da parte prática -->
+        <h2>Exemplo Prático</h2>
+
+        <!-- Explicação sobre o formulário utilizado no exemplo -->
+        <p>
+            O formulário abaixo utiliza recursos nativos do HTML para verificar
+            algumas informações antes do envio.
+        </p>
+
+        <!-- Formulário utilizado para demonstrar a validação nativa do HTML -->
+        <form action="#" method="POST">
+
+            <!-- Campo destinado ao preenchimento do nome -->
+            <div class="form-group">
+
+                <!-- Texto que identifica o campo de nome -->
+                <label for="nome">Nome Completo:</label>
+
+                <!-- Campo de texto obrigatório para o nome -->
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required
+                    placeholder="Digite seu nome completo"
+                >
+
+            </div>
+
+            <!-- Campo destinado ao preenchimento do e-mail -->
+            <div class="form-group">
+
+                <!-- Texto que identifica o campo de e-mail -->
+                <label for="email">E-mail:</label>
+
+                <!-- Campo de e-mail obrigatório com validação nativa do HTML -->
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="exemplo@empresa.com"
+                >
+
+            </div>
+
+            <!-- Campo destinado ao preenchimento do código de convite -->
+            <div class="form-group">
+
+                <!-- Texto que identifica o campo de código -->
+                <label for="codigo">
+                    Código de Convite (3 letras maiúsculas):
+                </label>
+
+                <!-- Campo que utiliza pattern para exigir exatamente 3 letras maiúsculas -->
+                <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    pattern="[A-Z]{3}"
+                    title="O código deve ter exatamente 3 letras maiúsculas."
+                    placeholder="XYZ"
+                >
+
+            </div>
+
+            <!-- Botão responsável pelo envio do formulário -->
+            <button type="submit">Enviar Dados</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+```
