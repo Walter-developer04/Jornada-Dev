@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* Estilo base para todas as caixas */
+div {
+  display: inline-block;
+  margin: 16px;
+  padding: 12px 20px;
+  outline-width: 4px;
+  outline-color: steelblue;
+  background: #f0f4f8;
+}
+
+/* Cada classe demonstra um valor de outline-style */
+.dotted { outline-style: dotted; }
+.dashed { outline-style: dashed; }
+.solid  { outline-style: solid;  }
+.double { outline-style: double; }
+.groove { outline-style: groove; }
+.ridge  { outline-style: ridge;  }
+.inset  { outline-style: inset;  }
+.outset { outline-style: outset; }

@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 30px;
+  background: #f0f0f0;
+}
+
+/* Estilo base de cada caixa */
+.caixa {
+  padding: 20px;
+  background: #ffffff;
+  text-align: center;
+  width: 120px;
+}
+
+/* border ocupa espaco: empurra os elementos ao redor */
+.com-border {
+  border: 8px solid #e76f51;
+}
+
+/* outline nao ocupa espaco: elementos vizinhos nao se movem */
+.com-outline {
+  outline: 8px solid #2a9d8f;
+}
+
+.nota {
+  margin-top: 20px;
+  color: #555;
+  font-size: 0.9em;
+}

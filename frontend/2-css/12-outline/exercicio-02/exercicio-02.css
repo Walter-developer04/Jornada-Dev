@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* Estilo base para todas as caixas */
+div {
+  display: inline-block;
+  margin: 16px;
+  padding: 12px 20px;
+  outline-style: solid;
+  outline-color: tomato;
+  background: #fff8f0;
+}
+
+/* Palavras-chave para espessura */
+.thin   { outline-width: thin;   }
+.medium { outline-width: medium; }
+.thick  { outline-width: thick;  }
+
+/* Valores numericos */
+.px1 { outline-width: 1px; }
+.px4 { outline-width: 4px; }
+.px8 { outline-width: 8px; }

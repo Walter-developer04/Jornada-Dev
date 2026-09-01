@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* Estilo base para todas as caixas */
+div {
+  display: inline-block;
+  margin: 16px;
+  padding: 12px 20px;
+  outline-style: solid;
+  outline-width: 4px;
+  background: #f9f9f9;
+}
+
+/* Cor por nome de palavra-chave CSS */
+.nome { outline-color: crimson; }
+
+/* Cor por valor hexadecimal */
+.hex  { outline-color: #2a9d8f; }
+
+/* Cor por funcao rgb() */
+.rgb  { outline-color: rgb(230, 126, 34); }
+
+/* currentColor usa a cor de texto do proprio elemento */
+.current {
+  color: mediumslateblue;
+  outline-color: currentColor;
+}

@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* Estilo base para todas as caixas */
+div {
+  display: inline-block;
+  margin: 16px;
+  padding: 14px 22px;
+  background: #f4f4f4;
+}
+
+/* Somente o style; width assume "medium", color assume currentColor */
+.so-style    { outline: solid; }
+
+/* Style e color; width assume "medium" */
+.style-color { outline: dashed #e63946; }
+
+/* Width e style; color assume currentColor */
+.width-style { outline: 3px groove; }
+
+/* Os tres valores em conjunto (ordem livre) */
+.completo    { outline: 4px solid #457b9d; }

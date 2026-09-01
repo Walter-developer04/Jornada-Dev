@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-06.css">
+  <title>Exercicio 06 - outline e layout</title>
+</head>
+<body>
+
+  <h1>outline nao ocupa espaco no layout</h1>
+  <p>
+    Ao contrario de <code>border</code>, o <code>outline</code> e desenhado fora
+    da borda do elemento sem afetar o layout. Os elementos ao redor nao se deslocam.
+  </p>
+
+  <div class="container">
+
+    <!-- Elemento com border: empurra os vizinhos -->
+    <div class="caixa com-border">border: 8px</div>
+
+    <!-- Elemento do meio: outline nao desloca nenhum vizinho -->
+    <div class="caixa com-outline">outline: 8px</div>
+
+    <!-- Elemento depois do outline: posicao nao mudou -->
+    <div class="caixa normal">sem decoracao</div>
+
+  </div>
+
+  <p class="nota">
+    Observe que a caixa com <code>border</code> empurra as vizinhas,
+    enquanto a caixa com <code>outline</code> nao altera a posicao de nenhum elemento.
+  </p>
+
+</body>
+</html>

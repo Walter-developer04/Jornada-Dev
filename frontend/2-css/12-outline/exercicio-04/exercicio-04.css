@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+/* Estilo base para todas as caixas */
+div {
+  display: inline-block;
+  margin: 30px;
+  padding: 20px 30px;
+  outline-style: dashed;
+  outline-width: 2px;
+  outline-color: darkorange;
+  background: #fffbe6;
+}
+
+/* Offset zero: sem espaco entre o outline e a borda */
+.zero     { outline-offset: 0px;  }
+
+/* Offset positivo: outline afastado para fora */
+.positivo { outline-offset: 8px;  }
+
+/* Offset negativo: outline deslocado para dentro */
+.negativo { outline-offset: -6px; }
