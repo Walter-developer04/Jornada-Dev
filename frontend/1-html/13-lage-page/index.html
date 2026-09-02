@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo/logo-mare.ico" type="image/x-icon" />
+    <title>Estação Maré Alta — Diário de um Observatório Costeiro</title>
+
+    <style>
+      /* ==============================
+           CORES PRINCIPAIS
+         ============================== */
+
+      /* Creme: #EFEBE0 */
+      /* Azul-escuro: #24424E */
+      /* Laranja: #D56B3A */
+      /* Azul: #126782 */
+      /* Escuro: #161925 */
+
+      /* ==============================
+           CONFIGURAÇÃO GERAL
+         ============================== */
+
+      body {
+        margin: 0;
+        background-color: #efebe0;
+        color: #161925;
+      }
+
+      /* ==============================
+           CABEÇALHO
+         ============================== */
+
+      /* ==============================
+   CABEÇALHO PRINCIPAL (topo)
+   ============================== */
+
+      body > header {
+        background-color: #24424e;
+        color: #efebe0;
+        padding: 30px;
+        border: 2px solid #161925;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        gap: 0 20px;
+      }
+
+      body > header img {
+        grid-row: 1 / 3;
+        grid-column: 1;
+        align-self: center;
+        border-radius: 4px;
+      }
+
+      body > header h1 {
+        grid-row: 1;
+        grid-column: 2;
+        margin: 0;
+        font-size: 2.2rem;
+        align-self: end;
+        line-height: 1.1;
+      }
+
+      body > header p {
+        grid-row: 2;
+        grid-column: 2;
+        margin: 4px 0 0 0;
+        font-size: 1rem;
+        opacity: 0.85;
+        align-self: start;
+      }
+
+      body > header nav {
+        grid-row: 3;
+        grid-column: 1 / -1;
+        margin-top: 25px;
+      }
+
+      /* ==============================
+            TÍTULO PRINCIPAL
+         ============================== */
+
+      h1 {
+        margin: 0 0 10px 0;
+      }
+
+      /* ==============================
+                NAVEGAÇÃO
+         ============================== */
+
+      nav {
+        margin-top: 20px;
+        background-color: #126782;
+        padding: 15px;
+        border: 2px solid #161925;
+      }
+
+      nav ul {
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+      }
+
+      nav li {
+        display: inline-block;
+        margin: 0 18px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #efebe0;
+      }
+
+      /* ==============================
+           LINHA DE SEPARAÇÃO
+         ============================== */
+
+      hr {
+        margin: 30px 0;
+        border: 0;
+        border-top: 2px solid #24424e;
+      }
+
+      /* ==============================
+            CONTEÚDO PRINCIPAL
+        ============================== */
+
+      main {
+        width: 1100px;
+        margin: 30px auto;
+      }
+
+      /* ==============================
+                  SEÇÕES
+         ============================== */
+
+      main > section {
+        background-color: #ffffff;
+        border: 2px solid #24424e;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      /* ==============================
+           CABEÇALHO DAS SEÇÕES
+        ============================== */
+
+      section > header {
+        background-color: #efebe0;
+        color: #161925;
+        border: 2px solid #126782;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      /* ==============================
+            ARTIGOS
+         ============================== */
+
+      article {
+        background-color: #efebe0;
+        border: 2px solid #126782;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      /* ==============================
+              FIGURAS
+         ============================== */
+
+      figure {
+        background-color: #ffffff;
+        border: 2px solid #24424e;
+        padding: 20px;
+        margin: 25px 0;
+      }
+
+      figure img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      figcaption {
+        text-align: center;
+        background-color: #24424e;
+        color: #efebe0;
+        padding: 10px;
+        margin-top: 15px;
+      }
+
+      /* ==============================
+                ASIDE
+         ============================== */
+
+      aside {
+        background-color: #d56b3a;
+        color: #161925;
+        border: 2px solid #161925;
+        padding: 20px;
+        margin-top: 30px;
+      }
+
+      /* ==============================
+             LISTAS
+         ============================== */
+
+      ul {
+        padding-left: 25px;
+      }
+
+      /* ==============================
+                  RODAPÉ
+         ============================== */
+
+      footer {
+        background-color: #161925;
+        color: #efebe0;
+        padding: 30px;
+        border: 2px solid #24424e;
+        margin-top: 30px;
+      }
+
+      footer nav {
+        background-color: #24424e;
+      }
+
+      footer a {
+        color: #efebe0;
+      }
+
+      address {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO -->
+    <header>
+      <!-- LOGO -->
+      <img
+        width="40px"
+        style="border-radius: 4px"
+        src="logo/logo-mare.jpg"
+        alt="a logo da estacao da maré"
+      />
+      <!-- TITULO PRINCIPAL DA PAGINA -->
+      <h1>Estação Maré Alta</h1>
+      <!-- DESCRIÇÃO -->
+      <p>Observação e memória da costa</p>
+
+      <!-- BARRA DE NAVEGAÇÃO -->
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#estacao">Estação</a></li>
+          <li><a href="#observacoes">Observações</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <!-- PARTE PRINCIPAL DO SITE-->
+    <main>
+      <!-- SESSÃO INICIO -->
+      <section id="inicio">
+        <header>
+          <h2>Onde o mar encontra o observador</h2>
+          <p>
+            A Estação Maré Alta é um pequeno observatório costeiro dedicado ao
+            registro das condições do mar, do clima e da vida presente na
+            região. <br />
+            Todos os dias, seus observadores acompanham a costa e registram
+            aquilo que muda entre o céu, o vento e as águas.
+          </p>
+        </header>
+
+        <figure>
+          <img
+            width="50%"
+            src="img/farol-estacao-mare-alta.jpg"
+            alt="Farol costeiro da Estação Maré Alta diante do oceano"
+          />
+          <figcaption>Farol da Estação Maré Alta diante do oceano.</figcaption>
+        </figure>
+      </section>
+      <hr />
+      <!-- SESSÃO ESTAÇÃO -->
+      <section id="estacao">
+        <header>
+          <h2>A Estação Maré Alta</h2>
+          <p>
+            A Estação Maré Alta é um observatório costeiro dedicado ao
+            acompanhamento das condições naturais da região.
+          </p>
+
+          <p>
+            A equipe registra diariamente informações sobre o comportamento do
+            mar, a direção dos ventos, as mudanças do tempo e a presença de
+            aves.
+          </p>
+
+          <p>
+            Esses registros ajudam a documentar as transformações da paisagem ao
+            longo do tempo.
+          </p>
+        </header>
+
+        <!-- ARTIGO FALANDO SOBRE A ESTAÇÃO -->
+        <article>
+          <h3>Uma pequena estação de observação</h3>
+          <figure>
+            <img width="50%" src="img/estacao.jpg" alt="estacao da mare" />
+            <figcaption>
+              vista externa da estação voltada para a área costeira.
+            </figcaption>
+          </figure>
+          <p>
+            A estação foi construída em uma área próxima ao litoral para
+            facilitar a observação das condições naturais da região. <br />
+            Em seu espaço são realizados registros do estado do mar, da direção
+            dos ventos, das condições do tempo e das mudanças percebidas na
+            paisagem ao longo do dia. <br />
+            A estrutura é simples e funcional, permitindo que os observadores
+            acompanhem a costa e mantenham um registro contínuo das informações
+            coletadas.
+          </p>
+        </article>
+        <!-- ARTIGO FALANDO SOBRE O OBSERVADOR-->
+        <article>
+          <h3>O que é observador</h3>
+          <p>
+            O observador é responsável por acompanhar as condições da costa e
+            registrar as mudanças percebidas durante o dia. <br />
+            Ele observa o estado do mar, a direção e a intensidade dos ventos,
+            as condições do tempo e a presença de aves e outros elementos da
+            paisagem. <br />
+            Cada anotação contribui para formar um histórico das condições
+            observadas na região.
+          </p>
+        </article>
+      </section>
+      <hr />
+
+      <!-- SESSÃO OBSERVAÇÕES -->
+      <section id="observacoes">
+        <header>
+          <h2>Registros da Costa</h2>
+          <p>
+            Durante as observações realizadas na estação, pequenos
+            acontecimentos da costa são registrados ao longo do dia. <br />
+            Mudanças na maré, no vento, no tempo e na presença de aves ajudam a
+            acompanhar as condições do ambiente e a compreender como a paisagem
+            se transforma com o passar das horas.
+          </p>
+        </header>
+
+        <!-- ARTIGO SOBRE MARE BAIXA -->
+        <article>
+          <header>
+            <h3>Maré baixa registrada</h3>
+            <time datetime="06:40">06:40</time>
+          </header>
+
+          <p>
+            Durante a maré baixa, o recuo da água altera a paisagem da costa.
+            Com a retração do mar, as rochas do fundo ficam totalmente expostas
+            e tornam-se visíveis na superfície. <br />
+            Esse processo amplia a faixa de areia utilizável, que permanece
+            úmida e compacta na área que antes estava submersa.
+          </p>
+        </article>
+        <!-- ARTIGO SOBRE MUDANÇAS NA DIREÇÃO DO VENTO -->
+        <article>
+          <header>
+            <h3>Mudanças na direção do vento</h3>
+            <time datetime="10:15">10:15</time>
+          </header>
+
+          <p>
+            Às 10h15, os instrumentos registraram uma alteração significativa na
+            direção do vento. <br />
+            As correntes de ar, que antes sopravam de forma constante, mudaram
+            de quadrante em poucos minutos. <br />
+            Essa variação gerou uma movimentação imediata nas águas costeiras,
+            influenciando tanto a formação das ondulações quanto a velocidade de
+            aproximação das ondas em direção à praia.
+          </p>
+        </article>
+      </section>
+      <section id="galeria">
+        <header>
+          <h2>Galeria da Costa</h2>
+          <p>
+            Esta galeria reúne registros visuais feitos ao redor da Estação Maré
+            Alta. <br />
+            As fotografias mostram diferentes aspectos da paisagem costeira,
+            <br />
+            como o oceano, as formações rochosas, <br />
+            a vegetação e a presença de aves observadas durante as atividades da
+            estação.
+          </p>
+        </header>
+        <!-- COSTÃO ROCHOSO -->
+        <figure>
+          <img
+            width="30%"
+            src="img/costao-rochoso.jpg"
+            alt="Imagem de um costão rochoso"
+          />
+          <figcaption>
+            Costão rochoso formado pelas águas e pelo vento ao longo da costa.
+          </figcaption>
+        </figure>
+
+        <!-- CONDIÇÕES DO OCEANO -->
+        <figure>
+          <img width="30%" src="img/mare.jpg" alt="Oceano" />
+          <figcaption>
+            Condições do oceano observadas durante a manhã na região costeira.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img width="30%" src="img/ave-costeira.jpg" alt="Ave Costeira" />
+          <figcaption>
+            Ave pousada sobre uma rocha próxima ao oceano.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            width="30%"
+            src="img/vegetacao-costeira.jpg"
+            alt="vegetacao costeira"
+          />
+          <figcaption>
+            Vegetação de restinga crescendo naturalmente próxima à costa.
+          </figcaption>
+        </figure>
+        <aside>
+          <h2>Curiosidades da Costa</h2>
+          <p>Pequenas observações sobre o ambiente que cerca a estação.</p>
+          <ul>
+            <li>A direção do vento pode mudar ao longo do dia.</li>
+            <li>A faixa de areia muda conforme o comportamneto das marés.</li>
+            <li>
+              Algumas aves aparece, somente em detreminadas épocas do ano.
+            </li>
+          </ul>
+        </aside>
+      </section>
+      <!-- RODA PÉ contato -->
+      <footer id="contato">
+        <!-- LOGO -->
+        <img
+          width="40px"
+          style="border-radius: 4px"
+          src="logo/logo-mare.jpg"
+          alt="a logo da estacao da maré"
+        />
+        <p>Estação Maré Alta — Diário de um Observatório Costeiro</p>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#estacao">Estação</a></li>
+            <li><a href="#observacoes">Observações</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <address>Contato: observatorio@marealta.example</address>
+      </footer>
+    </main>
+  </body>
+</html>
