@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>Exercicio 03 - CSS Units</title>
+</head>
+<body>
+    <h1>Unidade Relativa à Raiz: rem</h1>
+    <p class="descricao">A unidade rem (root em) é sempre calculada a partir do tamanho da fonte da raiz (elemento html), que por padrão equivale a 16px. Isso evita o efeito multiplicador acumulado.</p>
+
+    <div class="container-externo">
+        <p class="texto-externo">Elemento externo com font-size de 1.5rem (24px).</p>
+
+        <div class="container-interno">
+            <p class="texto-interno">Elemento aninhado com font-size de 1.5rem (também 24px).</p>
+            <p class="texto-pequeno">Elemento com font-size de 0.875rem (14px) e espaçamento uniforme.</p>
+        </div>
+    </div>
+</body>
+</html>

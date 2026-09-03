@@ -1,0 +1,40 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.exemplo-min {
+    width: min(100%, 450px);
+    background-color: #2f855a;
+    color: #ffffff;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.exemplo-max {
+    width: max(300px, 50%);
+    background-color: #b7791f;
+    color: #ffffff;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.titulo-funcao {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}

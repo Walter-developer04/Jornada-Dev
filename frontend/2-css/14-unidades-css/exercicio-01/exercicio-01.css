@@ -1,0 +1,44 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.caixa-pequena {
+    width: 150px;
+    height: 70px;
+    background-color: #3182ce;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.caixa-media {
+    width: 300px;
+    height: 70px;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.caixa-grande {
+    width: 450px;
+    height: 70px;
+    background-color: #2c5282;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 16px;
+}

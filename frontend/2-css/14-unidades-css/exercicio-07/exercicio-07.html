@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-07.css">
+    <title>Exercicio 07 - CSS Units</title>
+</head>
+<body>
+    <h1>Comparação: Porcentagem (%) versus Viewport (vw)</h1>
+    <p class="descricao">Dentro de um contêiner restrito (400px), a largura em % respeita o tamanho da caixa pai. Já a unidade vw ignora o pai e toma como base a janela inteira do navegador.</p>
+
+    <div class="caixa-pai">
+        <p class="aviso">Caixa Pai limitada a 400px</p>
+
+        <div class="filho-porcentagem">
+            <p>Filho com width: 100% (encaixa perfeitamente nos 400px do pai)</p>
+        </div>
+
+        <div class="filho-viewport">
+            <p>Filho com width: 60vw (calcula 60% da janela e transborda o pai)</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.moldura-pai {
+    width: 500px;
+    background-color: #edf2f7;
+    border: 2px dashed #718096;
+    padding: 16px;
+}
+
+.rotulo-pai {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.barra {
+    height: 40px;
+    color: #ffffff;
+    padding-left: 10px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.barra-25 {
+    width: 25%;
+    background-color: #805ad5;
+}
+
+.barra-50 {
+    width: 50%;
+    background-color: #6b46c1;
+}
+
+.barra-75 {
+    width: 75%;
+    background-color: #553c9a;
+}
+
+.barra-100 {
+    width: 100%;
+    background-color: #44337a;
+    margin-bottom: 0;
+}

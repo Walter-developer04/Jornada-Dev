@@ -1,0 +1,41 @@
+﻿body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.bloco {
+    color: #ffffff;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.bloco-largura-metade {
+    width: 50vw;
+    background-color: #dd6b20;
+}
+
+.bloco-largura-completa {
+    width: 80vw;
+    background-color: #c05621;
+}
+
+.bloco-altura-fixa-vh {
+    width: 50vw;
+    height: 20vh;
+    background-color: #9c4221;
+}

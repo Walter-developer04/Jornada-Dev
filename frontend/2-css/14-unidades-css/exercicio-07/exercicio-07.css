@@ -1,0 +1,47 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.caixa-pai {
+    width: 400px;
+    background-color: #ffffff;
+    border: 3px solid #e53e3e;
+    padding: 16px;
+}
+
+.aviso {
+    font-weight: bold;
+    color: #e53e3e;
+    margin-bottom: 12px;
+}
+
+.filho-porcentagem {
+    width: 100%;
+    background-color: #38a169;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.filho-viewport {
+    width: 60vw;
+    background-color: #e53e3e;
+    color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+}

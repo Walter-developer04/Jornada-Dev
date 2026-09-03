@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-04.css">
+    <title>Exercicio 04 - CSS Units</title>
+</head>
+<body>
+    <h1>Comparação: em versus rem</h1>
+    <p class="descricao">Observe como o em acumula a multiplicação de tamanho a cada nível de aninhamento, enquanto o rem mantém um tamanho fixo e previsível em todos os níveis.</p>
+
+    <div class="coluna coluna-em">
+        <h2>Uso de em (Cascata Acumulada)</h2>
+        <div class="nivel-1-em">
+            <p>Nível 1: 1.3em</p>
+            <div class="nivel-2-em">
+                <p>Nível 2: 1.3em do nível 1</p>
+                <div class="nivel-3-em">
+                    <p>Nível 3: 1.3em do nível 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coluna coluna-rem">
+        <h2>Uso de rem (Referência Constante)</h2>
+        <div class="nivel-1-rem">
+            <p>Nível 1: 1.3rem da raiz</p>
+            <div class="nivel-2-rem">
+                <p>Nível 2: 1.3rem da raiz</p>
+                <div class="nivel-3-rem">
+                    <p>Nível 3: 1.3rem da raiz</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+
+.container-pai {
+    font-size: 20px;
+    background-color: #e2e8f0;
+    padding: 1.5em;
+    border: 2px solid #cbd5e0;
+}
+
+.texto-pai {
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.filho {
+    font-size: 1.5em;
+    background-color: #cbd5e0;
+    padding: 1em;
+    margin-top: 12px;
+}
+
+.texto-filho {
+    color: #1a202c;
+    margin-bottom: 12px;
+}
+
+.neto {
+    font-size: 1.5em;
+    background-color: #a0aec0;
+    padding: 0.5em;
+    margin-top: 12px;
+}
+
+.texto-neto {
+    color: #ffffff;
+}

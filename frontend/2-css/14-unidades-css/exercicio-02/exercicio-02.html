@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Exercicio 02 - CSS Units</title>
+</head>
+<body>
+    <h1>Unidade Relativa à Fonte: em</h1>
+    <p class="descricao">A unidade em é relativa ao font-size do elemento pai ou do próprio elemento. Quando aninhamos elementos com tamanhos em em, o valor se multiplica progressivamente.</p>
+
+    <div class="container-pai">
+        <p class="texto-pai">Texto no elemento pai: font-size de 20px.</p>
+        
+        <div class="filho">
+            <p class="texto-filho">Texto no filho (1.5em de 20px = 30px).</p>
+            
+            <div class="neto">
+                <p class="texto-neto">Texto no neto (1.5em de 30px = 45px).</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

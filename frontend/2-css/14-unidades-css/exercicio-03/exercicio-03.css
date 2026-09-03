@@ -1,0 +1,50 @@
+﻿html {
+    font-size: 16px;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 1.5rem;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.descricao {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.container-externo {
+    background-color: #e6fffa;
+    border: 2px solid #81e6d9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.texto-externo {
+    font-size: 1.5rem;
+    color: #234e52;
+    margin-bottom: 1rem;
+}
+
+.container-interno {
+    background-color: #b2f5ea;
+    padding: 1.5rem;
+}
+
+.texto-interno {
+    font-size: 1.5rem;
+    color: #234e52;
+    margin-bottom: 0.75rem;
+}
+
+.texto-pequeno {
+    font-size: 0.875rem;
+    color: #285e61;
+}
