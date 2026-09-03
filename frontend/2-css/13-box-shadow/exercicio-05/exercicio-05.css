@@ -1,0 +1,40 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  margin: 48px;
+  background: #f8fafc;
+}
+
+h1 {
+  margin: 0 0 32px;
+  font-size: 24px;
+}
+
+.grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.caixa {
+  width: 180px;
+  padding: 32px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+/* Cor da sombra definida em hexadecimal */
+.cor-nomeada {
+  box-shadow: 12px 12px 8px #2563eb;
+}
+
+/* Alfa menor deixa a sombra mais suave */
+.cor-transparente {
+  box-shadow: 12px 12px 8px rgba(20, 184, 166, 0.45);
+}
+
+/* Sem cor: usa a cor atual do elemento */
+.cor-atual {
+  color: #7c3aed;
+  box-shadow: 12px 12px 8px;
+}

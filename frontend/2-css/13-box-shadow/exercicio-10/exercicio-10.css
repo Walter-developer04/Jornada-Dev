@@ -1,0 +1,29 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  margin: 56px;
+  background: #f8fafc;
+}
+
+h1 {
+  margin: 0 0 40px;
+  font-size: 24px;
+}
+
+.linha {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.caixa {
+  width: 160px;
+  height: 120px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+/* A sombra não muda o tamanho da caixa */
+.grande-sombra {
+  box-shadow: 0 0 0 24px rgba(100, 116, 139, 0.25);
+}

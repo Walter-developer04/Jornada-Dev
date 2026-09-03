@@ -1,0 +1,30 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  margin: 56px;
+  background: #f8fafc;
+}
+
+h1 {
+  margin: 0 0 40px;
+  font-size: 24px;
+}
+
+.grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+
+.caixa {
+  width: 200px;
+  padding: 36px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 14px 14px 16px #475569;
+}
+
+/* A sombra acompanha os cantos arredondados */
+.arredondada {
+  border-radius: 24px;
+}

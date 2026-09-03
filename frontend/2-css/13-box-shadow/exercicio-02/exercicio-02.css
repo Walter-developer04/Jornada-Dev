@@ -1,0 +1,44 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  margin: 48px;
+  background: #f8fafc;
+}
+
+h1 {
+  margin: 0 0 32px;
+  font-size: 24px;
+}
+
+.grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+
+.caixa {
+  width: 160px;
+  padding: 28px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+/* Sombra deslocada para a direita e para baixo */
+.direita-baixo {
+  box-shadow: 16px 12px #475569;
+}
+
+/* Offset-x negativo desloca para a esquerda */
+.esquerda-baixo {
+  box-shadow: -16px 12px #475569;
+}
+
+/* Offset-y negativo desloca para cima */
+.direita-cima {
+  box-shadow: 16px -12px #475569;
+}
+
+/* Deslocamento para a esquerda e para cima */
+.esquerda-cima {
+  box-shadow: -16px -12px #475569;
+}
