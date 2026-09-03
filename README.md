@@ -1,5 +1,5 @@
 # Jornada-Dev
- Jornada de estudos em desenvolvimento web — anotações, projetos e exercícios práticos de HTML, CSS, JS. Organizado por linguagem e tema.
+ Jornada de estudos em desenvolvimento web — anotações, projetos e exercícios práticos de HTML, CSS, JS, TS. Organizado por linguagem e tema.
  
  ##  Objetivo
  
