@@ -1,0 +1,87 @@
+{
+  // tsconfig.json — arquivo de configuracao do compilador TypeScript
+  //
+  // Fica na raiz do projeto. O compilador (tsc) le ele automaticamente.
+  // Para gerar um com todas as opcoes possiveis: npx tsc --init
+  //
+  // Comandos do dia a dia:
+  //   npx tsc            → compila o projeto
+  //   npx tsc --watch    → recompila a cada save
+  //   npx tsc --noEmit   → so valida os tipos, sem gerar arquivos
+
+  "compilerOptions": {
+
+    // Para qual versao de JavaScript o .ts vai ser compilado.
+    "target": "ES2020",
+
+    // Como os imports/exports vao funcionar no codigo gerado.
+    // ESNext mantem a sintaxe nativa de modulos — ideal pra Vite e Next.js.
+    // Se for Node.js puro sem bundler, troque por "CommonJS".
+    "module": "ESNext",
+
+    // Como o compilador vai localizar os arquivos que voce importa.
+    // "bundler" e o modo moderno, feito pra trabalhar com Vite, esbuild, etc.
+    // Se nao tiver bundler, use "node".
+    "moduleResolution": "bundler",
+
+    // Liga todas as verificacoes rigorosas de uma vez.
+    // Isso inclui: proibir variaveis sem tipo, exigir tratamento de null/undefined
+    // e ter tipagem mais precisa em funcoes. Parece pesado no inicio,
+    // mas evita uma classe inteira de bugs em producao. Sempre deixe true.
+    "strict": true,
+
+    // Permite escrever  import fs from 'fs'  em vez de  import * as fs from 'fs'.
+    // Necessario quando voce mistura modulos CommonJS com ESM no mesmo projeto.
+    "esModuleInterop": true,
+
+    // Forca que o nome dos arquivos nos imports bata exatamente com o nome real.
+    // Linux diferencia 'Arquivo.ts' de 'arquivo.ts'; Windows nao.
+    // Isso evita que o codigo quebre ao mudar de SO ou rodar no CI.
+    "forceConsistentCasingInFileNames": true,
+
+    // Habilita o uso de @Decorators nas classes.
+    // So precisa se voce usar NestJS, Angular, TypeORM ou algo parecido.
+    // Se nao usar decorators, pode remover essas duas linhas.
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Quais APIs o TypeScript vai reconhecer no seu codigo.
+    // "DOM" da acesso a document, window, fetch e tudo do navegador.
+    // "ES2020" garante os metodos modernos de Array, Promise, etc.
+    // Se for um projeto Node.js, instale @types/node e adicione "node" aqui.
+    "lib": ["ES2020", "DOM"],
+
+    // Onde os arquivos .js compilados vao ser salvos.
+    // Mantenha separado do src pra nao misturar fonte com saida.
+    // Lembre de adicionar "dist" no .gitignore.
+    "outDir": "./dist",
+
+    // Onde estao seus arquivos .ts. O compilador nao aceita
+    // arquivos fora dessa pasta como parte do projeto.
+    "rootDir": "./src",
+
+    // Gera arquivos .map junto com os .js compilados.
+    // Com eles, quando um erro acontece no navegador ou no Node,
+    // a stack trace aponta pra linha certa no .ts — nao no .js gerado.
+    // Essencial pra debugar.
+    "sourceMap": true,
+
+    // Ignora erros de tipo dentro do node_modules.
+    // Algumas bibliotecas tem tipos desatualizados ou imprecisos,
+    // e checar isso so atrasa a compilacao sem trazer beneficio real.
+    "skipLibCheck": true,
+
+    // Garante que cada arquivo .ts funcione de forma independente.
+    // Obrigatorio pra trabalhar com Vite, e recomendado com Next.js,
+    // pois eles transformam arquivo por arquivo, nao o projeto inteiro.
+    "isolatedModules": true
+  },
+
+  // Quais arquivos entram na compilacao.
+  // O glob abaixo pega todos os .ts dentro de src/, em qualquer nivel de pasta.
+  "include": ["src/**/*.ts"],
+
+  // O que o compilador deve ignorar.
+  // node_modules nunca deve ser compilado, e dist ja e o resultado final.
+  "exclude": ["node_modules", "dist"]
+}
