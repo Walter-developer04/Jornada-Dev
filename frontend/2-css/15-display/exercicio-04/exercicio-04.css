@@ -1,0 +1,39 @@
+﻿/* O que demonstra: remocao total da caixa no layout com display: none. */
+/* Para que serve: esconder um elemento sem deixar nenhum espaco vazio na tela. */
+/* Quando usar: em abas inativas, paineis fechados ou conteudos que so devem aparecer sob condicao. */
+/* O que observar: o Card 2 desaparece do fluxo; o Card 3 desloca-se e fica imediatamente ao lado do Card 1. */
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.container {
+    border: 2px dashed #999999;
+    padding: 15px;
+    background-color: #f5f5f5;
+}
+
+.card {
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.card-1 {
+    background-color: #9c27b0;
+}
+
+.card-removido {
+    /* Nao gera caixa no layout: nao ocupa nenhum espaco fisico */
+    display: none;
+    background-color: #e91e63;
+}
+
+.card-3 {
+    background-color: #673ab7;
+}

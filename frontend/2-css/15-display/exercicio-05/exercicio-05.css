@@ -1,0 +1,39 @@
+﻿/* O que demonstra: ocultacao visual mantendo a caixa com visibility: hidden. */
+/* Para que serve: esconder o conteudo visual preservando a posicao e alinhamento dos vizinhos. */
+/* Quando usar: para reservar um espaco fixo na tela antes do elemento se tornar visivel. */
+/* O que observar: diferenca direta com display:none: o Card 2 esta invisivel, mas seu espaco de 150px permanece vazio. */
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.container {
+    border: 2px dashed #999999;
+    padding: 15px;
+    background-color: #f5f5f5;
+}
+
+.card {
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.card-1 {
+    background-color: #009688;
+}
+
+.card-invisivel {
+    /* Torna o elemento invisivel, mas sua caixa e espaco fisico permanecem intactos */
+    visibility: hidden;
+    background-color: #f44336;
+}
+
+.card-3 {
+    background-color: #00796b;
+}

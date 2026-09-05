@@ -1,0 +1,26 @@
+﻿/* O que demonstra: comportamento de elementos em linha (display: inline). */
+/* Para que serve: estilizar trechos de texto sem interromper o fluxo da frase. */
+/* Quando usar: em elementos como <span>, <a>, <strong> e <em> dentro de paragrafos. */
+/* O que observar: os itens continuam lado a lado e ignoram as propriedades width e height. */
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.container {
+    border: 2px dashed #999999;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.destaque {
+    display: inline;
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 4px 8px;
+    border: 1px solid #2e7d32;
+    /* width e height nao produzem efeito em elementos inline comuns */
+    width: 200px;
+    height: 80px;
+}

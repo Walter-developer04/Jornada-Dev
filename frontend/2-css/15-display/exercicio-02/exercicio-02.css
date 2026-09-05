@@ -1,0 +1,32 @@
+﻿/* O que demonstra: comportamento de elementos em bloco (display: block). */
+/* Para que serve: estruturar sessoes verticais e caixas organizadoras de conteudo. */
+/* Quando usar: em divisoes principais (<div>, <section>), titulos (<h1>-<h6>) e paragrafos (<p>). */
+/* O que observar: cada bloco inicia em nova linha, empilha na vertical e aceita width e height. */
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.bloco {
+    display: block;
+    margin-bottom: 12px;
+    padding: 15px;
+    color: #ffffff;
+    border: 2px solid #1565c0;
+}
+
+.bloco-padrao {
+    background-color: #1976d2;
+}
+
+.bloco-largura {
+    background-color: #2196f3;
+    width: 260px;
+    height: 40px;
+}
+
+.bloco-empilhado {
+    background-color: #64b5f6;
+    color: #111111;
+}

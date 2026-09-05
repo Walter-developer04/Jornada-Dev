@@ -1,0 +1,27 @@
+﻿/* O que demonstra: comportamento hibrido (display: inline-block). */
+/* Para que serve: dispor caixas lado a lado mantendo o controle exato de dimensoes. */
+/* Quando usar: em botoes estilizados, itens de navegacao, badges e pequenos cards em linha. */
+/* O que observar: as caixas continuam na mesma linha, mas respeitam fielmente width, height e margins. */
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.container {
+    border: 2px dashed #999999;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.caixa {
+    display: inline-block;
+    width: 140px;
+    height: 80px;
+    line-height: 80px;
+    margin-right: 10px;
+    background-color: #ff9800;
+    color: #ffffff;
+    border: 2px solid #e65100;
+    text-align: center;
+}
