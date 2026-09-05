@@ -1,0 +1,31 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 24px;
+    color: #333333;
+}
+
+.container {
+    background-color: #ffffff;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    color: #111827;
+}
+
+.mensagem {
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+}
