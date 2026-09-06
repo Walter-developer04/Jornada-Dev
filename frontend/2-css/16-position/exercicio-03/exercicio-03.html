@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="exercicio-03.css" />
+  <title>Exercício 03 — position: sticky</title>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <span class="tag-conceito">position: sticky</span>
+    <h1>Flui normalmente — até atingir o limite. Aí gruda.</h1>
+    <p>
+      Age como <code>relative</code> no início. Quando a rolagem atinge o threshold
+      definido (<code>top: 0</code> aqui), o elemento gruda — mas só enquanto o
+      <strong>pai</strong> ainda estiver visível. Quando o pai vai embora, ele vai junto.
+    </p>
+
+    <!-- dica de scroll no próprio cabeçalho, sem precisar de fixed -->
+    <div class="dica-scroll"> role a página para ver o sticky em ação</div>
+  </header>
+
+  <!--
+    Cada .secao é o "container" do sticky header.
+    Isso é fundamental: o sticky gruda DENTRO do seu pai.
+    Quando o pai sai da viewport, o header some com ele.
+    Role devagar e observe a transição entre as seções.
+  -->
+  <main>
+
+    <section class="secao">
+      <div class="header-sticky">
+        <span class="numero-secao">01</span>
+        Fundamentos — como o sticky funciona
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          O sticky age como <code>relative</code> até atingir o threshold.
+          Aqui o threshold é <code>top: 0</code> — a borda do viewport.
+        </div>
+        <div class="card">
+          Quando o header toca o topo da janela, ele "gruda" e fica lá.
+          Diferente do <code>fixed</code>, ele não fica para sempre.
+        </div>
+        <div class="card">
+          O sticky só funciona se o pai tiver altura suficiente para o filho
+          ter onde "andar" antes de grudar. Sem altura no pai, nada acontece.
+        </div>
+        <div class="card">
+          Cuidado com <code>overflow: hidden</code> no pai ou em qualquer
+          ancestral — isso quebra o sticky silenciosamente.
+        </div>
+        <div class="card">
+          Sempre combine com <code>z-index</code> pra garantir que o header
+          fique por cima do conteúdo que passa embaixo dele.
+        </div>
+        <div class="card">
+          Suportado em todos os browsers modernos. Não precisa de
+          prefixo (<code>-webkit-</code>) há alguns anos já.
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="header-sticky">
+        <span class="numero-secao">02</span>
+        Comportamento — o que acontece na transição
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          Quando a seção anterior termina, o header "02" empurra o "01"
+          pra cima e toma o lugar dele no topo. Observe esse momento.
+        </div>
+        <div class="card">
+          Esse comportamento é diferente do <code>fixed</code>: dois elementos
+          <code>fixed</code> no mesmo <code>top: 0</code> se sobrepõem.
+          Dois <code>sticky</code> se empurram.
+        </div>
+        <div class="card">
+          O sticky mantém o ritmo do scroll. Quando a seção termina, o header
+          sai de cena naturalmente — sem um "salto" visual brusco.
+        </div>
+        <div class="card">
+          Esse padrão é muito comum em FAQs, tabelas de conteúdo, listas longas
+          com categorias, e sidebars de documentação.
+        </div>
+        <div class="card">
+          O threshold não precisa ser <code>top: 0</code>. Poderia ser
+          <code>top: 80px</code> se houvesse uma navbar fixed de 80px ocupando o topo.
+        </div>
+        <div class="card">
+          Inspecione um dos headers no DevTools e veja a propriedade
+          <code>position: sticky</code> aplicada.
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="header-sticky">
+        <span class="numero-secao">03</span>
+        Casos de uso — onde sticky brilha
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          Tabelas com cabeçalho fixo: o <code>thead</code> fica visível
+          enquanto você rola pelas linhas de dados.
+        </div>
+        <div class="card">
+          Sidebars que acompanham a leitura: o índice lateral gruda enquanto
+          você lê o artigo, some quando passa da seção.
+        </div>
+        <div class="card">
+          Filtros de e-commerce que ficam no topo da lista de produtos
+          enquanto você rola os resultados.
+        </div>
+        <div class="card">
+          Letras de agrupamento (A, B, C...) em listas de contatos — o
+          padrão que o iOS e Android usam na lista de apps.
+        </div>
+        <div class="card">
+          Barras de progresso de leitura por seção — cada header marca
+          o início de um bloco novo de conteúdo.
+        </div>
+        <div class="card">
+          Resumo: sempre que você quiser que algo grude temporariamente
+          — e não para sempre — sticky é a ferramenta certa.
+        </div>
+      </div>
+    </section>
+          <br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br>
+  </main>
+
+</body>
+</html>

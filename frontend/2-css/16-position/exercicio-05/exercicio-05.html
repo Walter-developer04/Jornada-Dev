@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="exercicio-05.css" />
+  <title>Exercício 05 — position: static</title>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <span class="tag-conceito">position: static</span>
+    <h1>O padrão — fluxo normal, sem surpresas</h1>
+    <p>
+      Todo elemento HTML é <code>static</code> por padrão. Ele não aceita
+      <code>top</code>, <code>right</code>, <code>bottom</code> nem <code>left</code>.
+      Simplesmente segue o fluxo do documento — onde o browser decidir que ele fica, ele fica.
+    </p>
+  </header>
+
+  <main>
+
+    <!--
+      Exemplo 1 — a comparação principal.
+
+      Dois elementos com exatamente os mesmos top e left declarados.
+      O static ignora completamente. O relative usa e funciona.
+      Esse exemplo deixa claro que a propriedade não é "fraca" — ela simplesmente não existe pro static.
+    -->
+    <section class="bloco">
+      <h2>Static ignora <code>top</code> e <code>left</code></h2>
+
+      <div class="grade-comparacao">
+
+        <!-- coluna esquerda: static -->
+        <div class="coluna">
+          <span class="sub-rotulo">position: static</span>
+          <div class="arena">
+            <!--
+              top: 30px e left: 30px estão no CSS dessa caixa.
+              Mas ela não vai a lugar nenhum — static não lê essas propriedades.
+            -->
+            <div class="caixa caixa-estatica">
+              top: 30px<br>left: 30px<br>
+              <em>(ignorados)</em>
+            </div>
+          </div>
+          <p class="nota">Valores declarados, mas completamente ignorados.</p>
+        </div>
+
+        <div class="divisor">vs</div>
+
+        <!-- coluna direita: relative como referência -->
+        <div class="coluna">
+          <span class="sub-rotulo">position: relative</span>
+          <div class="arena">
+            <!--
+              Mesmos top: 30px e left: 30px. Com relative, funcionam.
+              O elemento se deslocou dos seus pais azuis — veja a diferença.
+            -->
+            <div class="caixa caixa-relativa">
+              top: 30px<br>left: 30px<br>
+              <em>(funcionou!)</em>
+            </div>
+          </div>
+          <p class="nota">Mesmo código, mas com <code>relative</code> — o offset funciona.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!--
+      Exemplo 2 — o fluxo normal em ação.
+
+      Static significa "eu sigo o fluxo". Blocos se empilham de cima pra baixo.
+      Inlines ficam lado a lado. Sem surpresas, sem configuração.
+      Esse é o comportamento que você já usa o tempo todo sem pensar em position.
+    -->
+    <section class="bloco">
+      <h2>O fluxo normal — o que static garante</h2>
+
+      <div class="demo-fluxo">
+        <div class="bloco-fluxo">
+           bloco 1 — <code>div</code> com <code>display: block</code>
+        </div>
+        <div class="bloco-fluxo">
+           bloco 2 — ocupa a linha inteira, vai embaixo do anterior
+        </div>
+        <div class="bloco-fluxo destaque">
+           bloco 3 — sem nenhum <code>position</code> declarado. Static puro.
+        </div>
+      </div>
+
+      <p class="nota">
+        Sem <code>position</code> declarado. Os blocos se empilham naturalmente
+        de cima pra baixo — esse é o comportamento do fluxo normal.
+      </p>
+    </section>
+
+    <!--
+      Exemplo 3 — quando você escreveria position: static?
+
+      Na prática, você nunca declara static — é o padrão.
+      Mas existe um caso onde faz sentido: sobrescrever um position herdado
+      de uma classe ou de um estilo pai.
+    -->
+    <section class="bloco">
+      <h2>Quando você realmente escreveria <code>position: static</code>?</h2>
+
+      <p class="paragrafo">
+        Quase nunca. <code>static</code> é o padrão de todo elemento HTML — você não
+        precisa escrever pra ativar. Ele simplesmente já está lá.
+      </p>
+
+      <p class="paragrafo">
+        O único caso em que faz sentido declarar explicitamente é pra <strong>resetar</strong>
+        um <code>position</code> herdado. Por exemplo: uma biblioteca de CSS define
+        <code>.modal { position: fixed }</code>, mas você quer um modal que não seja fixed
+        numa tela específica. Aí você escreve <code>position: static</code> pra sobrescrever.
+      </p>
+
+      <div class="aviso-final">
+        <strong>Resumo:</strong> você não escreve <code>position: static</code>
+        — você <em>remove</em> outro <code>position</code> com ele.
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* reset mínimo */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f6;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  background: #ffe4e6;
+  color: #9f1239;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* ── barra de progresso de leitura ───────────────────── */
+
+/*
+  Esse é o primeiro elemento fixed da página.
+  top: 0; left: 0 = canto superior esquerdo do VIEWPORT.
+  width começa em 0 e o JS vai atualizando conforme o scroll.
+  Independente de onde o documento estiver, ela fica colada no topo da janela.
+*/
+.barra-progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #e11d48;
+  z-index: 200; /* precisa ficar acima de tudo */
+  transition: width 0.08s linear;
+}
+
+/* ── botão de voltar ao topo ──────────────────────────── */
+
+/*
+  Segundo elemento fixed da página.
+  bottom: 1.5rem; right: 1.5rem = canto inferior direito do VIEWPORT.
+  Role a página quanto quiser — ele não sai daqui.
+*/
+.botao-topo {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+
+  background: #e11d48;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3);
+  transition: background 0.10s;
+}
+
+.botao-topo:hover {
+  background: #be123c;
+}
+
+/* ── cabeçalho ────────────────────────────────────────── */
+.cabecalho {
+  padding: 2.5rem 1.5rem 1.5rem;
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.tag-conceito {
+  display: inline-block;
+  background: #e11d48;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 58ch;
+}
+
+/* ── blocos de conteúdo ───────────────────────────────── */
+.conteudo {
+  max-width: 680px;
+  margin-inline: auto;
+  padding: 0 1.5rem 6rem; /* padding-bottom grande pra não sobrepor o botão */
+}
+
+.bloco {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e8eaf0;
+}
+
+.bloco h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.bloco p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.bloco ul {
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.bloco li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+/* lista com mais espaço entre os itens */
+.lista li {
+  margin-bottom: 0.6rem;
+}
+
+/* ── comparação visual sticky vs fixed ────────────────── */
+.comparacao-visual {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.item-comparacao {
+  flex: 1;
+  background: #f5f7fb;
+  border-radius: 10px;
+  padding: 0.85rem;
+  font-size: 0.83rem;
+  color: #555;
+  border: 1px solid #e2e5eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.item-comparacao.destaque {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  color: #444;
+}
+
+.rotulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.rotulo-fixed {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+/* ── bloco de rascunho (só pra ter scroll) ────────────── */
+.rascunho {
+  border: 1px dashed #e2e5eb;
+  background: #fafafa;
+}
+
+.linhas-fake {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.linha {
+  height: 11px;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.linha.curta  { width: 55%; }
+.linha.media  { width: 78%; }

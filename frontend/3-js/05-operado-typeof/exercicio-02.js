@@ -1,4 +1,3 @@
-"use strict"
 // typeof com variáveis
 
 let nome = "Maria";

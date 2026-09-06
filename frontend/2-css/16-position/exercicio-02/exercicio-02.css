@@ -1,0 +1,233 @@
+/* reset mínimo */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f6;
+  color: #1a1a1a;
+  padding: 2.5rem 1.5rem;
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  background: #ede9fe;
+  color: #5b21b6;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* ── cabeçalho ────────────────────────────────────────── */
+.cabecalho {
+  margin-bottom: 2.5rem;
+}
+
+.tag-conceito {
+  display: inline-block;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 58ch;
+}
+
+/* ── blocos de exemplo ────────────────────────────────── */
+.bloco {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e8eaf0;
+}
+
+.bloco h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* ── cartão pai (exemplo 1) ───────────────────────────── */
+
+/*
+  Esse position: relative é o ingrediente que faz o exemplo funcionar.
+  Sem ele, os badges absolutos subiriam na árvore até achar outro
+  ancestral posicionado — provavelmente o body, e iriam pro canto da janela.
+*/
+.cartao-pai {
+  position: relative; /* ← aqui a âncora é definida */
+
+  background: #f5f3ff;
+  border: 2px solid #c4b5fd;
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 2.5rem; /* padding extra embaixo por causa do badge */
+  margin-bottom: 0.85rem;
+  min-height: 110px;
+}
+
+.cartao-pai h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 0.4rem;
+}
+
+.cartao-pai p {
+  font-size: 0.83rem;
+  color: #6d28d9;
+}
+
+/* badge base — reutilizado nos dois cantos */
+.badge {
+  position: absolute;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* top: 0 e right: 0 = canto superior direito do pai */
+.canto-superior-direito {
+  top: 12px;
+  right: 12px;
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* bottom: 0 e left: 0 = canto inferior esquerdo do pai */
+.canto-inferior-esquerdo {
+  bottom: 12px;
+  left: 12px;
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #c4b5fd;
+}
+
+/* ── exemplo 2: absolute e o fluxo ───────────────────── */
+.arena-fluxo {
+  position: relative; /* o filho absoluto precisa de um contexto pra se ancorar */
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  min-height: 90px;
+  padding: 1rem;
+  background: #f5f7fb;
+  border-radius: 10px;
+  border: 2px dashed #d1d5db;
+  margin-bottom: 0.85rem;
+}
+
+.caixa-normal {
+  width: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ede9fe;
+  color: #4c1d95;
+  border: 2px solid #a78bfa;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* esse saiu do fluxo — os vizinhos não enxergam ele */
+.caixa-absoluta {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  background: #fef3c7;
+  color: #78350f;
+  border: 2px dashed #fbbf24;
+  border-radius: 8px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ── exemplo 3: dois pais, mesmo badge ───────────────── */
+.dois-pais {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+/* pai A — menor, mais quadrado */
+.pai-A {
+  position: relative; /* cria o contexto de posicionamento */
+
+  flex: 1;
+  min-height: 90px;
+  background: #fdf4ff;
+  border: 2px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b21a8;
+}
+
+/* pai B — mais alto pra o badge cair num lugar diferente */
+.pai-B {
+  position: relative;
+
+  flex: 1;
+  min-height: 140px;
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #166534;
+}
+
+/* mesmo código de badge nos dois pais — resultado diferente por causa do tamanho do pai */
+.badge-interno {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #7c3aed;
+  color: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+/* ── nota ─────────────────────────────────────────────── */
+.nota {
+  font-size: 0.83rem;
+  color: #6b7280;
+  line-height: 1.5;
+}

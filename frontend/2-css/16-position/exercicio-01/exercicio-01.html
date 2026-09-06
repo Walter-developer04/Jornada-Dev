@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="exercicio-01.css" />
+  <title>Exercício 01 — position: relative</title>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <span class="tag-conceito">position: relative</span>
+    <h1>O elemento se move, mas o espaço original fica lá</h1>
+    <p>
+      Com <code>relative</code>, o elemento é deslocado visualmente a partir de onde
+      ele estaria no fluxo normal — mas o "vão" que ele ocuparia continua reservado.
+    </p>
+  </header>
+
+  <main>
+
+    <!--
+      Exemplo 1 — relative sem nenhum offset.
+      Se você declarar position: relative mas não passar top/right/bottom/left,
+      visualmente não muda nada. O elemento fica exatamente onde o fluxo o colocaria.
+      É útil, porém, quando você quer criar um contexto de posicionamento sem deslocar.
+    -->
+    <section class="bloco">
+      <h2>Sem deslocamento</h2>
+
+      <div class="arena">
+        <div class="caixa vizinho">antes</div>
+        <div class="caixa sem-offset">relative<br>(sem offset)</div>
+        <div class="caixa vizinho">depois</div>
+      </div>
+
+      <p class="nota">
+        <code>position: relative</code> declarado, mas sem <code>top</code> ou <code>left</code>.
+        Comportamento idêntico ao <code>static</code> visualmente.
+      </p>
+    </section>
+
+    <!--
+      Exemplo 2 — agora com offset de verdade.
+      A caixa amarela se deslocou 20px pra baixo e 40px pra direita,
+      mas os vizinhos não fecharam o buraco que ela deixou.
+      Isso é o ponto central do relative: o espaço original é preservado.
+    -->
+    <section class="bloco">
+      <h2>Com deslocamento — <code>top: 20px; left: 40px</code></h2>
+
+      <div class="arena">
+        <div class="caixa vizinho">antes</div>
+        <div class="caixa com-offset">relative<br>+ offset</div>
+        <div class="caixa vizinho">depois</div>
+      </div>
+
+      <p class="nota">
+        Repare que "depois" não se moveu. A caixa amarela deslocou visualmente,
+        mas o espaço dela ainda está reservado entre os vizinhos.
+      </p>
+    </section>
+
+    <!--
+      Exemplo 3 — offset negativo.
+      Menos intuitivo mas válido: top negativo puxa pra cima,
+      left negativo puxa pra esquerda — saindo da posição original.
+    -->
+    <section class="bloco">
+      <h2>Offset negativo — <code>top: -15px; left: -20px</code></h2>
+
+      <div class="arena">
+        <div class="caixa vizinho">antes</div>
+        <div class="caixa offset-negativo">relative<br>- offset</div>
+        <div class="caixa vizinho">depois</div>
+      </div>
+
+      <p class="nota">
+        Valores negativos funcionam ao contrário: a caixa sobe e vai pra esquerda.
+        O buraco original continua lá — mesma regra.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>

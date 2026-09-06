@@ -1,0 +1,201 @@
+/* reset mínimo */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f6;
+  color: #1a1a1a;
+  padding: 2.5rem 1.5rem;
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  border: 1px solid #e2e8f0;
+}
+
+/* ── cabeçalho ────────────────────────────────────────── */
+.cabecalho {
+  margin-bottom: 2.5rem;
+}
+
+.tag-conceito {
+  display: inline-block;
+  background: #475569;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 58ch;
+}
+
+/* ── blocos de exemplo ────────────────────────────────── */
+.bloco {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e8eaf0;
+}
+
+.bloco h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* ── grade de comparação lado a lado ─────────────────── */
+.grade-comparacao {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sub-rotulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+
+/* separador "vs" no meio */
+.divisor {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.arena {
+  position: relative; /* precisa pra o .caixa-relativa funcionar */
+  background: #f5f7fb;
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  min-height: 90px;
+  padding: 0.75rem;
+}
+
+/* ── as caixas de comparação ──────────────────────────── */
+.caixa {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.caixa em {
+  font-style: italic;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* static: top e left declarados, mas completamente ignorados pelo browser */
+.caixa-estatica {
+  position: static;  /* (ou nada — é a mesma coisa) */
+  top: 30px;         /* ← o browser lê isso e ignora. Não faz nada mesmo. */
+  left: 30px;        /* ← idem */
+
+  background: #f1f5f9;
+  color: #475569;
+  border: 2px solid #cbd5e1;
+}
+
+/* relative: mesmos top e left — mas agora funcionam */
+.caixa-relativa {
+  position: relative;
+  top: 30px;   /* agora funciona: empurra 30px pra baixo */
+  left: 30px;  /* e 30px pra direita */
+
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 2px solid #93c5fd;
+}
+
+/* ── demo de fluxo normal ─────────────────────────────── */
+.demo-fluxo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bloco-fluxo {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.84rem;
+  color: #475569;
+  /* sem position declarado — static puro, fluxo de bloco */
+}
+
+.bloco-fluxo.destaque {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* ── parágrafos de texto ──────────────────────────────── */
+.paragrafo {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.85rem;
+}
+
+/* ── bloco de resumo final ────────────────────────────── */
+.aviso-final {
+  margin-top: 0.5rem;
+  background: #f8fafc;
+  border-left: 3px solid #475569;
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  font-size: 0.87rem;
+  color: #334155;
+}
+
+/* ── nota descritiva ──────────────────────────────────── */
+.nota {
+  font-size: 0.83rem;
+  color: #6b7280;
+  line-height: 1.5;
+}

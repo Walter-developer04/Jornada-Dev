@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="exercicio-02.css" />
+  <title>Exercício 02 — position: absolute</title>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <span class="tag-conceito">position: absolute</span>
+    <h1>Sai do fluxo e se ancora no pai posicionado</h1>
+    <p>
+      O elemento absoluto ignora o fluxo normal e se posiciona em relação ao
+      ancestral mais próximo que tenha <code>position</code> diferente de <code>static</code>.
+      Se não achar nenhum, vai direto pro <code>&lt;html&gt;</code>.
+    </p>
+  </header>
+
+  <main>
+
+    <!--
+      Exemplo 1 — o caso mais comum: badge posicionado no canto do cartão.
+
+      O pai tem position: relative. Isso faz dele o "ponto zero" dos filhos absolutos.
+      top: 0; right: 0 no badge significa "canto superior direito do pai",
+      não "canto superior direito da janela".
+    -->
+    <section class="bloco">
+      <h2>Pai com <code>position: relative</code> — o filho se ancora aqui</h2>
+
+      <div class="cartao-pai">
+        <h3>Produto em destaque</h3>
+        <p>
+          Este cartão tem <code>position: relative</code>. Ele é o ancestral de
+          referência — os badges se ancoram nos cantos dele, não da página.
+        </p>
+
+        <!-- top: 0; right: 0 → canto superior direito do cartão pai -->
+        <span class="badge canto-superior-direito"> novo</span>
+
+        <!-- bottom: 0; left: 0 → canto inferior esquerdo do cartão pai -->
+        <span class="badge canto-inferior-esquerdo">R$ 49,90</span>
+      </div>
+
+      <p class="nota">
+        Tente remover o <code>position: relative</code> do pai no DevTools
+        e veja os badges escaparem para a janela inteira.
+      </p>
+    </section>
+
+    <!--
+      Exemplo 2 — o filho absoluto é invisível pro fluxo.
+
+      Box 1, 2 e 3 se comportam como se o elemento absoluto não existisse.
+      Ele foi removido do fluxo — não empurra, não reserva espaço, some.
+    -->
+    <section class="bloco">
+      <h2>O filho absoluto não ocupa espaço no fluxo</h2>
+
+      <div class="arena-fluxo">
+        <div class="caixa-normal">box 1</div>
+
+        <!--
+          Esse cara sumiu do fluxo. Box 2 e box 3 não sabem que ele existe —
+          por isso ficam colados em box 1 como se ele não estivesse aqui.
+        -->
+        <div class="caixa-absoluta">fora<br>do fluxo</div>
+
+        <div class="caixa-normal">box 2</div>
+        <div class="caixa-normal">box 3</div>
+      </div>
+
+      <p class="nota">
+        Box 1, 2 e 3 ficam como se o absoluto não existisse.
+        Diferente do <code>relative</code>, aqui o espaço original não é preservado.
+      </p>
+    </section>
+
+    <!--
+      Exemplo 3 — o "ponto zero" muda dependendo do ancestral.
+
+      Dois containers idênticos com badges absolutos. O que muda é o pai.
+      Isso ilustra que o absolute procura o ancestral posicionado mais próximo,
+      não necessariamente o pai direto.
+    -->
+    <section class="bloco">
+      <h2>Cada pai cria seu próprio espaço de referência</h2>
+
+      <div class="dois-pais">
+
+        <div class="pai-A">
+          Pai A
+          <span class="badge-interno">absoluto</span>
+        </div>
+
+        <div class="pai-B">
+          Pai B
+          <span class="badge-interno">absoluto</span>
+        </div>
+
+      </div>
+
+      <p class="nota">
+        Mesmo código de badge nos dois. O resultado é diferente porque
+        cada pai tem dimensões diferentes — o badge se ancora em relação a cada um.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>

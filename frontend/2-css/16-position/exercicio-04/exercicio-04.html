@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="exercicio-04.css" />
+  <title>Exercício 04 — position: fixed</title>
+</head>
+<body>
+
+  <!--
+    Barra de progresso de leitura no topo da janela.
+    Esse é o primeiro dos dois elementos fixed nesta página.
+    Ela cresce conforme o usuário rola — o JS no final cuida disso.
+    Repare que ela não acompanha o scroll: fica sempre colada no topo da janela.
+  -->
+  <div class="barra-progresso" id="barra-progresso"></div>
+
+  <!--
+    Botão de voltar ao topo no canto inferior direito.
+    Esse é o exemplo clássico de fixed: um elemento que permanece visível
+    em qualquer ponto da página, ancorado no viewport — não no documento.
+  -->
+  <button class="botao-topo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+     topo
+  </button>
+
+  <!-- ────────────────────────────────────────────────────── -->
+
+  <header class="cabecalho">
+    <span class="tag-conceito">position: fixed</span>
+    <h1>Ancorado na janela — não no documento</h1>
+    <p>
+      Com <code>fixed</code>, o elemento se posiciona em relação ao
+      <strong>viewport</strong> (a janela do browser). Rolar a página não o move.
+      Ele simplesmente fica lá, independente de onde o documento estiver.
+    </p>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="bloco">
+      <h2>O que tem de fixed nesta página</h2>
+      <ul>
+        <li>
+          <strong>Barra vermelha no topo</strong> — <code>position: fixed; top: 0; left: 0</code>.
+          Cresce conforme você rola, mas nunca sai do topo da janela.
+        </li>
+        <li>
+          <strong>Botão " topo" no canto inferior direito</strong> — <code>position: fixed; bottom: 1.5rem; right: 1.5rem</code>.
+          Role quanto quiser, ele não vai a lugar nenhum.
+        </li>
+      </ul>
+    </section>
+
+    <!--
+      Conteúdo suficiente pra rolar a página e ver os fixed em ação.
+    -->
+
+    <section class="bloco">
+      <h2>Como o fixed se posiciona</h2>
+      <p>
+        O fixed usa <code>top</code>, <code>right</code>, <code>bottom</code> e
+        <code>left</code> — igual ao absolute. A diferença é que o ponto de
+        referência é sempre o viewport, nunca o pai.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        Nem mesmo um pai com <code>position: relative</code> influencia o fixed.
+        Ele sempre "escapa" para o viewport.
+      </p>
+
+      <div class="comparacao-visual">
+        <div class="item-comparacao">
+          <span class="rotulo">absolute</span>
+          Se ancora no pai posicionado mais próximo
+        </div>
+        <div class="item-comparacao destaque">
+          <span class="rotulo rotulo-fixed">fixed</span>
+          Sempre se ancora no viewport — o pai não importa
+        </div>
+      </div>
+    </section>
+
+    <section class="bloco">
+      <h2>Fixed sai do fluxo</h2>
+      <p>
+        Igual ao <code>absolute</code>, o elemento fixed não ocupa espaço no
+        fluxo do documento. Se você colocar um botão fixed no canto inferior
+        direito e houver texto lá, o botão vai sobrepor o texto.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        Por isso, costuma-se adicionar <code>padding</code> ou <code>margin</code>
+        na área afetada pra garantir que o fixed não cubra conteúdo importante.
+      </p>
+    </section>
+
+    <section class="bloco">
+      <h2>Casos de uso mais comuns</h2>
+      <ul class="lista">
+        <li>Barra de navegação sempre visível no topo</li>
+        <li>Botão de voltar ao topo (como o dessa página)</li>
+        <li>Notificações e toasts no canto da tela</li>
+        <li>Chat de suporte flutuante</li>
+        <li>Barra de progresso de leitura (como a barra vermelha acima)</li>
+        <li>Cookies banner na base da tela</li>
+      </ul>
+    </section>
+
+    <section class="bloco">
+      <h2>Sticky vs Fixed — a diferença principal</h2>
+      <p>
+        <code>sticky</code> gruda temporariamente, dentro do limite do seu pai.
+        <code>fixed</code> fica no viewport para sempre, independente de qualquer pai.
+        Se você quer que algo fique <em>sempre</em> na tela — <code>fixed</code>.
+        Se você quer que algo grude <em>enquanto a seção durar</em> — <code>sticky</code>.
+      </p>
+    </section>
+
+    <!-- blocos extras pra ter scroll suficiente pra demonstrar o fixed -->
+    <section class="bloco rascunho">
+      <h2>Continue rolando </h2>
+      <div class="linhas-fake">
+        <div class="linha"></div>
+        <div class="linha curta"></div>
+        <div class="linha"></div>
+        <div class="linha media"></div>
+        <div class="linha"></div>
+        <div class="linha curta"></div>
+        <div class="linha"></div>
+        <div class="linha media"></div>
+        <div class="linha"></div>
+        <div class="linha curta"></div>
+        <div class="linha"></div>
+      </div>
+    </section>
+
+    <section class="bloco rascunho">
+      <h2>Chegou ao fim — o fixed ainda está lá</h2>
+      <p>
+        Mesmo aqui no final do documento, a barra de progresso está em 100%
+        e o botão "topo" ainda aparece no canto — porque são <code>fixed</code>.
+      </p>
+    </section>
+
+  </main>
+
+  <script>
+    // Atualiza a barra de progresso conforme o usuário rola.
+    // Serve pra demonstrar que o elemento fixed é atualizado a todo momento
+    // mas nunca sai do lugar onde foi ancorado.
+    const barra = document.getElementById('barra-progresso');
+
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const porcentagem = (window.scrollY / total) * 100;
+      barra.style.width = porcentagem + '%';
+    });
+  </script>
+
+</body>
+</html>

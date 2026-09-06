@@ -1,0 +1,147 @@
+/* reset mínimo */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f6;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* ── cabeçalho ────────────────────────────────────────── */
+.cabecalho {
+  padding: 2.5rem 1.5rem 2rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.tag-conceito {
+  display: inline-block;
+  background: #059669;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 60ch;
+  margin-bottom: 1.25rem;
+}
+
+/* dica de scroll que fica no próprio cabeçalho e some ao rolar */
+.dica-scroll {
+  display: inline-block;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #059669;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+/* ── seções (cada uma é o "pai" do sticky header) ─────── */
+
+/*
+  A altura do pai é o que define até onde o sticky vai grolar.
+  Quando o pai sai da viewport, o sticky some com ele —
+  esse é o comportamento que diferencia do fixed.
+*/
+.secao {
+  max-width: 700px;
+  margin-inline: auto;
+  padding: 0 1.5rem 2.5rem;
+}
+
+/* ── o elemento que gruda ─────────────────────────────── */
+.header-sticky {
+  position: sticky; /* ← aqui acontece a mágica */
+  top: 0;           /* gruda quando o topo do elemento toca o topo do viewport */
+  z-index: 10;      /* precisa ficar por cima dos cards que passam embaixo */
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  background: #059669;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  /* sombra extra pra deixar claro que o header ficou "suspenso" */
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+/* numerinho de seção no lado esquerdo do header */
+.numero-secao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── grid de cards de conteúdo ────────────────────────── */
+
+/*
+  Os cards são o conteúdo que o sticky header "protege" enquanto você rola.
+  A altura total da .secao = header + cards. É esse tamanho que determina
+  quanto tempo o header fica grudado antes de ser empurrado pelo próximo.
+*/
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #374151;
+  border: 1px solid #e8eaf0;
+  line-height: 1.55;
+}
+
+/* responsivo: uma coluna só em tela estreita */
+@media (max-width: 500px) {
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,3 @@
-"use strict"
-
 let semValor;
 console.log(typeof semValor);   // "undefined"
 

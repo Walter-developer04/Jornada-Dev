@@ -1,0 +1,146 @@
+/* reset mínimo — nada aqui que não seja necessário */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f6;
+  color: #1a1a1a;
+  padding: 2.5rem 1.5rem;
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+  background: #ebe8fd;
+  color: #4338ca;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* ── cabeçalho do exercício ───────────────────────────── */
+.cabecalho {
+  margin-bottom: 2.5rem;
+}
+
+/* a pílula de identificação do conceito — sem all-caps pra não virar template */
+.tag-conceito {
+  display: inline-block;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 55ch;
+}
+
+/* ── blocos de cada exemplo ───────────────────────────── */
+.bloco {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e8eaf0;
+}
+
+.bloco h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* arena: o palco onde o posicionamento acontece */
+.arena {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  min-height: 110px;
+  padding: 1rem;
+  background: #f5f7fb;
+  border-radius: 10px;
+  border: 2px dashed #d1d5db;
+  margin-bottom: 0.85rem;
+}
+
+/* ── as caixas ────────────────────────────────────────── */
+.caixa {
+  width: 110px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  line-height: 1.3;
+}
+
+/* os vizinhos existem pra mostrar que o espaço foi preservado */
+.vizinho {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 2px solid #93c5fd;
+}
+
+/* ── exemplo 1: sem offset ─ position: relative só como contexto */
+.sem-offset {
+  position: relative;
+  /* sem top/left — não muda nada visualmente, mas cria contexto de posicionamento */
+  background: #d1fae5;
+  color: #065f46;
+  border: 2px solid #6ee7b7;
+}
+
+/* ── exemplo 2: o deslocamento clássico ─────────────── */
+.com-offset {
+  position: relative;
+  top: 20px;   /* empurra 20px pra baixo do ponto original */
+  left: 40px;  /* empurra 40px pra direita */
+
+  background: #fef9c3;
+  color: #78350f;
+  border: 2px solid #fde047;
+}
+
+/* ── exemplo 3: offset negativo ─────────────────────── */
+.offset-negativo {
+  position: relative;
+  top: -15px;  /* sobe 15px em relação à posição original */
+  left: -20px; /* vai 20px pra esquerda */
+
+  background: #fce7f3;
+  color: #831843;
+  border: 2px solid #f9a8d4;
+}
+
+/* ── nota abaixo de cada exemplo ─────────────────────── */
+.nota {
+  font-size: 0.83rem;
+  color: #6b7280;
+  line-height: 1.5;
+}

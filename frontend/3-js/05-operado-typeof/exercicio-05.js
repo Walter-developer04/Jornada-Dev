@@ -1,5 +1,3 @@
-"use strict"
-
 const pessoa = { nome: "Ana", idade: 20 };
 const frutas = ["maçã", "banana"];
 
