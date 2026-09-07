@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-08.css">
+    <title>Exercicio 08 - Especificidade: :where()</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 08: Especificidade: :where()</h1>
+        <p>:where() sempre tem especificidade zero (0-0-0), independente dos argumentos</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <p>Paragrafo com :where() aplicado. O seletor p simples vence.</p>
+            </article>
+            <p class="explicacao">:where() sempre tem especificidade 0-0-0, mesmo com ID dentro. O seletor p (0-0-1) vence.</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>:where(#especial, .classe, p) { color: #e53e3e; font-size: 20px; } p { color: #38a169; font-size: 16px; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

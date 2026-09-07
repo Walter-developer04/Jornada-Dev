@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-07.css">
+    <title>Exercicio 07 - Especificidade: :is(), :not(), :has()</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 07: Especificidade: :is(), :not(), :has()</h1>
+        <p>Herdam a especificidade do argumento mais específico dentro delas</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <p>Paragrafo normal</p><div id='especial'>Div com ID especial</div>
+            </article>
+            <p class="explicacao">:is(p, #especial) tem especificidade 1-0-0 (do ID), vencendo p (0-0-1).</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>:is(p, #especial) { color: #3182ce; font-weight: bold; } p { color: #e53e3e; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

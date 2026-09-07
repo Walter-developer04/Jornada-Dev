@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Exercicio 01 - Geometria e Box Model da Lista</title>
+</head>
+<body>
+    <div class="painel-demonstracao">
+        <h1>Exercicio 01: Geometria e Box Model da Lista</h1>
+        <p class="nota-tecnica">O navegador aplica por padrao um padding-inline-start de 40px no elemento de lista para abrir espaco fisico para os marcadores.</p>
+
+        <div class="secao-comparativa">
+            <span class="etiqueta-bloco">Lista com o recuo padrao do navegador (40px)</span>
+            <ul class="lista-com-recuo">
+                <li class="item-estrutural">Primeiro item com limites delimitados</li>
+                <li class="item-estrutural">Segundo item ocupando a largura util da caixa</li>
+                <li class="item-estrutural">Terceiro item revelando a separacao vertical</li>
+            </ul>
+        </div>
+
+        <div class="secao-comparativa">
+            <span class="etiqueta-bloco">Lista com padding-left zerado (o marcador colide com o limite)</span>
+            <ul class="lista-sem-recuo">
+                <li class="item-estrutural">Item cujo marcador ultrapassa a margem externa</li>
+                <li class="item-estrutural">Observacao visual da caixa principal do item</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

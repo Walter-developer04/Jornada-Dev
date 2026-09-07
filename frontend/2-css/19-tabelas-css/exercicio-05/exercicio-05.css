@@ -1,0 +1,44 @@
+﻿/* Estilos para a Parte 05 — Bordas e espaçamento entre células */
+
+/* Estilos comuns para ambas as tabelas */
+.tabela-bordas-colapsadas,
+.tabela-bordas-separadas {
+    width: 70%; /* Define largura da tabela */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+.tabela-bordas-colapsadas th,
+.tabela-bordas-colapsadas td,
+.tabela-bordas-separadas th,
+.tabela-bordas-separadas td {
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* Estilo para cabeçalhos de coluna */
+.tabela-bordas-colapsadas th,
+.tabela-bordas-separadas th {
+    background-color: #e0e0e0; /* Cor de fundo para cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Tabela com bordas colapsadas */
+.tabela-bordas-colapsadas {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+}
+
+.tabela-bordas-colapsadas th,
+.tabela-bordas-colapsadas td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+}
+
+/* Tabela com bordas separadas */
+.tabela-bordas-separadas {
+    border-collapse: separate; /* Mantém as bordas separadas */
+    border-spacing: 5px 10px; /* Espaçamento horizontal e vertical entre células */
+    border: 2px solid #333; /* Borda para a tabela */
+}
+
+.tabela-bordas-separadas th,
+.tabela-bordas-separadas td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+}

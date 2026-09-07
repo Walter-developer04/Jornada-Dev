@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-13.css">
+    <title>filter cria stacking context</title>
+</head>
+<body>
+    <header>
+        <h1>filter cria stacking context</h1>
+        <p>Aplicacao de filtros visuais estabelece novo contexto de empilhamento.</p>
+    </header>
+    <main>
+        <section class="demonstracao-filter">
+            <div class="container-com-filtro">
+                <article class="elemento-filtrado-filho">Filho z-index: 100</article>
+            </div>
+            <article class="elemento-externo">z-index: 2</article>
+        </section>
+        <section class="explicacao-filter">
+            <h2>Comportamento</h2>
+            <p>filter: blur(2px) no pai cria stacking context. O filho nao escapa, mesmo com z-index: 100.</p>
+        </section>
+    </main>
+</body>
+</html>

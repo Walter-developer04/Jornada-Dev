@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>z-index valores inteiros</title>
+</head>
+<body>
+    <header>
+        <h1>z-index com valores inteiros</h1>
+        <p>Maior valor numerico = mais proximo do usuario.</p>
+    </header>
+    <main>
+        <section class="area-empilhamento">
+            <article class="camada-valor-1">z-index: 1</article>
+            <article class="camada-valor-2">z-index: 2</article>
+            <article class="camada-valor-3">z-index: 3</article>
+        </section>
+        <section class="explicacao">
+            <h2>Regra</h2>
+            <p>Elementos com maior z-index cobrem os de menor valor. Valores iguais resolvem pela ordem do documento.</p>
+        </section>
+    </main>
+    <footer>
+        <p>A ordenacao so funciona dentro do mesmo stacking context.</p>
+    </footer>
+</body>
+</html>

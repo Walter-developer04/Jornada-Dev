@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Exercício 01 — Introdução ao Z-Index</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Z-Index e Camadas</h1>
+        <p>Exercício 01 — Introdução</p>
+    </header>
+
+    <main class="conteudo">
+        <section class="explicacao">
+            <h2>O que é o z-index?</h2>
+            <p>
+                O <code>z-index</code> controla a ordem em que os elementos aparecem
+                quando eles se sobrepõem. Pense em camadas empilhadas:
+                quanto maior o número, mais "acima" o elemento fica.
+            </p>
+            <p>
+                Para o <code>z-index</code> funcionar, o elemento precisa ter um
+                <code>position</code> diferente de <code>static</code>
+                (ex: <code>relative</code>, <code>absolute</code> ou <code>fixed</code>).
+            </p>
+        </section>
+
+        <section class="demo">
+            <h2>Demonstração</h2>
+            <div class="palco">
+                <div class="caixa caixa-1">z-index: 1</div>
+                <div class="caixa caixa-2">z-index: 2</div>
+                <div class="caixa caixa-3">z-index: 3</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Jornada Dev — Frontend · Módulo 2: CSS</p>
+    </footer>
+</body>
+</html>

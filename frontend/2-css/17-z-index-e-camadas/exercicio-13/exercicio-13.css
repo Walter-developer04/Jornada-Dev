@@ -1,0 +1,54 @@
+﻿/* filter cria stacking context quando aplicado a um elemento */
+
+body {
+    font-family: 'Palatino Linotype', serif;
+    background: #f5f5dc;
+    color: #2f4f4f;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #8b4513; }
+h2 { color: #6b8e23; }
+
+.demonstracao-filter {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.container-com-filtro {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 280px; height: 170px;
+    background: #d2691e;
+    filter: blur(2px);
+    border: 3px solid #8b4513;
+}
+
+.elemento-filtrado-filho {
+    position: absolute;
+    top: 80px; left: 150px;
+    width: 200px; height: 90px;
+    background: #ffa500;
+    z-index: 100;
+    color: #2f4f4f;
+    padding: 1rem;
+}
+
+.elemento-externo {
+    position: absolute;
+    top: 150px; left: 100px;
+    width: 220px; height: 100px;
+    background: #556b2f;
+    z-index: 2;
+    color: #f5f5dc;
+    padding: 1rem;
+}
+
+.explicacao-filter {
+    background: #e8e8c0;
+    padding: 1.5rem;
+    border-left: 4px solid #8b4513;
+}

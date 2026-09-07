@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>Exercicio 03 - Especificidade: ID vs. Múltiplas Classes</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 03: Especificidade: ID vs. Múltiplas Classes</h1>
+        <p>Um ID (1-0-0) tem mais peso que qualquer combinação de classes</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <div id='principal' class='classe-a classe-b classe-c'>Elemento com ID e 3 classes. O ID vence.</div>
+            </article>
+            <p class="explicacao">Tres classes somam 0-3-0, mas um ID (1-0-0) ainda vence.</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>.classe-a.classe-b.classe-c { color: #e53e3e; } #principal { color: #d69e2e; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-10.css">
+    <title>Exercicio 10 - Especificidade: !important</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 10: Especificidade: !important</h1>
+        <p>!important muda a origem da cascata (não é especificidade), mas quando ambos são !important, a especificidade decide</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <div id='um' class='dois'>Elemento com ID e classe, ambos com !important.</div>
+            </article>
+            <p class="explicacao">Ambos sao !important. ID (1-0-0) vence classe (0-1-0).</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>#um { color: #38a169 !important; } .dois { color: #e53e3e !important; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

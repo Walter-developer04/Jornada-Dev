@@ -1,0 +1,51 @@
+﻿/* Estilos para a Parte 03 — Dimensionamento e largura da tabela */
+
+/* Define layout fixo para a tabela */
+.tabela-dimensoes {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+    table-layout: fixed; /* Algoritmo de layout fixo */
+    width: 100%; /* Tabela ocupa toda a largura disponível */
+    height: 200px; /* Define altura fixa para a tabela */
+}
+
+/* Define borda para todas as células */
+.tabela-dimensoes th,
+.tabela-dimensoes td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+    padding: 10px; /* Espaçamento interno */
+    overflow: hidden; /* Controla o transbordamento de conteúdo */
+    text-overflow: ellipsis; /* Mostra reticências quando o texto é muito longo */
+}
+
+/* Define larguras específicas para colunas */
+.tabela-dimensoes th:nth-child(1) {
+    width: 25%; /* Largura da primeira coluna */
+}
+
+.tabela-dimensoes th:nth-child(2) {
+    width: 20%; /* Largura da segunda coluna */
+}
+
+.tabela-dimensoes th:nth-child(3) {
+    width: 15%; /* Largura da terceira coluna */
+}
+
+.tabela-dimensoes th:nth-child(4) {
+    width: 40%; /* Largura da quarta coluna */
+}
+
+/* Define altura para linhas */
+.tabela-dimensoes tr {
+    height: 40px; /* Altura fixa para cada linha */
+}
+
+/* Estilo para cabeçalhos de coluna */
+.tabela-dimensoes th {
+    background-color: #e0e0e0; /* Cor de fundo para cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Estilo para células de dados */
+.tabela-dimensoes td {
+    vertical-align: top; /* Alinhamento vertical no topo */
+}

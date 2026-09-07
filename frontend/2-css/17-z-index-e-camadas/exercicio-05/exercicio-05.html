@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-05.css">
+    <title>Elementos posicionados e stacking context</title>
+</head>
+<body>
+    <header>
+        <h1>Position + z-index cria stacking context</h1>
+        <p>Elementos com position e z-index inteiro estabelecem novo contexto.</p>
+    </header>
+    <main>
+        <section class="demonstracao-posicionamento">
+            <div class="pai-contexto">
+                <article class="filho-alto">Filho z-index: 100</article>
+            </div>
+            <article class="elemento-externo">z-index: 5</article>
+        </section>
+        <section class="conclusao">
+            <h2>Resultado</h2>
+            <p>O filho com z-index: 100 fica atras do elemento externo com z-index: 5, pois esta preso dentro do contexto do pai (z-index: 1).</p>
+        </section>
+    </main>
+</body>
+</html>

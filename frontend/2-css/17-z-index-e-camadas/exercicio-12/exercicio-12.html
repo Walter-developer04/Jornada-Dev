@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-12.css">
+    <title>transform cria stacking context</title>
+</head>
+<body>
+    <header>
+        <h1>transform cria stacking context</h1>
+        <p>Qualquer transformacao diferente de none estabelece novo contexto.</p>
+    </header>
+    <main>
+        <section class="demonstracao-transform">
+            <div class="elemento-transformado">
+                <article class="filho-interno">Filho z-index: 50</article>
+            </div>
+            <article class="elemento-sem-transform">z-index: 3 (sem transform)</article>
+        </section>
+        <section class="nota-transform">
+            <h2>Observacao</h2>
+            <p>O elemento com transform: rotate(5deg) cria stacking context. Seu filho com z-index: 50 fica preso, enquanto o elemento externo com z-index: 3 aparece na frente.</p>
+        </section>
+    </main>
+</body>
+</html>

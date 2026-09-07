@@ -1,0 +1,57 @@
+﻿/* Elementos posicionados com z-index inteiro criam stacking context */
+
+body {
+    font-family: Verdana, sans-serif;
+    background: #f4f0e8;
+    color: #4a4a3a;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #8b6c42; }
+h2 { color: #5a8a5a; }
+
+.demonstracao-posicionamento {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+    background: #e8e0d0;
+}
+
+.pai-contexto {
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 200px;
+    top: 50px; left: 50px;
+    background: #c9a86a;
+    border: 3px solid #8b6c42;
+}
+
+.filho-alto {
+    position: absolute;
+    top: 40px; right: 20px;
+    width: 150px; height: 80px;
+    background: #6a8a6a;
+    color: #f4f0e8;
+    z-index: 100;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.elemento-externo {
+    position: absolute;
+    top: 120px; left: 180px;
+    width: 200px; height: 100px;
+    background: #8a6a4a;
+    color: #f4f0e8;
+    z-index: 5;
+    padding: 1rem;
+}
+
+.conclusao {
+    background: #d8d0c0;
+    padding: 1.5rem;
+    border-left: 4px solid #8b6c42;
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-08.css">
+    <title>Stacking contexts aninhados</title>
+</head>
+<body>
+    <header>
+        <h1>Contextos aninhados</h1>
+        <p>Um filho nunca escapa do contexto de empilhamento do pai.</p>
+    </header>
+    <main>
+        <section class="demonstracao-aninhamento">
+            <div class="contexto-pai-baixo">
+                <article class="filho-z-alto">Filho z-index: 50</article>
+            </div>
+            <div class="contexto-pai-alto">
+                <article class="filho-z-baixo">Filho z-index: 1</article>
+            </div>
+        </section>
+        <section class="explicacao-aninhamento">
+            <h2>Regra fundamental</h2>
+            <p>O filho com z-index: 50 nao sobrepoe o segundo contexto pai, pois esta contido no primeiro contexto (z-index: 2) que tem valor menor que o segundo (z-index: 3).</p>
+        </section>
+    </main>
+</body>
+</html>

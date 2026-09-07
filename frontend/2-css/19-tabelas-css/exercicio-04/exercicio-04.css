@@ -1,0 +1,53 @@
+﻿/* Estilos para a Parte 04 — Alinhamento do conteúdo em células */
+
+/* Torna os limites da tabela e células visíveis */
+.tabela-alinhamento {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+    width: 80%; /* Define largura da tabela */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+/* Define borda para todas as células */
+.tabela-alinhamento th,
+.tabela-alinhamento td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+    padding: 15px; /* Espaçamento interno */
+}
+
+/* Define altura para as células */
+.tabela-alinhamento th,
+.tabela-alinhamento td {
+    height: 50px; /* Altura fixa para as células */
+}
+
+/* Alinhamento horizontal para cabeçalhos */
+.celula-cabecalho-topo {
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.celula-cabecalho-meio {
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.celula-cabecalho-base {
+    text-align: right; /* Alinha o texto à direita */
+}
+
+/* Alinhamento vertical para células de dados */
+.celula-conteudo-topo {
+    vertical-align: top; /* Alinha o conteúdo no topo */
+}
+
+.celula-conteudo-meio {
+    vertical-align: middle; /* Alinha o conteúdo no meio */
+}
+
+.celula-conteudo-base {
+    vertical-align: bottom; /* Alinha o conteúdo na base */
+}
+
+/* Estilo para cabeçalhos de coluna */
+.tabela-alinhamento th {
+    background-color: #e0e0e0; /* Cor de fundo para cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+}

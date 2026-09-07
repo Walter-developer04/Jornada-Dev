@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-06.css">
+    <title>position fixed e sticky</title>
+</head>
+<body>
+    <header class="cabecalho-fixo">
+        <h1>position: fixed sempre cria stacking context</h1>
+    </header>
+    <main>
+        <section class="conteudo-rolagem">
+            <article class="painel-lateral">
+                <h2>Elemento fixo</h2>
+                <p>Este painel tem position: fixed e cria seu proprio stacking context, mesmo com z-index: auto.</p>
+            </article>
+            <article class="bloco-conteudo">
+                <h2>Conteudo normal</h2>
+                <p>Elementos com position: relative e z-index competem, mas ficam presos no contexto raiz.</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

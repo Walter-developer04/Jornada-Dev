@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-05.css">
+    <title>Exercicio 05 - Posicionamento do Marcador: Outside vs Inside</title>
+</head>
+<body>
+    <div class="painel-demonstracao">
+        <h1>Exercicio 05: Posicionamento do Marcador</h1>
+        <p class="descricao">Observe o alinhamento da segunda linha de cada item quando o texto ultrapassa a largura util da caixa.</p>
+
+        <div class="comparacao-posicoes">
+            <div class="bloco-posicao">
+                <h2>list-style-position: outside (Padrao)</h2>
+                <p class="nota">O marcador fica fora do fluxo de texto; a quebra alinha com o inicio do conteudo.</p>
+                <ul class="posicao-outside">
+                    <li>Primeira etapa do processo documental com explicacao minuciosa estendida para verificar a quebra correta de linha do marcador externo.</li>
+                    <li>Segunda fase de inspecao cartografica e conferencia visual da borda esquerda do item.</li>
+                </ul>
+            </div>
+
+            <div class="bloco-posicao">
+                <h2>list-style-position: inside</h2>
+                <p class="nota">O marcador entra no fluxo da primeira linha; a quebra de texto passa por baixo dele.</p>
+                <ul class="posicao-inside">
+                    <li>Primeira etapa do processo documental com explicacao minuciosa estendida para verificar a quebra correta de linha do marcador interno.</li>
+                    <li>Segunda fase de inspecao cartografica e conferencia visual da borda esquerda do item.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

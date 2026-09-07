@@ -58,4 +58,3 @@ console.log(JSON.stringify(valoresMistos));
 console.log(JSON.stringify(animais));
 console.log(resultadoTexto); // HELLO
 console.log(resultadoNumero); // 84
-

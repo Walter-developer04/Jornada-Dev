@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Exercicio 01 - Cálculo Básico de Especificidade</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 01: Cálculo Básico de Especificidade</h1>
+        <p>A hierarquia ID (1-0-0) > Classe (0-1-0) > Elemento (0-0-1)</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <p id='alvo-id' class='alvo-classe'>Texto com ID e classe. Veja qual regra vence.</p>
+            </article>
+            <p class="explicacao">ID vence sobre classe, que vence sobre elemento. A especificidade e calculada como (ID, Classe, Elemento).</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>p { color: #e53e3e; } .alvo-classe { color: #3182ce; } #alvo-id { color: #38a169; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

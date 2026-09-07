@@ -1,0 +1,82 @@
+﻿/* Exercicio 05: Posicionamento do Marcador: Outside vs Inside */
+/* Paleta: Ambar e Mel | Tipografia: Palatino Linotype */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+body {
+    background-color: #fffbeb;
+    color: #451a03;
+    padding: 32px 16px;
+}
+
+.painel-demonstracao {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #d97706;
+    padding: 24px;
+}
+
+h1 {
+    color: #78350f;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #d97706;
+    padding-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #92400e;
+}
+
+.comparacao-posicoes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloco-posicao {
+    border: 1px solid #fde68a;
+    padding: 16px;
+}
+
+h2 {
+    font-size: 1.05rem;
+    color: #78350f;
+    margin-bottom: 4px;
+}
+
+.nota {
+    font-size: 0.85rem;
+    color: #92400e;
+    margin-bottom: 12px;
+}
+
+ul {
+    border: 1px solid #fcd34d;
+    padding: 12px 28px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border: 1px dashed #d97706;
+    padding: 4px;
+}
+
+.posicao-outside {
+    list-style-position: outside;
+}
+
+.posicao-inside {
+    list-style-position: inside;
+    padding-left: 12px;
+}

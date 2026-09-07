@@ -42,5 +42,3 @@ export type DadosUsuario = ExtrairData<ApiResponse<{ nome: string; idade: number
 // DadosUsuario = { nome: string, idade: number }
 
 export {}; // isola este arquivo como modulo
-
-

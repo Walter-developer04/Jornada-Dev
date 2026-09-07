@@ -1,0 +1,69 @@
+﻿/* Exercicio 13: Sistemas com @counter-style */
+/* Paleta: Marsala e Vinho Rosado | Tipografia: Cambria */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, serif;
+}
+
+body {
+    background-color: #fff1f2;
+    color: #2a0312;
+    padding: 32px 16px;
+}
+
+.painel-demonstracao {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #9f1239;
+    padding: 24px;
+}
+
+h1 {
+    color: #500724;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #9f1239;
+    padding-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #831843;
+}
+
+.bloco-counter-style {
+    border: 1px solid #fecdd3;
+    padding: 18px;
+}
+
+h2 {
+    font-size: 1.05rem;
+    color: #500724;
+    margin-bottom: 12px;
+}
+
+/* Definicao de um sistema de marcadores customizado via @counter-style */
+@counter-style simbolos-geometricos {
+    system: cyclic;
+    symbols: "◆" "▲" "■";
+    suffix: " ";
+}
+
+.lista-custom-ciclica {
+    list-style-type: simbolos-geometricos;
+    padding-left: 32px;
+}
+
+.lista-custom-ciclica li::marker {
+    color: #9f1239;
+}
+
+li {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}

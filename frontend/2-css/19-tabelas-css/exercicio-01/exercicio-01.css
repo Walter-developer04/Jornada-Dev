@@ -1,0 +1,27 @@
+﻿/* Estilos para a Parte 01 — Estrutura básica da tabela */
+
+/* Torna os limites da tabela e células visíveis */
+.tabela-estrutura-basica {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+    width: 80%; /* Define largura da tabela */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+/* Define borda para todas as células */
+.tabela-estrutura-basica th,
+.tabela-estrutura-basica td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+    padding: 8px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento horizontal à esquerda */
+}
+
+/* Estilo para cabeçalhos de coluna */
+.tabela-estrutura-basica th {
+    font-weight: bold; /* Texto em negrito */
+    background-color: #f2f2f2; /* Cor de fundo para cabeçalho */
+}
+
+/* Estilo para células de dados */
+.tabela-estrutura-basica td {
+    vertical-align: middle; /* Alinhamento vertical ao meio */
+}

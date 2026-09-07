@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Exercício Tabelas 02</title>
+</head>
+<body>
+    <h1>Parte 02 — Grupos de colunas e cabeçalho/rodapé</h1>
+    <p>Uso de colgroup, col, thead, tbody, tfoot e caption para estrutura semântica avançada</p>
+    
+    <table class="tabela-grupos-colunas">
+        <caption class="legenda-tabela">Vendas por trimestre</caption>
+        
+        <colgroup class="grupo-colunas">
+            <col class="coluna-produto" style="width: 40%">
+            <col class="coluna-quantidade" style="width: 30%">
+            <col class="coluna-preco" style="width: 30%">
+        </colgroup>
+        
+        <thead class="cabecalho-tabela">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        
+        <tbody class="corpo-tabela">
+            <tr>
+                <td>Teclado</td>
+                <td>15</td>
+                <td>120.00</td>
+            </tr>
+            <tr>
+                <td>Mouse</td>
+                <td>30</td>
+                <td>45.00</td>
+            </tr>
+            <tr>
+                <td>Monitor</td>
+                <td>10</td>
+                <td>850.00</td>
+            </tr>
+        </tbody>
+        
+        <tfoot class="rodape-tabela">
+            <tr>
+                <td colspan="3">Total: 55 itens</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+

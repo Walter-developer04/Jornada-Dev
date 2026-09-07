@@ -1,0 +1,54 @@
+﻿/* opacity menor que 1 cria stacking context */
+
+body {
+    font-family: 'Book Antiqua', serif;
+    background: #2d1b2e;
+    color: #e8d5e0;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #da70d6; }
+h2 { color: #98fb98; }
+
+.demonstracao-opacity {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.container-transparente {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 300px; height: 180px;
+    background: #8b008b;
+    opacity: 0.7;
+    border: 3px solid #da70d6;
+}
+
+.filho-muito-alto {
+    position: absolute;
+    top: 100px; left: 150px;
+    width: 200px; height: 100px;
+    background: #ff69b4;
+    z-index: 100;
+    color: #2d1b2e;
+    padding: 1rem;
+}
+
+.elemento-opaco {
+    position: absolute;
+    top: 150px; left: 200px;
+    width: 220px; height: 120px;
+    background: #9932cc;
+    z-index: 5;
+    color: #e8d5e0;
+    padding: 1rem;
+}
+
+.explicacao-opacity {
+    background: #3d2b3e;
+    padding: 1.5rem;
+    border-left: 4px solid #da70d6;
+}

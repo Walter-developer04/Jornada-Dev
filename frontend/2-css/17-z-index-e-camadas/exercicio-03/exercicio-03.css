@@ -1,0 +1,62 @@
+﻿/* z-index com inteiros: ordenacao numerica no eixo z */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #2c394f;
+    color: #e2d1c3;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #7eb8da; }
+h2 { color: #b8c9a0; }
+
+main { max-width: 600px; }
+
+.area-empilhamento {
+    position: relative;
+    height: 350px;
+    margin-bottom: 2rem;
+    background: #1a2332;
+    border-radius: 8px;
+}
+
+.camada-valor-1 {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 220px; height: 160px;
+    background: #3a5a7a;
+    z-index: 1;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.camada-valor-2 {
+    position: absolute;
+    top: 80px; left: 80px;
+    width: 220px; height: 160px;
+    background: #5a7a9a;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.camada-valor-3 {
+    position: absolute;
+    top: 130px; left: 130px;
+    width: 220px; height: 160px;
+    background: #8aabd0;
+    z-index: 3;
+    padding: 1rem;
+    border-radius: 4px;
+    color: #1a2332;
+}
+
+.explicacao {
+    background: #34435a;
+    padding: 1.5rem;
+    border-left: 4px solid #7eb8da;
+}
+
+footer { margin-top: 2rem; font-size: 0.9rem; color: #8899aa; }

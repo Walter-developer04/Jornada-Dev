@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-04.css">
+    <title>z-index negativo</title>
+</head>
+<body>
+    <header>
+        <h1>z-index negativo</h1>
+        <p>Elementos com valores negativos ficam atras do fundo do stacking context.</p>
+    </header>
+    <main>
+        <section class="painel-comparacao">
+            <div class="caixa-contexto">
+                <article class="elemento-atras">z-index: -1</article>
+                <article class="elemento-frente">z-index: 0 (auto)</article>
+            </div>
+        </section>
+        <section class="nota">
+            <h2>Observacao</h2>
+            <p>No painel, o pai cria stacking context, prendendo o filho negativo atras do fundo.</p>
+        </section>
+    </main>
+</body>
+</html>

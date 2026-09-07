@@ -1,0 +1,63 @@
+﻿/* Stacking contexts aninhados: hierarquia de contencao */
+
+body {
+    font-family: Helvetica, sans-serif;
+    background: #f7f3e8;
+    color: #4a3a2a;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #a0522d; }
+h2 { color: #2f4f4f; }
+
+.demonstracao-aninhamento {
+    position: relative;
+    height: 350px;
+    margin-bottom: 2rem;
+}
+
+.contexto-pai-baixo {
+    position: relative;
+    z-index: 2;
+    width: 280px; height: 180px;
+    top: 40px; left: 40px;
+    background: #d2b48c;
+    border: 3px solid #8b4513;
+}
+
+.filho-z-alto {
+    position: absolute;
+    top: 60px; left: 60px;
+    width: 200px; height: 100px;
+    background: #5a8a5a;
+    color: #f7f3e8;
+    z-index: 50;
+    padding: 1rem;
+}
+
+.contexto-pai-alto {
+    position: relative;
+    z-index: 3;
+    width: 280px; height: 180px;
+    top: 160px; left: 160px;
+    background: #8fbc8f;
+    border: 3px solid #2f4f4f;
+}
+
+.filho-z-baixo {
+    position: absolute;
+    top: 40px; left: 40px;
+    width: 200px; height: 100px;
+    background: #6b8e23;
+    color: #f7f3e8;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.explicacao-aninhamento {
+    background: #e8dcc8;
+    padding: 1.5rem;
+    border-left: 4px solid #a0522d;
+}

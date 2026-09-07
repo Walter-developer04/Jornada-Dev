@@ -1,0 +1,42 @@
+﻿/* Estilos para a Parte 02 — Grupos de colunas e cabeçalho/rodapé */
+
+/* Torna os limites da tabela e células visíveis */
+.tabela-grupos-colunas {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+    width: 90%; /* Define largura da tabela */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+/* Define borda para todas as células */
+.tabela-grupos-colunas th,
+.tabela-grupos-colunas td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+    padding: 8px; /* Espaçamento interno */
+}
+
+/* Estilo para a legenda da tabela */
+.tabela-grupos-colunas caption {
+    caption-side: top; /* Posiciona a legenda acima da tabela */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 10px; /* Espaço entre legenda e tabela */
+    text-align: center; /* Alinha o texto da legenda ao centro */
+}
+
+/* Estilo para cabeçalho */
+.tabela-grupos-colunas thead th {
+    background-color: #e0e0e0; /* Cor de fundo para cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estilo para rodapé */
+.tabela-grupos-colunas tfoot td {
+    background-color: #f0f0f0; /* Cor de fundo para rodapé */
+    font-style: italic; /* Texto em itálico */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estilo para grupo de colunas */
+.grupo-colunas {
+    border: 2px solid #333; /* Borda para o grupo de colunas */
+}

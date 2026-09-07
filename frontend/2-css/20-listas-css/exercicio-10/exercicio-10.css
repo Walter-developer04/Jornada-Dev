@@ -1,0 +1,64 @@
+﻿/* Exercicio 10: Elementos com display: list-item */
+/* Paleta: Esmeralda e Jade | Tipografia: Century Gothic */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Century Gothic', Arial, sans-serif;
+}
+
+body {
+    background-color: #ecfdf5;
+    color: #022c22;
+    padding: 32px 16px;
+}
+
+.painel-demonstracao {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #059669;
+    padding: 24px;
+}
+
+h1 {
+    color: #064e3b;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #059669;
+    padding-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #047857;
+}
+
+.bloco-list-item {
+    border: 1px solid #a7f3d0;
+    padding: 16px;
+}
+
+h2 {
+    font-size: 1rem;
+    color: #064e3b;
+    margin-bottom: 12px;
+}
+
+.conteiner-blocos {
+    padding-left: 36px;
+}
+
+/* Declaracao de geracao de caixa de lista em elementos que nao sao li */
+.bloco-item {
+    display: list-item;
+    list-style-type: square;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.bloco-item::marker {
+    color: #059669;
+}

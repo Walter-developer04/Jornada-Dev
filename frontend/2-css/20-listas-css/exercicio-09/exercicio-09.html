@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-09.css">
+    <title>Exercicio 09 - Atributos HTML de Ordenacao e Renderizacao CSS</title>
+</head>
+<body>
+    <div class="painel-demonstracao">
+        <h1>Exercicio 09: Atributos HTML de Ordenacao</h1>
+        <p class="descricao">Integracao entre os atributos semanticos start, reversed e value com os contadores de renderizacao.</p>
+
+        <div class="grade-atributos">
+            <div class="bloco-atributo">
+                <h2>Lista Invertida: reversed</h2>
+                <ol reversed class="lista-ordenada">
+                    <li>Lancamento da sonda orbital</li>
+                    <li>Verificacao de telemetria</li>
+                    <li>Ignicao dos propulsores</li>
+                </ol>
+            </div>
+
+            <div class="bloco-atributo">
+                <h2>Inicio Deslocado: start="10"</h2>
+                <ol start="10" class="lista-ordenada">
+                    <li>Modulo de observacao termica</li>
+                    <li>Modulo de transmissao espectral</li>
+                </ol>
+            </div>
+
+            <div class="bloco-atributo">
+                <h2>Salto Pontual de Valor: li value="50"</h2>
+                <ol class="lista-ordenada">
+                    <li>Parametro inicial regular</li>
+                    <li value="50">Parametro com salto semantico para 50</li>
+                    <li>Sequencia subsequente automatica</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

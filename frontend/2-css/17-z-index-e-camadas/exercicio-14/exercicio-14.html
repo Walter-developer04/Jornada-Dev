@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-14.css">
+    <title>Ordem de pintura</title>
+</head>
+<body>
+    <header>
+        <h1>Ordem de pintura dentro do stacking context</h1>
+        <p>Sequencia definida no Appendix E do CSS 2.1.</p>
+    </header>
+    <main>
+        <section class="area-ordem-pintura">
+            <article class="elemento-fluxo-normal">1. Fluxo normal (bloco)</article>
+            <article class="elemento-flutuante">2. Flutuante</article>
+            <article class="elemento-posicionado-zero">4. Posicionado z-index: 0</article>
+            <article class="elemento-posicionado-positivo">5. Posicionado z-index: 1+</article>
+        </section>
+        <section class="nota-ordem">
+            <h2>Sequencia de pintura</h2>
+            <ol>
+                <li>Fundo e bordas do elemento raiz</li>
+                <li>Descendentes com z-index negativo</li>
+                <li>Blocos em fluxo normal</li>
+                <li>Flutuantes</li>
+                <li>Elementos inline</li>
+                <li>z-index: 0 ou auto</li>
+                <li>z-index: 1 ou maior</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

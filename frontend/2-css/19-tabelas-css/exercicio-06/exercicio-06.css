@@ -1,0 +1,54 @@
+﻿/* Estilos para a Parte 06 — Comportamento estrutural e layout de tabela */
+
+/* Estilos comuns para todas as tabelas */
+.tabela-layout-automatico,
+.tabela-layout-fixo,
+.tabela-celulas-vazias {
+    border-collapse: collapse; /* Colapsa as bordas para uma única linha */
+    width: 80%; /* Define largura da tabela */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+.tabela-layout-automatico th,
+.tabela-layout-automatico td,
+.tabela-layout-fixo th,
+.tabela-layout-fixo td,
+.tabela-celulas-vazias th,
+.tabela-celulas-vazias td {
+    border: 1px solid black; /* Borda sólida de 1 pixel */
+    padding: 8px; /* Espaçamento interno */
+}
+
+/* Estilo para cabeçalhos de coluna */
+.tabela-layout-automatico th,
+.tabela-layout-fixo th,
+.tabela-celulas-vazias th {
+    background-color: #e0e0e0; /* Cor de fundo para cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Tabela com layout automático */
+.tabela-layout-automatico {
+    table-layout: auto; /* Algoritmo de layout automático */
+}
+
+/* Tabela com layout fixo */
+.tabela-layout-fixo {
+    table-layout: fixed; /* Algoritmo de layout fixo */
+}
+
+.tabela-layout-fixo th,
+.tabela-layout-fixo td {
+    width: 100px; /* Define largura fixa para todas as células */
+}
+
+/* Tabela com células vazias */
+.tabela-celulas-vazias {
+    empty-cells: show; /* Mostra células vazias */
+}
+
+.tabela-celulas-vazias th,
+.tabela-celulas-vazias td {
+    height: 40px; /* Define altura para células */
+    vertical-align: middle; /* Alinha o conteúdo ao meio */
+}

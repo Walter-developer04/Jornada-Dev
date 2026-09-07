@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-11.css">
+    <title>opacity cria stacking context</title>
+</head>
+<body>
+    <header>
+        <h1>opacity menor que 1 cria stacking context</h1>
+        <p>Elementos com transparencia isolam seus descendentes.</p>
+    </header>
+    <main>
+        <section class="demonstracao-opacity">
+            <div class="container-transparente">
+                <article class="filho-muito-alto">Filho z-index: 100</article>
+            </div>
+            <article class="elemento-opaco">Elemento opaco z-index: 5</article>
+        </section>
+        <section class="explicacao-opacity">
+            <h2>Efeito</h2>
+            <p>O filho com z-index: 100 nao sobrepoe o elemento externo, pois o pai com opacity: 0.7 criou um stacking context que o prende.</p>
+        </section>
+    </main>
+</body>
+</html>

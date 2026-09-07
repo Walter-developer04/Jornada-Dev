@@ -1,0 +1,48 @@
+﻿/* position: fixed e position: sticky sempre criam stacking context */
+
+body {
+    font-family: 'Trebuchet', sans-serif;
+    background: #2a3439;
+    color: #d0ccc0;
+    margin: 0;
+    padding: 2rem;
+}
+
+.cabecalho-fixo {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #4a6572;
+    padding: 1rem;
+    z-index: auto;
+    color: #e0dcc0;
+}
+
+main { padding-top: 4rem; }
+
+.conteudo-rolagem {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.painel-lateral {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 220px;
+    background: #6a8572;
+    padding: 1.5rem;
+    z-index: auto;
+}
+
+.bloco-conteudo {
+    position: relative;
+    z-index: 1;
+    width: 60%;
+    background: #3a4a52;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+h1 { font-size: 1.2rem; }
+h2 { color: #a0c0a8; }

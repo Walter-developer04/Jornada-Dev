@@ -1,0 +1,59 @@
+﻿/* z-index auto: valor inicial da propriedade */
+/* Aplica-se a elementos posicionados e flex/grid items */
+
+body {
+    font-family: Georgia, serif;
+    background: #f5efe6;
+    color: #3d3529;
+    margin: 0;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+h1 { color: #8b5e3c; }
+h2 { color: #6b8e6b; }
+
+main { max-width: 600px; }
+
+.area-demonstracao {
+    position: relative;
+    height: 300px;
+    border: 2px dashed #8b5e3c;
+    margin-bottom: 2rem;
+}
+
+.camada-fundo {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 200px; height: 150px;
+    background: #d4a574;
+    z-index: auto;
+    padding: 1rem;
+}
+
+.camada-intermediaria {
+    position: absolute;
+    top: 60px; left: 60px;
+    width: 200px; height: 150px;
+    background: #a8c5a8;
+    z-index: auto;
+    padding: 1rem;
+}
+
+.camada-superior {
+    position: absolute;
+    top: 100px; left: 100px;
+    width: 200px; height: 150px;
+    background: #8b7355;
+    z-index: auto;
+    color: #f5efe6;
+    padding: 1rem;
+}
+
+.observacao {
+    background: #e8dfd0;
+    padding: 1.5rem;
+    border-left: 4px solid #6b8e6b;
+}
+
+footer { margin-top: 2rem; font-size: 0.9rem; color: #6b5e50; }

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-09.css">
+    <title>z-index em flex items</title>
+</head>
+<body>
+    <header>
+        <h1>z-index em flex items</h1>
+        <p>Flex items aceitam z-index mesmo com position: static.</p>
+    </header>
+    <main>
+        <section class="container-flex">
+            <article class="flex-item-1">z-index: 3</article>
+            <article class="flex-item-2">z-index: 1</article>
+            <article class="flex-item-3">z-index: 2</article>
+        </section>
+        <section class="nota-flex">
+            <h2>Comportamento especial</h2>
+            <p>Em flex items, o z-index funciona mesmo sem position: relative ou absolute.</p>
+        </section>
+    </main>
+</body>
+</html>

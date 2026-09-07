@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Exercicio 02 - Especificidade: Tipo vs. Classe</title>
+</head>
+<body>
+    <header>
+        <h1>Exercicio 02: Especificidade: Tipo vs. Classe</h1>
+        <p>Um seletor de classe (0-1-0) tem mais peso que um seletor de tipo (0-0-1)</p>
+    </header>
+
+    <main>
+        <section class="area-demo">
+            <h2>Demonstracao</h2>
+            <article class="elemento-alvo">
+                <p class='destaque'>Este paragrafo tem classe. A classe vence o seletor de elemento.</p><p>Este paragrafo nao tem classe. Recebe o estilo do elemento p.</p>
+            </article>
+            <p class="explicacao">A classe .destaque tem especificidade 0-1-0, maior que p (0-0-1).</p>
+        </section>
+
+        <section class="area-codigo">
+            <h2>Regras CSS aplicadas</h2>
+            <pre><code>p { color: #e53e3e; font-size: 18px; } .destaque { color: #805ad5; font-size: 22px; }</code></pre>
+        </section>
+
+        <section class="area-teste">
+            <h2>Teste</h2>
+            <p>Abra o DevTools (F12) e inspecione o elemento para ver qual regra esta sendo aplicada.</p>
+            <p>Tente remover ou comentar regras no arquivo CSS para ver a diferenca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Exercicio educacional sobre CSS Specificity.</p>
+    </footer>
+</body>
+</html>

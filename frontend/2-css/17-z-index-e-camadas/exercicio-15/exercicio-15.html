@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-15.css">
+    <title>isolation cria stacking context</title>
+</head>
+<body>
+    <header>
+        <h1>isolation: isolate cria stacking context</h1>
+        <p>Propriedade de composicao que forca o isolamento de grupo.</p>
+    </header>
+    <main>
+        <section class="demonstracao-isolamento">
+            <div class="grupo-isolado">
+                <article class="filho-isolado">Filho z-index: 100</article>
+            </div>
+            <article class="elemento-externo-isolamento">z-index: 2</article>
+        </section>
+        <section class="nota-isolamento">
+            <h2>Funcao</h2>
+            <p>isolation: isolate cria um stacking context explicito, sem usar position ou opacity.</p>
+        </section>
+    </main>
+</body>
+</html>

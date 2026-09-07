@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>z-index auto</title>
+</head>
+<body>
+    <header>
+        <h1>z-index: auto</h1>
+        <p>Valor inicial — o elemento participa do contexto pai sem criar um novo.</p>
+    </header>
+    <main>
+        <section class="area-demonstracao">
+            <article class="camada-fundo">z-index: auto</article>
+            <article class="camada-intermediaria">z-index: auto</article>
+            <article class="camada-superior">z-index: auto</article>
+        </section>
+        <section class="observacao">
+            <h2>Comportamento</h2>
+            <p>Com z-index: auto, a ordem visual segue a ordem do documento. Nenhum elemento cria seu proprio stacking context, todos participam do contexto raiz.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Ordem de empilhamento determinada pela sequencia no HTML.</p>
+    </footer>
+</body>
+</html>

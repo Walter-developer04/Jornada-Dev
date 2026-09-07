@@ -1,0 +1,67 @@
+﻿/* Exercicio 08: Estilizacao Direta com o Pseudo-Elemento ::marker */
+/* Paleta: Cobre e Queimado | Tipografia: Lucida Console */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+body {
+    background-color: #fff7ed;
+    color: #431407;
+    padding: 32px 16px;
+}
+
+.painel-demonstracao {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #ea580c;
+    padding: 24px;
+}
+
+h1 {
+    color: #7c2d12;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #ea580c;
+    padding-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: #9a3412;
+}
+
+.bloco-marker {
+    border: 1px solid #ffedd5;
+    padding: 16px;
+}
+
+h2 {
+    font-size: 0.95rem;
+    color: #7c2d12;
+    margin-bottom: 12px;
+}
+
+.lista-com-marker {
+    padding-left: 36px;
+    list-style-type: decimal;
+}
+
+/* Propriedades restritas e validas para a caixa do marcador conforme W3C */
+.lista-com-marker li::marker {
+    color: #ea580c;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

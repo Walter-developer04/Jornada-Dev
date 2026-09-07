@@ -1,0 +1,62 @@
+﻿/* Exercicio 12: Contadores CSS Hierarquicos com counters() */
+/* Paleta: Safira e Indigo | Tipografia: Franklin Gothic */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+}
+
+body {
+    background-color: #eef2ff;
+    color: #0f0d28;
+    padding: 32px 16px;
+}
+
+.painel-demonstracao {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #4338ca;
+    padding: 24px;
+}
+
+h1 {
+    color: #1e1b4b;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #4338ca;
+    padding-bottom: 8px;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #312e81;
+}
+
+.bloco-contadores {
+    border: 1px solid #c7d2fe;
+    padding: 18px;
+}
+
+/* Reinicializacao do contador e remocao do marcador padrao */
+ol {
+    list-style: none;
+    padding-left: 24px;
+    counter-reset: nivel;
+}
+
+li {
+    counter-increment: nivel;
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+
+/* A funcao counters() concatena todos os niveis ativos com o separador indicado */
+li::before {
+    content: counters(nivel, ".") " ";
+    color: #4338ca;
+    font-weight: bold;
+}

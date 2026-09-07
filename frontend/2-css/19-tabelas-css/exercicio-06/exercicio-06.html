@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-06.css">
+    <title>Exercício Tabelas 06</title>
+</head>
+<body>
+    <h1>Parte 06 — Comportamento estrutural e layout de tabela</h1>
+    <p>Estudo de table-layout: auto vs fixed, empty-cells e comportamento de células vazias</p>
+    
+    <h2>Tabela com layout automático (table-layout: auto)</h2>
+    <table class="tabela-layout-automatico">
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Teclado mecânico com switches azuis</td>
+            <td>15</td>
+            <td>120.00</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>30</td>
+            <td>45.00</td>
+        </tr>
+    </table>
+    
+    <h2>Tabela com layout fixo (table-layout: fixed)</h2>
+    <table class="tabela-layout-fixo">
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Teclado mecânico com switches azuis</td>
+            <td>15</td>
+            <td>120.00</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>30</td>
+            <td>45.00</td>
+        </tr>
+    </table>
+    
+    <h2>Tabela com células vazias (empty-cells)</h2>
+    <table class="tabela-celulas-vazias">
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Teclado</td>
+            <td></td>
+            <td>120.00</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>10</td>
+            <td>850.00</td>
+        </tr>
+    </table>
+</body>
+</html>
+
