@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef1f4;
+    color: #33383d;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.cena-sobre-a-imagem {
+    position: relative;
+    width: 480px;
+    max-width: 100%;
+}
+
+.imagem-de-fundo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.faixa-sem-filtro,
+.faixa-com-desfoque {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    background-color: rgba(23, 42, 58, 0.25);
+}
+
+.faixa-sem-filtro {
+    top: 18%;
+}
+
+/* o blur do backdrop-filter atinge a imagem que passa por trás da faixa */
+.faixa-com-desfoque {
+    top: 60%;
+    backdrop-filter: blur(6px);
+}

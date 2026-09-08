@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaf2ee;
+    color: #2f3a36;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.comparacao-de-posicionamento {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #63736c;
+}
+
+img {
+    display: block;
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* object-position escolhe a região do conteúdo que fica alinhada com a caixa */
+.imagem-topo {
+    object-position: top;
+}
+
+.imagem-centro {
+    object-position: center;
+}
+
+.imagem-base {
+    object-position: bottom;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-15.css">
+    <title>backdrop-filter</title>
+</head>
+<body>
+    <main>
+        <h1>backdrop-filter</h1>
+        <p>Duas faixas sobre a mesma imagem; apenas a que tem backdrop-filter altera o que aparece por trás dela.</p>
+
+        <section class="cena-sobre-a-imagem">
+            <img class="imagem-de-fundo" src="img-15.jfif" alt="Fotografia de demonstração">
+
+            <!-- A faixa sem filtro deixa a imagem nítida aparecer por trás; o backdrop-filter desfoca a área atrás do elemento. -->
+            <div class="faixa-sem-filtro">Sem backdrop-filter</div>
+            <div class="faixa-com-desfoque">backdrop-filter: blur(6px)</div>
+        </section>
+    </main>
+</body>
+</html>

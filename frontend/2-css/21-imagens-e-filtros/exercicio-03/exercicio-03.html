@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>image-rendering</title>
+</head>
+<body>
+    <main>
+        <h1>image-rendering</h1>
+        <p>A mesma fotografia pequena ampliada, mudando apenas a forma de renderizar os pixels.</p>
+
+        <section class="comparacao-de-renderizacao">
+            <figure>
+                <!-- auto deixa o navegador interpolar a imagem ampliada, suavizando a transição entre os pixels originais. -->
+                <img class="imagem-suavizada" src="img-03.jfif" alt="castelo">
+                <figcaption>image-rendering: auto</figcaption>
+            </figure>
+
+            <figure>
+                <!-- pixelated mantém os pixels originais visíveis como blocos nítidos quando a imagem é ampliada. -->
+                <img class="imagem-pixelada" src="img-03.jfif" alt="castelo">
+                <figcaption>image-rendering: pixelated</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

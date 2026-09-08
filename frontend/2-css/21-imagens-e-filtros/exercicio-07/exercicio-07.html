@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-07.css">
+    <title>Filtro hue-rotate</title>
+</head>
+<body>
+    <main>
+        <h1>Filtro hue-rotate</h1>
+        <p>A rotação de matiz desloca todas as cores da imagem ao mesmo tempo.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-07.png" alt="flores coloridas em jarro">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- hue-rotate gira o matiz das cores ao redor do círculo cromático; 180 graus leva cada cor ao tom oposto. -->
+                <img class="imagem-filtrada" src="img-07.png" alt="flores coloridas em jarro">
+                <figcaption>filter: hue-rotate(180deg)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

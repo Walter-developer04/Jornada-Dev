@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-08.css">
+    <title>Filtro invert</title>
+    
+</head>
+<body>
+    <main>
+        <h1>Filtro invert</h1>
+        <p>A inversão total das cores produz o efeito de negativo fotográfico.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-08.png" alt="segurando uma folha contra o sol">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- invert substitui cada cor pela sua cor oposta; em 100%, as áreas claras tornam-se escuras e as escuras tornam-se claras. -->
+                <img class="imagem-filtrada" src="img-08.png" alt="segurando uma folha contra o sol">
+                <figcaption>filter: invert(100%)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

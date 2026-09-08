@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-14.css">
+    <title>Combinando filtros</title>
+</head>
+<body>
+    <main>
+        <h1>Combinando filtros</h1>
+        <p>Duas funções encadeadas em uma única declaração de filtro.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-14.jfif" alt="Fotografia de demonstração">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- Várias funções podem ser encadeadas na mesma declaração; cada uma é aplicada sobre o resultado produzido pela anterior. -->
+                <img class="imagem-combinada" src="img-14.jfif" alt="Fotografia de demonstração">
+                <figcaption>filter: sepia(100%) hue-rotate(180deg)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

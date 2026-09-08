@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-09.css">
+    <title>Filtro opacity</title>
+</head>
+<body>
+    <main>
+        <h1>Filtro opacity</h1>
+        <p>A transparência da função opacity() deixa o fundo que está atrás da imagem aparecer.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-09.png" alt="Moleton verde ">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure class="figura-fundo-colorido">
+                <!-- A função opacity() reduz a opacidade da imagem dentro da cadeia de filtros; com 40%, o fundo atrás dela passa a ser visível. -->
+                <img class="imagem-translucida" src="img-09.png" alt="Moleton verde ">
+                <figcaption>filter: opacity(40%)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

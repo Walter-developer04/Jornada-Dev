@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>object-fit</title>
+</head>
+<body>
+    <main>
+        <h1>object-fit</h1>
+        <p>A mesma imagem quadrada ocupa caixas idênticas, mudando apenas o valor de object-fit.</p>
+
+        <section class="comparacao-de-enquadramento">
+            <figure>
+                <!-- fill estica a imagem nas duas direções até preencher toda a caixa, alterando suas proporções originais. -->
+                <img class="imagem-fill" src="img-01.png" alt="Mulher segurando flor">
+                <figcaption>object-fit: fill</figcaption>
+            </figure>
+
+            <figure>
+                <!-- cover amplia a imagem o suficiente para cobrir a caixa inteira e recorta a parte que excede, sem distorcer. -->
+                <img class="imagem-cover" src="img-01.png" alt="Mulher segurando flor">
+                <figcaption>object-fit: cover</figcaption>
+            </figure>
+
+            <figure>
+                <!-- contain mantém a imagem inteira visível dentro da caixa, deixando faixas vazias onde o conteúdo não alcança. -->
+                <img class="imagem-contain" src="img-01.png" alt="Mulher segurando flor">
+                <figcaption>object-fit: contain</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

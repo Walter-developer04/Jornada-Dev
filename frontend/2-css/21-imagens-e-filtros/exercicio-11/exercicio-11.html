@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-11.css">
+    <title>Filtro contrast</title>
+</head>
+<body>
+    <main>
+        <h1>Filtro contrast</h1>
+        <p>A diferença entre as áreas claras e escuras ajustada em duas intensidades.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-11.png" alt="Fotografia de demonstração">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- Valores abaixo de 100% diminuem a diferença entre as áreas claras e escuras, aproximando os tons. -->
+                <img class="imagem-contraste-reduzido" src="img-11.png" alt="Fotografia de demonstração">
+                <figcaption>filter: contrast(60%)</figcaption>
+            </figure>
+
+            <figure>
+                <!-- Valores acima de 100% aumentam essa diferença, tornando os claros mais claros e os escuros mais escuros. -->
+                <img class="imagem-contraste-intensificado" src="img-11.png" alt="Fotografia de demonstração">
+                <figcaption>filter: contrast(200%)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

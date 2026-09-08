@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>object-position</title>
+</head>
+<body>
+    <main>
+        <h1>object-position</h1>
+        <p>Três imagens recortadas com cover, cada uma revelando uma região diferente do conteúdo.</p>
+
+        <section class="comparacao-de-posicionamento">
+            <figure>
+                <!-- top alinha o conteúdo da imagem com o limite superior da caixa, deixando a parte de cima visível. -->
+                <img class="imagem-topo" src="img-02.png" alt="paisagem">
+                <figcaption>object-position: top</figcaption>
+            </figure>
+
+            <figure>
+                <!-- center é o valor padrão: o conteúdo fica no meio da caixa e o recorte acontece de forma simétrica. -->
+                <img class="imagem-centro" src="img-02.png" alt="paisagem">
+                <figcaption>object-position: center</figcaption>
+            </figure>
+
+            <figure>
+                <!-- bottom alinha o conteúdo com o limite inferior da caixa, revelando a parte de baixo da imagem. -->
+                <img class="imagem-base" src="img-02.png" alt="paisagem">
+                <figcaption>object-position: bottom</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

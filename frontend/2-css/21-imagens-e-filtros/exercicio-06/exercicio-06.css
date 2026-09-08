@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #edf2e9;
+    color: #333b2e;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.comparacao-do-filtro {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #75816c;
+}
+
+img {
+    display: block;
+    width: 340px;
+    height: auto;
+}
+
+/* saturate abaixo de 100% desbota as cores; acima de 100% as intensifica */
+.imagem-desbotada {
+    filter: saturate(40%);
+}
+
+.imagem-intensificada {
+    filter: saturate(220%);
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-05.css">
+    <title>Filtro sepia</title>
+</head>
+<body>
+    <main>
+        <h1>Filtro sepia</h1>
+        <p>A mesma fotografia antes e depois da conversão para tons de sépia.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-05.png" alt="Arquitetura antiga">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- sepia converte as cores da imagem para tons amarronzados; em 100%, o resultado lembra uma fotografia antiga. -->
+                <img class="imagem-filtrada" src="img-05.png" alt="Arquitetura antiga">
+                <figcaption>filter: sepia(100%)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

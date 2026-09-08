@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-10.css">
+    <title>Filtro brightness</title>
+    
+</head>
+<body>
+    <main>
+        <h1>Filtro brightness</h1>
+        <p>O brilho da imagem controlado por valores abaixo e acima do padrão de 100%.</p>
+
+        <section class="comparacao-do-filtro">
+            <figure>
+                <img src="img-10.jfif" alt="Fotografia de demonstração">
+                <figcaption>Imagem original</figcaption>
+            </figure>
+
+            <figure>
+                <!-- Valores abaixo de 100% reduzem o brilho, escurecendo a imagem por completo. -->
+                <img class="imagem-escurecida" src="img-10.jfif" alt="Fotografia de demonstração">
+                <figcaption>filter: brightness(60%)</figcaption>
+            </figure>
+
+            <figure>
+                <!-- Valores acima de 100% aumentam o brilho, clareando todas as áreas da imagem. -->
+                <img class="imagem-clareada" src="img-10.jfif" alt="Fotografia de demonstração">
+                <figcaption>filter: brightness(180%)</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

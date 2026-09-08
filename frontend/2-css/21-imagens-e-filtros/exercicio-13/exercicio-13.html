@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-13.css">
+    <title>Filtro drop-shadow</title>
+</head>
+<body>
+    <main>
+        <h1>Filtro drop-shadow</h1>
+        <p>Uma imagem com área transparente recebendo uma sombra que acompanha o desenho.</p>
+
+        <section class="comparacao-da-sombra">
+            <figure>
+                <img src="github-icon.png" alt="Logo do github">
+                <figcaption>Sem filtro</figcaption>
+            </figure>
+
+            <figure>
+                <!-- A sombra do drop-shadow segue a silhueta desenhada pela imagem, e não o retângulo do elemento. -->
+                <img class="estrela-com-sombra" src="github-icon.png" alt="Logo do github">
+                <figcaption>filter: drop-shadow(12px 12px 8px rgba(0, 0, 0, 0.5))</figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>
