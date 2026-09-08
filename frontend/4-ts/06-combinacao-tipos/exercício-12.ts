@@ -1,0 +1,45 @@
+/**
+ * ===================================================
+ *  EXERCICIO 12 - OPERADOR KEYOF COM TIPOS DE OBJETOS
+ * ===================================================
+ *  O QUE E:      Operador de tipo que extrai os nomes das chaves publicas de um tipo de objeto.
+ *  O QUE FAZ:    Produz uma uniao de literais contendo as strings/numeros que representam as chaves.
+ *  SINTAXE:      type Chaves = keyof TipoObjeto;
+ *  QUANDO USAR:  Para garantir acesso seguro a propriedades, funcoes get/set e validacao de campos.
+ *  QUANDO NAO:   Nao usar em valores em tempo de execucao (keyof opera exclusivamente no sistema de tipos).
+ * ===================================================
+ */
+
+// 1. EXEMPLO CORRETO
+type ConfiguracaoSistema = {
+  host: string;
+  porta: number;
+  ativo: boolean;
+};
+
+// ChaveConfiguracao e equivalente a: "host" | "porta" | "ativo"
+type ChaveConfiguracao = keyof ConfiguracaoSistema;
+
+const chaveValida1: ChaveConfiguracao = "host";
+const chaveValida2: ChaveConfiguracao = "porta";
+
+function obterNomePropriedade(chave: ChaveConfiguracao): string {
+  return "Propriedade lida: " + chave;
+}
+
+// 2. EXEMPLO INCORRETO
+// Passar qualquer string que nao faca parte das chaves gera rejeicao do compilador
+// @ts-expect-error - O tipo '"ambiente"' nao e atribuivel ao tipo 'keyof ConfiguracaoSistema'
+const chaveInvalida: ChaveConfiguracao = "ambiente";
+
+// 3. MINI-DESAFIO
+// Crie o tipo 'ChaveProduto' extraindo as chaves do tipo 'ProdutoEstoque'.
+type ProdutoEstoque = {
+  codigoBarra: string;
+  quantidade: number;
+  precoUnitario: number;
+};
+type ChaveProduto = keyof ProdutoEstoque;
+
+// Solucao comentada:
+// type ChaveProduto = keyof ProdutoEstoque;
