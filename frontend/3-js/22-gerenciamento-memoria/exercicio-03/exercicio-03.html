@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-03.css">
+  <title>Exercício 03 - Referências fortes e fracas</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Referências fortes e fracas</h1>
+    <p>
+      Listas e Maps seguram itens com referências fortes: o objeto não pode ser
+      coletado. WeakMap, WeakSet e WeakRef seguram com referências fracas: não
+      impedem a coleta. Aqui comparamos os dois mundos lado a lado.
+    </p>
+  </header>
+
+  <main>
+    <section class="acoes">
+      <button id="botao-criar">criar objeto</button>
+      <button id="botao-soltar">soltar referências fortes</button>
+      <button id="botao-esvaziar">esvaziar Map forte</button>
+      <button id="botao-verificar">verificar estado atual</button>
+      <button id="botao-reiniciar">reiniciar</button>
+    </section>
+
+    <section class="comparativo">
+      <div class="coluna">
+        <h2>Map (forte)</h2>
+        <p class="medida" id="medida-map">0</p>
+        <p class="nota" id="nota-map"></p>
+      </div>
+      <div class="coluna">
+        <h2>WeakMap (fraco)</h2>
+        <p class="medida" id="medida-weak">sem size</p>
+        <p class="nota" id="nota-weak"></p>
+      </div>
+    </section>
+
+    <section class="acompanhamento">
+      <h2>Objetos observados com WeakRef</h2>
+      <p class="aviso">
+        O navegador decide o momento da coleta. Depois de soltar as referências
+        fortes, clique em verificar estado: o Map segue segurando tudo, enquanto
+        o WeakMap pode já ter liberado suas entradas.
+      </p>
+      <ul id="lista-observados"></ul>
+    </section>
+
+    <section class="eventos">
+      <h2>Histórico</h2>
+      <ul id="lista-eventos"></ul>
+    </section>
+  </main>
+
+  <script src="exercicio-03.js"></script>
+</body>
+</html>

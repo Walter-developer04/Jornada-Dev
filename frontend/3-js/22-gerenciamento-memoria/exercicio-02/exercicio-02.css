@@ -1,0 +1,150 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d1117;
+  color: #d7e0d9;
+  font-family: Consolas, Courier New, monospace;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.cabecalho {
+  border: 1px solid #233028;
+  background: #10161d;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  color: #3fb950;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.linha-status {
+  color: #8a9a8e;
+  margin-top: 6px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+
+.painel {
+  border: 1px solid #233028;
+  background: #10161d;
+  padding: 14px;
+}
+
+h2 {
+  color: #e3b341;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.comandos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comandos button {
+  font-family: inherit;
+  font-size: 13px;
+  background: #16211a;
+  color: #9ece6a;
+  border: 1px solid #2c3e30;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.comandos button:hover {
+  background: #1e2a20;
+  color: #d7e0d9;
+}
+
+.comandos .destaque {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.console {
+  grid-column: 1 / -1;
+}
+
+.lista-log {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.lista-log li {
+  padding: 4px 0;
+  border-bottom: 1px dashed #1d2822;
+  color: #9ece6a;
+}
+
+.bloco-raiz {
+  border: 1px dashed #e3b341;
+  color: #e3b341;
+  padding: 10px;
+  margin-bottom: 12px;
+  min-height: 44px;
+}
+
+.bloco-raiz p {
+  margin: 4px 0;
+}
+
+.area-objetos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 120px;
+}
+
+.cartao-objeto {
+  border: 1px solid #2c3e30;
+  background: #16211a;
+  padding: 10px;
+  min-width: 132px;
+}
+
+.cartao-objeto.alcancavel {
+  border-color: #3fb950;
+}
+
+.cartao-objeto.inalcancavel {
+  border-color: #b3552d;
+  opacity: 0.6;
+}
+
+.cartao-objeto .identidade {
+  color: #9ece6a;
+}
+
+.cartao-objeto .detalhe {
+  color: #8a9a8e;
+  font-size: 12px;
+}
+
+.resumo {
+  margin-top: 12px;
+  color: #e3b341;
+}
+
+.rodape {
+  margin-top: 16px;
+  border: 1px solid #233028;
+  padding: 12px 16px;
+  color: #8a9a8e;
+  font-size: 13px;
+}

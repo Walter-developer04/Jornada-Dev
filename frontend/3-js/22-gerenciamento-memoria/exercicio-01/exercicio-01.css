@@ -1,0 +1,108 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f1e5;
+  color: #2a241d;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  padding: 24px;
+}
+
+.cabecalho {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  border-bottom: 3px double #b4552d;
+  padding-bottom: 16px;
+}
+
+.rotulo {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #b4552d;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 8px 0;
+}
+
+.resumo {
+  color: #57503f;
+}
+
+.conteudo {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+.experimento {
+  background: #fffdf6;
+  border: 1px solid #d8cdb8;
+  padding: 20px 24px;
+}
+
+h2 {
+  font-size: 20px;
+  border-left: 4px solid #b4552d;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+
+.tabela-variaveis {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.tabela-variaveis li {
+  padding: 10px 12px;
+  border-bottom: 1px dotted #c9bfa8;
+  font-size: 15px;
+}
+
+.tabela-variaveis strong {
+  color: #b4552d;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  background: #2a241d;
+  color: #f7f1e5;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b4552d;
+}
+
+.leitura {
+  margin-top: 14px;
+  font-style: italic;
+  color: #57503f;
+  min-height: 24px;
+}
+
+.rodape {
+  max-width: 760px;
+  margin: 32px auto 0;
+  border-top: 1px solid #c9bfa8;
+  padding-top: 12px;
+  font-size: 14px;
+  color: #57503f;
+}

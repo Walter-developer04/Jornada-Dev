@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-04.css">
+  <title>Exercício 04 - Vazamentos de memória</title>
+</head>
+<body>
+  <header>
+    <h1>VAZAMENTOS DE MEMÓRIA</h1>
+    <p>
+      Vazamento é memória que não é mais necessária, mas continua retida por uma
+      referência esquecida. Os suspeitos mais comuns: escutas em objetos longevos,
+      closures que capturam dados grandes e elementos destacados do DOM.
+    </p>
+  </header>
+
+  <div class="controles">
+    <button id="botao-criar-descuidado" class="perigo">criar painel DESCUIDADO</button>
+    <button id="botao-criar-cuidadoso" class="seguro">criar painel CUIDADOSO</button>
+    <button id="botao-destruir">destruir todos os painéis</button>
+    <button id="botao-inspecionar">inspecionar retenção</button>
+    <button id="botao-reiniciar">reiniciar tudo</button>
+  </div>
+
+  <section class="medidor">
+    <p>memória retida estimada: <strong id="valor-retido">0 KB</strong></p>
+    <div class="barra"><div id="barra-retida"></div></div>
+    <p id="explicacao-medidor">Crie painéis nos dois modos, destrua-os e compare o que sobra vivo.</p>
+  </section>
+
+  <section class="palco">
+    <h2>palco (parte visível do documento)</h2>
+    <div id="area-paineis"></div>
+  </section>
+
+  <section class="autopsia">
+    <h2>autópsia da retenção</h2>
+    <p id="explicacao-autopsia">
+      Clique em inspecionar retenção depois de destruir painéis descuidados.
+      A cadeia explicará por que cada objeto continua vivo.
+    </p>
+    <ul id="lista-retencao"></ul>
+  </section>
+
+  <script src="exercicio-04.js"></script>
+</body>
+</html>

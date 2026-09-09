@@ -1,0 +1,161 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #202020;
+  font-family: Times New Roman, Times, serif;
+  line-height: 1.6;
+  padding: 40px 24px;
+}
+
+header,
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 4px double #202020;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.selo {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #8a1c1c;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+.introducao {
+  margin-top: 10px;
+  color: #444;
+}
+
+.pratica {
+  border: 1px solid #c9c4bc;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.pratica h2 {
+  font-size: 20px;
+  border-bottom: 1px solid #202020;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.estrategias {
+  margin: 14px 0;
+}
+
+.estrategias label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: 14px;
+  background: #ffffff;
+  color: #202020;
+  border: 1px solid #202020;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8a1c1c;
+  border-color: #8a1c1c;
+  color: #ffffff;
+}
+
+.estatisticas {
+  display: flex;
+  gap: 24px;
+  margin: 14px 0;
+}
+
+.estatisticas div {
+  border-left: 3px solid #8a1c1c;
+  padding-left: 10px;
+}
+
+dt {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+dd {
+  font-size: 22px;
+  color: #8a1c1c;
+}
+
+#lista-cache {
+  list-style: none;
+  margin-top: 10px;
+}
+
+#lista-cache li {
+  padding: 8px 0;
+  border-bottom: 1px dotted #c9c4bc;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.situacao-em-uso {
+  color: #2d6a2d;
+}
+
+.situacao-retida {
+  color: #8a1c1c;
+}
+
+.situacao-coletada {
+  color: #666;
+}
+
+.diagnostico {
+  margin-top: 12px;
+  font-style: italic;
+  color: #8a1c1c;
+  min-height: 24px;
+}
+
+.estado-escuta {
+  margin-top: 12px;
+}
+
+#mensagem-escuta {
+  color: #444;
+  min-height: 24px;
+}
+
+.checklist ol {
+  margin-left: 20px;
+}
+
+.checklist li {
+  margin-bottom: 6px;
+}

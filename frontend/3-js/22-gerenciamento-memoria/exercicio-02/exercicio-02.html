@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-02.css">
+  <title>Exercício 02 - Alocação e coleta de lixo</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>gerenciador_memoria.sim</h1>
+    <p class="linha-status">
+      Ciclo de vida de objetos: alocar, manter alcançável, soltar referências
+      e deixar o coletor de lixo agir.
+    </p>
+  </header>
+
+  <main class="grade">
+    <section class="painel comandos">
+      <h2>&gt; comandos</h2>
+      <button id="botao-alocar">[1] alocar objeto</button>
+      <button id="botao-guardar">[2] guardar na raiz</button>
+      <button id="botao-soltar">[3] soltar temporária</button>
+      <button id="botao-remover">[4] remover último da raiz</button>
+      <button id="botao-coletar" class="destaque">[5] executar coleta de lixo</button>
+      <button id="botao-reiniciar">[0] reiniciar simulação</button>
+    </section>
+
+    <section class="painel memoria">
+      <h2>&gt; heap monitorado</h2>
+      <div id="bloco-raiz" class="bloco-raiz"></div>
+      <div id="area-objetos" class="area-objetos"></div>
+      <p id="resumo-memoria" class="resumo"></p>
+    </section>
+
+    <section class="painel console">
+      <h2>&gt; log do sistema</h2>
+      <ul id="lista-log" class="lista-log"></ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>
+      Regra do coletor: um objeto só é liberado quando não existe caminho de
+      referências partindo das raízes (variáveis globais e pilha de execução)
+      até ele. Esse critério chama-se alcance, e o algoritmo clássico é o
+      mark and sweep, marcação e varredura.
+    </p>
+  </footer>
+
+  <script src="exercicio-02.js"></script>
+</body>
+</html>

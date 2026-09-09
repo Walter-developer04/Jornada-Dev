@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-05.css">
+  <title>Exercício 05 - Prevenção de vazamentos</title>
+</head>
+<body>
+  <header>
+    <p class="selo">Relatório de boas práticas - memória</p>
+    <h1>Prevenção: escrever código que não retém o desnecessário</h1>
+    <p class="introducao">
+      Este exercício reúne os conceitos anteriores em duas práticas: um cache
+      com estratégias de retenção e o par addEventListener/removeEventListener
+      usando função nomeada.
+    </p>
+  </header>
+
+  <main>
+    <section class="pratica">
+      <h2>Prática 1 - Cache com controle de retenção</h2>
+      <p>
+        Escolha a estratégia, carregue imagens simuladas e depois descarte-as.
+        Compare o que cada cache retém quando as referências fortes somem.
+      </p>
+      <div id="formulario-estrategia" class="estrategias">
+        <label><input type="radio" name="estrategia" value="sem-limite" checked> Map sem limite (perigo)</label>
+        <label><input type="radio" name="estrategia" value="com-limite"> Map com limite de cinco itens</label>
+        <label><input type="radio" name="estrategia" value="fraco"> WeakMap (referência fraca)</label>
+      </div>
+      <div class="acoes">
+        <button id="botao-carregar">carregar imagem simulada</button>
+        <button id="botao-descartar">descartar última imagem</button>
+        <button id="botao-verificar">verificar cache</button>
+        <button id="botao-reiniciar">reiniciar</button>
+      </div>
+      <dl class="estatisticas">
+        <div><dt>carregadas</dt><dd id="valor-carregadas">0</dd></div>
+        <div><dt>no cache</dt><dd id="valor-retidas">0</dd></div>
+        <div><dt>peso retido</dt><dd id="valor-peso">0 KB</dd></div>
+      </dl>
+      <ul id="lista-cache"></ul>
+      <p id="diagnostico" class="diagnostico"></p>
+    </section>
+
+    <section class="pratica">
+      <h2>Prática 2 - Escutas que podem ser removidas</h2>
+      <p>
+        Só é possível remover uma escuta usando a MESMA função da instalação.
+        Funções anônimas criadas na hora não podem ser removidas depois.
+      </p>
+      <div class="acoes">
+        <button id="botao-escutar">instalar escuta do documento</button>
+        <button id="botao-parar">remover escuta do documento</button>
+      </div>
+      <p class="estado-escuta">situação: <strong id="valor-escuta">desligada</strong></p>
+      <p id="mensagem-escuta"></p>
+    </section>
+
+    <section class="pratica checklist">
+      <h2>Checklist de prevenção</h2>
+      <ol>
+        <li>Remova escutas que não são mais necessárias, guardando a função nomeada.</li>
+        <li>Prefira escutar no próprio elemento a escutar no window ou document.</li>
+        <li>Evite variáveis globais: mantenha cada dado no menor escopo possível.</li>
+        <li>Use WeakMap e WeakSet para metadados que devem morrer com o objeto.</li>
+        <li>Coloque limite em caches: um Map que só cresce é vazamento adiado.</li>
+        <li>Solte referências grandes quando terminar, atribuindo null com intenção.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="exercicio-05.js"></script>
+</body>
+</html>

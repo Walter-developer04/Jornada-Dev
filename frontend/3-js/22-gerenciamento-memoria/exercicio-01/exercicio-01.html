@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-01.css">
+  <title>Exercício 01 - Valores e referências</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <p class="rotulo">Estudo de memória - parte 01</p>
+    <h1>Valores copiados e referências compartilhadas</h1>
+    <p class="resumo">
+      Tipos primitivos são guardados por valor; objetos são guardados por referência.
+      Essa diferença é o primeiro passo para entender como a memória funciona em JavaScript.
+    </p>
+  </header>
+
+  <main class="conteudo">
+    <section class="experimento">
+      <h2>1. Tipo primitivo: a cópia é independente</h2>
+      <p>
+        Ao escrever numeroB = numeroA, o conteúdo é copiado.
+        Depois disso, cada variável segue a própria vida.
+      </p>
+      <ul id="lista-primitivos" class="tabela-variaveis"></ul>
+      <div class="controles">
+        <button id="botao-atribuir-primitivo">numeroB = numeroA</button>
+        <button id="botao-modificar-primitivo">numeroB = 99</button>
+        <button id="botao-reiniciar-primitivo">Reiniciar</button>
+      </div>
+      <p id="leitura-primitivo" class="leitura"></p>
+    </section>
+
+    <section class="experimento">
+      <h2>2. Objeto: a cópia aponta para o mesmo espaço</h2>
+      <p>
+        Ao escrever objetoCopia = objetoOriginal, nenhum objeto novo nasce.
+        Apenas a referência, o endereço na memória, é copiada.
+      </p>
+      <ul id="lista-objetos" class="tabela-variaveis"></ul>
+      <div class="controles">
+        <button id="botao-atribuir-objeto">objetoCopia = objetoOriginal</button>
+        <button id="botao-modificar-objeto">objetoCopia.tamanho = 99</button>
+        <button id="botao-copia-real">copiaIndependente = { ...objetoOriginal }</button>
+        <button id="botao-modificar-independente">copiaIndependente.tamanho = 7</button>
+        <button id="botao-reiniciar-objeto">Reiniciar</button>
+      </div>
+      <p id="leitura-objeto" class="leitura"></p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>
+      Ideia central: mudar um objeto por qualquer uma de suas referências é mudar o
+      objeto único que existe na memória. Todas as variáveis ligadas a ele enxergam a mudança.
+    </p>
+  </footer>
+
+  <script src="exercicio-01.js"></script>
+</body>
+</html>
