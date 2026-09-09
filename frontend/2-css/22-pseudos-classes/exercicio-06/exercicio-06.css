@@ -1,0 +1,143 @@
+﻿/*
+  O que é:
+  :link é uma pseudo-classe de link: corresponde a âncoras
+  (<a> com href) cujo destino ainda não foi visitado, ou seja,
+  não consta no histórico do navegador.
+
+  Para que serve:
+  Distinguir visualmente o que ainda não foi aberto. É o
+  complemento de :visited e exige um destino, por isso só
+  funciona em elementos com href.
+
+  Como usar:
+    a:link { ... }
+    a:link:hover { ... }
+
+  Quando usar:
+  Em índices, listas de destinos e menus em que a diferença
+  entre "por visitar" e "já visitado" carrega informação útil.
+
+  Quando não usar:
+  Em elementos sem href, pois sem URL não há estado de link.
+  E ao combinar os estados do link, respeite a ordem LVHA —
+  :link, :visited, :hover, :active — porque, entre regras de
+  mesma especificidade, vence a que aparece depois na folha
+  de estilo.
+*/
+
+:root {
+  --grama: #e7eedb;
+  --cartao: #fbfaf2;
+  --tinta: #1f2a1c;
+  --suave: #5b6a52;
+  --tomate: #c0432a;
+  --borda: #cfd6bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--grama);
+  color: var(--tinta);
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 1.55;
+}
+
+.mapa {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.chip {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 4px 12px;
+  background: var(--tinta);
+  color: var(--grama);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+}
+
+.resumo {
+  max-width: 52ch;
+  color: var(--suave);
+}
+
+code {
+  font-family: "Courier New", monospace;
+  background: #dde4cc;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.trilhas {
+  display: grid;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+/* estado básico: é a aparência que sobra quando o link já foi visitado */
+.placa {
+  display: block;
+  padding: 16px 20px;
+  border: 2px dashed var(--borda);
+  border-radius: 10px;
+  color: var(--suave);
+  font-style: italic;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* :link aceita qualquer propriedade: a placa ativa mora inteira aqui */
+.placa:link {
+  border: 3px solid var(--tinta);
+  background: var(--cartao);
+  color: var(--tinta);
+  font-style: normal;
+  font-weight: 700;
+  box-shadow: 5px 5px 0 var(--borda);
+}
+
+/* ordem LVHA respeitada: :hover declarado depois de :link */
+.placa:link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--tomate);
+}
+
+.aviso {
+  margin-top: 36px;
+  padding: 20px 24px;
+  background: var(--cartao);
+  border-left: 4px solid var(--tomate);
+  border-radius: 0 8px 8px 0;
+}
+
+.aviso h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.aviso p {
+  margin: 0;
+  color: var(--suave);
+}
+
+/* âncora sem href: :link não corresponde, o cursor nem se mole */
+.sem-destino {
+  color: var(--suave);
+  text-decoration: underline dotted;
+  cursor: default;
+}

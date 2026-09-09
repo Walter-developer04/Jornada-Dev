@@ -1,0 +1,123 @@
+﻿/*
+  O que é:
+  :visited é uma pseudo-classe de link: corresponde a âncoras
+  com href cujo destino já foi visitado, ou seja, consta no
+  histórico do navegador.
+
+  Para que serve:
+  Mostrar ao leitor o que já foi aberto, em sumários, listas
+  de leitura e referências.
+
+  Como usar:
+    a:visited { color: ...; }
+
+  Quando usar:
+  Sempre que o histórico de acesso for informação útil para
+  quem navega.
+
+  Quando não usar:
+  Por privacidade, os navegadores limitam :visited a
+  propriedades de cor: color, background-color, outline-color
+  e as variantes de border-color. Layout, sombras, imagens de
+  fundo e pseudo-classes combinadas como :visited:hover não
+  funcionam — o navegador devolve o valor do estado não
+  visitado. Não tente ler ou disfarçar o histórico de quem
+  usa a página: a restrição existe exatamente para impedir
+  isso.
+*/
+
+:root {
+  --papel: #f6eae6;
+  --folha: #fdf7f4;
+  --tinta: #3a2c2a;
+  --suave: #7d6a66;
+  --ameixa: #7c3a5c;
+  --ameixa-clara: #f2dfe8;
+  --linha: #e4d2cb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
+}
+
+.diario {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 2.6rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.abertura {
+  max-width: 54ch;
+  color: var(--suave);
+}
+
+code {
+  font-family: "Courier New", monospace;
+  background: #eee0da;
+  padding: 1px 6px;
+}
+
+section {
+  margin-top: 36px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ameixa);
+}
+
+.capitulo {
+  display: block;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background: var(--folha);
+  border: 1px solid var(--linha);
+  border-left: 4px solid var(--tinta);
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+/* restrição de privacidade: aqui só color, background-color e border-color agem */
+.capitulo:visited {
+  color: var(--ameixa);
+  background-color: var(--ameixa-clara);
+  border-color: var(--ameixa);
+}
+
+.referencias p {
+  margin: 0 0 10px;
+  color: var(--suave);
+}
+
+.referencias ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.referencias li {
+  margin-bottom: 6px;
+}
+
+/* externos: a cor de visitado depende do histórico de quem abre a página */
+.referencias a:visited {
+  color: var(--ameixa);
+}

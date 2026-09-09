@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-04.css">
+  <title>Exercício 04 — :first-child, :last-child e :nth-child()</title>
+</head>
+<body>
+  <main class="documento">
+    <p class="selo">Arquivo 04 · Seletores estruturais</p>
+    <h1>Índice do plantão de estudo</h1>
+    <p class="resumo">
+      Pseudo-classes estruturais selecionam elementos pela posição entre os
+      irmãos: <code>:first-child</code> corresponde ao primeiro filho do pai,
+      <code>:last-child</code> ao último e <code>:nth-child()</code> à posição
+      calculada por número, palavra-chave ou fórmula. A tabela e a lista abaixo
+      também usam <code>:not()</code> para desenhar divisores.
+    </p>
+
+    <table class="grade-horarios">
+      <caption>Programação — sala de revisão</caption>
+      <thead>
+        <tr>
+          <th scope="col">Horário</th>
+          <th scope="col">Tema</th>
+          <th scope="col">Monitor</th>
+          <th scope="col">Sala</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">08:00</th>
+          <td>Seletores básicos</td>
+          <td>Ana</td>
+          <td>3A</td>
+        </tr>
+        <tr>
+          <th scope="row">09:00</th>
+          <td>Cascata e herança</td>
+          <td>Bruno</td>
+          <td>3A</td>
+        </tr>
+        <tr>
+          <th scope="row">10:00</th>
+          <td>Especificidade</td>
+          <td>Carla</td>
+          <td>3B</td>
+        </tr>
+        <tr>
+          <th scope="row">11:00</th>
+          <td>Pseudo-classes</td>
+          <td>Diego</td>
+          <td>3B</td>
+        </tr>
+        <tr>
+          <th scope="row">13:00</th>
+          <td>Grid</td>
+          <td>Helena</td>
+          <td>3B</td>
+        </tr>
+        <tr>
+          <th scope="row">14:00</th>
+          <td>Flexbox</td>
+          <td>Igor</td>
+          <td>3A</td>
+        </tr>
+        <tr>
+          <th scope="row">15:00</th>
+          <td>Revisão geral</td>
+          <td>Ana</td>
+          <td>Auditório</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="leitura">
+      <h2>Notas do plantão</h2>
+      <ol class="notas">
+        <li>O primeiro item abre a lista em negrito, por :first-child.</li>
+        <li>Os divisores pontilhados vêm de li:not(:last-child).</li>
+        <li>Este é o terceiro item, pintado por li:nth-child(3).</li>
+        <li>As listras da tabela vêm de tr:nth-child(odd), que conta a partir de um.</li>
+        <li>O último item encerra a lista em itálico, por :last-child.</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

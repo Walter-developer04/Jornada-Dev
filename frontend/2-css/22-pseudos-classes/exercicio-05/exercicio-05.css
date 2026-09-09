@@ -1,0 +1,201 @@
+﻿/*
+  O que é:
+  :has() é uma pseudo-classe funcional relacional: o seletor base
+  corresponde quando o argumento corresponde a um descendente ou
+  a um irmão que vem depois dele na árvore do documento.
+
+  Para que serve:
+  Fazer um elemento reagir ao conteúdo e ao estado de outros
+  elementos — inclusive selecionar o ancestral, o que as
+  pseudo-classes anteriores não conseguem.
+
+  Como usar:
+    .tarefa:has(input:checked) { ... }
+    .quadro:has(input:checked) { ... }
+    h2:has(+ p) { ... }
+
+  Quando usar:
+  Quando o estilo do contêiner depende de algo dentro dele, como
+  um cartão que muda quando contém um campo marcado.
+
+  Quando não usar:
+  :has() não avalia qualquer elemento do documento: a relação
+  precisa ser de descendente ou de irmão posterior. Como o
+  suporte nos navegadores é recente, trate-o como melhoria
+  progressiva, e não como único recurso de legibilidade.
+*/
+
+:root {
+  --cena: #17121c;
+  --cartao: #201a27;
+  --caixa: #1b1522;
+  --texto: #efe6f4;
+  --suave: #a89bb8;
+  --magenta: #e050b4;
+  --lima: #cff14a;
+  --borda: #3a2f45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cena);
+  color: var(--texto);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+.cena {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 4px 10px;
+  background: var(--magenta);
+  color: var(--cena);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.resumo {
+  max-width: 56ch;
+  color: var(--suave);
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  color: var(--lima);
+  background: #241d2c;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.quadro {
+  margin-top: 40px;
+  padding: 28px;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+
+/* o quadro inteiro muda quando existe ao menos um checkbox marcado */
+.quadro:has(input:checked) {
+  border-color: var(--lima);
+}
+
+.quadro-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quadro-topo h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.estados {
+  display: grid;
+}
+
+.estado {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.estado-ativo {
+  display: none;
+  color: var(--lima);
+  font-weight: 600;
+}
+
+/* o texto do cabeçalho é trocado sem JavaScript */
+.quadro:has(input:checked) .estado-ativo {
+  display: block;
+}
+
+.quadro:has(input:checked) .estado-vazio {
+  display: none;
+}
+
+.tarefas {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.tarefa label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--caixa);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.tarefa input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--magenta);
+}
+
+/* :has() mira o li a partir do checkbox dentro dele */
+.tarefa:has(input:checked) label {
+  border-color: var(--magenta);
+}
+
+.tarefa:has(input:checked) span {
+  color: var(--suave);
+  text-decoration: line-through;
+  text-decoration-color: var(--magenta);
+  text-decoration-thickness: 2px;
+}
+
+.ensaio {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px dashed var(--borda);
+}
+
+.ensaio h3 {
+  margin: 0 0 8px;
+}
+
+/* argumento relacional: o h3 que tem um p imediatamente depois */
+h3:has(+ p) {
+  color: var(--lima);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+.ensaio p {
+  margin: 0;
+  color: var(--suave);
+}

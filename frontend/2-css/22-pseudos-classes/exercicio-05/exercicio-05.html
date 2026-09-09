@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-05.css">
+  <title>Exercício 05 — :has()</title>
+</head>
+<body>
+  <main class="cena">
+    <p class="tag">Experimento 05</p>
+    <h1>:has()</h1>
+    <p class="resumo">
+      <code>:has()</code> é uma pseudo-classe funcional relacional: o seletor
+      base corresponde quando o argumento encontra um descendente ou um irmão
+      posterior. Marque uma tarefa e observe a tarefa em si, o quadro inteiro e
+      o indicador de estado reagirem — sem uma linha de JavaScript.
+    </p>
+
+    <section class="quadro">
+      <header class="quadro-topo">
+        <h2>Plano de revisão</h2>
+        <div class="estados">
+          <p class="estado estado-vazio">Nenhuma tarefa concluída</p>
+          <p class="estado estado-ativo">Há tarefas concluídas</p>
+        </div>
+      </header>
+
+      <ul class="tarefas">
+        <li class="tarefa">
+          <label>
+            <input type="checkbox">
+            <span>Revisar :hover e :active</span>
+          </label>
+        </li>
+        <li class="tarefa">
+          <label>
+            <input type="checkbox">
+            <span>Revisar :focus, :focus-visible e :focus-within</span>
+          </label>
+        </li>
+        <li class="tarefa">
+          <label>
+            <input type="checkbox">
+            <span>Revisar :checked, :disabled, :valid e :invalid</span>
+          </label>
+        </li>
+        <li class="tarefa">
+          <label>
+            <input type="checkbox">
+            <span>Revisar :first-child, :last-child e :nth-child()</span>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="ensaio">
+      <h3>Nota sobre irmãos</h3>
+      <p>
+        Este título recebe estilo porque um parágrafo vem logo depois dele: a
+        regra <code>h3:has(+ p)</code> seleciona o <code>h3</code> imediatamente
+        seguido de um <code>p</code>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

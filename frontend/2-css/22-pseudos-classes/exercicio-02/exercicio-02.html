@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-02.css">
+  <title>Exercício 02 — :focus, :focus-visible e :focus-within</title>
+</head>
+<body>
+  <main class="terminal">
+    <h1>focus.log</h1>
+    <p class="intro">
+      Três pseudo-classes ligadas ao foco: <code>:focus</code> seleciona o
+      elemento que recebeu foco; <code>:focus-visible</code> seleciona o elemento
+      focado quando o navegador conclui que o indicador precisa ser exibido, o
+      caso comum é a navegação por teclado; <code>:focus-within</code> seleciona
+      o ancestral que contém um descendente focado. Percorra os controles com a
+      tecla <kbd>Tab</kbd> e compare com o clique do mouse.
+    </p>
+
+    <section class="bloco">
+      <h2>01 · campos de texto</h2>
+      <p>
+        Com o mouse, o campo recebe apenas o contorno discreto de
+        <code>:focus</code>. Com <kbd>Tab</kbd>, o mesmo campo recebe o contorno
+        forte de <code>:focus-visible</code>.
+      </p>
+      <div class="grade-campos">
+        <label class="campo">
+          <span>usuário</span>
+          <input type="text" name="usuario" placeholder="digite o login">
+        </label>
+        <label class="campo">
+          <span>senha</span>
+          <input type="password" name="senha" placeholder="********">
+        </label>
+      </div>
+    </section>
+
+    <section class="bloco">
+      <h2>02 · painel com :focus-within</h2>
+      <p>
+        A barra lateral do painel acende quando qualquer controle interno está
+        focado, porque <code>:focus-within</code> seleciona o próprio formulário.
+      </p>
+      <form class="painel-busca">
+        <input type="search" name="consulta" placeholder="buscar no log">
+        <button type="submit">executar</button>
+      </form>
+    </section>
+
+    <section class="bloco">
+      <h2>03 · botões e link</h2>
+      <p>
+        O mesmo par <code>:focus</code> e <code>:focus-visible</code> aplicado a
+        botões e a um link de documentação.
+      </p>
+      <div class="linha-botoes">
+        <button type="button">compilar</button>
+        <button type="button">executar testes</button>
+        <a href="#">ver documentação</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

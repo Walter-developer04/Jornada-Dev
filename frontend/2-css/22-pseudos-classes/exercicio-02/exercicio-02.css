@@ -1,0 +1,185 @@
+﻿/*
+  O que é:
+  :focus, :focus-visible e :focus-within são pseudo-classes de foco.
+  :focus corresponde ao elemento que recebeu foco;
+  :focus-visible corresponde ao elemento focado quando o navegador
+  decide que o indicador de foco precisa ser exibido, o caso típico
+  é a navegação por teclado;
+  :focus-within corresponde ao elemento que tem um descendente focado.
+
+  Para que serve:
+  Tornar visível a posição do usuário na ordem de tabulação, algo
+  essencial para a acessibilidade por teclado.
+
+  Como usar:
+    input:focus { ... }
+    input:focus-visible { ... }
+    form:focus-within { ... }
+
+  Quando usar:
+  Em todo controle interativo. Prefira :focus-visible para os
+  estilos mais fortes: quem usa o mouse não vê o anel, quem usa
+  o teclado sim.
+
+  Quando não usar:
+  Nunca remova o outline do :focus sem substituí-lo por outra
+  indicação igualmente visível; :hover não substitui o foco,
+  porque o teclado nunca o dispara.
+*/
+
+:root {
+  --fundo: #0f1418;
+  --painel: #161d23;
+  --caixa: #0c1114;
+  --texto: #c9d6d2;
+  --suave: #8fa3a0;
+  --verde: #4dd0a3;
+  --cinza: #5f6d70;
+  --borda: #263038;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Consolas, "Courier New", monospace;
+  line-height: 1.6;
+}
+
+.terminal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  color: var(--verde);
+  font-weight: 400;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--borda);
+}
+
+code,
+kbd {
+  color: var(--verde);
+  background: #1b242b;
+  border: 1px solid var(--borda);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.intro,
+.bloco p {
+  color: var(--suave);
+}
+
+.bloco {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+}
+
+.bloco h2 {
+  margin: 0 0 8px;
+  color: var(--verde);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.grade-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.campo {
+  display: grid;
+  gap: 4px;
+}
+
+.campo span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--cinza);
+}
+
+input,
+button,
+.linha-botoes a {
+  font: inherit;
+}
+
+input {
+  padding: 10px 12px;
+  background: var(--caixa);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  color: var(--texto);
+}
+
+input:focus {
+  border-color: var(--cinza);
+  outline: 1px solid var(--cinza);
+}
+
+/* o indicador reforçado aparece quando o foco veio do teclado */
+input:focus-visible {
+  border-color: var(--verde);
+  outline: 2px dashed var(--verde);
+  outline-offset: 2px;
+}
+
+.painel-busca {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--caixa);
+  border-left: 4px solid var(--borda);
+}
+
+.painel-busca input { 
+flex: 1;
+}
+
+.painel-busca:focus-within {
+  border-left-color: var(--verde);
+}
+
+button,
+.linha-botoes a {
+  padding: 10px 16px;
+  color: var(--texto);
+  background: #1b242b;
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:focus,
+.linha-botoes a:focus {
+  outline: 1px solid var(--cinza);
+}
+
+button:focus-visible,
+.linha-botoes a:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+}
+
+.linha-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}

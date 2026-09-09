@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-07.css">
+  <title>Exercício 07 — :visited</title>
+</head>
+<body>
+  <main class="diario">
+    <h1>:visited</h1>
+    <p class="abertura">
+      <code>:visited</code> corresponde a âncoras cujo destino já consta no
+      histórico do navegador. Clique em um capítulo abaixo e observe a cor
+      mudar no mesmo instante: a âncora interna registra a visita e a
+      pseudo-classe passa a corresponder. Recarregue a página — o estado
+      persiste, porque vive no histórico, não no HTML.
+    </p>
+
+    <section class="capitulos">
+      <h2>Sumário</h2>
+      <a class="capitulo" href="#cap-1">Capítulo I · Da cor herdada</a>
+      <a class="capitulo" href="#cap-2">Capítulo II · Do histórico que permanece</a>
+      <a class="capitulo" href="#cap-3">Capítulo III · Da privacidade por trás das regras</a>
+      <a class="capitulo" href="#cap-4">Capítulo IV · Do regresso da cor antiga</a>
+    </section>
+
+    <section class="referencias">
+      <h2>Referências externas</h2>
+      <p>
+        Destinos fora desta página: se você já os visitou antes, eles já
+        nascem com a cor de visitado.
+      </p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Selectors/Pseudo-classes">MDN · Referência de pseudo-classes</a></li>
+        <li><a href="https://www.w3.org/TR/selectors-4/">W3C · Selectors Level 4</a></li>
+        <li><a href="https://example.com/">example.com</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

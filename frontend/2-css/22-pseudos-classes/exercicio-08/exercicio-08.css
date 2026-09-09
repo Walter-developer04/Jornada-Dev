@@ -1,0 +1,159 @@
+﻿/*
+  O que é:
+  :lang() é uma pseudo-classe funcional que seleciona elementos
+  pelo idioma em que o navegador os determina estar. Em HTML,
+  o idioma vem do atributo lang do próprio elemento ou é
+  herdado do ancestral mais próximo que o declarar.
+
+  Para que serve:
+  Estilizar trechos multilíngues sem classes manuais: cores,
+  aspas tipográficas, hifenização e outros detalhes por idioma.
+
+  Como usar:
+    :lang(pt-BR) { ... }
+    .frase:lang(en) { ... }
+
+  Quando usar:
+  Em páginas com conteúdo em vários idiomas, ou quando a
+  marcação já declara lang por acessibilidade e o estilo pode
+  aproveitar essa mesma informação.
+
+  Quando não usar:
+  :lang() não traduz nem altera o idioma: só seleciona. E não
+  se confunde com o seletor de atributo [lang]: o atributo
+  exige valor exato no próprio elemento, enquanto :lang()
+  considera a herança e casa subtags — :lang(pt) seleciona
+  também elementos em pt-BR e pt-PT.
+*/
+
+:root {
+  --fundo: #edeef2;
+  --cartao: #ffffff;
+  --tinta: #211f28;
+  --suave: #6a6875;
+  --borda: #d7d8e0;
+  --pt: #1b7a43;
+  --en: #b3261e;
+  --fr: #1a4f8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.especime {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+}
+
+.resumo {
+  max-width: 56ch;
+  color: var(--suave);
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  background: #e2e3ea;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.idioma {
+  margin-top: 22px;
+  padding: 20px 24px;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-left: 5px solid var(--borda);
+}
+
+.idioma h2 {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* um identificador casa a língua e suas variantes: pt casa pt-BR e pt-PT */
+.idioma:lang(pt) {
+  border-left-color: var(--pt);
+}
+
+.idioma:lang(en) {
+  border-left-color: var(--en);
+}
+
+.idioma:lang(fr) {
+  border-left-color: var(--fr);
+}
+
+.idioma:lang(pt) h2 {
+  color: var(--pt);
+}
+
+.idioma:lang(en) h2 {
+  color: var(--en);
+}
+
+.idioma:lang(fr) h2 {
+  color: var(--fr);
+}
+
+.frase {
+  margin: 0 0 10px;
+}
+
+/* as frases herdadas não têm lang e mesmo assim caem nestas regras */
+.frase:lang(pt) {
+  color: var(--pt);
+}
+
+.frase:lang(en) {
+  color: var(--en);
+}
+
+.frase:lang(fr) {
+  color: var(--fr);
+}
+
+.herdada {
+  padding: 8px 12px;
+  background: #f6f6fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.comparativo {
+  margin-top: 32px;
+  padding: 20px 24px;
+  border: 1px dashed var(--borda);
+  color: var(--suave);
+}
+
+.comparativo h2 {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.comparativo p {
+  margin: 0;
+}

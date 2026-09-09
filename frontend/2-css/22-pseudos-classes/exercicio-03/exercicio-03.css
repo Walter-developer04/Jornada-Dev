@@ -1,0 +1,209 @@
+﻿/*
+  O que é:
+  :checked, :disabled, :enabled, :required, :valid e :invalid são
+  pseudo-classes de estado de formulário. :checked corresponde a
+  radios e checkboxes marcados; :disabled e :enabled distinguem
+  controles bloqueados e disponíveis; :required corresponde a
+  campos obrigatórios; :valid e :invalid refletem a validação
+  nativa do HTML, determinada por atributos como type, required,
+  min e pattern.
+
+  Para que serve:
+  Estilizar estados sem JavaScript: destacar a opção marcada,
+  esmaecer o botão bloqueado e sinalizar preenchimento válido
+  ou inválido.
+
+  Como usar:
+    input:checked + label { ... }
+    button:disabled { ... }
+    input:required { ... }
+    input:valid { ... }
+    input:invalid { ... }
+
+  Quando usar:
+  Sempre que o formulário conta com a validação nativa. A
+  combinação com o seletor de irmão adjacente (+) permite
+  estilizar o label da opção marcada.
+
+  Quando não usar:
+  Cor sozinha não comunica erro: mantenha mensagens e rótulos.
+  Evite marcar :invalid em campos ainda intocados; por isso este
+  arquivo só aplica :invalid depois que o campo perde o placeholder
+  (:not(:placeholder-shown)), ou seja, depois de o usuário digitar.
+*/
+
+:root {
+  --papel: #ffffff;
+  --preenchimento: #fdfcfa;
+  --tinta: #141414;
+  --neutro: #8c8c8c;
+  --linha: #e7e3dd;
+  --ambar: #b45309;
+  --ambar-claro: #fbf1e6;
+  --verde: #3f7d4e;
+  --verde-claro: #eef5ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+.folha {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.nota {
+  margin: 0;
+  color: var(--neutro);
+  font-size: 0.9rem;
+}
+
+.cadastro {
+  display: grid;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.linha-form {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"] {
+  font: inherit;
+  padding: 12px 14px;
+  background: var(--preenchimento);
+  border: 1px solid var(--linha);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+/* obrigatório: borda tracejada enquanto o campo continua vazio */
+input[type="text"]:required,
+input[type="email"]:required {
+  border-style: dashed;
+}
+
+input[type="text"]:required:not(:placeholder-shown),
+input[type="email"]:required:not(:placeholder-shown) {
+  border-style: solid;
+}
+
+/* :valid e :invalid só entram em cena depois da primeira digitação */
+input[type="text"]:not(:placeholder-shown):invalid,
+input[type="email"]:not(:placeholder-shown):invalid {
+  border-color: var(--ambar);
+  background: var(--ambar-claro);
+}
+
+input[type="text"]:not(:placeholder-shown):valid,
+input[type="email"]:not(:placeholder-shown):valid {
+  border-color: var(--verde);
+  background: var(--verde-claro);
+}
+
+.dica {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--neutro);
+}
+
+.plano {
+  border: 1px solid var(--linha);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.plano legend {
+  padding: 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opcao input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--ambar);
+}
+
+/* o label irmão reage ao estado do input graças ao seletor + */
+.opcao label {
+  padding: 8px 14px;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  color: var(--neutro);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.opcao input:checked + label {
+  border-color: var(--tinta);
+  color: var(--tinta);
+  background: #f4f2ef;
+}
+
+.acoes {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  font: inherit;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid var(--tinta);
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+
+button.principal {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+/* pseudo-classes podem ser combinadas em um mesmo seletor */
+button.principal:enabled:hover {
+  background: #000000;
+}
+
+button.fantasma {
+  background: transparent;
+}
+
+button.fantasma:disabled {
+  border-color: var(--linha);
+  color: var(--neutro);
+  opacity: 0.55;
+  cursor: not-allowed;
+}

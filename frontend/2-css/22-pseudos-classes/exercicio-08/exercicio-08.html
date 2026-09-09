@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-08.css">
+  <title>Exercício 08 — :lang()</title>
+</head>
+<body>
+  <main class="especime">
+    <h1>:lang()</h1>
+    <p class="resumo">
+      <code>:lang()</code> seleciona elementos pelo idioma em que são
+      determinados estar. Em HTML, o idioma vem do atributo <code>lang</code>
+      do próprio elemento ou é herdado do ancestral que o declarar. Cada bloco
+      abaixo declara um idioma e as frases recebem a cor correspondente. A
+      segunda frase de cada bloco não tem atributo próprio — e continua sendo
+      selecionada, porque herda o idioma da seção.
+    </p>
+
+    <section class="idioma" lang="pt-BR">
+      <h2>Português · Brasil</h2>
+      <p class="frase">A cascata também transporta idioma, não só cor e fonte.</p>
+      <p class="frase herdada">Esta frase não tem lang próprio, mas herda pt-BR da seção.</p>
+    </section>
+
+    <section class="idioma" lang="pt-PT">
+      <h2>Português · Portugal</h2>
+      <p class="frase">Esta secção também é apanhada por :lang(pt), porque pt casa subtags.</p>
+    </section>
+
+    <section class="idioma" lang="en">
+      <h2>English</h2>
+      <p class="frase">The pseudo-class reads the declared language, not the words.</p>
+      <p class="frase herdada">This sentence inherits English from its section.</p>
+    </section>
+
+    <section class="idioma" lang="fr">
+      <h2>Français</h2>
+      <p class="frase">La règle accepte les sous-tags de langue.</p>
+      <p class="frase herdada">Cette phrase hérite du français de sa section.</p>
+    </section>
+
+    <section class="comparativo">
+      <h2>Comparativo com o seletor de atributo</h2>
+      <p>
+        A regra <code>.idioma:lang(pt)</code> pintou tanto o bloco
+        <code>pt-BR</code> quanto o <code>pt-PT</code>: um identificador casa a
+        própria língua e suas variantes com hífen. Já <code>[lang="pt"]</code>
+        exigiria valor exato e não selecionaria nenhum dos dois — e ignoraria
+        as frases herdadas, porque elas nem sequer têm o atributo.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

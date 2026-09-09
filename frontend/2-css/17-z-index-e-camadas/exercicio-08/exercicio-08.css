@@ -19,7 +19,7 @@ h2 { color: #2f4f4f; }
 }
 
 .contexto-pai-baixo {
-    position: relative;
+    position: absolute;
     z-index: 2;
     width: 280px; height: 180px;
     top: 40px; left: 40px;
@@ -38,7 +38,7 @@ h2 { color: #2f4f4f; }
 }
 
 .contexto-pai-alto {
-    position: relative;
+    position: absolute;
     z-index: 3;
     width: 280px; height: 180px;
     top: 160px; left: 160px;

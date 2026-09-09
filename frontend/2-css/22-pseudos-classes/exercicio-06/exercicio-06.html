@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="exercicio-06.css">
+  <title>Exercício 06 — :link</title>
+</head>
+<body>
+  <main class="mapa">
+    <p class="chip">Setor 06 · Trilhas não percorridas</p>
+    <h1>:link</h1>
+    <p class="resumo">
+      <code>:link</code> corresponde a âncoras com <code>href</code> cujo
+      destino ainda não está no histórico de navegação. Enquanto o link não é
+      visitado, a placa aparece completa. Clique em uma trilha: o destino passa
+      a constar no histórico, <code>:link</code> deixa de corresponder e a
+      placa desmancha para o estado básico — o link agora é assunto de
+      <code>:visited</code>, do exercício seguinte.
+    </p>
+
+    <section class="trilhas">
+      <a class="placa" href="#mirante">Mirante do Vale</a>
+      <a class="placa" href="#cachoeira">Cachoeira da Pedra</a>
+      <a class="placa" href="#ponte">Ponte Suspensa</a>
+      <a class="placa" href="#gruta">Gruta dos Samambais</a>
+    </section>
+
+    <section class="aviso">
+      <h2>Âncora sem destino</h2>
+      <p>
+        O trecho <a class="sem-destino">folheto sem endereço</a> nunca recebe o
+        estilo de trilha: sem <code>href</code> não existe URL e
+        <code>:link</code> não corresponde, mesmo o elemento sendo um
+        <code>&lt;a&gt;</code>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
