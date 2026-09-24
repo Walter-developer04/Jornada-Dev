@@ -4,21 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="exercicio-09.css">
-    <title>::backdrop - Estilo para o backdrop de um modal</title>
+    <title>::backdrop - estilo para o backdrop de um modal</title>
 </head>
+
 <body>
     <main>
         <header>
             <h1>::backdrop</h1>
-            <p>Estilo para o backdrop de um modal</p>
+            <p>estilo aplicado a area atras de um modal</p>
         </header>
-                    <section>
-                <!-- Este dialog demonstra o uso de ::backdrop -->
-                <dialog open>
-                    <p>Este é um modal com backdrop estilizado.</p>
-                    <button>Fechar</button>
-                </dialog>
-            </section>
+
+        <section>
+            <!-- este botao abre o dialog como modal sem precisar de javascript -->
+            <button type="button" command="show-modal" commandfor="exemplo-modal">
+                abrir modal
+            </button>
+
+            <!-- este dialog sera exibido como modal e, por isso, tera um ::backdrop -->
+            <dialog id="exemplo-modal">
+                <p>este dialog esta aberto como modal.</p>
+
+                <!-- este botao fecha o dialog usando um comando html nativo -->
+                <button type="button" command="close" commandfor="exemplo-modal">
+                    fechar
+                </button>
+            </dialog>
+        </section>
     </main>
 </body>
 </html>
