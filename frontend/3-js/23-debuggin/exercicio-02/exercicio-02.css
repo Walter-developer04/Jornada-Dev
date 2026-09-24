@@ -1,0 +1,154 @@
+﻿/*
+    Exercício 02 - Debugging Issues
+    Identidade visual técnica: fundo cinza-aço, painéis retangulares,
+    tipografia monoespaçada nos títulos e destaque petróleo.
+*/
+
+/* Base e tipografia */
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    background-color: #e8edf1;
+    color: #212e36;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 880px;
+    padding: 40px 32px;
+}
+
+h1,
+h2 {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 6px 0 12px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95em;
+    background-color: #d5dee5;
+    padding: 1px 5px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+/* Cabeçalho e rodapé */
+.cabecalho-exercicio {
+    background-color: #ffffff;
+    border: 1px solid #c4cfd8;
+    border-left: 5px solid #155e63;
+    padding: 18px 24px;
+}
+
+.etiqueta-numero {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    color: #155e63;
+    letter-spacing: 1px;
+    margin: 0 0 4px;
+}
+
+.texto-introducao {
+    max-width: 640px;
+}
+
+.conteudo-exercicio {
+    margin-top: 26px;
+}
+
+.rodape-exercicio {
+    margin-top: 40px;
+    font-size: 13px;
+    color: #5d6d78;
+}
+
+/* Estrutura comum das seções de exemplo */
+.secao-exemplo {
+    background-color: #ffffff;
+    border: 1px solid #c4cfd8;
+    border-top: 4px solid #155e63;
+    margin-top: 26px;
+    padding: 20px 24px;
+}
+
+.texto-exemplo {
+    max-width: 640px;
+}
+
+/* Exemplo 1 - botões que disparam a função com erro */
+.grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.botao-exemplo {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    background-color: #155e63;
+    color: #eef4f5;
+    border: none;
+    padding: 9px 16px;
+    cursor: pointer;
+}
+
+.botao-exemplo:hover {
+    background-color: #0f4a4e;
+}
+
+/* Botão marcado como suspeito: o que dispara o problema */
+.botao-com-erro {
+    background-color: #8f3b34;
+}
+
+.botao-com-erro:hover {
+    background-color: #7a2f29;
+}
+
+/* Exemplo 2 - linha de resultado do total */
+.linha-resultado {
+    width: 40%;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 16px;
+    background-color: #eef2f4;
+    border-left: 4px solid #b07d2b;
+    padding: 10px 14px;
+    margin-top: 12px;
+}
+
+/* Exemplo 3 - formulário com campos de texto convertidos */
+.formulario-exemplo {
+    border: 1px dashed #9fb0bb;
+    margin-bottom: 12px;
+    padding: 16px;
+}
+
+.formulario-exemplo label {
+    display: block;
+    font-size: 13px;
+    color: #3c4a54;
+    margin: 10px 0 4px;
+}
+
+.formulario-exemplo input {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 16px;
+    width: 180px;
+    padding: 6px 8px;
+    border: 1px solid #9fb0bb;
+    background-color: #f7fafb;
+    color: #212e36;
+}
+
+.formulario-exemplo .grupo-botoes {
+    margin-top: 14px;
+}

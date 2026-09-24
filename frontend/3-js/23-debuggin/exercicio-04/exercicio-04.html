@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-04.css">
+    <title>Exercício 04 - Debugging Performance</title>
+</head>
+<body>
+
+    <!--
+    O que é: depuração de desempenho é medir onde o tempo é gasto antes de
+    otimizar. O DevTools oferece o painel Performance, para gravações, e
+    APIs como performance.now, para medir trechos de código.
+
+    Para que serve: encontrar as partes do código que realmente custam
+    tempo, em vez de adivinhar.
+
+    Quando usar: quando a página engasga, demora para responder ou consome
+    processamento demais.
+
+    Como usar: meça primeiro, mude depois. Os três exemplos mostram medidas
+    de tempo de execução, o custo dos refluxos de layout e a comparação
+    entre duas formas de animar.
+    -->
+
+    <header class="cabecalho-exercicio">
+        <p class="etiqueta-numero">Exercício 04</p>
+        <h1>Debugging Performance</h1>
+        <p class="texto-introducao">
+            Depuração de desempenho. Abra o DevTools com F12 e observe os
+            tempos medidos na tela e no Console. Os mesmos testes também
+            podem ser analisados em gravações do painel Performance.
+        </p>
+    </header>
+
+    <main class="conteudo-exercicio">
+
+        <!--
+        Exemplo 1 - Medindo o tempo de duas implementações
+        O que é: performance.now devolve um marcador de tempo em milissegundos
+        com fração, e console.time rotula uma medida no Console.
+        Para que serve: comparar dois códigos que produzem o mesmo resultado
+        com custos diferentes.
+        Quando usar: antes de trocar uma implementação por outra, para
+        confirmar que a mudança vale a pena.
+        Como usar: clique nos dois botões e compare os tempos. A versão lenta
+        percorre a lista de nomes uma vez para cada nome; a rápida percorre a
+        lista uma única vez usando um objeto como acumulador.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-um">
+            <h2>Exemplo 1 - Medindo o tempo de execução</h2>
+            <p class="texto-exemplo">
+                A tarefa é contar quantas vezes cada nome aparece em uma
+                lista com 4000 nomes repetidos em padrão. Os dois botões
+                resolvem a mesma tarefa por caminhos diferentes.
+            </p>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-contar-lenta" type="button">Executar versão lenta</button>
+                <button class="botao-exemplo" id="botao-contar-rapida" type="button">Executar versão rápida</button>
+            </div>
+
+            <dl class="painel-medidas">
+                <div class="linha-medida">
+                    <dt>Tempo da versão lenta</dt>
+                    <dd id="tempo-versao-lenta">ainda não medido</dd>
+                </div>
+                <div class="linha-medida">
+                    <dt>Tempo da versão rápida</dt>
+                    <dd id="tempo-versao-rapida">ainda não medido</dd>
+                </div>
+                <div class="linha-medida">
+                    <dt>Diferença</dt>
+                    <dd id="diferenca-de-tempos">ainda não calculada</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!--
+        Exemplo 2 - Refluxo de layout forçado
+        O que é: ler propriedades de layout, como offsetHeight, obriga o
+        navegador a recalcular o layout na hora se alguma escrita o tiver
+        invalidado. Ler e escrever no mesmo laço força um recálculo por
+        iteração.
+        Para que serve: mostrar que o custo não está só no JavaScript, mas
+        na interação do script com a renderização da página.
+        Quando usar: quando o código altera e lê medidas de muitos elementos
+        em sequência.
+        Como usar: clique nos dois botões e compare os tempos. A versão
+        misturada lê e escreve em cada iteração; a separada faz todas as
+        leituras primeiro e todas as escritas depois.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-dois">
+            <h2>Exemplo 2 - Custo do refluxo de layout</h2>
+            <p class="texto-exemplo">
+                As duzentas barras abaixo trocam de altura em cada clique.
+                Os dois botões realizam a mesma troca: um intercalando
+                leitura e escrita por barra, outro separando as duas fases.
+            </p>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-pintar-misturado" type="button">Pintar lendo e escrevendo</button>
+                <button class="botao-exemplo" id="botao-pintar-separado" type="button">Pintar separando as fases</button>
+            </div>
+
+            <dl class="painel-medidas">
+                <div class="linha-medida">
+                    <dt>Tempo misturado</dt>
+                    <dd id="tempo-misturado">ainda não medido</dd>
+                </div>
+                <div class="linha-medida">
+                    <dt>Tempo separado</dt>
+                    <dd id="tempo-separado">ainda não medido</dd>
+                </div>
+            </dl>
+
+            <div class="area-caixas" id="area-caixas"></div>
+        </section>
+
+        <!--
+        Exemplo 3 - requestAnimationFrame e setInterval
+        O que é: requestAnimationFrame agenda a próxima atualização junto
+        com o ciclo de desenho da tela; setInterval dispara por tempo
+        decorrido, sem relação com a tela.
+        Para que serve: comparar a suavidade e a quantidade de trabalho
+        entre as duas formas de animar.
+        Quando usar: em qualquer animação contínua movida por JavaScript.
+        Como usar: inicie as animações e observe os contadores de
+        atualizações. No painel Performance, grave alguns segundos para ver
+        os quadros e o trabalho do thread principal. Quando a aba fica
+        oculta, o navegador reduz o setInterval e o requestAnimationFrame
+        deixa de ser chamado.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-tres">
+            <h2>Exemplo 3 - Animando com requestAnimationFrame e setInterval</h2>
+            <p class="texto-exemplo">
+                As duas barras fazem o mesmo movimento. A primeira é movida
+                por um setInterval de 16 milissegundos; a segunda, por
+                requestAnimationFrame. Os contadores registram quantas
+                atualizações cada forma realizou.
+            </p>
+
+            <div class="pista-animacao">
+                <p class="rotulo-pista">Barra movida por setInterval</p>
+                <div class="trilho-animacao">
+                    <div class="barra-animacao" id="barra-temporizador"></div>
+                </div>
+                <p class="linha-contagem">Atualizações: <span class="valor-observado" id="contador-temporizador">0</span></p>
+            </div>
+
+            <div class="pista-animacao">
+                <p class="rotulo-pista">Barra movida por requestAnimationFrame</p>
+                <div class="trilho-animacao">
+                    <div class="barra-animacao" id="barra-quadro"></div>
+                </div>
+                <p class="linha-contagem">Atualizações: <span class="valor-observado" id="contador-quadro">0</span></p>
+            </div>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-iniciar-animacoes" type="button">Iniciar animações</button>
+                <button class="botao-exemplo botao-parar" id="botao-parar-animacoes" type="button">Parar animações</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape-exercicio">
+        <p>Exercício de estudo JS: Debugging</p>
+    </footer>
+
+    <script src="exercicio-04.js"></script>
+</body>
+</html>

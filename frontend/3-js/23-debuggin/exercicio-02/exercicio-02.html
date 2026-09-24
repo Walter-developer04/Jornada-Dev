@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Exercício 02 - Debugging Issues</title>
+</head>
+<body>
+
+    <!--
+    O que é: depurar é o processo de encontrar a causa de um comportamento
+    errado do código, seja um erro visível no Console, seja um resultado
+    errado sem nenhuma mensagem.
+
+    Para que serve: transformar um problema mal entendido em uma causa
+    conhecida: qual função, qual linha e qual valor estão errados.
+
+    Quando usar: sempre que o resultado observado não corresponder ao
+    esperado, com ou sem mensagem de erro.
+
+    Como usar: os três exemplos treinam três situações: ler a mensagem de
+    erro e sua pilha de chamadas, rastrear um bug de lógica com console.log
+    e inspecionar tipos de variáveis com a pausa do debugger.
+    -->
+
+    <header class="cabecalho-exercicio">
+        <p class="etiqueta-numero">Exercício 02</p>
+        <h1>Debugging Issues</h1>
+        <p class="texto-introducao">
+            Depuração de problemas em JavaScript. Abra o DevTools com F12 e
+            deixe a aba Console visível durante os três exemplos.
+        </p>
+    </header>
+
+    <main class="conteudo-exercicio">
+
+        <!--
+        Exemplo 1 - Erro visível no Console
+        O que é: mensagens de erro do JavaScript aparecem no Console com o
+        tipo do erro, a descrição e a pilha de chamadas (stack trace).
+        Para que serve: a pilha mostra o caminho exato até a linha que
+        falhou, do clique do botão até a instrução do problema.
+        Quando usar: sempre que uma mensagem vermelha aparecer no Console.
+        Como usar: clique no primeiro botão, leia a mensagem no Console e
+        expanda a pilha. O link com o nome do arquivo e o número da linha
+        abre o painel Sources exatamente na linha que causou o erro. Depois
+        clique no segundo botão para ver a mesma tarefa funcionando.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-um">
+            <h2>Exemplo 1 - Lendo um erro e sua pilha de chamadas</h2>
+            <p class="texto-exemplo">
+                A função com erro tenta ler o telefone de uma estudante que
+                não possui essa informação cadastrada. A versão corrigida
+                verifica a informação antes de usar. Observe que a página
+                continua funcionando mesmo depois do erro: ele acontece
+                dentro do ouvinte do clique.
+            </p>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo botao-com-erro" id="botao-executar-com-erro" type="button">Executar com erro</button>
+                <button class="botao-exemplo" id="botao-executar-corrigida" type="button">Executar versão corrigida</button>
+            </div>
+        </section>
+
+        <!--
+        Exemplo 2 - Bug de lógica sem mensagem de erro
+        O que é: um bug de lógica acontece quando o código roda sem lançar
+        erro, mas produz um resultado errado. O Console não reclama.
+        Para que serve: nesses casos, a depuração começa inserindo
+        console.log para ver com quais valores o código está trabalhando.
+        Quando usar: quando o resultado não bate com o esperado e não
+        existe mensagem de erro.
+        Como usar: clique nos dois botões e compare os totais. Depois abra o
+        arquivo exercicio-02.js e veja o console.log dentro do laço: ele
+        mostra quais itens entram na soma e revela que o primeiro item nunca
+        é somado.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-dois">
+            <h2>Exemplo 2 - Encontrando um bug de lógica</h2>
+            <p class="texto-exemplo">
+                A função soma o valor de uma compra. O total esperado é
+                R$ 125,90, mas a versão com bug devolve R$ 100,90 sem
+                nenhuma mensagem de erro. O rastreio com console.log dentro
+                do laço mostra o caminho para encontrar a causa.
+            </p>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo botao-com-erro" id="botao-calcular-com-bug" type="button">Calcular com bug</button>
+                <button class="botao-exemplo" id="botao-calcular-corrigida" type="button">Calcular versão corrigida</button>
+            </div>
+
+            <p class="linha-resultado" id="resultado-total">Os totais calculados aparecerão aqui.</p>
+        </section>
+
+        <!--
+        Exemplo 3 - Tipos inesperados inspecionados com debugger
+        O que é: todo valor em JavaScript tem um tipo: número, texto,
+        booleano e outros. Muitos bugs nascem de um valor que é texto quando
+        o código esperava número.
+        Para que serve: a pausa do debugger permite ver o tipo e o valor de
+        cada variável na área Scope do painel Sources. Textos aparecem entre
+        aspas e números sem aspas.
+        Quando usar: quando o resultado de um cálculo vier estranho, como
+        uma concatenação no lugar de uma soma.
+        Como usar: preencha os dois campos e clique em Somar com bug com o
+        DevTools aberto. A execução pausa no debugger: note na área Scope
+        que os dois valores estão entre aspas, ou seja, são textos. Retome
+        com F8 e compare com o botão da versão corrigida.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-tres">
+            <h2>Exemplo 3 - Inspecionando tipos com a pausa do debugger</h2>
+            <p class="texto-exemplo">
+                Os campos de formulário devolvem texto. A versão com bug soma
+                os valores sem converter; a corrigida usa a função Number
+                antes de somar.
+            </p>
+
+            <form class="formulario-exemplo" id="formulario-soma">
+                <label for="campo-valor-produto">Valor do produto</label>
+                <input type="number" id="campo-valor-produto" value="100" step="1">
+
+                <label for="campo-acrescimo">Acréscimo</label>
+                <input type="number" id="campo-acrescimo" value="30" step="1">
+
+                <div class="grupo-botoes">
+                    <button class="botao-exemplo botao-com-erro" id="botao-somar-com-bug" type="button">Somar com bug</button>
+                    <button class="botao-exemplo" id="botao-somar-corrigida" type="button">Somar versão corrigida</button>
+                </div>
+            </form>
+
+            <p class="linha-resultado" id="resultado-soma">O resultado aparecerá aqui.</p>
+        </section>
+
+    </main>
+
+    <footer class="rodape-exercicio">
+        <p>Exercício de estudo JS: Debugging.</p>
+    </footer>
+
+    <script src="exercicio-02.js"></script>
+</body>
+</html>

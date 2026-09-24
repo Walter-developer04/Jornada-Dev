@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>Exercício 03 - Debugging Memory Leaks</title>
+</head>
+<body>
+
+    <!--
+    O que é: vazamento de memória acontece quando objetos que não são mais
+    necessários continuam referenciados, impedindo o coletor de lixo
+    (garbage collector) de liberar o espaço.
+
+    Para que serve estudá-lo: páginas que vazam memória ficam mais pesadas
+    com o tempo, principalmente aplicações que ficam abertas por horas.
+
+    Quando usar a investigação: quando o uso de memória do navegador cresce
+    sem parar durante o uso normal da página.
+
+    Como usar: o painel Memory do DevTools permite capturar instantâneos de
+    memória (heap snapshots) e compará-los. Os três exemplos abaixo são
+    controlados e reversíveis: cada um tem um botão que desfaz o vazamento.
+    -->
+
+    <header class="cabecalho-exercicio">
+        <p class="etiqueta-numero">Exercício 03</p>
+        <h1>Debugging Memory Leaks</h1>
+        <p class="texto-introducao">
+            Vazamentos de memória em JavaScript. Abra o DevTools com F12 e
+            use a aba Memory para comparar instantâneos antes e depois de
+            cada operação. Todos os exemplos podem ser desfeitos.
+        </p>
+    </header>
+
+    <main class="conteudo-exercicio">
+
+        <!--
+        Exemplo 1 - Elementos removidos que continuam referenciados
+        O que é: quando um elemento sai da tela, ele só libera memória se
+        nenhuma variável guardar referência a ele. Enquanto houver
+        referência, o elemento permanece na memória como nó desconectado.
+        Para que serve: mostrar a causa mais comum de vazamento em páginas
+        que criam e removem elementos com frequência.
+        Quando usar: em listas dinâmicas que crescem e encolhem o tempo todo.
+        Como usar: adicione leituras, remova algumas e clique em Liberar
+        referências. No painel Memory, capture um instantâneo depois da
+        remoção e outro depois de liberar: os elementos desconectados
+        aparecem no primeiro e deixam de existir no segundo.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-um">
+            <h2>Exemplo 1 - Elementos removidos mantidos em memória</h2>
+            <p class="texto-exemplo">
+                A remoção da leitura tira o elemento da tela, mas o código
+                com bug guarda a referência em uma lista, impedindo a coleta.
+            </p>
+
+            <div class="quadro-observacao">
+                <p>Leituras na tela: <span class="valor-observado" id="contador-leituras-na-tela">0</span></p>
+                <p>Referências retidas: <span class="valor-observado" id="contador-referencias-retidas">0</span></p>
+            </div>
+
+            <ul class="lista-leituras" id="lista-leituras"></ul>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-adicionar-leitura" type="button">Adicionar leitura</button>
+                <button class="botao-exemplo" id="botao-remover-leitura" type="button">Remover última leitura</button>
+                <button class="botao-liberar" id="botao-liberar-referencias" type="button">Liberar referências</button>
+            </div>
+        </section>
+
+        <!--
+        Exemplo 2 - Temporizador nunca cancelado
+        O que é: setInterval mantém a função de retorno ativa enquanto não
+        receber clearInterval. Dados acumulados por ela nunca são coletados.
+        Para que serve: mostrar vazamentos lentos, que crescem aos poucos e
+        só incomodam depois de muito tempo de página aberta.
+        Quando usar: em qualquer página com temporizadores periódicos.
+        Como usar: inicie a coleta, espere alguns segundos e pare. O quadro
+        mostra o total de amostras guardadas. Sem parar o temporizador, o
+        acúmulo não termina. Use Liberar histórico para zerar as amostras.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-dois">
+            <h2>Exemplo 2 - Temporizador que nunca é cancelado</h2>
+            <p class="texto-exemplo">
+                A cada 200 milissegundos, a coleta guarda uma amostra nova.
+                Se o clearInterval nunca for chamado, o acúmulo não tem fim.
+            </p>
+
+            <div class="quadro-observacao">
+                <p>Amostras guardadas: <span class="valor-observado" id="contador-amostras">0</span></p>
+                <p>Coleta em andamento: <span class="valor-observado" id="indicador-coleta">não</span></p>
+            </div>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-iniciar-coleta" type="button">Iniciar coleta</button>
+                <button class="botao-exemplo" id="botao-parar-coleta" type="button">Parar coleta</button>
+                <button class="botao-liberar" id="botao-liberar-historico" type="button">Liberar histórico</button>
+            </div>
+        </section>
+
+        <!--
+        Exemplo 3 - Variável global acidental
+        O que é: atribuir um valor sem usar let, const ou var cria, sem
+        aviso, uma propriedade no objeto global do navegador.
+        Para que serve: mostrar que dados soltos no escopo global nunca são
+        coletados enquanto a página estiver aberta.
+        Quando usar: suspeite disso em códigos antigos ou apressados, em que
+        alguma atribuição escapou sem declaração.
+        Como usar: clique em Registrar sem declarar algumas vezes. No
+        Console, digite o nome historicoNaoDeclarado e pressione Enter: a
+        variável existe e responde. O botão Remover global usa delete para
+        apagá-la.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-tres">
+            <h2>Exemplo 3 - Variável global criada por acidente</h2>
+            <p class="texto-exemplo">
+                A função com bug grava dados sem declarar a variável. Em
+                código com <code>"use strict"</code>, essa atribuição
+                lançaria um erro em vez de criar a global.
+            </p>
+
+            <div class="quadro-observacao">
+                <p>Itens na variável global: <span class="valor-observado" id="contador-global-acidental">0</span></p>
+            </div>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-registrar-sem-declarar" type="button">Registrar sem declarar</button>
+                <button class="botao-liberar" id="botao-remover-global" type="button">Remover global</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape-exercicio">
+        <p>Exercício de estudo JS. Debugging</p>
+    </footer>
+
+    <script src="exercicio-03.js"></script>
+</body>
+</html>

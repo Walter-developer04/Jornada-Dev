@@ -1,0 +1,157 @@
+﻿/*
+    Exercício 03 - Debugging Memory Leaks
+    Identidade visual de caderno de laboratório: papel esverdeado,
+    separações tracejadas e destaque verde-musgo.
+*/
+
+/* Base e tipografia */
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #f1f5ee;
+    color: #23301f;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 880px;
+    padding: 42px 32px;
+}
+
+h1,
+h2 {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: #1f3a1f;
+}
+
+h1 {
+    font-size: 27px;
+    margin: 6px 0 12px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95em;
+    background-color: #e0e8db;
+    padding: 1px 5px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+/* Cabeçalho e rodapé */
+.cabecalho-exercicio {
+    border-bottom: 2px dashed #9db490;
+    padding-bottom: 16px;
+}
+
+.etiqueta-numero {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4a7040;
+    margin: 0 0 4px;
+}
+
+.texto-introducao {
+    max-width: 640px;
+}
+
+.conteudo-exercicio {
+    margin-top: 28px;
+}
+
+.rodape-exercicio {
+    border-top: 1px dashed #9db490;
+    margin-top: 42px;
+    padding-top: 12px;
+    font-size: 12px;
+    color: #5e7253;
+}
+
+/* Estrutura comum das seções de exemplo */
+.secao-exemplo {
+    background-color: #fbfdf9;
+    border: 1px solid #ccd9c4;
+    margin-top: 28px;
+    padding: 20px 24px;
+}
+
+.texto-exemplo {
+    max-width: 640px;
+}
+
+/* Quadros de observação, como anotações de medição */
+.quadro-observacao {
+    background-color: #eef3ea;
+    border: 1px dashed #8aa37c;
+    margin-bottom: 14px;
+    padding: 10px 16px;
+}
+
+.quadro-observacao p {
+    font-size: 14px;
+    margin: 0 0 4px;
+}
+
+.valor-observado {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: #4a7040;
+}
+
+/* Exemplo 1 - lista de leituras criada e removida */
+.lista-leituras {
+    list-style: none;
+    margin: 0 0 16px;
+    max-width: 360px;
+    padding: 0;
+}
+
+.lista-leituras li {
+    border-bottom: 1px dashed #b7c7ac;
+    font-size: 14px;
+    padding: 4px 2px;
+}
+
+/* Exemplo 2 - quadro de amostras já usa o quadro de observação */
+/* Exemplo 3 - quadro da global acidental também o reutiliza */
+
+/* Botões comuns e botão que desfaz o vazamento */
+.grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.botao-exemplo {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 14px;
+    background-color: #4a7040;
+    color: #f2f6ee;
+    border: 1px solid #3a5a32;
+    padding: 9px 16px;
+    cursor: pointer;
+}
+
+.botao-exemplo:hover {
+    background-color: #3a5a32;
+}
+
+.botao-liberar {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 14px;
+    background-color: #f4f7f0;
+    color: #4a7040;
+    border: 1px solid #4a7040;
+    padding: 9px 16px;
+    cursor: pointer;
+}
+
+.botao-liberar:hover {
+    background-color: #e2ecdc;
+}

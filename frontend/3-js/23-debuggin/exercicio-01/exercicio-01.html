@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Exercício 01 - Using Browser DevTools</title>
+</head>
+<body>
+
+    <!--
+    O que é: o DevTools é o conjunto de ferramentas de desenvolvimento embutido
+    nos navegadores (Chrome, Edge, Firefox e outros), aberto em um painel
+    acoplado à janela.
+
+    Para que serve: inspecionar o HTML renderizado, testar estilos sem editar
+    os arquivos, ler mensagens do JavaScript, pausar a execução do código e
+    analisar rede, memória e desempenho.
+
+    Quando usar: durante todo o desenvolvimento, tanto para ajustar a
+    aparência de uma página quanto para investigar erros e comportamentos
+    inesperados.
+
+    Como usar: pressione F12 ou Ctrl+Shift+I, ou clique com o botão direito
+    em um elemento e escolha Inspecionar. Este exercício percorre três
+    painéis: Elements, Console e Sources.
+    -->
+
+    <header class="cabecalho-exercicio">
+        <p class="etiqueta-numero">Exercício 01</p>
+        <h1>Using Browser DevTools</h1>
+        <p class="texto-introducao">
+            Usando as ferramentas de desenvolvimento do navegador. Abra o
+            DevTools com F12 antes de começar e acompanhe os três exemplos
+            com o painel visível.
+        </p>
+    </header>
+
+    <main class="conteudo-exercicio">
+
+        <!--
+        Exemplo 1 - Painel Elements
+        O que é: a árvore HTML da página exatamente como está neste momento,
+        junto com os estilos aplicados ao elemento selecionado.
+        Para que serve: encontrar elementos, conferir classes e testar
+        estilos em tempo real, sem alterar o arquivo CSS.
+        Quando usar: para ajustar cores, espaços e posicionamento enquanto a
+        página está aberta.
+        Como usar: clique com o botão direito na ficha abaixo e escolha
+        Inspecionar. Depois clique no botão e observe o atributo class da
+        ficha mudando na árvore do painel.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-um">
+            <h2>Exemplo 1 - Inspecionando elementos no painel Elements</h2>
+            <p class="texto-exemplo">
+                A ficha abaixo é um elemento comum da página. O botão alterna
+                a classe <code>ficha-destacada</code>, e essa mudança pode ser
+                acompanhada na árvore do painel Elements. Também é possível
+                editar estilos no painel Styles para testar valores antes de
+                escrever no CSS.
+            </p>
+
+            <article class="ficha-estudante" id="ficha-estudante">
+                <h3>Ficha de estudante</h3>
+                <p class="linha-ficha">Nome: Marina Aguiar</p>
+                <p class="linha-ficha">Curso: Sistemas de Informação</p>
+                <p class="linha-ficha">Semestre: 4</p>
+            </article>
+
+            <button class="botao-exemplo" id="botao-alternar-destaque" type="button">
+                Alternar destaque da ficha
+            </button>
+        </section>
+
+        <!--
+        Exemplo 2 - Painel Console
+        O que é: o painel onde o JavaScript da página exibe mensagens de
+        informação, aviso e erro, além de aceitar comandos digitados.
+        Para que serve: acompanhar valores durante a execução, ler erros com
+        a pilha de chamadas e testar expressões.
+        Quando usar: sempre que for preciso ver o que o código está fazendo.
+        Como usar: deixe a aba Console aberta e clique nos botões desta
+        seção. Os filtros de nível na barra do painel mostram apenas um tipo
+        de mensagem por vez.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-dois">
+            <h2>Exemplo 2 - Lendo mensagens no painel Console</h2>
+            <p class="texto-exemplo">
+                Cada botão chama um método diferente do objeto
+                <code>console</code>. O método <code>table</code> desenha a
+                tabela diretamente no painel, o que ajuda a comparar listas
+                de objetos.
+            </p>
+
+            <div class="grupo-botoes">
+                <button class="botao-exemplo" id="botao-mostrar-informacao" type="button">Mostrar informação</button>
+                <button class="botao-exemplo" id="botao-mostrar-aviso" type="button">Mostrar aviso</button>
+                <button class="botao-exemplo" id="botao-mostrar-erro" type="button">Mostrar erro</button>
+                <button class="botao-exemplo" id="botao-mostrar-tabela" type="button">Mostrar tabela de notas</button>
+            </div>
+        </section>
+
+        <!--
+        Exemplo 3 - Painel Sources e a palavra-chave debugger
+        O que é: o painel Sources mostra os arquivos JavaScript da página e
+        permite pausar a execução em pontos escolhidos (breakpoints).
+        Para que serve: examinar o valor das variáveis em um momento exato e
+        acompanhar a execução linha a linha.
+        Quando usar: quando o console.log não é suficiente para entender o
+        que a função está fazendo.
+        Como usar: com o DevTools aberto, clique em Calcular média. A
+        execução pausa na linha debugger do arquivo exercicio-01.js. Veja as
+        variáveis na área Scope e retome com o botão de continuar ou F8.
+        -->
+
+        <section class="secao-exemplo" id="exemplo-tres">
+            <h2>Exemplo 3 - Pausando o código no painel Sources</h2>
+            <p class="texto-exemplo">
+                O cálculo da média usa a instrução <code>debugger</code>, que
+                só pausa a execução quando o DevTools está aberto. Com o
+                painel fechado, ela é ignorada e o cálculo acontece
+                normalmente.
+            </p>
+
+            <button class="botao-exemplo" id="botao-calcular-media" type="button">Calcular média das notas</button>
+            <p class="resultado-media" id="resultado-media">A média calculada aparecerá aqui.</p>
+        </section>
+
+    </main>
+
+    <footer class="rodape-exercicio">
+        <p>Exercício de estudo JS: Debugging</p>
+    </footer>
+
+    <script src="exercicio-01.js"></script>
+</body>
+</html>

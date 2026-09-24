@@ -1,0 +1,208 @@
+﻿/*
+    Exercício 04 - Debugging Performance
+    Identidade visual de painel analítico escuro: grafite, texto claro
+    e destaque âmbar nas leituras numéricas.
+*/
+
+/* Base e tipografia */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #23282c;
+    color: #e3ded2;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 920px;
+    padding: 42px 32px;
+}
+
+h1,
+h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #f0ebdd;
+    margin: 6px 0 12px;
+}
+
+h2 {
+    font-size: 19px;
+    color: #d9a441;
+    margin: 0 0 10px;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95em;
+    background-color: #333a40;
+    padding: 1px 5px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+/* Cabeçalho e rodapé */
+.cabecalho-exercicio {
+    border-bottom: 1px solid #3f474e;
+    padding-bottom: 18px;
+}
+
+.etiqueta-numero {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d9a441;
+    margin: 0 0 4px;
+}
+
+.texto-introducao {
+    max-width: 640px;
+}
+
+.conteudo-exercicio {
+    margin-top: 28px;
+}
+
+.rodape-exercicio {
+    border-top: 1px solid #3f474e;
+    margin-top: 44px;
+    padding-top: 12px;
+    font-size: 12px;
+    color: #9aa3a9;
+}
+
+/* Estrutura comum das seções de exemplo */
+.secao-exemplo {
+    background-color: #2b3136;
+    border: 1px solid #3d454c;
+    border-top: 3px solid #d9a441;
+    margin-top: 28px;
+    padding: 20px 24px;
+}
+
+.texto-exemplo {
+    max-width: 640px;
+}
+
+/* Painéis de medidas, como leituras de instrumento */
+.painel-medidas {
+    border: 1px solid #444d55;
+    margin: 16px 0 12px;
+}
+
+.linha-medida {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #333b41;
+    padding: 8px 14px;
+}
+
+.linha-medida:last-child {
+    border-bottom: none;
+}
+
+.linha-medida dt {
+    font-size: 13px;
+    color: #aeb6bb;
+}
+
+.linha-medida dd {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    color: #d9a441;
+}
+
+/* Exemplo 2 - área das barras que trocam de altura */
+.area-caixas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: flex-end;
+    min-height: 70px;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid #3d454c;
+    background-color: #21262a;
+}
+
+.caixa-pintura {
+    width: 18px;
+    height: 24px;
+    background-color: #56626b;
+}
+
+/* Exemplo 3 - pistas de animação */
+.pista-animacao {
+    margin-bottom: 16px;
+}
+
+.rotulo-pista {
+    font-size: 13px;
+    color: #aeb6bb;
+    margin: 0 0 6px;
+}
+
+.trilho-animacao {
+    position: relative;
+    height: 20px;
+    background-color: #21262a;
+    border: 1px solid #3d454c;
+    overflow: hidden;
+}
+
+.barra-animacao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #d9a441;
+}
+
+.linha-contagem {
+    font-size: 13px;
+    color: #aeb6bb;
+    margin: 6px 0 0;
+}
+
+.valor-observado {
+    font-family: "Courier New", Courier, monospace;
+    color: #d9a441;
+}
+
+/* Botões */
+.grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.botao-exemplo {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 14px;
+    background-color: #d9a441;
+    color: #23282c;
+    border: 1px solid #b8862f;
+    padding: 9px 18px;
+    cursor: pointer;
+}
+
+.botao-exemplo:hover {
+    background-color: #c08f33;
+}
+
+.botao-parar {
+    background-color: #2b3136;
+    color: #e3ded2;
+    border: 1px solid #9aa3a9;
+}
+
+.botao-parar:hover {
+    background-color: #363e45;
+}
