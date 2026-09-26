@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-04.css">
+
+    <title>Grid — Exercício 04</title>
+</head>
+<body>
+
+    <header>
+        <p class="folha">Exercício 04 · Folha de demonstração nº 01</p>
+        <h1>CSS Grid</h1>
+        <p class="introducao">
+            Com <code>display: grid</code>, o container recebe um molde de linhas e
+            colunas declarado em <code>grid-template-columns</code>, e cada filho é
+            encaixado nas células, uma após outra.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1 · Três colunas iguais</h2>
+
+            <!-- O ul é o container grid; cada li cai em uma célula -->
+            <ul class="grade">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+                <li>04</li>
+                <li>05</li>
+                <li>06</li>
+                <li>07</li>
+                <li>08</li>
+                <li>09</li>
+            </ul>
+
+            <p class="nota">
+                grid-template-columns: repeat(3, 1fr) — três faixas iguais. O 1fr
+                significa "uma parte do espaço disponível".
+            </p>
+        </section>
+
+        <section>
+            <h2>2 · Colunas de larguras diferentes</h2>
+
+            <ul class="grade medidas">
+                <li>120px</li>
+                <li>1fr</li>
+                <li>120px</li>
+            </ul>
+
+            <p class="nota">
+                grid-template-columns: 120px 1fr 120px — as colunas laterais têm
+                largura fixa; a do meio absorve o espaço restante.
+            </p>
+        </section>
+
+        <section>
+            <h2>3 · Itens ocupando várias células</h2>
+
+            <ul class="grade">
+                <li class="ocupa-duas-colunas">span 2 colunas</li>
+                <li>02</li>
+                <li class="ocupa-duas-linhas">span 2 linhas</li>
+                <li>04</li>
+                <li>05</li>
+            </ul>
+
+            <p class="nota">
+                grid-column: span 2 e grid-row: span 2 — um item pode avançar sobre
+                as células vizinhas do molde.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Exercício educacional — demonstração de display: grid, grid-template-columns, gap e span.</p>
+    </footer>
+
+</body>
+</html>

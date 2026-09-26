@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-01.css">
+
+    <title>Floating Elements — Exercício 01</title>
+</head>
+<body>
+
+    <header>
+        <p class="etiqueta">Exercício 01 · Técnicas de layout</p>
+        <h1>Floating Elements</h1>
+        <p class="resumo">
+            A propriedade <code>float</code> tira um elemento do fluxo normal da
+            página e o encosta em um dos lados do container. O conteúdo ao redor
+            reage: em vez de começar abaixo, ele escorre para o espaço livre.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Uma caixa flutuando à esquerda</h2>
+
+            <article class="demonstracao">
+                <!-- Esta caixa flutua; os parágrafos ao lado reagem a ela -->
+                <p class="caixa flutua-esquerda">float: left</p>
+
+                <p>
+                    Esta caixa recebeu <code>float: left</code>. Ela deixou de ocupar
+                    uma linha inteira e foi encostada no lado esquerdo do container.
+                    Este parágrafo nem percebeu: o texto subiu e passou a ocupar o
+                    espaço livre ao lado da caixa.
+                </p>
+                <p>
+                    Enquanto a altura da caixa durar, as linhas do texto ficam mais
+                    estreitas. Cada parágrafo seguinte continua se encaixando ao lado
+                    dela, porque para o restante do documento aquele espaço continua
+                    sendo considerado disponível.
+                </p>
+                <p>
+                    Quando a altura da caixa acaba, o texto volta a usar a largura
+                    completa, exatamente como faria se não existisse float nenhum.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Uma caixa flutuando à direita</h2>
+
+            <article class="demonstracao">
+                <p class="caixa flutua-direita">float: right</p>
+
+                <p>
+                    Aqui a mesma caixa recebeu <code>float: right</code>. O
+                    comportamento é espelhado: o elemento é empurrado até a borda
+                    direita e o texto passa a contorná-la pela esquerda.
+                </p>
+                <p>
+                    Trocar de left para right muda apenas o lado em que o elemento
+                    encosta. O efeito sobre o conteúdo vizinho continua o mesmo: ele
+                    flui ao redor do elemento flutuante.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Interrompendo a volta com clear</h2>
+
+            <article class="demonstracao">
+                <p class="caixa flutua-esquerda">float: left</p>
+
+                <p>
+                    Este primeiro parágrafo contorna a caixa, como nos exemplos
+                    anteriores.
+                </p>
+
+                <p class="limpa">Este parágrafo recebeu clear: left</p>
+
+                <p>
+                    O <code>clear: left</code> funciona como uma barreira: o parágrafo
+                    se recusa a dividir a linha com um float à esquerda e desce até a
+                    primeira linha totalmente livre, abaixo da caixa. A partir dele, o
+                    fluxo volta ao normal.
+                </p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Exercício educacional — demonstração de float e clear com HTML e CSS puro.</p>
+    </footer>
+
+</body>
+</html>

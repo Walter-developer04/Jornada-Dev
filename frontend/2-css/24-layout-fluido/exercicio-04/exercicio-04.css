@@ -1,0 +1,142 @@
+/* =========================================================================
+   Exercício 04 — Grid
+   Identidade: folha milimetrada de engenharia. Fundo com malha fina,
+   tinta azul-escuro, rótulos em fonte monoespaçada e vermelho de marca.
+
+   O objetivo é enxergar o molde: grid-template-columns desenha as
+   faixas, gap abre os vãos e os filhos preenchem as células.
+   ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Consolas, 'Lucida Console', monospace;
+    color: #1c3a55;
+    background-color: #f4f8fb;
+
+    /* A malha milimetrada é desenhada com dois gradients de 1px,
+       um vertical e outro horizontal, repetidos a cada 28px. */
+    background-image:
+        linear-gradient(to right, rgba(45, 110, 170, 0.13) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(45, 110, 170, 0.13) 1px, transparent 1px);
+    background-size: 28px 28px;
+    line-height: 1.6;
+}
+
+header,
+main,
+footer {
+    width: 92%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 2.4rem auto 0;
+    background-color: #ffffff;
+    border: 2px solid #1c3a55;
+    padding: 1.5rem 1.6rem;
+}
+
+.folha {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    color: #b23a2e;
+    margin-bottom: 0.7rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.introducao {
+    font-size: 0.95rem;
+    max-width: 52ch;
+}
+
+code {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #b23a2e;
+}
+
+main {
+    padding: 2.2rem 0;
+}
+
+section {
+    margin-bottom: 2.2rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #1c3a55;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.1rem;
+    background-color: #ffffff;
+}
+
+/* O molde em ação: display: grid liga o modo grade e
+   grid-template-columns declara as faixas verticais. Os filhos nem
+   precisam saber disso — cada um cai na próxima célula livre. */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;                    /* vão entre colunas e entre linhas */
+    list-style: none;
+    background-color: #ffffff;
+    border: 2px solid #1c3a55;
+    padding: 12px;
+}
+
+.grade li {
+    min-height: 88px;
+    border: 1px solid #35618a;
+    background-color: #dcebf7;
+    display: grid;
+    place-items: center;          /* atalho do grid para centralizar conteúdo */
+    font-weight: bold;
+}
+
+/* Faixas mistas: fixas nas pontas, flexível no meio. O 1fr cresce
+   para absorver o espaço que sobrar. */
+.medidas {
+    grid-template-columns: 120px 1fr 120px;
+}
+
+/* Um item pode ser maior que uma célula: o span 2 avança sobre a
+   coluna vizinha sem alterar o molde do container. */
+.ocupa-duas-colunas {
+    grid-column: span 2;
+    background-color: #bcd9f0;
+}
+
+/* O mesmo vale para as linhas: este item desce ocupando duas
+   faixas verticais da grade. */
+.ocupa-duas-linhas {
+    grid-row: span 2;
+    background-color: #bcd9f0;
+}
+
+.nota {
+    margin-top: 0.9rem;
+    font-size: 0.8rem;
+    color: #b23a2e;
+    background-color: #ffffff;
+    padding: 0.35rem 0.6rem;
+}
+
+footer {
+    margin: 0 auto 2.6rem;
+    background-color: #ffffff;
+    border: 2px solid #1c3a55;
+    padding: 1rem 1.4rem;
+    font-size: 0.8rem;
+    color: #35618a;
+}

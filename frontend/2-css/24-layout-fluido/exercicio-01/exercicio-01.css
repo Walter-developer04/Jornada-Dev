@@ -1,0 +1,126 @@
+/* =========================================================================
+   Exercício 01 — Floating Elements
+   Identidade: editorial quente, papel creme, terracota e serifa (Georgia).
+
+   A ideia central: float retira o elemento do fluxo normal, encosta-o em
+   um dos lados do container e deixa o conteúdo ao redor ocupar o resto.
+   ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f6eedd;
+    color: #3c2f20;
+    line-height: 1.75;
+}
+
+header,
+main,
+footer {
+    width: 92%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 3rem 0 2rem;
+    border-bottom: 4px double #c05a24;
+}
+
+.etiqueta {
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #c05a24;
+    margin-bottom: 0.9rem;
+}
+
+h1 {
+    font-size: 2.7rem;
+    line-height: 1.1;
+    color: #2c2214;
+    margin-bottom: 1rem;
+}
+
+.resumo {
+    font-size: 1.05rem;
+}
+
+code {
+    font-size: 0.9em;
+    background-color: #eadfc4;
+    padding: 0.1em 0.45em;
+    border-radius: 4px;
+}
+
+section {
+    padding: 2.4rem 0;
+}
+
+h2 {
+    font-size: 1.35rem;
+    color: #a84c1d;
+    margin-bottom: 1.1rem;
+}
+
+.demonstracao {
+    background-color: #fffaf0;
+    border: 1px solid #e2d2ae;
+    border-left: 5px solid #d97b46;
+    border-radius: 6px;
+    padding: 1.6rem;
+}
+
+.demonstracao p {
+    margin-bottom: 0.9rem;
+}
+
+/* A caixa que vai flutuar. Sem float, ela seria um bloco comum e os
+   parágrafos começariam abaixo dela, um empilhado no outro. */
+.caixa {
+    width: 150px;
+    height: 150px;
+    background-color: #d96a2f;
+    color: #fff4e2;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150px;
+}
+
+/* float: left tira a caixa do fluxo normal e a encosta no lado
+   esquerdo. O texto seguinte passa a fluir ao lado dela — por isso
+   se diz que o conteúdo "contorna" o elemento flutuante. */
+.demonstracao .flutua-esquerda {
+    float: left;
+    margin: 0 1.1rem 0.5rem 0;
+}
+
+/* Mesma lógica, lado oposto: a caixa cola na direita e o texto
+   contorna pela esquerda. */
+.demonstracao .flutua-direita {
+    float: right;
+    margin: 0 0 0.5rem 1.1rem;
+}
+
+/* clear: left avisa o navegador: "não me coloque ao lado de um float
+   à esquerda". O elemento desce até a primeira linha livre abaixo da
+   caixa e encerra o efeito de contorno. */
+.limpa {
+    clear: left;
+    border-top: 2px dashed #d97b46;
+    padding-top: 0.8rem;
+    color: #a84c1d;
+    font-style: italic;
+}
+
+footer {
+    padding: 1.5rem 0 2.5rem;
+    border-top: 4px double #c05a24;
+    font-size: 0.85rem;
+    color: #8a7455;
+}

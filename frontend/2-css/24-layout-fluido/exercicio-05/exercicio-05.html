@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-05.css">
+
+    <title>Flow Layout — Exercício 05</title>
+</head>
+<body>
+
+    <header>
+        <p class="numero">05</p>
+        <h1>Flow Layout</h1>
+        <p class="introducao">
+            Antes de float, flexbox ou grid existe o fluxo normal. É o jeito
+            padrão de o navegador dispor a página: elementos de bloco empilham de
+            cima para baixo; elementos inline fluem lado a lado e quebram de linha
+            quando o espaço acaba.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1 — Blocos empilham verticalmente</h2>
+
+            <!-- Sem float, flex ou grid: só o fluxo normal -->
+            <article class="demonstracao">
+                <p class="bloco">Bloco 1</p>
+                <p class="bloco">Bloco 2</p>
+                <p class="bloco">Bloco 3</p>
+            </article>
+
+            <p class="nota">
+                Cada elemento de bloco ocupa a largura disponível e empurra o
+                seguinte para uma linha nova.
+            </p>
+        </section>
+
+        <section>
+            <h2>2 — Inlines fluem lado a lado</h2>
+
+            <article class="demonstracao">
+                <p>
+                    Neste parágrafo, os trechos destacados são inline:
+                    <span class="inline">inline 01</span> e
+                    <span class="inline">inline 02</span> não abrem linha nova.
+                    Eles se encaixam na sequência do texto,
+                    <span class="inline">inline 03</span> continua ocupando a
+                    mesma linha até ela ficar cheia. Quando isso acontece,
+                    <span class="inline">inline 04</span> simplesmente escorre
+                    para a linha seguinte, e o texto segue:
+                    <span class="inline">inline 05</span>, sem nenhuma regra
+                    extra de layout.
+                </p>
+            </article>
+
+            <p class="nota">
+                Span, strong, em, links e o próprio texto são inline: dividem a
+                mesma linha enquanto houver espaço.
+            </p>
+        </section>
+
+        <section>
+            <h2>3 — As margens participam do fluxo</h2>
+
+            <article class="demonstracao">
+                <p class="bloco com-espaco">Este bloco tem 48px de margem acima.</p>
+                <p class="bloco">Este bloco foi empurrado para baixo pela margem do anterior.</p>
+            </article>
+
+            <p class="nota">
+                No fluxo normal, a margem ocupa lugar de verdade: ela empurra
+                tudo o que vem depois.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Exercício educacional — demonstração do fluxo normal de blocos e inlines.</p>
+    </footer>
+
+</body>
+</html>

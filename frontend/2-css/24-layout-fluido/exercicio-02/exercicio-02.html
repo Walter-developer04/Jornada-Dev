@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-02.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <title>Multicolumn Layout — Exercício 02</title>
+</head>
+<body>
+
+    <header>
+        <p class="edicao">Edição de estudos</p>
+        <h1>A Gazeta das Colunas</h1>
+        <p class="subtitulo">
+            Um texto único, sem nenhuma divisão no HTML, repartido em colunas
+            diretamente pelo CSS.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Duas colunas com column-count</h2>
+
+            <article class="texto duas-colunas">
+                <h3>Um texto só, duas colunas</h3>
+                <p>
+                    No HTML, este artigo é apenas uma sequência de parágrafos, um
+                    depois do outro, como qualquer texto comum. Não existe coluna
+                    marcada na estrutura: nenhuma tabela, nenhuma divisão lateral.
+                </p>
+                <p>
+                    Quem cria as colunas é o CSS. Ao receber <code>column-count: 2</code>,
+                    o navegador mede todo o conteúdo, divide em duas partes de altura
+                    parecida e deposita uma parte em cada coluna.
+                </p>
+                <p>
+                    Se um parágrafo cai exatamente na fronteira, ele é cortado e
+                    continua na coluna seguinte, como acontece em jornais e revistas.
+                </p>
+            </article>
+
+            <p class="nota">
+                column-count: 2 — o número de colunas é fixo; a altura de cada
+                uma é calculada pelo navegador.
+            </p>
+        </section>
+
+        <section>
+            <h2>Três colunas com column-gap e column-rule</h2>
+
+            <article class="texto tres-colunas">
+                <p>
+                    Agora pedimos três colunas. O conteúdo continua sendo o mesmo
+                    tipo de coisa: parágrafos comuns que o navegador distribui, um
+                    trecho por coluna, até preencher as três.
+                </p>
+                <p>
+                    O <code>column-gap</code> abre um respiro entre as colunas. Sem
+                    ele, elas ficam coladas e a leitura fica cansativa, porque o
+                    olho tropeça ao saltar de uma para a outra.
+                </p>
+                <p>
+                    Já o <code>column-rule</code> desenha um filete vertical no meio
+                    do vão. Ele é apenas decorativo: não ocupa espaço que pertenceria
+                    ao texto, apenas aparece dentro do gap.
+                </p>
+                <p>
+                    É por isso que esta seção parece uma página de jornal: todo o
+                    efeito visual nasce de poucas propriedades aplicadas a um único
+                    elemento.
+                </p>
+            </article>
+
+            <p class="nota">
+                column-count: 3 · column-gap: 1.8rem · column-rule: 1px solid
+            </p>
+        </section>
+
+        <section>
+            <h2>Colunas por largura com column-width</h2>
+
+            <article class="texto por-largura">
+                <p>
+                    Nesta última demonstração não pedimos um número de colunas.
+                    Pedimos uma largura: <code>column-width: 170px</code>.
+                </p>
+                <p>
+                    Com isso, o navegador faz uma conta simples: verifica quantas
+                    colunas de 170px cabem na largura disponível e cria tantas
+                    quantas couberem. Se o container for mais largo, surgem mais
+                    colunas; se for mais estreito, menos.
+                </p>
+                <p>
+                    Este é o único momento em que a quantidade de colunas não está
+                    escrita no CSS — ela nasce do espaço disponível.
+                </p>
+            </article>
+
+            <p class="nota">
+                column-width: 170px — o número de colunas é consequência do espaço.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Exercício educacional — demonstração de column-count, column-width, column-gap e column-rule.</p>
+    </footer>
+
+</body>
+</html>

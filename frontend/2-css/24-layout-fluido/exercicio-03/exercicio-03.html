@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-03.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Flexbox — Exercício 03</title>
+</head>
+<body>
+
+    <header>
+        <p class="etiqueta">exercicio-03 · layout · flexbox</p>
+        <h1>Flexbox</h1>
+        <p class="introducao">
+            Um container com <code>display: flex</code> passa a organizar os filhos
+            ao longo de um eixo: <code>flex-direction</code> escolhe a direção,
+            <code>justify-content</code> distribui no eixo principal,
+            <code>align-items</code> alinha no eixo cruzado e <code>gap</code> abre
+            o espaçamento entre os itens.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>A direção do eixo — flex-direction</h2>
+
+            <article class="painel">
+                <h3>flex-direction: row (padrão)</h3>
+                <ul class="faixa">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                </ul>
+            </article>
+
+            <article class="painel">
+                <h3>flex-direction: column</h3>
+                <ul class="faixa coluna">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Distribuição no eixo principal — justify-content</h2>
+
+            <article class="painel">
+                <h3>justify-content: flex-start (padrão)</h3>
+                <ul class="faixa">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+            </article>
+
+            <article class="painel">
+                <h3>justify-content: center</h3>
+                <ul class="faixa ao-centro">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+            </article>
+
+            <article class="painel">
+                <h3>justify-content: space-between</h3>
+                <ul class="faixa nas-pontas">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Alinhamento no eixo cruzado — align-items</h2>
+
+            <article class="painel">
+                <h3>align-items: stretch (padrão)</h3>
+                <ul class="faixa faixa-alta">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+            </article>
+
+            <article class="painel">
+                <h3>align-items: center</h3>
+                <ul class="faixa faixa-alta eixo-central">
+                    <li class="baixo">baixo</li>
+                    <li class="medio">médio</li>
+                    <li class="alto">alto</li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Exercício educacional — demonstração de display: flex, flex-direction, justify-content, align-items e gap.</p>
+    </footer>
+
+</body>
+</html>

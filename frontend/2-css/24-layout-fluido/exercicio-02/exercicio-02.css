@@ -1,0 +1,135 @@
+/* =========================================================================
+   Exercício 02 — Multicolumn layout
+   Identidade: jornal impresso. Papel claro, tinta escura, vermelho para
+   destaques, manchete em Playfair Display e texto corrido em Lora.
+
+   O coração do exercício são as propriedades column-*: elas transformam
+   um bloco de texto único em várias colunas equilibradas.
+   ========================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: #efe9da;
+    color: #211c14;
+    line-height: 1.8;
+}
+
+header,
+main,
+footer {
+    width: 92%;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 2.8rem 0 1.6rem;
+    border-bottom: 3px double #211c14;
+}
+
+.edicao {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.68rem;
+    color: #9c2c1e;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-size: 3.3rem;
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
+}
+
+.subtitulo {
+    font-style: italic;
+    color: #554a38;
+}
+
+main {
+    padding: 0.4rem 0 1.5rem;
+}
+
+section {
+    padding: 1.9rem 0;
+    border-bottom: 1px solid #cfc4a9;
+}
+
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.1rem;
+}
+
+.texto {
+    background-color: #faf6ea;
+    border: 1px solid #d6cbac;
+    padding: 1.7rem 1.7rem 0.9rem;
+}
+
+.texto h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
+}
+
+.texto p {
+    margin-bottom: 0.95rem;
+    text-align: justify;
+}
+
+.texto p:last-child {
+    margin-bottom: 0;
+}
+
+/* Aqui o texto vira duas colunas. O navegador sozinho balanceia a
+   altura e reparte os parágrafos entre elas. */
+.duas-colunas {
+    column-count: 2;
+    column-gap: 2.2rem;
+}
+
+/* Três colunas, com respiro entre elas e um filete vertical no meio
+   do vão. O column-rule é só desenho: não rouba espaço do texto. */
+.tres-colunas {
+    column-count: 3;
+    column-gap: 1.8rem;
+    column-rule: 1px solid #c9bc9d;
+}
+
+/* Aqui não pedimos quantidade, pedimos largura. O navegador encaixa
+   tantas colunas de 170px quanto couberem na largura disponível. */
+.por-largura {
+    column-width: 170px;
+    column-gap: 1.8rem;
+}
+
+.nota {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #9c2c1e;
+}
+
+code {
+    font-size: 0.88em;
+    background-color: #e7dfc9;
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+}
+
+footer {
+    padding: 1.4rem 0 2.4rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #554a38;
+}
