@@ -1,0 +1,72 @@
+/* Variáveis de cor: paleta Cyber Sunset (contraste testado para WCAG AA) */
+:root {
+  --fundo: #14061f;
+  --superficie: #22103a;
+  --texto: #f5eefc;
+  --ambar: #ffb347;
+  --violeta: #b794f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+main { max-width: 64rem; margin: 0 auto; padding: 3rem 1.5rem; }
+
+h1 { font-size: 2.5rem; color: var(--ambar); margin: 0 0 .5rem; }
+h2 { color: var(--violeta); margin-top: 3rem; }
+h3 { margin: 0 0 .25rem; color: var(--ambar); }
+p  { margin: 0 0 1rem; }
+code { color: var(--violeta); }
+
+/* Grade responsiva dos cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--violeta);
+  border-radius: .75rem;
+  padding: 1.25rem;
+}
+
+/* Palco: área onde o elemento transformado é exibido */
+.palco {
+  display: grid;
+  place-items: center;
+  height: 10rem;
+  border: 1px dashed var(--violeta);
+  border-radius: .5rem;
+}
+
+.box {
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  background: var(--ambar);
+  color: var(--fundo);
+  font-weight: 700;
+  border-radius: .5rem;
+}
+
+/* Cada classe abaixo aplica UMA função de transform */
+.box--translate { transform: translate(30px, -15px); }   /* move X e Y */
+.box--rotate    { transform: rotate(20deg); }            /* gira 20° */
+.box--scale     { transform: scale(1.4); }               /* 140% do tamanho */
+.box--skew      { transform: skew(-15deg, 5deg); }       /* inclina */
+
+/* transform-origin define o "pivô" da rotação (aqui, o canto superior esquerdo) */
+.box--origin { transform-origin: top left; transform: rotate(25deg); }
+
+/* Funções combinadas são aplicadas da esquerda para a direita */
+.box--combo { transform: translateX(20px) rotate(-15deg) scale(1.2); }

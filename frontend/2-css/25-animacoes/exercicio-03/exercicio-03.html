@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exercicio-03.css">
+  <title>Exercício 03 — Transitions</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Transitions</h1>
+      <p>Com <code>transition</code>, a mudança entre dois estados (como <code>:hover</code>) acontece de forma suave.</p>
+    </header>
+
+    <section aria-labelledby="exemplos">
+      <h2 id="exemplos">Passe o mouse ou use o teclado (Tab)</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Cor e fundo</h3>
+          <p>Transição de <code>background-color</code>.</p>
+          <button type="button" class="botao">Botão</button>
+        </article>
+        <article class="card">
+          <h3>Elevação</h3>
+          <p>Transição de <code>transform</code> e <code>box-shadow</code>.</p>
+          <a href="#exemplos" class="elevar">Cartão que sobe</a>
+        </article>
+        <article class="card">
+          <h3>Largura</h3>
+          <p>Transição de <code>width</code>.</p>
+          <div class="barra" tabindex="0"><div class="barra__preenchimento"></div></div>
+        </article>
+        <article class="card">
+          <h3>Timing functions</h3>
+          <p>Mesma duração, ritmos diferentes.</p>
+          <div class="trilha trilha--ease" tabindex="0"><span class="ponto"></span></div>
+          <div class="trilha trilha--linear" tabindex="0"><span class="ponto"></span></div>
+          <div class="trilha trilha--bezier" tabindex="0"><span class="ponto"></span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

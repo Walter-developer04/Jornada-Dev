@@ -1,0 +1,110 @@
+/* Paleta Organic Slate: tons terrosos, menta suave e musgo (contraste AA) */
+:root {
+  --fundo: #f3ede2;
+  --texto: #2b342b;
+  --musgo: #3f5a3a;
+  --menta: #a7d7c5;
+  --superficie: #fbf8f2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+main { max-width: 64rem; margin: 0 auto; padding: 3rem 1.5rem; }
+h1 { font-size: 2.5rem; font-weight: 800; color: var(--musgo); margin: 0 0 .5rem; }
+h2 { margin-top: 3rem; }
+h3 { margin: 0 0 .25rem; color: var(--musgo); }
+p  { margin: 0 0 1rem; }
+code { font-weight: 600; color: var(--musgo); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--menta);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+/* Foco visível para navegação por teclado */
+:focus-visible { outline: 3px solid var(--musgo); outline-offset: 3px; }
+
+/* 1) Cor e fundo: transition: propriedade | duração | timing */
+.botao {
+  font: inherit;
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  border: 2px solid var(--musgo);
+  border-radius: .5rem;
+  background: var(--musgo);
+  color: var(--fundo);
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease;
+}
+.botao:hover { background: var(--menta); color: var(--texto); }
+
+/* 2) Elevação: várias propriedades separadas por vírgula */
+.elevar {
+  display: block;
+  padding: 1.5rem;
+  border-radius: .75rem;
+  background: var(--menta);
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.elevar:hover, .elevar:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(43, 52, 43, .25);
+}
+
+/* 3) Largura */
+.barra { height: 1rem; background: var(--menta); border-radius: 1rem; overflow: hidden; }
+.barra__preenchimento {
+  width: 20%;
+  height: 100%;
+  background: var(--musgo);
+  transition: width .8s ease-in-out;
+}
+.barra:hover .barra__preenchimento,
+.barra:focus-visible .barra__preenchimento { width: 100%; }
+
+/* 4) Timing functions: mesma duração (1.5s), ritmos diferentes */
+.trilha {
+  position: relative;
+  height: 1.5rem;
+  margin-bottom: .75rem;
+  background: var(--menta);
+  border-radius: 1rem;
+}
+.ponto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--musgo);
+  border-radius: 50%;
+  transition: left 1.5s ease;
+}
+.trilha--linear .ponto { transition-timing-function: linear; }
+.trilha--bezier .ponto { transition-timing-function: cubic-bezier(.68, -.55, .27, 1.55); }
+.trilha:hover .ponto,
+.trilha:focus-visible .ponto { left: calc(100% - 1.5rem); }
+
+/* Acessibilidade: reduz movimento quando solicitado */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: .01ms !important; }
+}
