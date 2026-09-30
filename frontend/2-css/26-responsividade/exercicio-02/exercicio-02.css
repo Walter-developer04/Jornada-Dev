@@ -1,0 +1,106 @@
+/* Exercício 02 - Container Queries (paleta fria) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    background-color: #eaf4f8;
+    color: #0b3c5d;
+    line-height: 1.6;
+}
+
+.area-comparacao {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.cabecalho-exercicio {
+    border-bottom: 3px solid #1d8a99;
+    padding-bottom: 1rem;
+}
+
+.titulo-exercicio {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.rotulo-coluna {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #1d8a99;
+    margin-bottom: 0.5rem;
+}
+
+/* Larguras diferentes para os dois contêineres.
+   A viewport é a mesma para ambos. */
+.coluna-estreita {
+    width: 260px;
+    max-width: 100%;
+}
+
+.coluna-larga {
+    width: 100%;
+    max-width: 560px;
+}
+
+/* Aqui o elemento é declarado como contêiner.
+   container-type: inline-size permite consultar a largura dele,
+   e container-name dá um nome para usarmos na @container. */
+.recipiente-cartao {
+    container-type: inline-size;
+    container-name: cartao;
+}
+
+/* Estilo base do cartão: layout vertical, próprio para espaços pequenos. */
+.cartao-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: #ffffff;
+    border: 2px solid #1d8a99;
+    border-radius: 16px;
+}
+
+.avatar-perfil {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #1d8a99;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nome-perfil {
+    font-size: 1.25rem;
+}
+
+/* Diferente de @media, que olha para a viewport, @container olha para
+   a largura do contêiner chamado "cartao". Quando ele tiver 420px ou mais,
+   o cartão passa para o layout horizontal e o avatar aumenta.
+   Se a janela for grande mas o contêiner for estreito, nada muda. */
+@container cartao (min-width: 420px) {
+    .cartao-perfil {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .avatar-perfil {
+        width: 96px;
+        height: 96px;
+        font-size: 2rem;
+    }
+}

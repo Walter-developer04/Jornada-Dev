@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-01.css">
+
+    <title>Media Queries</title>
+</head>
+<body>
+    <main class="area-exemplo">
+
+        <!-- Cabeçalho com o indicador. O texto do indicador é trocado
+             pelo CSS conforme a largura da viewport. -->
+        <header class="cabecalho-exercicio">
+            <h1 class="titulo-exercicio">Media Queries</h1>
+            <p class="descricao">Redimensione a janela do navegador e observe a quantidade de colunas mudar.</p>
+            <p class="indicador-largura"></p>
+        </header>
+
+        <!-- Estes cartões ficam em 1, 2 ou 3 colunas,
+             dependendo da largura da tela. -->
+        <section class="grade-cartoes">
+            <article class="cartao-exemplo">
+                <h2 class="titulo-cartao">Cartão 1</h2>
+                <p class="descricao">Cada cartão é apenas um bloco que será reorganizado pela grade.</p>
+            </article>
+            <article class="cartao-exemplo">
+                <h2 class="titulo-cartao">Cartão 2</h2>
+                <p class="descricao">A grade muda de organização quando a viewport atinge certa largura.</p>
+            </article>
+            <article class="cartao-exemplo">
+                <h2 class="titulo-cartao">Cartão 3</h2>
+                <p class="descricao">Nenhum JavaScript é usado: somente @media no CSS.</p>
+            </article>
+        </section>
+
+    </main>
+</body>
+</html>

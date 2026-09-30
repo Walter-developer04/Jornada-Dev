@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-03.css">
+
+    <title>Responsive Typography</title>
+</head>
+<body>
+    <main class="pagina-tipografia">
+
+        <header class="cabecalho-exercicio">
+            <p class="etiqueta-exercicio">Exercício 03</p>
+            <h1 class="titulo-exercicio">Tipografia Responsiva</h1>
+            <p class="descricao">Redimensione a janela: o texto fluido cresce e diminui sem breakpoints.</p>
+        </header>
+
+        <!-- Texto com tamanho fixo, para servir de comparação.
+             Ele não muda quando a janela é redimensionada. -->
+        <section class="bloco-texto bloco-fixo">
+            <p class="rotulo-bloco">Tamanho fixo: font-size: 3rem</p>
+            <h2 class="titulo-fixo">Título que nunca muda</h2>
+            <p class="paragrafo-fixo">Este parágrafo usa sempre o mesmo tamanho, em qualquer tela.</p>
+        </section>
+
+        <!-- Texto fluido: o tamanho é calculado com clamp(),
+             respeitando um mínimo e um máximo. -->
+        <section class="bloco-texto bloco-fluido">
+            <p class="rotulo-bloco">Tamanho fluido: clamp(2rem, 1rem + 5vw, 4.5rem)</p>
+            <h2 class="titulo-fluido">Título que acompanha a tela</h2>
+            <p class="paragrafo-fluido">Este parágrafo também é fluido, mas com uma variação bem menor, para manter a leitura confortável.</p>
+        </section>
+
+    </main>
+</body>
+</html>

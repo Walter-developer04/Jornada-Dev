@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-02.css">
+
+    <title>Container Queries</title>
+</head>
+<body>
+    <main class="area-comparacao">
+
+        <header class="cabecalho-exercicio">
+            <h1 class="titulo-exercicio">Container Queries</h1>
+            <p class="descricao">O mesmo cartão aparece duas vezes, com a mesma viewport, mas em contêineres de larguras diferentes.</p>
+        </header>
+
+        <!-- Contêiner estreito: o cartão dentro dele será exibido na vertical,
+             mesmo que a tela seja grande. -->
+        <section class="coluna-estreita">
+            <p class="rotulo-coluna">Contêiner estreito (260px)</p>
+            <div class="recipiente-cartao">
+                <article class="cartao-perfil">
+                    <div class="avatar-perfil">AB</div>
+                    <div class="texto-perfil">
+                        <h2 class="nome-perfil">Ana Borges</h2>
+                        <p class="descricao">O layout deste cartão depende da largura do contêiner, não da janela.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contêiner largo: o mesmo cartão muda para layout horizontal
+             porque o espaço disponível ali é maior. -->
+        <section class="coluna-larga">
+            <p class="rotulo-coluna">Contêiner largo (até 560px)</p>
+            <div class="recipiente-cartao">
+                <article class="cartao-perfil">
+                    <div class="avatar-perfil">AB</div>
+                    <div class="texto-perfil">
+                        <h2 class="nome-perfil">Ana Borges</h2>
+                        <p class="descricao">O layout deste cartão depende da largura do contêiner, não da janela.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

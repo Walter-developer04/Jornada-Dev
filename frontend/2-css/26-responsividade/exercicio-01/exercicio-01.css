@@ -1,0 +1,99 @@
+/* Exercício 01 - Media Queries (paleta quente) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff4e6;
+    color: #3b1d0e;
+    line-height: 1.5;
+}
+
+.area-exemplo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.cabecalho-exercicio {
+    background-color: #d9480f;
+    color: #fff4e6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.titulo-exercicio {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.indicador-largura {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #f59f00;
+    color: #3b1d0e;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Estilo base (sem media query): vale para telas pequenas.
+   Abordagem "mobile first": começamos pelo layout mais simples
+   e adicionamos regras conforme a tela aumenta. */
+.indicador-largura::after {
+    content: "Viewport menor que 600px: 1 coluna";
+}
+
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.cartao-exemplo {
+    background-color: #ffffff;
+    border-left: 6px solid #d9480f;
+    border-radius: 6px;
+    padding: 1.25rem;
+}
+
+.titulo-cartao {
+    color: #d9480f;
+    margin-bottom: 0.5rem;
+}
+
+/* A media query abaixo só é aplicada quando a largura da viewport
+   for de 600px ou mais. Ela troca a grade para 2 colunas,
+   aumenta o espaçamento e atualiza o texto do indicador. */
+@media (min-width: 600px) {
+    .area-exemplo {
+        padding: 2rem;
+    }
+
+    .grade-cartoes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .indicador-largura::after {
+        content: "Viewport entre 600px e 899px: 2 colunas";
+    }
+}
+
+/* Esta segunda media query vale a partir de 900px.
+   Ela sobrescreve a anterior porque vem depois no arquivo:
+   a grade passa a ter 3 colunas e o espaço entre os cartões aumenta. */
+@media (min-width: 900px) {
+    .grade-cartoes {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .indicador-largura::after {
+        content: "Viewport de 900px ou mais: 3 colunas";
+    }
+}
