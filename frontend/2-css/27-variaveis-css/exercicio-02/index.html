@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 02 - Escopo, herança e fallback</title>
+</head>
+<body>
+    <main class="laboratorio-escopo">
+        <header class="cabecalho-laboratorio">
+            <p class="etiqueta-exercicio">Exercício 02</p>
+            <h1>Escopo, herança e fallback</h1>
+            <p class="subtitulo-laboratorio">A mesma variável, <code>--cor-marca</code>, assume valores diferentes conforme o lugar em que é declarada. Observe a cor das bordas, dos títulos e das amostras em cada bloco.</p>
+        </header>
+
+        <section class="area-escopo" aria-labelledby="titulo-escopo">
+            <h2 id="titulo-escopo">1. Escopo e herança</h2>
+            <p>Toda propriedade personalizada participa da cascata. Um elemento recebe o valor declarado no ancestral mais próximo, a menos que declare o seu próprio.</p>
+
+            <section class="escopo-raiz" aria-labelledby="titulo-raiz">
+                <header class="cabecalho-escopo">
+                    <h3 id="titulo-raiz">Escopo global (:root)</h3>
+                    <code class="codigo-variavel">--cor-marca: #e07a5f;</code>
+                </header>
+                <p class="valor-herdado">Valor herdado: este parágrafo não declara nada e recebe o valor global.</p>
+
+                <section class="escopo-bloco-especial" aria-labelledby="titulo-bloco">
+                    <header class="cabecalho-escopo">
+                        <h3 id="titulo-bloco">.escopo-bloco-especial</h3>
+                        <code class="codigo-variavel">--cor-marca: #81b29a;</code>
+                    </header>
+                    <p class="valor-sobrescrito">Valor sobrescrito: o bloco declara a variável de novo e vence o valor global.</p>
+                    <p class="valor-herdado-do-bloco">Valor herdado do bloco: sem declaração própria, este parágrafo recebe o valor do ancestral mais próximo.</p>
+
+                    <section class="escopo-local" aria-labelledby="titulo-local">
+                        <header class="cabecalho-escopo">
+                            <h3 id="titulo-local">.escopo-local</h3>
+                            <code class="codigo-variavel">--cor-marca: #f2cc8f;</code>
+                        </header>
+                        <p class="valor-local">Valor local: a declaração mais próxima do elemento prevalece.</p>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <section class="area-fallback" aria-labelledby="titulo-fallback">
+            <h2 id="titulo-fallback">2. Fallback em var()</h2>
+            <p>O segundo argumento de <code>var()</code> só é usado quando a variável pedida não tem valor utilizável naquele ponto.</p>
+            <ul class="lista-fallback">
+                <li>
+                    <article class="exemplo-fallback">
+                        <h3>Variável não declarada</h3>
+                        <p class="valor-fallback-ativo">Fundo vindo do fallback</p>
+                        <code class="codigo-variavel">background-color: var(--cor-inexistente, #8d9aa0);</code>
+                    </article>
+                </li>
+                <li>
+                    <article class="exemplo-fallback exemplo-fallback-declarado">
+                        <h3>Variável declarada</h3>
+                        <p class="valor-fallback-ignorado">Fundo vindo da variável</p>
+                        <code class="codigo-variavel">background-color: var(--cor-declarada, #8d9aa0);</code>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section class="area-resumo" aria-labelledby="titulo-resumo">
+            <h2 id="titulo-resumo">3. As quatro situações</h2>
+            <dl class="lista-situacoes">
+                <dt class="etiqueta-herdada">Valor herdado</dt>
+                <dd>O elemento não declara a variável e recebe o valor do ancestral mais próximo que a declara.</dd>
+                <dt class="etiqueta-sobrescrita">Valor sobrescrito</dt>
+                <dd>Um bloco declara de novo a mesma variável e substitui o valor herdado para si e para seus descendentes.</dd>
+                <dt class="etiqueta-local">Valor local</dt>
+                <dd>A declaração está no escopo mais interno e vale apenas ali, mesmo havendo declarações mais externas.</dd>
+                <dt class="etiqueta-fallback">Valor de fallback</dt>
+                <dd>A variável não tem valor utilizável, então <code>var()</code> usa o segundo argumento.</dd>
+            </dl>
+        </section>
+    </main>
+</body>
+</html>

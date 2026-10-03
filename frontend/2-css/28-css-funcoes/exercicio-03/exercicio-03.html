@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-03.css">
+    <title>Exercício 03 — var() e custom properties</title>
+</head>
+<body>
+    <header class="secao-titulo">
+        <div class="planeta" aria-hidden="true"></div>
+        <p class="etiqueta">Exercício 03 · CSS Functions</p>
+        <h1>var(): um valor, vários usos</h1>
+        <p class="resumo">Uma custom property guarda um valor uma vez. A função var() o reutiliza onde for preciso.</p>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="secao-demonstracao" aria-labelledby="titulo-demonstracao">
+            <h2 id="titulo-demonstracao">Demonstração</h2>
+            <pre class="bloco-codigo"><code>:root {
+    --cor-destaque: #F6D488;
+    --espaco: 1.5rem;
+}
+.cartao-constelacao { border: 3px solid var(--cor-destaque); }</code></pre>
+            <div class="grade-cartoes">
+                <article class="cartao-constelacao cartao-herdado">
+                    <h3>Cartão A</h3>
+                    <p class="rotulo">Valor herdado de :root</p>
+                    <p>Borda sólida usando --cor-destaque.</p>
+                </article>
+                <article class="cartao-constelacao cartao-redefinido">
+                    <h3>Cartão B</h3>
+                    <p class="rotulo">Valor redefinido no cartão</p>
+                    <p>Borda dupla: a mesma regra, mas --cor-destaque vale outra cor aqui dentro.</p>
+                </article>
+                <article class="cartao-constelacao cartao-reserva">
+                    <h3>Cartão C</h3>
+                    <p class="rotulo">Valor reserva</p>
+                    <p>Borda tracejada: var(--cor-inexistente, #FFFFFF) usa o segundo valor porque a variável não existe.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-analise" aria-labelledby="titulo-analise">
+            <h2 id="titulo-analise">Análise</h2>
+            <ul>
+                <li><strong>Problema:</strong> a mesma cor se repete em várias regras.</li>
+                <li><strong>Função:</strong> var() lê a custom property no ponto onde é usada.</li>
+                <li><strong>Resultado:</strong> trocar o valor em um lugar atualiza todos os usos.</li>
+                <li><strong>Escopo:</strong> uma custom property pode ser redefinida dentro de um elemento e vale para os seus descendentes.</li>
+            </ul>
+        </section>
+
+        <section class="secao-validacao" aria-labelledby="titulo-validacao">
+            <h2 id="titulo-validacao">Validação</h2>
+            <ul>
+                <li><strong>Manutenção:</strong> poucas variáveis, com nomes claros. Criar dezenas sem necessidade só piora a leitura.</li>
+                <li><strong>Accessibility:</strong> texto #EEF1FF sobre fundo #05060F tem contraste muito acima de 4,5:1 (WCAG 1.4.3). Ao trocar uma variável de cor, o contraste precisa ser verificado de novo.</li>
+                <li><strong>Performance:</strong> alterar uma variável pode exigir recálculo de estilo nos elementos que a usam. Com poucas variáveis, como aqui, o custo tende a ser pequeno.</li>
+                <li><strong>Compatibilidade:</strong> consulte a tabela de var() no MDN; versões não foram verificadas neste exercício.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape-simples">
+        <p>Exercício 03 · demonstração educacional estática.</p>
+    </footer>
+</body>
+</html>

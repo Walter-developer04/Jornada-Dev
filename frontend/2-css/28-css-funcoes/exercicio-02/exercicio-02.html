@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-02.css">
+    <title>Exercício 02 — min(), max() e clamp()</title>
+</head>
+<body>
+    <header class="secao-titulo">
+        <div class="farol" aria-hidden="true">
+            <div class="farol-feixe"></div>
+            <div class="farol-torre"></div>
+            <div class="farol-galeria"></div>
+            <div class="farol-luz"></div>
+            <div class="farol-teto"></div>
+        </div>
+        <div class="conteudo-titulo">
+            <p class="etiqueta">Exercício 02 · CSS Functions</p>
+            <h1>min(), max() e clamp()</h1>
+            <p>Três funções para limitar um valor que muda com a janela: teto, piso e os dois juntos.</p>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="secao-demonstracao" aria-labelledby="titulo-demonstracao">
+            <h2 id="titulo-demonstracao">Demonstração</h2>
+            <p>Todas as barras partem de 45vw. Redimensione a janela e compare o comportamento de cada uma.</p>
+            <ul class="lista-barras">
+                <li class="barra barra-sem-funcao">sem função: width: 45vw</li>
+                <li class="barra barra-minimo">min(): width: min(45vw, 24rem)</li>
+                <li class="barra barra-maximo">max(): width: max(45vw, 12rem)</li>
+                <li class="barra barra-limitada">clamp(): width: clamp(12rem, 45vw, 24rem)</li>
+            </ul>
+        </section>
+
+        <section class="secao-analise" aria-labelledby="titulo-analise">
+            <h2 id="titulo-analise">Análise</h2>
+            <div class="grade-funcoes">
+                <article class="cartao-funcao">
+                    <h3>min()</h3>
+                    <p>Escolhe o menor valor da lista. Funciona como teto: a barra cresce, mas para em 24rem.</p>
+                </article>
+                <article class="cartao-funcao">
+                    <h3>max()</h3>
+                    <p>Escolhe o maior valor. Funciona como piso: a barra nunca fica menor que 12rem.</p>
+                </article>
+                <article class="cartao-funcao">
+                    <h3>clamp()</h3>
+                    <p>Recebe mínimo, valor ideal e máximo. Equivale a max(mínimo, min(ideal, máximo)).</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-validacao" aria-labelledby="titulo-validacao">
+            <h2 id="titulo-validacao">Validação</h2>
+            <p class="texto-fluido">Este texto usa clamp(1rem, 0.9rem + 1vw, 1.5rem).</p>
+            <ul>
+                <li><strong>Accessibility:</strong> o mínimo e o ideal usam rem, então o texto continua respondendo à ampliação do usuário (WCAG 1.4.4). Evite font-size apenas com vw.</li>
+                <li><strong>Performance:</strong> estas funções podem substituir media queries simples e reduzir CSS. Isso melhora a manutenção; não é garantia de renderização mais rápida.</li>
+                <li><strong>Compatibilidade:</strong> segundo os dados de compatibilidade do MDN, clamp() é suportada desde Chrome e Edge 79, Firefox 75 e Safari 13.1. Para min() e max(), consulte a tabela do MDN.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape-simples">
+        <p>Exercício 02 · demonstração educacional estática.</p>
+    </footer>
+</body>
+</html>

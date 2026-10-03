@@ -1,0 +1,122 @@
+﻿/* Paleta de arquivo: mesa #2B2622, papel #E8DCC0, tinta #1C1A17, carimbo #8E1B1B. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #2B2622;
+    color: #F3EAD3;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+.secao-titulo {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background:
+        repeating-linear-gradient(0deg, transparent 0, transparent 2.4rem, rgba(255, 255, 255, 0.05) 2.4rem, rgba(255, 255, 255, 0.05) 2.5rem),
+        #2B2622;
+}
+
+.folha-principal {
+    width: min(100%, 38rem);
+    padding: clamp(1.5rem, 5vw, 3rem);
+    background: #E8DCC0;
+    color: #1C1A17;
+    border-left: 0.75rem solid #8E1B1B;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.etiqueta {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0.5rem 0 1rem;
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(2rem, 1.4rem + 3.5vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.carimbo {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.25rem 0.75rem;
+    border: 3px solid #8E1B1B;
+    color: #8E1B1B;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transform: rotate(-4deg);
+}
+
+.conteudo-principal {
+    width: min(100% - 2rem, 60rem);
+    margin: 2rem auto;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    background: #E8DCC0;
+    color: #1C1A17;
+}
+
+h2 {
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #1C1A17;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.secao-analise, .secao-validacao { margin-top: 2rem; }
+
+.comparacao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1.5rem;
+}
+
+.evidencia { padding: 1rem; background: #F3EAD3; }
+.evidencia h3 { margin-top: 0; font-family: "Courier New", Courier, monospace; }
+.evidencia-ruim { border: 3px dashed #8E1B1B; }
+.evidencia-melhor { border: 3px solid #1C1A17; }
+
+.amostra {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    background: #FFFDF5;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Decisão ruim: bordas repetidas e três sombras largas empilhadas. */
+.bloco-pesado {
+    border-top: 2px solid #1C1A17;
+    border-right: 2px solid #1C1A17;
+    border-bottom: 2px solid #1C1A17;
+    border-left: 2px solid #1C1A17;
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(0, 0, 0, 0.4),
+        0 0 120px rgba(0, 0, 0, 0.4);
+}
+
+/* Decisão melhor: uma borda e uma sombra discreta. */
+.bloco-enxuto {
+    border: 2px solid #1C1A17;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+}
+
+pre {
+    overflow-x: auto;
+    margin: 0;
+    padding: 0.75rem;
+    background: #FFFDF5;
+    border: 1px solid #1C1A17;
+    font-size: 0.85rem;
+}
+
+.rodape-simples { padding: 1.5rem; text-align: center; color: #E8DCC0; }

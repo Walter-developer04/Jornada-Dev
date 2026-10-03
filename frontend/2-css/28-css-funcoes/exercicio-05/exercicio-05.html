@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-05.css">
+    <title>Exercício 05 — Best Practices: Accessibility</title>
+</head>
+<body>
+    <a class="link-pular" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="secao-titulo">
+        <div class="sol" aria-hidden="true"></div>
+        <p class="etiqueta">Exercício 05 · Best Practices</p>
+        <h1>Acessibilidade decide se a estética funciona</h1>
+        <p class="resumo">Uma composição bonita só é adequada se o texto continuar legível e a estrutura compreensível.</p>
+        <a class="link-validacao" href="#validacao">Ir para a validação</a>
+    </header>
+
+    <main id="conteudo" class="conteudo-principal">
+        <section class="secao-demonstracao" aria-labelledby="titulo-demonstracao">
+            <h2 id="titulo-demonstracao">Demonstração</h2>
+            <p>O mesmo fundo creme com duas cores de texto. O resultado é indicado por palavra e por estilo de borda, não só pela cor.</p>
+            <div class="comparacao">
+                <article class="amostra amostra-reprovada">
+                    <h3>Reprovado</h3>
+                    <p class="texto-amostra">Laranja claro sobre creme: contraste de cerca de 1,9:1.</p>
+                </article>
+                <article class="amostra amostra-aprovada">
+                    <h3>Aprovado</h3>
+                    <p class="texto-amostra">Vermelho escuro sobre creme: contraste de cerca de 8:1.</p>
+                </article>
+            </div>
+            <p>Valores calculados com a fórmula do WCAG; confirme em uma ferramenta de contraste.</p>
+        </section>
+
+        <section class="secao-analise" aria-labelledby="titulo-analise">
+            <h2 id="titulo-analise">Análise</h2>
+            <ul>
+                <li><strong>Decisão visual:</strong> o círculo vermelho é decorativo e não carrega informação, por isso fica fora da árvore de acessibilidade.</li>
+                <li><strong>Validação:</strong> todo texto fica sobre fundo claro, nunca sobre o círculo.</li>
+                <li><strong>Conclusão:</strong> quando uma cor bonita falha no contraste, a cor muda.</li>
+            </ul>
+        </section>
+
+        <section id="validacao" class="secao-validacao" aria-labelledby="titulo-validacao">
+            <h2 id="titulo-validacao">Validação</h2>
+            <ul>
+                <li><strong>Contraste (WCAG 1.4.3):</strong> mínimo de 4,5:1 para texto normal e 3:1 para texto grande.</li>
+                <li><strong>Cor não é o único meio (WCAG 1.4.1):</strong> rótulos e bordas diferentes.</li>
+                <li><strong>Foco visível (WCAG 2.4.7):</strong> use Tab; os links mostram um contorno espesso.</li>
+                <li><strong>Ampliação de texto (WCAG 1.4.4):</strong> tamanhos em rem acompanham a configuração do usuário.</li>
+                <li><strong>Estrutura:</strong> header, main, section, footer, um h1 e h2/h3 em ordem.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape-simples">
+        <p>Exercício 05 · demonstração educacional estática.</p>
+    </footer>
+</body>
+</html>

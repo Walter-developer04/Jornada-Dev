@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 01 - Fundamentos das CSS Variables</title>
+</head>
+<body>
+    <main class="quadro-estudo">
+        <header class="cabecalho-estudo">
+            <p class="etiqueta-exercicio">Exercício 01</p>
+            <h1>CSS Variables: declarar uma vez, usar em vários lugares</h1>
+            <p class="subtitulo-estudo">Uma propriedade personalizada guarda um valor com nome. Qualquer elemento pode consumir esse valor com <code>var()</code>.</p>
+        </header>
+
+        <section class="area-declaracao" aria-labelledby="titulo-declaracao">
+            <h2 id="titulo-declaracao">1. Declaração no escopo global</h2>
+            <p>O seletor <code>:root</code> define valores disponíveis para toda a página. O nome de uma variável sempre começa com dois hifens.</p>
+            <figure class="bloco-codigo">
+                <pre><code>:root {
+    --cor-principal: #1f5d50;
+    --cor-secundaria: #b84a32;
+    --cor-destaque: #e3b23c;
+}</code></pre>
+                <figcaption>Três valores declarados uma única vez.</figcaption>
+            </figure>
+            <ul class="lista-valores">
+                <li class="amostra-valor">
+                    <span class="cor-amostra cor-amostra-principal" aria-hidden="true"></span>
+                    <span class="legenda-amostra">
+                        <span class="nome-variavel">--cor-principal</span>
+                        <span class="valor-declarado">#1f5d50</span>
+                    </span>
+                </li>
+                <li class="amostra-valor">
+                    <span class="cor-amostra cor-amostra-secundaria" aria-hidden="true"></span>
+                    <span class="legenda-amostra">
+                        <span class="nome-variavel">--cor-secundaria</span>
+                        <span class="valor-declarado">#b84a32</span>
+                    </span>
+                </li>
+                <li class="amostra-valor">
+                    <span class="cor-amostra cor-amostra-destaque" aria-hidden="true"></span>
+                    <span class="legenda-amostra">
+                        <span class="nome-variavel">--cor-destaque</span>
+                        <span class="valor-declarado">#e3b23c</span>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="area-reutilizacao" aria-labelledby="titulo-reutilizacao">
+            <h2 id="titulo-reutilizacao">2. Consumo com var()</h2>
+            <p>Nenhum dos quatro exemplos abaixo repete um código de cor. Cada um apenas pede o valor pelo nome da variável.</p>
+            <ul class="lista-exemplos">
+                <li>
+                    <article class="exemplo-variable">
+                        <h3>Cor do texto</h3>
+                        <p class="amostra-texto">Texto na cor principal</p>
+                        <code class="codigo-variavel">color: var(--cor-principal);</code>
+                    </article>
+                </li>
+                <li>
+                    <article class="exemplo-variable">
+                        <h3>Cor de fundo</h3>
+                        <p class="amostra-fundo">Fundo na cor secundária</p>
+                        <code class="codigo-variavel">background-color: var(--cor-secundaria);</code>
+                    </article>
+                </li>
+                <li>
+                    <article class="exemplo-variable">
+                        <h3>Cor da borda</h3>
+                        <p class="amostra-borda">Borda na cor principal</p>
+                        <code class="codigo-variavel">border: 2px solid var(--cor-principal);</code>
+                    </article>
+                </li>
+                <li>
+                    <article class="exemplo-variable">
+                        <h3>Cor de destaque</h3>
+                        <p class="amostra-destaque">Fundo na cor de destaque</p>
+                        <code class="codigo-variavel">background-color: var(--cor-destaque);</code>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section class="area-resumo" aria-labelledby="titulo-resumo">
+            <h2 id="titulo-resumo">3. Onde cada variável aparece nesta página</h2>
+            <dl class="lista-usos">
+                <dt class="etiqueta-variavel etiqueta-principal">--cor-principal</dt>
+                <dd>Título principal, etiqueta do exercício, linhas sob os subtítulos, texto do primeiro exemplo e borda do terceiro.</dd>
+                <dt class="etiqueta-variavel etiqueta-secundaria">--cor-secundaria</dt>
+                <dd>Nomes das variáveis e fundo do segundo exemplo.</dd>
+                <dt class="etiqueta-variavel etiqueta-destaque">--cor-destaque</dt>
+                <dd>Faixa lateral do cabeçalho e fundo do quarto exemplo.</dd>
+            </dl>
+            <p>As amostras de cor da seção 1 e as etiquetas desta lista também consomem as mesmas três variáveis. Alterar um valor em <code>:root</code> atualiza todos esses pontos de uma só vez.</p>
+        </section>
+    </main>
+</body>
+</html>

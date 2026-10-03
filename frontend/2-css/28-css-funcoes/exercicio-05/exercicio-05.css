@@ -1,0 +1,85 @@
+﻿/* Paleta: creme #FBF6EC, tinta #1F1A17, vermelho do sol #BC002D, vermelho de texto #9B0028, pêssego #F7DCC4. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #FBF6EC;
+    color: #1F1A17;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+/* Link para pular direto ao conteúdo: aparece só quando recebe foco. */
+.link-pular { position: absolute; left: -999px; top: 0; }
+.link-pular:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+    padding: 0.75rem 1rem;
+    background: #1F1A17;
+    color: #FBF6EC;
+}
+
+.secao-titulo {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, #FBF6EC 0%, #FBF6EC 55%, #F7DCC4 100%);
+    border-bottom: 2px solid #1F1A17;
+}
+
+/* Círculo decorativo, sem texto sobre ele. */
+.sol {
+    --tamanho: clamp(12rem, 42vmin, 28rem);
+    width: var(--tamanho);
+    height: var(--tamanho);
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: #BC002D;
+}
+
+.etiqueta { margin: 0; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.9rem; }
+
+h1 { max-width: 40rem; margin: 0; font-size: clamp(1.75rem, 1.2rem + 3vw, 3rem); line-height: 1.2; font-weight: normal; }
+
+.resumo { max-width: 34rem; margin: 0; }
+
+a { color: #9B0028; }
+
+/* Foco visível: contorno espesso e deslocado. */
+a:focus-visible { outline: 3px solid #1F1A17; outline-offset: 4px; }
+
+.conteudo-principal { width: min(100% - 2rem, 52rem); margin: 0 auto; }
+
+.secao-demonstracao, .secao-analise, .secao-validacao {
+    padding: 2.5rem 0;
+    border-top: 1px solid #1F1A17;
+}
+
+h2 { margin-top: 0; color: #9B0028; font-weight: normal; }
+
+.comparacao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1rem;
+}
+
+.amostra { padding: 1rem; background: #FBF6EC; }
+.amostra h3 { margin-top: 0; }
+
+/* Reprovado: contraste insuficiente, borda tracejada. */
+.amostra-reprovada { border: 2px dashed #1F1A17; }
+.amostra-reprovada .texto-amostra { color: #E8A87C; }
+
+/* Aprovado: contraste adequado, borda sólida. */
+.amostra-aprovada { border: 2px solid #1F1A17; }
+.amostra-aprovada .texto-amostra { color: #9B0028; }
+
+.rodape-simples { padding: 1.5rem; text-align: center; border-top: 1px solid #1F1A17; }

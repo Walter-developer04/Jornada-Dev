@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-04.css">
+    <title>Exercício 04 — Best Practices: Performance</title>
+</head>
+<body>
+    <header class="secao-titulo">
+        <div class="folha-principal">
+            <p class="etiqueta">Arquivo 04 · Best Practices</p>
+            <h1>Caso 04: o CSS suspeito</h1>
+            <p>Funcionar não significa estar bem implementado. A investigação compara duas soluções que produzem um resultado parecido.</p>
+            <span class="carimbo">Confidencial</span>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="secao-evidencias" aria-labelledby="titulo-evidencias">
+            <h2 id="titulo-evidencias">Evidências</h2>
+            <div class="comparacao">
+                <article class="evidencia evidencia-ruim">
+                    <h3>Evidência A — decisão ruim</h3>
+                    <div class="amostra bloco-pesado">Amostra A</div>
+<pre><code>border-top: 2px solid #1C1A17;
+border-right: 2px solid #1C1A17;
+border-bottom: 2px solid #1C1A17;
+border-left: 2px solid #1C1A17;
+box-shadow:
+  0 0 40px rgba(0,0,0,.4),
+  0 0 80px rgba(0,0,0,.4),
+  0 0 120px rgba(0,0,0,.4);</code></pre>
+                </article>
+                <article class="evidencia evidencia-melhor">
+                    <h3>Evidência B — decisão melhor</h3>
+                    <div class="amostra bloco-enxuto">Amostra B</div>
+<pre><code>border: 2px solid #1C1A17;
+box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.25);</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-analise" aria-labelledby="titulo-analise">
+            <h2 id="titulo-analise">Análise</h2>
+            <ul>
+                <li><strong>Decisão:</strong> ambas as soluções funcionam e entregam um bloco com borda e sombra.</li>
+                <li><strong>Avaliação:</strong> A repete quatro bordas iguais e empilha três sombras com desfoque grande. Sombras amplas podem aumentar o trabalho de pintura.</li>
+                <li><strong>Conclusão:</strong> B declara a borda uma vez e usa uma sombra. Essa abordagem pode reduzir trabalho desnecessário em determinadas situações e é mais fácil de manter.</li>
+            </ul>
+        </section>
+
+        <section class="secao-validacao" aria-labelledby="titulo-validacao">
+            <h2 id="titulo-validacao">Como verificar</h2>
+            <ol>
+                <li>Abra as ferramentas do desenvolvedor do navegador.</li>
+                <li>Use o painel Performance para gravar e observar as etapas de estilo, layout e pintura.</li>
+                <li>No Chrome, ative Paint flashing no painel Rendering para ver as áreas repintadas.</li>
+                <li>Compare as duas versões antes de concluir. Nenhuma técnica é sempre mais rápida; meça o caso real.</li>
+            </ol>
+            <p><strong>Accessibility:</strong> tinta #1C1A17 sobre papel #E8DCC0 mantém contraste alto, e as evidências são identificadas por texto e estilo de borda, não só por cor.</p>
+        </section>
+    </main>
+
+    <footer class="rodape-simples">
+        <p>Exercício 04 · demonstração educacional estática.</p>
+    </footer>
+</body>
+</html>

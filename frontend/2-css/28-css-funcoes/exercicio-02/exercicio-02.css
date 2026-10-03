@@ -1,0 +1,124 @@
+﻿/* Paleta costeira: noite #0A1A2F, oceano #134E6A, luz #FFD65A, sinal #C8352B, areia #F2E6CF. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #0A1A2F;
+    color: #FFF8E7;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+.secao-titulo {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0A1A2F 0%, #0F2E4A 65%, #134E6A 100%);
+    border-bottom: 1rem solid #F2E6CF;
+}
+
+.conteudo-titulo { max-width: 32rem; }
+
+.etiqueta {
+    margin: 0 0 0.5rem;
+    color: #FFD65A;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* clamp(): título fluido, com mínimo e máximo em rem. */
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 1.5rem + 4vw, 4.5rem);
+    line-height: 1.1;
+}
+
+/* Farol feito só com formas CSS. */
+.farol {
+    position: relative;
+    flex: none;
+    width: clamp(7rem, 20vw, 12rem);
+    height: clamp(14rem, 50vh, 24rem);
+}
+
+.farol-torre {
+    position: absolute; bottom: 0; left: 15%; right: 15%; height: 68%;
+    background: repeating-linear-gradient(to bottom, #FFF8E7 0, #FFF8E7 2rem, #C8352B 2rem, #C8352B 4rem);
+    clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+}
+.farol-galeria { position: absolute; bottom: 68%; left: 22%; right: 22%; height: 3%; background: #F2E6CF; }
+.farol-luz {
+    position: absolute; bottom: 71%; left: 34%; right: 34%; height: 14%;
+    background: #FFD65A; border: 2px solid #FFF8E7; box-shadow: 0 0 1.5rem #FFD65A;
+}
+.farol-teto {
+    position: absolute; bottom: 85%; left: 30%; right: 30%; height: 8%;
+    background: #C8352B; clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.farol-feixe {
+    position: absolute; bottom: 73%; left: 50%; width: 110%; height: 10%;
+    background: linear-gradient(to right, rgba(255, 214, 90, 0.65), rgba(255, 214, 90, 0));
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
+}
+
+/* min(): a largura nunca passa de 60rem e mantém 1rem de folga em cada lado. */
+.conteudo-principal {
+    width: min(100% - 2rem, 60rem);
+    margin: 0 auto;
+}
+
+.secao-demonstracao, .secao-analise, .secao-validacao {
+    padding: 2.5rem 0;
+    border-top: 2px solid #134E6A;
+}
+
+h2 { color: #FFD65A; }
+
+.lista-barras {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    list-style: none;
+    background: #0F2E4A;
+    border: 2px solid #F2E6CF;
+}
+
+.barra {
+    padding: 0.75rem 1rem;
+    border: 3px solid #0A1A2F;
+    color: #0A1A2F;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Referência: sem função, a barra acompanha 45vw sem limites. */
+.barra-sem-funcao { width: 45vw; background: #FFF8E7; border-style: dashed; }
+/* min(): teto de 24rem. */
+.barra-minimo { width: min(45vw, 24rem); background: #FFD65A; }
+/* max(): piso de 12rem. */
+.barra-maximo { width: max(45vw, 12rem); background: #F2E6CF; border-style: double; }
+/* clamp(): piso de 12rem e teto de 24rem. */
+.barra-limitada { width: clamp(12rem, 45vw, 24rem); background: #9CD3E8; border-width: 5px; }
+
+.grade-funcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+}
+
+.cartao-funcao { padding: 1rem; background: #0F2E4A; border: 2px solid #FFD65A; }
+.cartao-funcao h3 { margin-top: 0; font-family: "Courier New", Courier, monospace; }
+
+.texto-fluido { font-size: clamp(1rem, 0.9rem + 1vw, 1.5rem); color: #FFD65A; }
+
+.rodape-simples { padding: 1.5rem; text-align: center; color: #F2E6CF; }

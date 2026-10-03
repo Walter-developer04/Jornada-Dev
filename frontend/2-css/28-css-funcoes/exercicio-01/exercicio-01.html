@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio-01.css">
+    <title>Exercício 01 — calc()</title>
+</head>
+<body>
+    <header class="secao-titulo">
+        <p class="etiqueta">Exercício 01 · CSS Functions</p>
+        <h1>calc(): contas dentro do CSS</h1>
+        <p class="resumo">A função combina unidades diferentes na mesma declaração, algo que um valor fixo não consegue fazer.</p>
+        <code class="codigo-destaque">width: calc(100% - 10rem);</code>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="secao-demonstracao" aria-labelledby="titulo-demonstracao">
+            <h2 id="titulo-demonstracao">Demonstração</h2>
+            <p>Problema: a coluna da esquerda tem 10rem fixos e o painel precisa ocupar exatamente o espaço restante.</p>
+            <div class="trilho">
+                <div class="bloco-fixo">10rem fixos</div>
+                <div class="bloco-restante">calc(100% - 10rem)</div>
+            </div>
+            <p>Segundo caso: o espaçamento interno soma uma base em rem com uma parte proporcional à janela.</p>
+            <div class="cartao-respiro">padding: calc(1rem + 2vw)</div>
+        </section>
+
+        <section class="secao-analise" aria-labelledby="titulo-analise">
+            <h2 id="titulo-analise">Análise</h2>
+            <ul>
+                <li><strong>Problema:</strong> porcentagem e rem não podem ser somados em um valor fixo.</li>
+                <li><strong>Função:</strong> calc() deixa o navegador resolver a conta.</li>
+                <li><strong>Resultado:</strong> o painel preenche o espaço que sobra em qualquer largura.</li>
+                <li><strong>Limitação:</strong> os operadores + e - exigem espaços ao redor.</li>
+            </ul>
+        </section>
+
+        <section class="secao-validacao" aria-labelledby="titulo-validacao">
+            <h2 id="titulo-validacao">Validação</h2>
+            <ul>
+                <li><strong>Performance:</strong> calc() não é mais rápido nem mais lento por si só. Se width: 100% resolve, a conta é desnecessária.</li>
+                <li><strong>Accessibility:</strong> texto claro sobre fundo escuro, com contraste muito acima de 4,5:1 (WCAG 1.4.3). Usar rem na conta acompanha o tamanho de fonte configurado pelo usuário.</li>
+                <li><strong>Compatibilidade:</strong> confira a tabela do MDN antes de depender de navegadores antigos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape-simples">
+        <p>Exercício 01 · demonstração educacional estática.</p>
+    </footer>
+</body>
+</html>

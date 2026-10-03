@@ -1,0 +1,112 @@
+﻿/* Custom properties: cada valor é declarado uma vez e reutilizado com var(). */
+:root {
+    --cor-fundo: #05060F;
+    --cor-painel: #11163A;
+    --cor-texto: #EEF1FF;
+    --cor-destaque: #F6D488;
+    --cor-apoio: #8FB4FF;
+    --espaco: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Estrelas estáticas: pontos feitos com radial-gradient. */
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    background-image:
+        radial-gradient(circle at 8% 14%, #FFFFFF 0, #FFFFFF 1px, transparent 2px),
+        radial-gradient(circle at 23% 62%, #FFFFFF 0, #FFFFFF 1px, transparent 2px),
+        radial-gradient(circle at 41% 28%, #F6D488 0, #F6D488 1.5px, transparent 2.5px),
+        radial-gradient(circle at 57% 81%, #FFFFFF 0, #FFFFFF 1px, transparent 2px),
+        radial-gradient(circle at 72% 19%, #FFFFFF 0, #FFFFFF 1px, transparent 2px),
+        radial-gradient(circle at 88% 55%, #8FB4FF 0, #8FB4FF 1.5px, transparent 2.5px),
+        radial-gradient(circle at 95% 90%, #FFFFFF 0, #FFFFFF 1px, transparent 2px);
+    background-size: 40rem 40rem;
+    color: var(--cor-texto);
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.secao-titulo {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: var(--espaco);
+    text-align: center;
+    background: radial-gradient(circle at 50% 40%, rgba(143, 180, 255, 0.25), transparent 60%);
+}
+
+.planeta {
+    --tamanho: clamp(8rem, 24vmin, 14rem);
+    position: relative;
+    width: var(--tamanho);
+    height: var(--tamanho);
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--cor-apoio), #2B3A8C 60%, #0A0F2E);
+}
+
+.planeta::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: -30%;
+    width: 160%;
+    height: 16%;
+    border: 4px solid var(--cor-destaque);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+}
+
+.etiqueta { margin: 0; color: var(--cor-destaque); letter-spacing: 0.1em; text-transform: uppercase; }
+
+h1 { margin: 0; font-size: clamp(2rem, 1.2rem + 4vw, 4rem); line-height: 1.1; }
+
+.resumo { max-width: 34rem; margin: 0; }
+
+.conteudo-principal { width: min(100% - 2rem, 60rem); margin: 0 auto; }
+
+.secao-demonstracao, .secao-analise, .secao-validacao {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--cor-apoio);
+}
+
+h2 { color: var(--cor-destaque); }
+
+.bloco-codigo {
+    overflow-x: auto;
+    padding: 1rem;
+    background: var(--cor-painel);
+    border: 1px solid var(--cor-apoio);
+    color: var(--cor-texto);
+}
+
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+}
+
+.cartao-constelacao {
+    padding: var(--espaco);
+    background: var(--cor-painel);
+    border: 3px solid var(--cor-destaque);
+}
+
+.cartao-constelacao h3 { margin-top: 0; }
+
+.rotulo { color: var(--cor-apoio); font-weight: bold; }
+
+/* A mesma regra, mas a variável é redefinida só dentro deste cartão. */
+.cartao-redefinido { --cor-destaque: #8FB4FF; border-style: double; border-width: 6px; }
+
+/* Variável inexistente: var() usa o valor reserva. */
+.cartao-reserva { border: 3px dashed var(--cor-inexistente, #FFFFFF); }
+
+.rodape-simples { padding: 1.5rem; text-align: center; color: var(--cor-apoio); }

@@ -1,0 +1,265 @@
+/* Variáveis */
+
+/* Valores globais da página e valor inicial da variável usada na demonstração. */
+:root {
+    --cor-fundo: #1f2a2e;
+    --cor-superficie: #2a373c;
+    --cor-texto: #ece6da;
+    --cor-principal: #e07a5f;
+    --cor-secundaria: #81b29a;
+    --cor-destaque: #f2cc8f;
+    --cor-auxiliar: #8d9aa0;
+
+    /* Esta é a variável cujo valor muda de escopo para escopo. */
+    --cor-marca: #e07a5f;
+
+    --espacamento-principal: 1.25rem;
+    --raio-painel: 10px;
+    --largura-borda: 3px;
+
+    --fonte-titulo: "Trebuchet MS", Verdana, sans-serif;
+    --fonte-texto: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+    --fonte-codigo: "Lucida Console", "Courier New", monospace;
+}
+
+/* Estilos base */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: calc(var(--espacamento-principal) * 2) var(--espacamento-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+code {
+    font-family: var(--fonte-codigo);
+    font-size: 0.85rem;
+}
+
+h2 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    color: var(--cor-destaque);
+}
+
+h3 {
+    margin: 0;
+    font-family: var(--fonte-codigo);
+    font-size: 0.95rem;
+    /* O título de cada bloco acompanha o valor de --cor-marca naquele escopo. */
+    color: var(--cor-marca);
+}
+
+/* Estrutura principal */
+
+.laboratorio-escopo {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacamento-principal) * 1.5);
+}
+
+.cabecalho-laboratorio {
+    padding-bottom: var(--espacamento-principal);
+    border-bottom: var(--largura-borda) solid var(--cor-destaque);
+}
+
+.etiqueta-exercicio {
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    padding: 0.15rem 0.8rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    font-family: var(--fonte-codigo);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: var(--raio-painel);
+}
+
+h1 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 2.2rem;
+    line-height: 1.15;
+    color: var(--cor-destaque);
+}
+
+.subtitulo-laboratorio {
+    margin: 0;
+    max-width: 44rem;
+}
+
+.area-escopo,
+.area-fallback,
+.area-resumo {
+    padding: var(--espacamento-principal);
+    border: 1px solid var(--cor-auxiliar);
+    border-radius: var(--raio-painel);
+}
+
+/* Componentes: blocos de escopo */
+
+/* Cada bloco desenha a borda com o valor de --cor-marca que enxerga. */
+.escopo-raiz,
+.escopo-bloco-especial,
+.escopo-local {
+    margin-top: 1rem;
+    padding: var(--espacamento-principal);
+    border: var(--largura-borda) dashed var(--cor-marca);
+    border-radius: var(--raio-painel);
+}
+
+/* Não declara --cor-marca: o valor vem de :root por herança. */
+.escopo-raiz {
+    background-color: var(--cor-superficie);
+}
+
+/* Este valor local sobrescreve a variável herdada neste bloco. */
+.escopo-bloco-especial {
+    --cor-marca: #81b29a;
+    background-color: var(--cor-fundo);
+}
+
+/* Declaração ainda mais próxima: vale somente para este bloco e seus filhos. */
+.escopo-local {
+    --cor-marca: #f2cc8f;
+    background-color: var(--cor-superficie);
+}
+
+.cabecalho-escopo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.codigo-variavel {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-auxiliar);
+    border-radius: 6px;
+    color: var(--cor-texto);
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Demonstração das variáveis: as quatro amostras usam a mesma regra. */
+/* O que muda é apenas o escopo em que cada parágrafo está. */
+.valor-herdado,
+.valor-sobrescrito,
+.valor-herdado-do-bloco,
+.valor-local {
+    margin: 0.6rem 0 0;
+    padding: 0.7rem 1rem;
+    background-color: var(--cor-marca);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* Demonstração das variáveis: fallback */
+
+.lista-fallback {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+}
+
+.exemplo-fallback {
+    height: 100%;
+    padding: var(--espacamento-principal);
+    background-color: var(--cor-superficie);
+    border: var(--largura-borda) solid var(--cor-auxiliar);
+    border-radius: var(--raio-painel);
+}
+
+.exemplo-fallback h3 {
+    margin-bottom: 0.75rem;
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    font-size: 1.05rem;
+}
+
+/* Esta variável existe apenas dentro do segundo exemplo. */
+.exemplo-fallback-declarado {
+    --cor-declarada: #81b29a;
+}
+
+/* --cor-inexistente nunca é declarada, então o fallback é usado. */
+.valor-fallback-ativo {
+    margin: 0 0 0.75rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--cor-inexistente, #8d9aa0);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* --cor-declarada tem valor utilizável, então o fallback é ignorado. */
+.valor-fallback-ignorado {
+    margin: 0 0 0.75rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--cor-declarada, #8d9aa0);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* Resumo das situações */
+
+.lista-situacoes {
+    margin: 1rem 0 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.75rem 1rem;
+    align-items: start;
+}
+
+.lista-situacoes dd {
+    margin: 0;
+}
+
+.etiqueta-herdada,
+.etiqueta-sobrescrita,
+.etiqueta-local,
+.etiqueta-fallback {
+    padding: 0.15rem 0.7rem;
+    color: var(--cor-fundo);
+    font-family: var(--fonte-titulo);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.etiqueta-herdada {
+    background-color: var(--cor-principal);
+}
+
+.etiqueta-sobrescrita {
+    background-color: var(--cor-secundaria);
+}
+
+.etiqueta-local {
+    background-color: var(--cor-destaque);
+}
+
+.etiqueta-fallback {
+    background-color: var(--cor-auxiliar);
+}

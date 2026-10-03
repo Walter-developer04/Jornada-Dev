@@ -1,0 +1,96 @@
+﻿/* Paleta neon: fundo escuro garante contraste alto no texto. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #0B0820;
+    color: #F5F3FF;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.secao-titulo {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, #4C1D95 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, #9D174D 0%, transparent 45%),
+        #0B0820;
+}
+
+.etiqueta { margin: 0; color: #F9A8D4; letter-spacing: 0.08em; text-transform: uppercase; }
+
+h1 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: clamp(2rem, 1.2rem + 4vw, 4rem);
+    line-height: 1.1;
+    text-shadow: 0 0 12px #7C3AED;
+}
+
+.resumo { max-width: 36rem; margin: 0; }
+
+.codigo-destaque {
+    padding: 0.75rem 1rem;
+    border: 2px solid #38BDF8;
+    border-radius: 0.5rem;
+    background: #120B33;
+    color: #A5F3FC;
+    box-shadow: 0 0 12px #38BDF8;
+}
+
+/* calc(): largura total menos uma margem fixa de 2rem de cada lado. */
+.conteudo-principal {
+    width: calc(100% - 4rem);
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.secao-demonstracao, .secao-analise, .secao-validacao {
+    padding: 2.5rem 0;
+    border-top: 1px solid #7C3AED;
+}
+
+h2 { color: #F9A8D4; }
+
+.trilho {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0 1.5rem;
+    border: 2px solid #C4B5FD;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.bloco-fixo {
+    flex: none;
+    width: 10rem;
+    padding: 1rem;
+    background: #1E1B4B;
+    border-right: 2px dashed #C4B5FD;
+}
+
+/* calc(): 100% menos os 10rem do bloco ao lado. */
+.bloco-restante {
+    width: calc(100% - 10rem);
+    padding: 1rem;
+    background: #3B0764;
+}
+
+/* calc(): base em rem somada a uma parte proporcional à janela. */
+.cartao-respiro {
+    padding: calc(1rem + 2vw);
+    border: 2px solid #F472B6;
+    border-radius: 0.5rem;
+    background: #1E1B4B;
+}
+
+.rodape-simples { padding: 1.5rem; text-align: center; color: #C4B5FD; }

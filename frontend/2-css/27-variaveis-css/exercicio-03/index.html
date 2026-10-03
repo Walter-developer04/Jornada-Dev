@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 03 - Variáveis organizadas em camadas</title>
+</head>
+<body>
+    <main class="quadro-sistema">
+        <header class="cabecalho-sistema">
+            <p class="etiqueta-exercicio">Exercício 03</p>
+            <h1>Variáveis organizadas em camadas</h1>
+            <p class="subtitulo-sistema">Valores-base alimentam variáveis de componente, e cada componente pode receber uma variação local sem repetir nenhum valor.</p>
+        </header>
+
+        <section class="camada camada-base" aria-labelledby="titulo-base">
+            <header class="cabecalho-camada">
+                <span class="numero-camada" aria-hidden="true">1</span>
+                <h2 id="titulo-base">Valores-base</h2>
+            </header>
+            <p>Declarados em <code>:root</code>, ficam no escopo global e servem de origem para as demais camadas.</p>
+            <ul class="lista-valores-base">
+                <li class="valor-base">
+                    <span class="amostra-cor amostra-principal" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--cor-principal</code><span class="valor-declarado">#234e70</span></span>
+                </li>
+                <li class="valor-base">
+                    <span class="amostra-cor amostra-secundaria" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--cor-secundaria</code><span class="valor-declarado">#b83a4b</span></span>
+                </li>
+                <li class="valor-base">
+                    <span class="amostra-cor amostra-destaque" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--cor-destaque</code><span class="valor-declarado">#35b0a1</span></span>
+                </li>
+                <li class="valor-base">
+                    <span class="amostra-cor amostra-auxiliar" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--cor-auxiliar</code><span class="valor-declarado">#5b6b80</span></span>
+                </li>
+                <li class="valor-base">
+                    <span class="amostra-espacamento" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--espacamento-base</code><span class="valor-declarado">1rem</span></span>
+                </li>
+                <li class="valor-base">
+                    <span class="amostra-raio" aria-hidden="true"></span>
+                    <span class="legenda-base"><code>--raio-painel</code><span class="valor-declarado">8px</span></span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="camada camada-componente" aria-labelledby="titulo-componente">
+            <header class="cabecalho-camada">
+                <span class="numero-camada" aria-hidden="true">2</span>
+                <h2 id="titulo-componente">Variáveis do componente</h2>
+            </header>
+            <p>Cada componente declara as próprias variáveis, e o valor delas pode vir de uma variável-base. A borda pede <code>--etiqueta-borda</code> com um fallback.</p>
+            <figure class="bloco-codigo">
+                <pre><code>.etiqueta-componente {
+    --etiqueta-fundo: var(--cor-principal);
+    --etiqueta-texto: var(--cor-superficie);
+
+    background-color: var(--etiqueta-fundo);
+    color: var(--etiqueta-texto);
+    border: 2px solid var(--etiqueta-borda, var(--cor-auxiliar));
+}
+
+.painel-componente {
+    --painel-espacamento: calc(var(--espacamento-base) * 2);
+    padding: var(--painel-espacamento);
+}</code></pre>
+                <figcaption>Variáveis que apontam para outras variáveis formam a camada intermediária.</figcaption>
+            </figure>
+        </section>
+
+        <section class="camada camada-uso" aria-labelledby="titulo-uso">
+            <header class="cabecalho-camada">
+                <span class="numero-camada" aria-hidden="true">3</span>
+                <h2 id="titulo-uso">Componentes e variações locais</h2>
+            </header>
+            <p>Cada variação sobrescreve apenas as variáveis de que precisa. O restante continua vindo do componente.</p>
+
+            <h3>Etiquetas</h3>
+            <ul class="lista-etiquetas">
+                <li>
+                    <p class="etiqueta-componente">Etiqueta padrão</p>
+                    <p class="legenda-uso">Usa os valores do componente. A borda vem do fallback.</p>
+                </li>
+                <li>
+                    <p class="etiqueta-componente etiqueta-secundaria">Variação secundária</p>
+                    <p class="legenda-uso">Sobrescreve apenas <code>--etiqueta-fundo</code>.</p>
+                </li>
+                <li>
+                    <p class="etiqueta-componente etiqueta-destaque">Variação de destaque</p>
+                    <p class="legenda-uso">Sobrescreve <code>--etiqueta-fundo</code> e <code>--etiqueta-texto</code>.</p>
+                </li>
+                <li>
+                    <p class="etiqueta-componente etiqueta-contorno">Borda própria</p>
+                    <p class="legenda-uso">Declara <code>--etiqueta-borda</code>, então o fallback não é usado.</p>
+                </li>
+            </ul>
+
+            <h3>Painéis</h3>
+            <ul class="lista-paineis">
+                <li>
+                    <article class="painel-componente">
+                        <h4>Painel padrão</h4>
+                        <p>Espaçamento interno igual a duas vezes <code>--espacamento-base</code>.</p>
+                    </article>
+                </li>
+                <li>
+                    <article class="painel-componente painel-compacto">
+                        <h4>Painel compacto</h4>
+                        <p>A variação local troca apenas <code>--painel-espacamento</code> e <code>--painel-borda</code>.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section class="camada camada-caminho" aria-labelledby="titulo-caminho">
+            <header class="cabecalho-camada">
+                <span class="numero-camada" aria-hidden="true">4</span>
+                <h2 id="titulo-caminho">O caminho de um valor</h2>
+            </header>
+            <ol class="caminho-valor">
+                <li class="passo-caminho">
+                    <h3>Origem</h3>
+                    <code>--cor-principal: #234e70;</code>
+                    <p>Declarada em <code>:root</code>.</p>
+                </li>
+                <li class="passo-caminho">
+                    <h3>Componente</h3>
+                    <code>--etiqueta-fundo: var(--cor-principal);</code>
+                    <p>A variável do componente aponta para a origem.</p>
+                </li>
+                <li class="passo-caminho">
+                    <h3>Propriedade</h3>
+                    <code>background-color: var(--etiqueta-fundo);</code>
+                    <p>A propriedade consome a variável do componente.</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

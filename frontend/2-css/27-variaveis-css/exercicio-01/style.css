@@ -1,0 +1,287 @@
+/* Variáveis */
+
+/* Valores declarados uma vez no escopo global e reutilizados em toda a página. */
+:root {
+    --cor-fundo: #f3eee3;
+    --cor-superficie: #fffdf8;
+    --cor-texto: #26231f;
+    --cor-principal: #1f5d50;
+    --cor-secundaria: #b84a32;
+    --cor-destaque: #e3b23c;
+    --cor-auxiliar: #6b6457;
+
+    --espacamento-principal: 1.5rem;
+    --raio-painel: 6px;
+    --largura-borda: 2px;
+
+    --fonte-titulo: Georgia, "Times New Roman", serif;
+    --fonte-texto: "Segoe UI", Arial, sans-serif;
+    --fonte-codigo: Consolas, "Courier New", monospace;
+}
+
+/* Estilos base */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: calc(var(--espacamento-principal) * 2) var(--espacamento-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    line-height: 1.6;
+}
+
+code {
+    font-family: var(--fonte-codigo);
+    font-size: 0.92em;
+}
+
+h2 {
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.4rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    /* A linha sob o subtítulo consome a cor principal. */
+    border-bottom: var(--largura-borda) solid var(--cor-principal);
+}
+
+h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1.05rem;
+}
+
+/* Estrutura principal */
+
+.quadro-estudo {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-principal);
+}
+
+.cabecalho-estudo {
+    padding: var(--espacamento-principal);
+    background-color: var(--cor-superficie);
+    border: var(--largura-borda) solid var(--cor-texto);
+    /* A faixa lateral usa a cor de destaque. */
+    border-left: 12px solid var(--cor-destaque);
+    border-radius: var(--raio-painel);
+}
+
+.area-declaracao,
+.area-reutilizacao,
+.area-resumo {
+    padding: var(--espacamento-principal);
+    background-color: var(--cor-superficie);
+    border: var(--largura-borda) solid var(--cor-texto);
+    border-radius: var(--raio-painel);
+}
+
+.etiqueta-exercicio {
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    padding: 0.15rem 0.7rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-superficie);
+    font-family: var(--fonte-codigo);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: var(--raio-painel);
+}
+
+h1 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--cor-principal);
+}
+
+.subtitulo-estudo {
+    margin: 0;
+    max-width: 42rem;
+}
+
+/* Componentes */
+
+.bloco-codigo {
+    margin: 1rem 0;
+}
+
+.bloco-codigo pre {
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    line-height: 1.5;
+    overflow-x: auto;
+    border-radius: var(--raio-painel) var(--raio-painel) 0 0;
+}
+
+.bloco-codigo figcaption {
+    padding: 0.4rem 1rem;
+    background-color: var(--cor-fundo);
+    border: var(--largura-borda) solid var(--cor-texto);
+    border-top: 0;
+    border-radius: 0 0 var(--raio-painel) var(--raio-painel);
+    font-size: 0.85rem;
+}
+
+/* Demonstração das variáveis: amostras dos valores declarados */
+
+.lista-valores {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem;
+}
+
+.amostra-valor {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--cor-fundo);
+    border: var(--largura-borda) solid var(--cor-texto);
+    border-radius: var(--raio-painel);
+}
+
+.cor-amostra {
+    flex: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: var(--largura-borda) solid var(--cor-texto);
+    border-radius: var(--raio-painel);
+}
+
+.cor-amostra-principal {
+    background-color: var(--cor-principal);
+}
+
+.cor-amostra-secundaria {
+    background-color: var(--cor-secundaria);
+}
+
+.cor-amostra-destaque {
+    background-color: var(--cor-destaque);
+}
+
+.legenda-amostra {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-variavel {
+    font-family: var(--fonte-codigo);
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.valor-declarado {
+    font-family: var(--fonte-codigo);
+    font-size: 0.85rem;
+    color: var(--cor-auxiliar);
+}
+
+/* Demonstração das variáveis: consumo com var() */
+
+.lista-exemplos {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+}
+
+.exemplo-variable {
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--cor-fundo);
+    border: var(--largura-borda) solid var(--cor-texto);
+    border-radius: var(--raio-painel);
+}
+
+.amostra-texto,
+.amostra-fundo,
+.amostra-borda,
+.amostra-destaque {
+    margin: 0 0 0.75rem;
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    border-radius: var(--raio-painel);
+}
+
+/* O elemento utiliza o valor armazenado nesta propriedade personalizada. */
+.amostra-texto {
+    color: var(--cor-principal);
+}
+
+.amostra-fundo {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-superficie);
+}
+
+.amostra-borda {
+    border: var(--largura-borda) solid var(--cor-principal);
+}
+
+.amostra-destaque {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+}
+
+.codigo-variavel {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-auxiliar);
+    border-radius: var(--raio-painel);
+    font-size: 0.82rem;
+    overflow-x: auto;
+}
+
+/* Resumo dos usos */
+
+.lista-usos {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.75rem 1rem;
+    align-items: start;
+}
+
+.lista-usos dd {
+    margin: 0;
+}
+
+.etiqueta-variavel {
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--raio-painel);
+    font-family: var(--fonte-codigo);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.etiqueta-principal {
+    background-color: var(--cor-principal);
+    color: var(--cor-superficie);
+}
+
+.etiqueta-secundaria {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-superficie);
+}
+
+.etiqueta-destaque {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+}

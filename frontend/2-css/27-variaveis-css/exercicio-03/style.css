@@ -1,0 +1,380 @@
+/* Variáveis */
+
+/* Camada 1: valores-base compartilhados por toda a página. */
+:root {
+    --cor-fundo: #eef1f4;
+    --cor-superficie: #ffffff;
+    --cor-texto: #14202a;
+    --cor-principal: #234e70;
+    --cor-secundaria: #b83a4b;
+    --cor-destaque: #35b0a1;
+    --cor-auxiliar: #5b6b80;
+
+    --espacamento-base: 1rem;
+    --raio-painel: 8px;
+    --largura-borda: 2px;
+    --sombra-suave: 0 1px 3px rgba(20, 32, 42, 0.14);
+    --sombra-elevada: 0 6px 14px rgba(20, 32, 42, 0.2);
+    --duracao-transicao: 160ms;
+
+    --fonte-titulo: Tahoma, Verdana, sans-serif;
+    --fonte-texto: Cambria, Georgia, serif;
+    --fonte-codigo: Consolas, "Courier New", monospace;
+}
+
+/* Estilos base */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: calc(var(--espacamento-base) * 2) var(--espacamento-base);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+code {
+    font-family: var(--fonte-codigo);
+    font-size: 0.88rem;
+}
+
+h2 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+}
+
+h3 {
+    margin: calc(var(--espacamento-base) * 1.25) 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    color: var(--cor-principal);
+}
+
+h4 {
+    margin: 0 0 0.35rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+}
+
+/* Estrutura principal */
+
+.quadro-sistema {
+    max-width: 62rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacamento-base) * 1.25);
+}
+
+.cabecalho-sistema {
+    padding: calc(var(--espacamento-base) * 1.5);
+    background-color: var(--cor-principal);
+    color: var(--cor-superficie);
+    border-radius: var(--raio-painel);
+}
+
+.etiqueta-exercicio {
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    padding: 0.15rem 0.75rem;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: var(--raio-painel);
+}
+
+h1 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.subtitulo-sistema {
+    margin: 0;
+    max-width: 44rem;
+}
+
+/* Camadas: cada uma define a própria cor local e as demais regras a consomem. */
+
+.camada {
+    --cor-sobre-camada: var(--cor-superficie);
+    padding: calc(var(--espacamento-base) * 1.25);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-auxiliar);
+    border-left: 8px solid var(--cor-camada);
+    border-radius: var(--raio-painel);
+    box-shadow: var(--sombra-suave);
+}
+
+.camada-base {
+    --cor-camada: var(--cor-principal);
+}
+
+.camada-componente {
+    --cor-camada: var(--cor-secundaria);
+}
+
+/* Aqui a cor de destaque é clara, então o número usa texto escuro. */
+.camada-uso {
+    --cor-camada: var(--cor-destaque);
+    --cor-sobre-camada: var(--cor-texto);
+}
+
+.camada-caminho {
+    --cor-camada: var(--cor-auxiliar);
+}
+
+.cabecalho-camada {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.numero-camada {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--cor-camada);
+    color: var(--cor-sobre-camada);
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+/* Camada 1: amostras dos valores-base */
+
+.lista-valores-base {
+    list-style: none;
+    margin: var(--espacamento-base) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--espacamento-base);
+}
+
+.valor-base {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-auxiliar);
+    border-radius: var(--raio-painel);
+}
+
+.amostra-cor,
+.amostra-raio {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--raio-painel);
+}
+
+.amostra-principal {
+    background-color: var(--cor-principal);
+}
+
+.amostra-secundaria {
+    background-color: var(--cor-secundaria);
+}
+
+.amostra-destaque {
+    background-color: var(--cor-destaque);
+}
+
+.amostra-auxiliar {
+    background-color: var(--cor-auxiliar);
+}
+
+/* A largura da amostra é calculada a partir do valor-base de espaçamento. */
+.amostra-espacamento {
+    flex: none;
+    width: calc(var(--espacamento-base) * 2);
+    height: var(--espacamento-base);
+    background-color: var(--cor-auxiliar);
+}
+
+.amostra-raio {
+    border: var(--largura-borda) solid var(--cor-principal);
+}
+
+.legenda-base {
+    display: flex;
+    flex-direction: column;
+}
+
+.valor-declarado {
+    font-family: var(--fonte-codigo);
+    font-size: 0.8rem;
+    color: var(--cor-auxiliar);
+}
+
+/* Camada 2: bloco de código */
+
+.bloco-codigo {
+    margin: var(--espacamento-base) 0 0;
+}
+
+.bloco-codigo pre {
+    margin: 0;
+    padding: var(--espacamento-base);
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    line-height: 1.5;
+    overflow-x: auto;
+    border-radius: var(--raio-painel) var(--raio-painel) 0 0;
+}
+
+.bloco-codigo figcaption {
+    padding: 0.4rem var(--espacamento-base);
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-auxiliar);
+    border-top: 0;
+    border-radius: 0 0 var(--raio-painel) var(--raio-painel);
+    font-size: 0.85rem;
+}
+
+/* Camada 3: componente etiqueta */
+
+.lista-etiquetas,
+.lista-paineis {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--espacamento-base);
+}
+
+.lista-etiquetas {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.lista-paineis {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    align-items: start;
+}
+
+/* O componente declara suas variáveis e as consome com var(). */
+.etiqueta-componente {
+    --etiqueta-fundo: var(--cor-principal);
+    --etiqueta-texto: var(--cor-superficie);
+
+    margin: 0;
+    padding: 0.5rem 0.9rem;
+    background-color: var(--etiqueta-fundo);
+    color: var(--etiqueta-texto);
+    /* Se --etiqueta-borda não existir, o fallback assume o valor auxiliar. */
+    border: var(--largura-borda) solid var(--etiqueta-borda, var(--cor-auxiliar));
+    border-radius: var(--raio-painel);
+    font-family: var(--fonte-titulo);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    transition: transform var(--duracao-transicao) ease, box-shadow var(--duracao-transicao) ease;
+}
+
+.etiqueta-componente:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-elevada);
+}
+
+/* As variações vêm depois do componente para sobrescrever os valores locais. */
+.etiqueta-secundaria {
+    --etiqueta-fundo: var(--cor-secundaria);
+}
+
+.etiqueta-destaque {
+    --etiqueta-fundo: var(--cor-destaque);
+    --etiqueta-texto: var(--cor-texto);
+}
+
+.etiqueta-contorno {
+    --etiqueta-fundo: var(--cor-superficie);
+    --etiqueta-texto: var(--cor-principal);
+    --etiqueta-borda: var(--cor-principal);
+}
+
+.legenda-uso {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--cor-auxiliar);
+}
+
+/* Camada 3: componente painel */
+
+.painel-componente {
+    --painel-espacamento: calc(var(--espacamento-base) * 2);
+    --painel-borda: var(--cor-principal);
+
+    padding: var(--painel-espacamento);
+    background-color: var(--cor-superficie);
+    border: var(--largura-borda) solid var(--painel-borda);
+    border-radius: var(--raio-painel);
+    box-shadow: var(--sombra-suave);
+    transition: transform var(--duracao-transicao) ease, box-shadow var(--duracao-transicao) ease;
+}
+
+.painel-componente:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-elevada);
+}
+
+.painel-compacto {
+    --painel-espacamento: var(--espacamento-base);
+    --painel-borda: var(--cor-secundaria);
+}
+
+.painel-componente p {
+    margin: 0;
+}
+
+/* Camada 4: caminho do valor */
+
+.caminho-valor {
+    list-style: none;
+    margin: var(--espacamento-base) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--espacamento-base);
+}
+
+.passo-caminho {
+    padding: var(--espacamento-base);
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-auxiliar);
+    border-top: 4px solid var(--cor-principal);
+    border-radius: var(--raio-painel);
+}
+
+.passo-caminho h3 {
+    margin-top: 0;
+}
+
+.passo-caminho code {
+    display: block;
+    padding: 0.35rem 0.5rem;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-auxiliar);
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.passo-caminho p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
